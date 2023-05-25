@@ -5,9 +5,9 @@ import img from '../../../assets/NavLogoReal.PNG';
 
 export default function Navigation () {
     return (
-        <nav>
+        <nav className='nav'>
 
-            <div>
+            <div className='main-logo-container'>
                 <img src={img} alt='Ctrecs Logo' />
             </div>
         </nav>

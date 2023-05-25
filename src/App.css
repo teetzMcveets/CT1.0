@@ -6,8 +6,8 @@
 
 :root {
   --BGC: #0D0D0D;
-  --surf1: #191919;
-  --surf2: #262626;
+  --s1: #191919;
+  --s2: #262626;
   --primary: #8FE9DB;
   --secondary: #AD87E7;
   --text: #CCCCCC;
@@ -18,5 +18,9 @@
   --med2: 14px;
   --big1: 16px;
   --big2: 18px;
+}
+
+html {
+  background-color: var(--BGC);
 }
 

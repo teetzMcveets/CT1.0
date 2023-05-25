@@ -1,0 +1,13 @@
+/* NAV CONTAINER */
+.nav {
+    background-color: var(--s1);
+    position: fixed;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+img {
+    height: 80px;
+}
