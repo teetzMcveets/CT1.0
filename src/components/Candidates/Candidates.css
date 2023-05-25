@@ -1,1 +1,19 @@
 /* CANDIDATE PAGE CONTAINERS */
+.candidates-container {
+    display: flex;
+    justify-content: center;
+}
+
+.create-candidate-container {
+    padding: var(--med1);
+    display: flex;
+    justify-content: right;
+}
+
+.candidates-left-container {
+    border: 1px solid white;
+}
+
+/* .candidates-right-container {
+    border: 1px solid white;
+} */

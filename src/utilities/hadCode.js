@@ -3,6 +3,10 @@ export const arnieMcVeighty = {
     firstName: 'Arnie',
     middleNames: '',
     lastName: 'McVeighty',
+    owner: '#15',
+    number: '07590 732 466',
+    email: 'mcveighty.a@gmail.com',
+    profile: '50%',
 }
 
 export const danMilverton = {
@@ -10,4 +14,8 @@ export const danMilverton = {
     firstName: 'Daniel',
     middleNames: 'James',
     lastName: 'Milverton',
+    owner: '#15',
+    number: '07718 478 634',
+    email: 'djmilverton@yahoo.com',
+    profile: '20%',
 }

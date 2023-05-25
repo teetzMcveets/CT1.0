@@ -1,0 +1,52 @@
+/* Candidate list display */
+.candidate-card-link {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.candidate-details-card {
+    margin: 0 var(--small1) var(--big3) var(--med2);
+    display: flex;
+    padding: var(--small2) var(--med2);
+    background-color: var(--s1);
+}
+
+.candidate-details-card:hover {
+    background-color: var(--s2);
+}
+
+.candidate-single-detail {
+    padding: var(--small2) 50px var(--small2) 0;
+}
+
+.first-column {
+    width: 200px;
+}
+
+.p-top {
+    font-weight: bold;
+}
+
+.id-key {
+    color: var(--primary);
+    padding-right: 5px;
+    font-weight: bold;
+}
+
+.candidate-archive-container {
+    display: flex;
+    align-items: flex-end;
+}
+
+.archive-button {
+    border: none;
+    color: var(--secondary);
+    background-color: transparent;
+    font-size: var(--big1);
+    z-index: 1;
+}
+
+.archive-button:hover {
+    cursor: pointer;
+    color: var(--primary)
+}
