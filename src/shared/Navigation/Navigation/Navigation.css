@@ -8,6 +8,41 @@
     z-index: 1;
 }
 
+
+/* CTRECS LOGO */
 img {
     height: 80px;
 }
+
+
+/* NAVIGATION LINKS */
+.nav-ul,
+.nav-settings-container {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    padding: var(--small2) 0;
+}
+
+.nav-link,
+.settings-link {
+    text-decoration: none;
+    color: var(--text);
+    padding: var(--med2) 0;
+    font-size: var(--med2);
+    display: flex;
+    justify-content: center;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+    border-left: 3px solid var(--primary);
+    background-color: var(--BGC);   
+    transition-duration: var(--transition);
+}
+
+.nav-link.active {
+    border-left: 3px solid var(--primary);
+    background-color: var(--BGC);   
+}
+
