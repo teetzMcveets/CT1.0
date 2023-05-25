@@ -22,7 +22,6 @@
     color: var(--text);
     border: 2px solid var(--s2);
     border-radius: 5px;
-    width: 200px;
 }
 
 .candidate-input:focus {

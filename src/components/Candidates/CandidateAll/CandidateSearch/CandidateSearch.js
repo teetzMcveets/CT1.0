@@ -132,7 +132,17 @@ export default function CandidateSearch () {
 
                 </div>
 
+                    <div className='search-criteria-container'>
+                        <div className='candidate-search-container'>
+                            <button
+                                className='button-one'
+                            >
+                                Clear Search
+                            </button>
+                        </div>
+                    </div>
             </div>
+
         </>
     )
 }

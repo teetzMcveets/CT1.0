@@ -10,6 +10,7 @@
     padding: var(--small2) var(--med2);
     background-color: var(--s1);
     border: 2px solid transparent;
+    justify-content: space-between;
 }
 
 .candidate-details-card:hover {
@@ -55,7 +56,6 @@
 .archived-candidate {
     background-color: var(--BGC);
     color: var(--s2);
-    border: 2px solid var(--s2);
 }
 
 .archived-span {

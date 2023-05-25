@@ -1,13 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 import generateUID from '../../utilities/generateUID';
-import { arnieMcVeighty, danMilverton } from '../../utilities/hadCode';
+import { arnieMcVeighty, danMilverton, jamieFranks } from '../../utilities/hadCode';
 
 const initialState = {
     byId: {
         [arnieMcVeighty.id]: arnieMcVeighty,
         [danMilverton.id]: danMilverton,
+        [jamieFranks.id]: jamieFranks,
     },
-    allIds: [arnieMcVeighty.id, danMilverton.id],
+    allIds: [arnieMcVeighty.id, danMilverton.id, jamieFranks.id],
 }
 
 const candidatesSlice = createSlice({

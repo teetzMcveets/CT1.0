@@ -21,3 +21,15 @@ export const danMilverton = {
     profile: '20%',
     status: 'Active',
 }
+
+export const jamieFranks = {
+    id: 135806,
+    firstName: 'Jame',
+    middleNames: '',
+    lastName: 'Franks',
+    owner: '#15',
+    number: '07770 597 594',
+    email: 'jamie@alliance-personnel.com',
+    profile: '20%',
+    status: 'Archived',
+}

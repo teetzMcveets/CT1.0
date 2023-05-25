@@ -19,6 +19,7 @@
   --big1: 16px;
   --big2: 18px;
   --big3: 20px;
+  --big4: 24px;
   --transition: 0.35s;
 }
 
@@ -53,6 +54,32 @@ html {
   scrollbar-width: none; /* Firefox */
 }
 
+/* Main Content
+=========================================================================== */
+
 .main-content {
   padding: 0 20px 0 80px;
+}
+
+/* UNIVERSAL BUTTONS */
+.button-one {
+  font-size: var(--med2);
+  padding: var(--small1) var(--med1);
+  border-radius: var(--med1);
+  background-color: var(--BGC);
+  color: var(--text);
+  border: 1px solid var(--primary);
+}
+
+.button-one:hover {
+  background-color: var(--primary);
+  color: var(--textOnColor);
+  transition-duration: var(--transition);
+  cursor: pointer;
+}
+
+.button-one:active {
+  background-color: var(--secondary);
+  border: 1px solid var(--secondary);
+  
 }
