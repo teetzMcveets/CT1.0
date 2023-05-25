@@ -11,7 +11,7 @@
 
 /* CTRECS LOGO */
 img {
-    height: 80px;
+    width: 60px;
 }
 
 
@@ -46,3 +46,17 @@ img {
     background-color: var(--BGC);   
 }
 
+/* SETTINGS LINK */
+.nav-settings-container {
+    position: fixed;
+    bottom: 50px;
+    width: 60px;
+}
+
+.settings-link:hover {
+    color: var(--primary);
+}
+
+.settings-link:active {
+    color: var(--BGC);
+}

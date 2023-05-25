@@ -27,7 +27,7 @@ export default function Navigation () {
                     <i className="fas fa-handshake icon-size"></i>
                 </NavLink>
                 <NavLink to='/finance' className='nav-link'>
-                    <i className="fas fa-hourglass-start icon-size"></i>
+                    <i className="fas fa-landmark icon-size"></i>
                 </NavLink>
                 <NavLink to='/reports' className='nav-link'>
                     <i className="fas fa-chart-line icon-size"></i>
