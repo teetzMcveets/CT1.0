@@ -38,3 +38,11 @@
     background-color: var(--text);
     border-radius: 50%;
 }
+
+.user-icon:hover {
+    background-color: var(--primary);
+}
+
+.user-icon:active {
+    background-color: var(--BGC);
+}
