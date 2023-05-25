@@ -1,0 +1,46 @@
+.candidate-search-container {
+    display: flex;
+    flex-direction: column;
+    padding: var(--small2) var(--med2);
+    background-color: var(--s1);
+}
+
+.search-criteria-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.candidate-label {
+    padding: var(--small2) 0;
+}
+
+.candidate-input {
+    margin: 0 0 var(--med2) var(--med1);
+    padding: 4px;
+    font-size: var(--med1);
+    background-color: var(--BGC);
+    color: var(--text);
+    border: 2px solid var(--s2);
+    border-radius: 5px;
+    width: 200px;
+}
+
+.candidate-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary)
+}
+
+.rad-answer-container {
+    border: 2px solid var(--s2);
+    margin: 0 50px var(--med2) var(--med2);
+}
+
+.rad-single-answer {
+    border-bottom: 1px solid var(--s2);
+    padding: var(--small1);
+    display: flex;
+}
+
+.rad-label {
+    padding: 0 0 0 var(--big3)
+}

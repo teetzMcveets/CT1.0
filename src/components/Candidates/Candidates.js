@@ -1,6 +1,7 @@
 import React from 'react';
 import './Candidates.css';
 import CandidateList from './CandidateAll/CandidateList/CandidateList';
+import CandidateSearch from './CandidateAll/CandidateSearch/CandidateSearch';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleStatus } from '../../features/candidates/candidateSlice';
 
@@ -17,17 +18,18 @@ export default function Candidates () {
     return (
         <div className='main-content'>
             
-            {/* CREATE BUTTON */}
             <div className='create-candidate-container'>
-                <button>
-                    Create
-                </button>
+                <div className='button-placement'>
+                    <button>
+                        Create
+                    </button>
+                </div>
             </div>
 
-            
             <div className='candidates-container'>
+                {/* CREATE BUTTON */}
                 <div className='candidates-left-container'>
-                    LEFT
+                    <CandidateSearch />
                 </div>
                 <div className='candidates-right-container'>
                     <CandidateList 
