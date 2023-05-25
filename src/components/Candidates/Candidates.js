@@ -15,13 +15,14 @@ export default function Candidates () {
         dispatch(toggleStatus({ id }));
     }
 
+
     return (
         <div className='main-content'>
             
             <div className='create-candidate-container'>
                 <div className='button-placement'>
-                    <button>
-                        Create
+                    <button className='button-one'>
+                        + Create
                     </button>
                 </div>
             </div>
@@ -29,7 +30,8 @@ export default function Candidates () {
             <div className='candidates-container'>
                 {/* CREATE BUTTON */}
                 <div className='candidates-left-container'>
-                    <CandidateSearch />
+                    <CandidateSearch 
+                    />
                 </div>
                 <div className='candidates-right-container'>
                     <CandidateList 

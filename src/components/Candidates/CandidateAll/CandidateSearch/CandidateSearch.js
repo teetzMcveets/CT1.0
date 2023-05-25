@@ -13,7 +13,8 @@ export default function CandidateSearch () {
                     <input 
                         type='text'
                         className='candidate-input'
-                        placeHolder='Search...'
+                        placeholder='Search...'
+                        name='name'
                     />
                 </div>
 
@@ -22,9 +23,10 @@ export default function CandidateSearch () {
                         Search Number
                     </label>
                     <input 
-                        type='text'
+                        type='tel'
                         className='candidate-input'
-                        placeHolder='Search...'
+                        placeholder='Search...'
+                        name='number'
                     />
                 </div>
 
@@ -38,7 +40,7 @@ export default function CandidateSearch () {
                             <input 
                                 type='radio'
                                 id='all'
-                                name='industrySearch'
+                                name='industry'
                             />
                             <label
                                 htmlFor='all'
@@ -52,7 +54,7 @@ export default function CandidateSearch () {
                             <input 
                                 type='radio'
                                 id='driving'
-                                name='industrySearch'
+                                name='industry'
                             />
                             <label 
                                 htmlFor='driving'
@@ -66,7 +68,7 @@ export default function CandidateSearch () {
                             <input 
                                 type='radio'
                                 id='industrial'
-                                name='industrySearch'
+                                name='industry'
                             />
                             <label
                                 htmlFor='industrial'
@@ -90,7 +92,7 @@ export default function CandidateSearch () {
                             <input 
                                 type='radio'
                                 id='active'
-                                name='statusSearch'
+                                name='status'
                             />
                             <label
                                 htmlFor='active'
@@ -104,7 +106,7 @@ export default function CandidateSearch () {
                             <input 
                                 type='radio'
                                 id='allStatus'
-                                name='statusSearch'
+                                name='status'
                             />
                             <label 
                                 htmlFor='allStatus'
@@ -118,7 +120,7 @@ export default function CandidateSearch () {
                             <input 
                                 type='radio'
                                 id='archived'
-                                name='statusSearch'
+                                name='status'
                             />
                             <label
                                 htmlFor='archived'

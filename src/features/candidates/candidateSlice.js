@@ -39,7 +39,7 @@ const candidatesSlice = createSlice({
             if (candidate) {
                 candidate.status = candidate.status === 'Active' ? 'Archived' : 'Active';
             }
-        }
+        },
     }
 });
 
