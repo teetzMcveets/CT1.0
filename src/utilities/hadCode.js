@@ -1,10 +1,13 @@
-let ids = new Set();
+export const arnieMcVeighty = {
+    id: 123456,
+    firstName: 'Arnie',
+    middleNames: '',
+    lastName: 'McVeighty',
+}
 
-export default function generateUID() {
-    let newId = Math.floor(Math.random() * 1000000);
-    while (ids.has(newId)) {
-        newId = Math.floor(Math.random() * 1000000);
-    }
-    ids.add(newId);
-    return newId;
+export const danMilverton = {
+    id: 987654,
+    firstName: 'Daniel',
+    middleNames: 'James',
+    lastName: 'Milverton',
 }
