@@ -53,3 +53,6 @@ html {
   scrollbar-width: none; /* Firefox */
 }
 
+.main-content {
+  padding-left: 80px;
+}
