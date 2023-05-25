@@ -2,6 +2,7 @@
 .user-nav-container {
     padding: 12px 0 12px 80px;
     display: flex;
+    justify-content: space-between;
 }
 
 /* TITLE TEXT */
@@ -18,4 +19,22 @@
 .date {
     color: var(--primary);
     font-weight: bold;
+}
+
+
+.user-container {
+    display: flex;
+    align-items: center;
+    padding-right: var(--big3);
+}
+
+.user-name {
+    padding: 0 12px;
+}
+
+.user-icon {
+    width: 25px;
+    height: 25px;
+    background-color: var(--text);
+    border-radius: 50%;
 }

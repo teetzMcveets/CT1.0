@@ -40,12 +40,25 @@ export default function UserNav () {
     return (
         <div className='user-nav-container'>
 
+            {/* TITLE AND DATE */}
             <div className='title-container'>
                 <h1 className='title-text'>{title}</h1>
                 <p>
                     <span className='weekday'>{weekday}, </span>
                     <span className='date'>{rest.join(', ')}</span>
                 </p>
+            </div>
+            
+
+            {/* WELCOME USER */}
+            <div className='user-container'>
+                <div className='user-name'>
+                    <p>Welcome UserName</p>
+                </div>
+
+                <Link to='#' className='your-logo-link'>
+                    <div className='user-icon'></div>
+                </Link>
             </div>
 
         </div>
