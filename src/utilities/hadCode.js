@@ -8,6 +8,7 @@ export const arnieMcVeighty = {
     email: 'mcveighty.a@gmail.com',
     profile: '50%',
     status: 'Active',
+    industry: 'Driving',
 }
 
 export const danMilverton = {
@@ -20,6 +21,7 @@ export const danMilverton = {
     email: 'djmilverton@yahoo.com',
     profile: '20%',
     status: 'Active',
+    industry: 'Driving',
 }
 
 export const jamieFranks = {
@@ -30,6 +32,20 @@ export const jamieFranks = {
     owner: '#15',
     number: '07770 597 594',
     email: 'jamie@alliance-personnel.com',
-    profile: '20%',
+    profile: '34%',
     status: 'Archived',
+    industry: 'Driving',
+}
+
+export const amiKaur = {
+    id: 756398,
+    firstName: 'Ami',
+    middleNames: '',
+    lastName: 'Kaur',
+    owner: '#1',
+    number: '07766 597 594',
+    email: 'ami@alliance-personnel.com',
+    profile: '50%',
+    status: 'Active',
+    industry: 'Industrial',
 }
