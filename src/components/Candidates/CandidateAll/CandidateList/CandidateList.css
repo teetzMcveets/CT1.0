@@ -9,6 +9,7 @@
     display: flex;
     padding: var(--small2) var(--med2);
     background-color: var(--s1);
+    border: 2px solid transparent;
 }
 
 .candidate-details-card:hover {
@@ -49,4 +50,18 @@
 .archive-button:hover {
     cursor: pointer;
     color: var(--primary)
+}
+
+.archived-candidate {
+    background-color: var(--BGC);
+    color: var(--s2);
+    border: 2px solid var(--s2);
+}
+
+.archived-span {
+    color: var(--s2);
+}
+
+.archived-candidate:hover {
+    background-color: var(--BGC);
 }

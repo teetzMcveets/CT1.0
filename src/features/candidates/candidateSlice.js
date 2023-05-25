@@ -26,8 +26,16 @@ const candidatesSlice = createSlice({
                     payload: {
                         ...candidate,
                         id,
+                        status: 'Active',
                     }
                 }
+            },
+        },
+        toggleStatus: (state, action) => {
+            const { id } = action.payload;
+            const candidate = state.byId[id];
+            if (candidate) {
+                candidate.status = candidate.status === 'Active' ? 'Archived' : 'Active';
             }
         }
     }
@@ -35,6 +43,7 @@ const candidatesSlice = createSlice({
 
 export const {
     addCandidate,
+    toggleStatus,
 } = candidatesSlice.actions;
 
 export default candidatesSlice.reducer;

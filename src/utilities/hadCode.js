@@ -7,6 +7,7 @@ export const arnieMcVeighty = {
     number: '07590 732 466',
     email: 'mcveighty.a@gmail.com',
     profile: '50%',
+    status: 'Active',
 }
 
 export const danMilverton = {
@@ -18,4 +19,5 @@ export const danMilverton = {
     number: '07718 478 634',
     email: 'djmilverton@yahoo.com',
     profile: '20%',
+    status: 'Active',
 }
