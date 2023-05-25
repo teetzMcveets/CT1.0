@@ -14,29 +14,29 @@ export default function Navigation () {
 
             {/* NAVIGATION LINKS */}
             <ul className='nav-ul'>
-                <NavLink to='#' className='nav-link'>
+                <NavLink to='/dashboard' className='nav-link'>
                     <i className="fas fa-chart-pie icon-size"></i>
                 </NavLink>
-                <NavLink to='#' className='nav-link'>
+                <NavLink to='/bookings' className='nav-link'>
                     <i className="far fa-calendar-alt icon-size"></i>
                 </NavLink>
-                <NavLink to='#' className='nav-link'>
+                <NavLink to='/candidates' className='nav-link'>
                     <i className="fas fa-user icon-size"></i>
                 </NavLink>
-                <NavLink to='#' className='nav-link'>
+                <NavLink to='/clients' className='nav-link'>
                     <i className="fas fa-handshake icon-size"></i>
                 </NavLink>
-                <NavLink to='#' className='nav-link'>
+                <NavLink to='/finance' className='nav-link'>
                     <i className="fas fa-hourglass-start icon-size"></i>
                 </NavLink>
-                <NavLink to='#' className='nav-link'>
+                <NavLink to='/reports' className='nav-link'>
                     <i className="fas fa-chart-line icon-size"></i>
                 </NavLink>
             </ul>
 
             {/* SETTINGS LINK */}
             <div className='nav-settings-container'>
-                <Link to='#' className='settings-link'>
+                <Link to='/settings' className='settings-link'>
                     <i className='fas fa-cog'></i>
                 </Link>
             </div>
