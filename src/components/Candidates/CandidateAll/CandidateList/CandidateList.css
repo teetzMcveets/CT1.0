@@ -41,6 +41,10 @@
     font-weight: bold;
 }
 
+.name {
+    text-decoration: underline;
+}
+
 .id-key {
     color: var(--primary);
     padding-right: 5px;

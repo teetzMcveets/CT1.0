@@ -31,7 +31,7 @@ export default function CandidateSearch () {
                 <div className='search-criteria-container'>
                     
                     <label className='candidate-label'>Industry</label>
-                    
+
                     <div className='rad-answer-container'>
                         
                         <div className='rad-single-answer'>

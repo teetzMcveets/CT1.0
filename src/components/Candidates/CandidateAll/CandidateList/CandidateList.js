@@ -24,7 +24,7 @@ export default function CandidateList ({ candidates, handleArchiveClick }) {
                                             <div className='first-column'>
                                                 
                                                 <div className='candidate-single-detail'>
-                                                    <p className='p-top'>{candidate.firstName} {candidate.lastName}</p>
+                                                    <p className='p-top name'>{candidate.firstName} {candidate.lastName}</p>
                                                 </div>
 
                                                 <div className='candidate-single-detail'>
