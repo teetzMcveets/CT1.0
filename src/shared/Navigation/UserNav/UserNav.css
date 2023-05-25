@@ -1,0 +1,21 @@
+/* NAVIGATION CONTAINER */
+.user-nav-container {
+    padding: 12px 0 12px 80px;
+    display: flex;
+}
+
+/* TITLE TEXT */
+.title-text {
+    font-size: var(--big3);
+    padding-bottom: var(--small1);
+}
+
+.weekday,
+.date {
+    font-size: var(--med1);
+}
+
+.date {
+    color: var(--primary);
+    font-weight: bold;
+}

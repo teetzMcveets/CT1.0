@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navigation from './shared/Navigation/Navigation/Navigation';
+import UserNav from './shared/Navigation/UserNav/UserNav';
 import Dashboard from './components/Dashboard/Dashboard';
 import Bookings from './components/Bookings/Bookings';
 import Candidates from './components/Candidates/Candidates';
@@ -15,6 +16,7 @@ function App() {
   return (
     <Router>
       <Navigation />
+      <UserNav />
       <Routes>
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/bookings' element={<Bookings />} />

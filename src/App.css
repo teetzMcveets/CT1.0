@@ -18,6 +18,7 @@
   --med2: 14px;
   --big1: 16px;
   --big2: 18px;
+  --big3: 20px;
   --transition: 0.35s;
 }
 
@@ -28,6 +29,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   overflow-y: scroll;
   font-size: var(--med1);
+  color: var(--text);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera 
