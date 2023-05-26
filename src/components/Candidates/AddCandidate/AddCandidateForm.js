@@ -33,10 +33,14 @@ export default function AddCandidateForm () {
                                 Industry
                             </label>
                             <div className='input-container'>
-                                <input 
-                                    type='text'
+                                <select
+                                    name='industry'
                                     className='add-candidate-input'
-                                />
+                                >
+                                    <option value=''>Please select...</option>
+                                    <option value='Driving'>Driving</option>
+                                    <option value='Industrial'>Industrial</option>
+                                </select>
                             </div>
                         </div>
                         <div className='form-label-input'>
