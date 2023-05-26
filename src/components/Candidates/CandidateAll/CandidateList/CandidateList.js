@@ -22,9 +22,11 @@ export default function CandidateList ({ candidates, handleArchiveClick }) {
                         </button>
                     </div>
                     <div className='button-placement'>
-                        <button className='button-primary'>
-                            + Create
-                        </button>
+                        <Link to='/candidates/add-candidate'>
+                            <button className='button-primary'>
+                                + Create
+                            </button>
+                        </Link>
                     </div>
                     
                 </div>

@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Bookings from './components/Bookings/Bookings';
 import Candidates from './components/Candidates/Candidates';
 import CandidateDetails from './components/Candidates/CandidateAll/CandidateDetails/CandidateDetails';
+import AddCandidate from './components/Candidates/AddCandidate/AddCandidate';
 import Clients from './components/Clients/Clients';
 import Finance from './components/Finance/Finance';
 import Reports from './components/Reports/Reports';
@@ -23,6 +24,7 @@ function App() {
         <Route path='/bookings' element={<Bookings />} />
         <Route path='/candidates' element={<Candidates />} />
         <Route path='/candidates/:id' element={<CandidateDetails />} />
+        <Route path='/candidates/add-candidate' element={<AddCandidate />} />
         <Route path='/clients' element={<Clients />} />
         <Route path='/finance' element={<Finance />} />
         <Route path='/reports' element={<Reports />} />
