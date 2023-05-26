@@ -44,6 +44,7 @@ img {
 .nav-link.active {
     border-left: 3px solid var(--primary);
     background-color: var(--BGC);   
+    color: var(--primary)
 }
 
 /* SETTINGS LINK */

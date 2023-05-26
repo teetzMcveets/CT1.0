@@ -1,0 +1,26 @@
+.sub-nav {
+    display: flex;
+    background-color: var(--s1);
+}
+
+.sub-nav-ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-nav-link {
+    padding: var(--small2);
+    font-size: var(--small2);
+    /* border: 1px solid var(--s2); */
+    color: var(--text);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sub-nav-link:hover,
+.sub-nav-link.active {
+    background-color: var(--BGC);
+    color: var(--primary);
+    border-left: 2px solid var(--primary);
+    transition-duration: var(--transition);
+}
