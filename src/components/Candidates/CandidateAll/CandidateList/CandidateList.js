@@ -1,17 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CandidateList.css';
 import { Link } from 'react-router-dom';
 
 export default function CandidateList ({ candidates, handleArchiveClick }) {
+    const [sort, setSort ] = useState('A-Z');
+
+    const sortedCandidates = Object.values(candidates)
+        .sort((a, b) => sort === 'A-Z' ? a.firstName.localeCompare(b.firstName) : b.firstName.localeCompare(a.firstName));
 
     return (
         <>
             <div className='candidates-list-container'>
 
+                <div className='create-candidate-container'>
+                    <div className='button-placement' style={{ paddingLeft: 10 }}>
+                        <button 
+                            className='button-secondary'
+                            onClick={() => setSort(sort === 'A-Z' ? 'Z-A' : 'A-Z')}
+                        >
+                            <i className={`${sort === 'A-Z' ? 'fas fa-angle-up' : 'fas fa-angle-down'}`}></i>
+                        </button>
+                    </div>
+                    <div className='button-placement'>
+                        <button className='button-primary'>
+                            + Create
+                        </button>
+                    </div>
+                    
+                </div>
+
                 <div className='candidate-list-detail-container'>
-                {Object.values(candidates)
-                    .sort((a, b) => a.firstName.localeCompare(b.firstName))
-                    .map(candidate => {
+                {sortedCandidates.map(candidate => {
                         const isArchived = candidate.status === 'Archived';
 
                         return (

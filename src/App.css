@@ -62,27 +62,51 @@ html {
 }
 
 /* UNIVERSAL BUTTONS */
-.button-one {
-  font-size: var(--med2);
-  padding: var(--small1) var(--med1);
-  border-radius: var(--med1);
-  background-color: var(--BGC);
-  /* background-image: linear-gradient(144deg, #8FE9D8, #5B8291, #3a5462 50%, #8FE9D8); */
-  color: var(--text);
-  border: 2px solid var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.button-one:hover {
+.button-primary {
   background-color: var(--primary);
   color: var(--textOnColor);
+  border: 2px solid var(--primary);
+  border-radius: var(--small2);
+  padding: 5px 10px;
+}
+
+.button-primary:hover {
+  background-color: var(--BGC);
+  border: 2px solid var(--primary);
+  color: var(--text);
+  cursor: pointer;
   transition-duration: var(--transition);
+}
+
+.button-primary:active {
+  background-color: var(--primary);
+  color: var(--textOnColor);
+  border: 2px solid var(--primary);
+  transition-duration: 0ms;
+}
+
+.button-secondary {
+  background-color: var(--secondary);
+  color: var(--textOnColor);
+  border: 2px solid var(--secondary);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
   cursor: pointer;
 }
 
-.button-one:active {
-  background-color: var(--secondary);
+.button-secondary:hover {
+  background-color: var(--BCG);
   border: 2px solid var(--secondary);
+  color: var(--text);
+  cursor: pointer;
+  transition-duration: var(--transition);
+}
+
+.button-secondary:active {
+  background-color: var(--secondary);
+  color: var(--textOnColor);
+  border: 2px solid var(--secondary);
+  transition-duration: 0ms;
 }

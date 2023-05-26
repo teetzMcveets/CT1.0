@@ -28,14 +28,6 @@ export default function Candidates () {
 
     return (
         <div className='main-content'>
-            
-            <div className='create-candidate-container'>
-                <div className='button-placement'>
-                    <button className='button-one'>
-                        + Create
-                    </button>
-                </div>
-            </div>
 
             <div className='candidates-container'>
                 {/* CREATE BUTTON */}

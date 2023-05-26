@@ -1,3 +1,11 @@
+/* top buttons */
+.create-candidate-container {
+    padding: var(--med1);
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+}
+
 /* Candidate list display */
 .candidate-card-link {
     color: var(--text);

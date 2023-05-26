@@ -3,19 +3,12 @@
     display: flex;
     justify-content: flex-start;
     padding-left: 15%;
+    padding-top: var(--big3);
 }
 
-.create-candidate-container {
-    padding: var(--med1);
-    display: flex;
-    justify-content: right;
-    padding-right: 17%;
-    /* border: 1px solid white; */
+.candidates-left-container {
+    padding-top: 50px;
 }
-
-/* .candidates-left-container {
-    border: 1px solid white;
-} */
 
 .candidates-right-container {
     /* border: 1px solid white; */

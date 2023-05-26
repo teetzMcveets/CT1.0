@@ -191,7 +191,7 @@ export default function CandidateSearch ({
                     <div className='search-criteria-container'>
                         <div className='candidate-search-container'>
                             <button
-                                className='button-one'
+                                className='button-primary'
                                 onClick={handleClearSearchLocal}
                             >
                                 <span>
