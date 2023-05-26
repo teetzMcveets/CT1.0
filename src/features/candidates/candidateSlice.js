@@ -25,11 +25,11 @@ const candidatesSlice = createSlice({
         addCandidate: {
             reducer: (state, action) => {
                 const { id } = action.payload;
-                state.candidates.byId[id] = action.payload;
-                state.candidates.allIds.push(id);
+                state.byId[id] = action.payload;
+                state.allIds.push(id);
             },
             prepare: (candidate = {}) => {
-                const id = generateUID().toString();
+                const id = generateUID();
                 return {
                     payload: {
                         ...candidate,

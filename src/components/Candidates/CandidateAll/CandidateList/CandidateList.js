@@ -36,10 +36,10 @@ export default function CandidateList ({ candidates, handleArchiveClick }) {
                         const isArchived = candidate.status === 'Archived';
 
                         return (
-                            <>
+                            <React.Fragment key={candidate.id}>
                                 <Link 
                                     to={isArchived ? '#' : `/candidates/${candidate.id}`} 
-                                    key={candidate.id} 
+                                    // key={candidate.id} 
                                     className={`candidate-card-link ${isArchived ? 'archived-candidate' : ''}`}>
                                         <div className={`candidate-details-card ${isArchived ? 'archived-candidate' : ''}`}>
                                             <div className='candidate-card-details'>
@@ -105,7 +105,7 @@ export default function CandidateList ({ candidates, handleArchiveClick }) {
                                             </div>
                                         </div> 
                                     </Link>  
-                                </>
+                                </React.Fragment>
                             )
                         })}
                 </div>

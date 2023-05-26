@@ -37,28 +37,52 @@
 
 .form-label-input {
     display: flex;
-    align-items: center;
-    padding: var(--small1) 0;
+    align-items: flex-start;
+    margin: var(--big1) 0;
 }
 
-.candidate-label {
+.candidate-label,
+.rad-candidate-label {
     padding: var(--med1);
     width: 30%;
     display: flex;
     justify-content: right;
+    height: 100%;
 }
 
 .input-container {
     width: 50%;
+    padding: 4px;
 }
 
-.add-candidate-input {
+.add-candidate-input,
+.add-candidate-input-date,
+.add-candidate-number {
     background-color: var(--BGC);
     color: var(--text);
     border: 2px solid var(--s2);
     border-radius: 5px;
     padding: 4px;
     width: 70%;
+}
+
+.add-candidate-input-date {
+    width: auto;
+}
+
+.number-code {
+    width: 50px;
+    margin-right: 5px;
+}
+
+.first-five {
+    width: 50px;
+    margin-right: 5px;
+}
+
+.next-three {
+    width: 40px;
+    margin-right: 5px;
 }
 
 .add-candidate-input:focus {
@@ -70,4 +94,15 @@
     font-size: 0.9rem;
     font-style: italic;
     padding-left: 5px;
+}
+
+.add-rad-single-answer {
+    border: 2px solid var(--s3);
+    width: 60%;
+}
+
+.create-button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: var(--big1) 0;
 }
