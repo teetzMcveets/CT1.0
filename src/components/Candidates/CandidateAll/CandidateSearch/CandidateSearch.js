@@ -138,15 +138,15 @@ export default function CandidateSearch ({
                                 type='radio'
                                 id='active'
                                 name='status'
-                                value='Active'
-                                checked={status === 'Active'}
+                                value='All'
+                                checked={status === 'All'}
                                 onChange={handleStatusSearch}
                             />
                             <label
                                 htmlFor='active'
                                 className='rad-label'
                             >
-                                Active
+                                All
                             </label>
                         </div> 
 
@@ -155,15 +155,15 @@ export default function CandidateSearch ({
                                 type='radio'
                                 id='allStatus'
                                 name='status'
-                                value='statusAll'
-                                checked={status === 'statusAll'}
+                                value='Active'
+                                checked={status === 'Active'}
                                 onChange={handleStatusSearch}
                             />
                             <label 
                                 htmlFor='allStatus'
                                 className='rad-label'
                             >
-                                All
+                                Active
                             </label>
                         </div> 
 

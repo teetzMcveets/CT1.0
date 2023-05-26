@@ -54,7 +54,7 @@ const candidatesSlice = createSlice({
                 name: '',
                 number: '',
                 industry: 'All',
-                status: 'Active',
+                status: 'All',
             }
         }
     }
@@ -89,7 +89,7 @@ export const selectFilteredCandidates = createSelector(
         if (industry && industry !== 'All') {
             filteredCandidates = filteredCandidates.filter((candidate) => candidate.industry === industry);
         }
-        if (status && status !== 'Active') {
+        if (status && status !== 'All') {
             filteredCandidates = filteredCandidates.filter((candidate) => candidate.status === status);
         }
 
