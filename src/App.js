@@ -23,7 +23,7 @@ function App() {
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/bookings' element={<Bookings />} />
         <Route path='/candidates' element={<Candidates />} />
-        <Route path='/candidates/:id*' element={<CandidateDetails />} />
+        <Route path='/candidates/:id/*' element={<CandidateDetails />} />
         <Route path='/candidates/add-candidate' element={<AddCandidate />} />
         <Route path='/clients' element={<Clients />} />
         <Route path='/finance' element={<Finance />} />

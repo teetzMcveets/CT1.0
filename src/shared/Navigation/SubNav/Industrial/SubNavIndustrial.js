@@ -15,9 +15,6 @@ export default function SubNav () {
                         <NavLink to='preference-questions' className='sub-nav-link'>
                             Preference Questions
                         </NavLink>
-                        <NavLink to='licenses' className='sub-nav-link'>
-                            Licenses
-                        </NavLink>
                         <NavLink to='medical-questions' className='sub-nav-link'>
                             Medical Questions
                         </NavLink>
@@ -27,7 +24,7 @@ export default function SubNav () {
                         <NavLink to='general-compliance' className='sub-nav-link'>
                             General Compliance
                         </NavLink>
-                        <NavLink to='skills-driving' className='sub-nav-link'>
+                        <NavLink to='skills-industrial' className='sub-nav-link'>
                             Skills
                         </NavLink>
                         <NavLink to='candidate-availability' className='sub-nav-link'>
