@@ -1,7 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CandidateSearch.css';
 
-export default function CandidateSearch () {
+export default function CandidateSearch ({
+    searchCriteria,
+    handleSearchChange,
+    handleClearSearch,
+}) {
+    const { industry, status } = searchCriteria;
+    const [name, setName] = useState(searchCriteria.name);
+    const [number, setNumber] = useState(searchCriteria.number);
+
+    const handleNameSearch = (e) => {
+        setName(e.target.value);
+        handleSearchChange({ ...searchCriteria, name: e.target.value });
+    };
+
+    const handleNumberSearch = (e) => {
+        setNumber(e.target.value);
+        handleSearchChange({ ...searchCriteria, number: e.target.value });
+    };
+
+    const handleIndustrySearch = (e) => {
+        handleSearchChange({ ...searchCriteria, industry: e.target.value});
+    }
+
+    const handleStatusSearch = (e) => {
+        handleSearchChange({ ...searchCriteria, status: e.target.value});
+    }
+
+    const handleClearSearchLocal = () => {
+        handleClearSearch('');
+        setName('');
+        setNumber('');
+    }
+
     return (
         <>
             <div className='candidate-search-container'>
@@ -15,6 +47,8 @@ export default function CandidateSearch () {
                         className='candidate-input'
                         placeholder='Search...'
                         name='name'
+                        value={name}
+                        onChange={handleNameSearch}
                     />
                 </div>
 
@@ -27,6 +61,8 @@ export default function CandidateSearch () {
                         className='candidate-input'
                         placeholder='Search...'
                         name='number'
+                        value={number}
+                        onChange={handleNumberSearch}
                     />
                 </div>
 
@@ -41,6 +77,9 @@ export default function CandidateSearch () {
                                 type='radio'
                                 id='all'
                                 name='industry'
+                                value='All'
+                                checked={industry === 'All'}
+                                onChange={handleIndustrySearch}
                             />
                             <label
                                 htmlFor='all'
@@ -55,6 +94,9 @@ export default function CandidateSearch () {
                                 type='radio'
                                 id='driving'
                                 name='industry'
+                                value='Driving'
+                                checked={industry === 'Driving'}
+                                onChange={handleIndustrySearch}
                             />
                             <label 
                                 htmlFor='driving'
@@ -69,6 +111,9 @@ export default function CandidateSearch () {
                                 type='radio'
                                 id='industrial'
                                 name='industry'
+                                value='Industrial'
+                                checked={industry === 'Industrial'}
+                                onChange={handleIndustrySearch}
                             />
                             <label
                                 htmlFor='industrial'
@@ -93,6 +138,9 @@ export default function CandidateSearch () {
                                 type='radio'
                                 id='active'
                                 name='status'
+                                value='Active'
+                                checked={status === 'Active'}
+                                onChange={handleStatusSearch}
                             />
                             <label
                                 htmlFor='active'
@@ -107,6 +155,9 @@ export default function CandidateSearch () {
                                 type='radio'
                                 id='allStatus'
                                 name='status'
+                                value='statusAll'
+                                checked={status === 'statusAll'}
+                                onChange={handleStatusSearch}
                             />
                             <label 
                                 htmlFor='allStatus'
@@ -121,6 +172,9 @@ export default function CandidateSearch () {
                                 type='radio'
                                 id='archived'
                                 name='status'
+                                value='Archived'
+                                checked={status === 'Archived'}
+                                onChange={handleStatusSearch}
                             />
                             <label
                                 htmlFor='archived'
@@ -138,8 +192,11 @@ export default function CandidateSearch () {
                         <div className='candidate-search-container'>
                             <button
                                 className='button-one'
+                                onClick={handleClearSearchLocal}
                             >
-                                Clear Search
+                                <span>
+                                    Clear Search
+                                </span>
                             </button>
                         </div>
                     </div>

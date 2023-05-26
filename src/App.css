@@ -67,8 +67,12 @@ html {
   padding: var(--small1) var(--med1);
   border-radius: var(--med1);
   background-color: var(--BGC);
+  /* background-image: linear-gradient(144deg, #8FE9D8, #5B8291, #3a5462 50%, #8FE9D8); */
   color: var(--text);
-  border: 1px solid var(--primary);
+  border: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button-one:hover {
@@ -80,6 +84,5 @@ html {
 
 .button-one:active {
   background-color: var(--secondary);
-  border: 1px solid var(--secondary);
-  
+  border: 2px solid var(--secondary);
 }

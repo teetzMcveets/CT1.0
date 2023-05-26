@@ -49,7 +49,7 @@ img {
 /* SETTINGS LINK */
 .nav-settings-container {
     position: fixed;
-    bottom: 50px;
+    bottom: 20px;
     width: 60px;
 }
 
