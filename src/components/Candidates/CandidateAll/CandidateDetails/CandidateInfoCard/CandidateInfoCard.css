@@ -1,0 +1,33 @@
+.info-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-container {
+    border: 2px solid var(--s2);
+    padding: var(--med1);
+}
+
+.default-photo {
+    width: 150px;
+    height: 80px;
+    background-color: var(--s1);
+}
+
+.add-photo-text {
+    margin: var(--small1);
+    display: flex;
+    justify-content: center;
+}
+.info-details {
+    display: flex;
+    padding: 4px 0;
+}
+
+.info-label {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 var(--small1);
+    color: var(--primary)
+}

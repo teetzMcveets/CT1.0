@@ -9,6 +9,7 @@ export const arnieMcVeighty = {
     profile: '50%',
     status: 'Active',
     industry: 'Driving',
+    dateOfBirth: '1990-06-19',
 }
 
 export const danMilverton = {

@@ -1,0 +1,69 @@
+/* MAIN DETAILS */
+.your-details {
+    position: fixed;
+    left: 100px;
+}
+
+
+
+.candidates-detail-container {
+    display: flex;
+    justify-content: center;
+    padding-top: var(--big3);
+}
+
+.candidate-details-right {
+    margin-left: var(--big3);
+    display: flex;
+    flex-direction: column;
+}
+
+.back-button-details-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--med2);
+}
+
+.card-detail-title {
+    display: flex;
+}
+
+.card-container {
+    padding-top: var(--big3);
+    padding-bottom: var(--big3);
+    background-color: var(--s1);
+}
+
+.card-title {
+    padding: var(--small2);
+    background-color: var(--s2);
+}
+
+.detail-container {
+    display: flex; 
+    padding: var(--small2) 0;
+    justify-content: center;
+}
+
+.detail-label {
+    padding: 0 var(--med1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 180px;
+}
+
+.detail-answer {
+    padding: 0 var(--med1);
+    width: 350px;
+    display: flex;
+}
+
+.answer-border {
+    padding: var(--small2);
+    width: 200px;
+    border: 2px solid var(--s2);
+    border-radius: 5px;
+    padding: 4px;
+    height: 25px;
+}
