@@ -9,8 +9,8 @@
   --s1: #191919;
   --s2: #262626;
   --s3: #323232;
-  --primary: #8FE9DB;
-  --secondary: #AD87E7;
+  --primary: #6DECD8;
+  --secondary: #0074FD;
   --text: #CCCCCC;
   --text2: #cccccc94;
   --textOnColor: #0E0E0E;
@@ -60,7 +60,7 @@ html {
 =========================================================================== */
 
 .main-content {
-  padding: 0 20px 0 80px;
+  padding: 50px 20px 0 80px;
 }
 
 /* UNIVERSAL BUTTONS */
@@ -128,6 +128,24 @@ html {
 
 .link-primary:active {
   color: var(--text);
+  transition-duration: 0ms;
+  text-decoration: underline;
+}
+
+.link-secondary {
+  text-decoration: underline;
+  color: var(--secondary);
+  cursor: pointer;
+}
+
+.link-secondary:hover {
+  text-decoration: none;
+  color: var(--text);
+  transition-duration: var(--transition);
+}
+
+.link-secondary:active {
+  color: var(--secondary);
   transition-duration: 0ms;
   text-decoration: underline;
 }

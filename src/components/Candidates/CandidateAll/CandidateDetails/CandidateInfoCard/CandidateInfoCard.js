@@ -27,6 +27,14 @@ export default function CandidateInfoCard ({ candidate }) {
                     </div>
                     <div className='info-details'>
                         <label className='info-label'>
+                            Owner
+                        </label>
+                        <div>
+                            {candidate.owner}
+                        </div>
+                    </div>
+                    <div className='info-details'>
+                        <label className='info-label'>
                             Industry
                         </label>
                         <div>
@@ -41,13 +49,15 @@ export default function CandidateInfoCard ({ candidate }) {
                             {candidate.status}
                         </div>
                     </div>
-                    <div className='info-details'>
-                        <label className='info-label'>
-                            Profile
-                        </label>
-                        <div>
-                            {candidate.profile}
-                        </div>
+                </div>
+                <div className='info-container'>
+                    <div className='back-button-details-container'>
+                        <button className='button-secondary'>
+                            <i className='fas fa-pencil-alt'></i>
+                        </button>
+                        <button className='button-secondary'>
+                            <i className='fas fa-times'></i>
+                        </button>
                     </div>
                 </div>
 

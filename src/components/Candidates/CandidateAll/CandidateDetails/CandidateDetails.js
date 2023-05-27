@@ -27,10 +27,10 @@ export default function CandidateDetails() {
                             <SubNavIndustrial />
                         }
                         <div className='your-details'>
-                        <CandidateInfoCard 
-                            candidate={candidate}
-                        />
-                    </div>
+                            <CandidateInfoCard 
+                                candidate={candidate}
+                            />
+                        </div>
                     </div>
                     
                     <div className='candidate-details-right'>

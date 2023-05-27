@@ -3,6 +3,8 @@
     padding: 12px 0 12px 80px;
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    width: 100%;
 }
 
 /* TITLE TEXT */

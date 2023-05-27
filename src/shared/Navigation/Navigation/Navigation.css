@@ -39,6 +39,7 @@ img {
     border-left: 3px solid var(--primary);
     background-color: var(--BGC);   
     transition-duration: var(--transition);
+    color: var(--primary);
 }
 
 .nav-link.active {

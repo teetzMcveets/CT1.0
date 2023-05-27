@@ -5,11 +5,16 @@ import { arnieMcVeighty, danMilverton, jamieFranks, amiKaur } from '../../utilit
 const initialState = {
     byId: {
         [arnieMcVeighty.id]: arnieMcVeighty,
-        [danMilverton.id]: danMilverton,
-        [jamieFranks.id]: jamieFranks,
-        [amiKaur.id]: amiKaur,
+        // [danMilverton.id]: danMilverton,
+        // [jamieFranks.id]: jamieFranks,
+        // [amiKaur.id]: amiKaur,
     },
-    allIds: [arnieMcVeighty.id, danMilverton.id, jamieFranks.id, amiKaur.id],
+    allIds: [
+        arnieMcVeighty.id,
+        // danMilverton.id, 
+        // jamieFranks.id, 
+        // amiKaur.id,
+    ],
     searchCriteria: {
         name: '',
         number: '',
