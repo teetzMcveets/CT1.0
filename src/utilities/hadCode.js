@@ -71,18 +71,35 @@ export const danMilverton = {
     criminalConvictions: 'Yes',
 }
 
-// export const jamieFranks = {
-//     id: 135806,
-//     firstName: 'Jame',
-//     middleNames: '',
-//     lastName: 'Franks',
-//     owner: '# 5',
-//     number: '07770 597 594',
-//     email: 'jamie@alliance-personnel.com',
-//     profile: '34%',
-//     status: 'Archived',
-//     industry: 'Driving',
-// }
+export const jamieFranks = {
+    id: 135806,
+    firstName: 'Jame',
+    middleNames: '',
+    lastName: 'Franks',
+    owner: '#5',
+    number: '07770 597 594',
+    email: 'jamie@alliance-personnel.com',
+    profile: '34%',
+    status: 'Active',
+    industry: 'Industrial',
+    dateOfBirth: '1980-05-01',
+    gender: 'Male',
+    nationality: 'British',
+    access: [
+    ],
+    contactPref: [
+    ],
+    address1: '34 Roosevelt Apartments',
+    address2: '1 Lexington Gardens',
+    address3: '',
+    cityTown: 'Birmingham',
+    county: '',
+    postCode: 'B15 2DU',
+    movedIn: '2017-12-22',
+    niNumber: 'DM120190M',
+    workPermit: 'Not Needed',
+    criminalConvictions: 'No',
+}
 
 // export const amiKaur = {
 //     id: 756398,

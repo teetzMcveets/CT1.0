@@ -85,10 +85,10 @@
     margin-right: 5px;
 }
 
-.add-candidate-input:focus {
+/* .add-candidate-input:focus {
     outline: none;
-    box-shadow: 0 0 0 2px var(--primary)
-}
+    box-shadow: 0 0 0 2px var(--secondary)
+} */
 
 .add-candidate-input::placeholder {
     font-size: 0.9rem;

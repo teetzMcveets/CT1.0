@@ -1,19 +1,17 @@
 import { createSlice, createSelector } from '@reduxjs/toolkit';
 import generateUID from '../../utilities/generateUID';
-import { arnieMcVeighty, danMilverton, jamieFranks, amiKaur } from '../../utilities/hadCode';
+import { arnieMcVeighty, danMilverton, jamieFranks } from '../../utilities/hadCode';
 
 const initialState = {
     byId: {
         [arnieMcVeighty.id]: arnieMcVeighty,
         [danMilverton.id]: danMilverton,
-        // [jamieFranks.id]: jamieFranks,
-        // [amiKaur.id]: amiKaur,
+        [jamieFranks.id]: jamieFranks,
     },
     allIds: [
         arnieMcVeighty.id,
         danMilverton.id, 
-        // jamieFranks.id, 
-        // amiKaur.id,
+        jamieFranks.id, 
     ],
     searchCriteria: {
         name: '',
@@ -40,6 +38,8 @@ const candidatesSlice = createSlice({
                         ...candidate,
                         id,
                         status: 'Active',
+                        access: [],
+                        contactPref: [],
                     }
                 }
             },

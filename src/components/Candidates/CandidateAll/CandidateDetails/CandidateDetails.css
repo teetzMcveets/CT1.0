@@ -73,7 +73,7 @@
 .answer-border {
     padding: var(--small2);
     width: 200px;
-    border: 2px solid var(--s2);
+    border: 2px solid var(--s1);
     border-radius: 5px;
     padding: 4px;
     height: 25px;
