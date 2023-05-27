@@ -34,19 +34,42 @@ export const arnieMcVeighty = {
     criminalConvictions: 'No',
 }
 
-// export const danMilverton = {
-//     id: 987654,
-//     firstName: 'Daniel',
-//     middleNames: 'James',
-//     lastName: 'Milverton',
-//     owner: '# 5',
-//     number: '07718 478 634',
-//     email: 'djmilverton@yahoo.com',
-//     profile: '20%',
-//     status: 'Active',
-//     industry: 'Driving',
-//     date
-// }
+export const danMilverton = {
+    id: 987654,
+    firstName: 'Daniel',
+    middleNames: 'James',
+    lastName: 'Milverton',
+    owner: '#5',
+    number: '07718 478 634',
+    email: 'djmilverton@yahoo.com',
+    profile: '20%',
+    status: 'Active',
+    industry: 'Driving',
+    dateOfBirth: '1990-01-12',
+    gender: 'Male',
+    nationality: 'British',
+    access: [
+        '#1',
+        '#5', 
+    ],
+    contactPref: [
+        'Mobile',
+        'Email',
+    ],
+    address1: '34 Roosevelt Apartments',
+    address2: '1 Lexington Gardens',
+    address3: '',
+    cityTown: 'Birmingham',
+    county: '',
+    postCode: 'B15 2DU',
+    movedIn: '2017-12-22',
+    niNumber: 'DM120190M',
+    workPermit: 'EUSS',
+    EUSSShareCode: 'WF4 84G W16',
+    permitNumber: '',
+    permitExpiry: '2025-11-01',
+    criminalConvictions: 'Yes',
+}
 
 // export const jamieFranks = {
 //     id: 135806,

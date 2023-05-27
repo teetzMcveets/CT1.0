@@ -5,13 +5,13 @@ import { arnieMcVeighty, danMilverton, jamieFranks, amiKaur } from '../../utilit
 const initialState = {
     byId: {
         [arnieMcVeighty.id]: arnieMcVeighty,
-        // [danMilverton.id]: danMilverton,
+        [danMilverton.id]: danMilverton,
         // [jamieFranks.id]: jamieFranks,
         // [amiKaur.id]: amiKaur,
     },
     allIds: [
         arnieMcVeighty.id,
-        // danMilverton.id, 
+        danMilverton.id, 
         // jamieFranks.id, 
         // amiKaur.id,
     ],
@@ -61,7 +61,16 @@ const candidatesSlice = createSlice({
                 industry: 'All',
                 status: 'All',
             }
-        }
+        },
+        updateCandidate: (state, action) => {
+            const { id } = action.payload;
+            if (state.byId[id]) {
+                state.byId[id] = {
+                    ...state.byId[id],
+                    ...action.payload
+                };
+            }
+        },
     }
 });
 
@@ -70,6 +79,7 @@ export const {
     toggleStatus,
     setSearchCriteria,
     clearSearchCriteria,
+    updateCandidate,
 } = candidatesSlice.actions;
 
 export default candidatesSlice.reducer;

@@ -50,18 +50,10 @@ export default function CandidateInfoCard ({ candidate }) {
                         </div>
                     </div>
                 </div>
-                <div className='info-container'>
-                    <div className='back-button-details-container'>
-                        <button className='button-secondary'>
-                            <i className='fas fa-pencil-alt'></i>
-                        </button>
-                        <button className='button-secondary'>
-                            <i className='fas fa-times'></i>
-                        </button>
-                    </div>
-                </div>
+                
 
             </div>
+            
         </>
     )
 }

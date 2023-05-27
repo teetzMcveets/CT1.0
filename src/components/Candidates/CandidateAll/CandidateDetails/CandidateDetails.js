@@ -13,8 +13,27 @@ export default function CandidateDetails() {
     const { id } = useParams();
     const candidate = useSelector((state) => state.candidate.byId[id]);
     const location = useLocation();
+    const dispatch = useDispatch();
     const [isEditing, setIsEditing] = useState(false);
-    console.log(candidate);
+
+    const [updatedPrimaryQuestions, setUpdatedPrimaryQuestions] = useState({
+        ...candidate,
+    })
+
+    const toggleEdit = () => {
+        setIsEditing(!isEditing);
+    }
+
+    const handleUpdatedForm = (field, value) => {
+        const pathName = location.pathname;
+
+        if (pathName.endsWith('primary-questions')) {
+            setUpdatedPrimaryQuestions(prevState => ({
+                ...prevState,
+                [field]: value
+            }))
+        }
+    }
 
     return (
         <>
@@ -40,10 +59,17 @@ export default function CandidateDetails() {
                                 element={
                                     !isEditing ?
                                         <PrimaryQuestions 
-                                            candidate={candidate}                                       
+                                            candidate={candidate}
+                                            edit={toggleEdit}
+                                            isEditing={isEditing}                                  
                                         />
                                         :
-                                        <PrimaryQuestionsForm />
+                                        <PrimaryQuestionsForm 
+                                            candidate={candidate}
+                                            updatedPrimaryQuestions={updatedPrimaryQuestions}
+                                            handleOnChange={handleUpdatedForm}
+                                            edit={toggleEdit}
+                                        />
                                 }
                             />
 
