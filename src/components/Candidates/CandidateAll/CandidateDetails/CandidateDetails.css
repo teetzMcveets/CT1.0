@@ -1,15 +1,12 @@
-/* MAIN DETAILS */
-.your-details {
-    position: fixed;
-    left: 100px;
-}
-
-
-
 .candidates-detail-container {
     display: flex;
     justify-content: center;
     padding-top: var(--big3);
+}
+
+.candidate-details-left {
+    display: flex;
+    flex-direction: column;
 }
 
 .candidate-details-right {
@@ -43,20 +40,23 @@
     display: flex; 
     padding: var(--small2) 0;
     justify-content: center;
+    align-items: flex-start;
 }
 
 .detail-label {
-    padding: 0 var(--med1);
+    padding: 4px var(--med1);
     display: flex;
     justify-content: flex-end;
     align-items: center;
     width: 180px;
 }
 
-.detail-answer {
+.detail-answer,
+.rad-detail-answer {
     padding: 0 var(--med1);
     width: 350px;
     display: flex;
+    align-items: flex-start;
 }
 
 .answer-border {
@@ -66,4 +66,15 @@
     border-radius: 5px;
     padding: 4px;
     height: 25px;
+}
+
+.rad-detail {
+    display: flex;
+    border: 2px solid var(--s2);
+    padding: var(--small2);
+    width:  200px;
+}
+
+.rad-detail-input {
+    margin-right: 14px;
 }

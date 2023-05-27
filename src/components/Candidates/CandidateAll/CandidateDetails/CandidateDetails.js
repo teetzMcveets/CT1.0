@@ -20,18 +20,19 @@ export default function CandidateDetails() {
         <>
             <div className='main-content' >
                 <div className='candidates-detail-container'>
-                    <div className='your-details'>
-                        <CandidateInfoCard 
-                            candidate={candidate}
-                        />
-                    </div>
                     <div className='candidate-details-left'>
                         {candidate.industry === 'Driving' ?
                             <SubNavDriving />
                             :
                             <SubNavIndustrial />
                         }
+                        <div className='your-details'>
+                        <CandidateInfoCard 
+                            candidate={candidate}
+                        />
                     </div>
+                    </div>
+                    
                     <div className='candidate-details-right'>
                         <Routes>
                             <Route

@@ -10,6 +10,8 @@ export const arnieMcVeighty = {
     status: 'Active',
     industry: 'Driving',
     dateOfBirth: '1990-06-19',
+    gender: 'Male',
+    nationality: 'British',
 }
 
 export const danMilverton = {

@@ -178,6 +178,7 @@ export default function AddCandidateForm ({
                                             id='male'
                                             name='gender'
                                             value='Male'
+                                            onChange={onInputChange}
                                             required
                                         />
                                         <label
@@ -194,6 +195,7 @@ export default function AddCandidateForm ({
                                             id='female'
                                             name='gender'
                                             value='Female'
+                                            onChange={onInputChange}
                                         />
                                         <label
                                             htmlFor='female'
@@ -208,7 +210,8 @@ export default function AddCandidateForm ({
                                             type='radio'
                                             id='notSay'
                                             name='gender'
-                                            value='notSay'
+                                            value='Prefer not to say'
+                                            onChange={onInputChange}
                                         />
                                         <label
                                             htmlFor='notSay'

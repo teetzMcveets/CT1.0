@@ -4,14 +4,14 @@
 }
 
 .info-container {
-    border: 2px solid var(--s2);
+    border: 2px solid var(--s1);
     padding: var(--med1);
 }
 
 .default-photo {
     width: 150px;
     height: 80px;
-    background-color: var(--s1);
+    background-color: var(--s2);
 }
 
 .add-photo-text {

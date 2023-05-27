@@ -69,6 +69,92 @@ export default function PrimaryQuestions ({ candidate, }) {
                     </div>
                 </div>
 
+                <div className='detail-container'>
+                    <div className='detail-label'>
+                        Gender
+                    </div>
+
+                    <div className='rad-detail-answer'>
+                        <div>
+                            <div className='rad-detail'>
+                                <div className='rad-detail-input'>
+                                    <input 
+                                        type='radio'
+                                        checked={candidate.gender === 'Male'}
+                                    />
+                                </div>
+                                <div className='rad-detail-label'>
+                                    <label>
+                                        Male
+                                    </label>
+                                </div>
+                            </div>
+                            <div className='rad-detail'>
+                                <div className='rad-detail-input'>
+                                    <input 
+                                        type='radio'
+                                        checked={candidate.gender === 'Female'}
+                                    />
+                                </div>
+                                <div>
+                                    <label className='rad-detail-label'>
+                                        Female
+                                    </label>
+                                </div>
+                            </div>
+                            <div className='rad-detail'>
+                                <div className='rad-detail-input'>
+                                    <input 
+                                        type='radio'
+                                        checked={candidate.gender === 'Prefer not to say'}
+                                    />
+                                </div>
+                                <div>
+                                    <label className='rad-detail-label'>
+                                        Prefer not to say
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className='detail-container'>
+                    <div className='detail-label'>
+                        Nationality
+                    </div>
+
+                    <div className='rad-detail-answer'>
+                        <div>
+                            <div className='rad-detail'>
+                                <div className='rad-detail-input'>
+                                    <input 
+                                        type='radio'
+                                        checked={candidate.nationality === 'British'}
+                                    />
+                                </div>
+                                <div className='rad-detail-label'>
+                                    <label>
+                                        British
+                                    </label>
+                                </div>
+                            </div>
+                            <div className='rad-detail'>
+                                <div className='rad-detail-input'>
+                                    <input 
+                                        type='radio'
+                                        checked={candidate.nationality === 'Other'}
+                                    />
+                                </div>
+                                <div>
+                                    <label className='rad-detail-label'>
+                                        Other
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </>

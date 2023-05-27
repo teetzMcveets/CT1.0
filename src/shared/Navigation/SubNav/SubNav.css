@@ -6,6 +6,7 @@
 .sub-nav-ul {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .sub-nav-link {
