@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../CandidateDetailsForm.css';
 
-export default function PrimaryQuestionsForm ({ candidate, updatedPrimaryQuestions, handleOnChange, edit }) {
+export default function PrimaryQuestionsForm ({ candidate, updatedPrimaryQuestions, handleOnChange, edit, save }) {
 
     return (
         <>  
@@ -12,6 +12,7 @@ export default function PrimaryQuestionsForm ({ candidate, updatedPrimaryQuestio
                         <div>
                             <button
                                 className='button-secondary'
+                                onClick={save}
                             >
                                 <i className='fas fa-save'></i>
                             </button>

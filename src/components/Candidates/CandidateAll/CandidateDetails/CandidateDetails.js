@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import './CandidateDetails.css';
 import { Route, Routes, useParams, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { updateCandidate } from '../../../../features/candidates/candidateSlice';
 import SubNavDriving from '../../../../shared/Navigation/SubNav/Driving/SubNavDriving'
 import SubNavIndustrial from '../../../../shared/Navigation/SubNav/Industrial/SubNavIndustrial';
 import CandidateInfoCard from './CandidateInfoCard/CandidateInfoCard';
 import PrimaryQuestions from './CandidatePages/PrimaryQuestions/PrimaryQuestions';
 import PrimaryQuestionsForm from './CandidatePages/PrimaryQuestions/PrimaryQuestionsForm';
+import PreferenceQuestions from './CandidatePages/PreferenceQuestions/PreferenceQuestions';
+import PreferenceQuestionsForm from './CandidatePages/PreferenceQuestions/PreferenceQuestionsForm';
 
 
 export default function CandidateDetails() {
@@ -18,6 +21,9 @@ export default function CandidateDetails() {
 
     const [updatedPrimaryQuestions, setUpdatedPrimaryQuestions] = useState({
         ...candidate,
+    })
+    const [updatedPreferenceQuestions, setUpdatedPreferenceQuestions] = useState({
+        ...candidate
     })
 
     const toggleEdit = () => {
@@ -32,8 +38,31 @@ export default function CandidateDetails() {
                 ...prevState,
                 [field]: value
             }))
+        } else if (pathName.endsWith('preference-questions')) {
+            setUpdatedPreferenceQuestions(prevState => ({
+                ...prevState,
+                [field]: value
+            }))
         }
     }
+
+    const handleSave = () => {
+        const pathName = location.pathname;
+        let updatedQuestions;
+
+        if (pathName.endsWith('primary-questions')) {
+            updatedQuestions = updatedPrimaryQuestions
+        } else if (pathName.endsWith('preference-questions')) {
+            updatedQuestions = updatedPreferenceQuestions
+        }
+
+        if (updatedQuestions) {
+            dispatch(updateCandidate(updatedQuestions));
+            setIsEditing(false)
+        }
+    }
+
+    
 
     return (
         <>
@@ -69,10 +98,30 @@ export default function CandidateDetails() {
                                             updatedPrimaryQuestions={updatedPrimaryQuestions}
                                             handleOnChange={handleUpdatedForm}
                                             edit={toggleEdit}
+                                            save={handleSave}
                                         />
                                 }
                             />
+                            <Route 
+                                path='preference-questions'
+                                element={
+                                    !isEditing ?
+                                        <PreferenceQuestions
+                                            candidate={candidate}
+                                            edit={toggleEdit}
+                                            isEditing={isEditing}
+                                        />
+                                        :
+                                        <PreferenceQuestionsForm
+                                            candidate={candidate}
+                                            updatedPreferenceQuestions={updatedPreferenceQuestions}
+                                            handleOnChange={handleUpdatedForm}
+                                            edit={toggleEdit}
+                                            save={handleSave}
+                                        />
 
+                                } 
+                            />
                         </Routes>
                     </div>
                 </div>
