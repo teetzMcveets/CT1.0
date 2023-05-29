@@ -56,7 +56,7 @@ img {
 }
 
 .settings-link:hover {
-    color: var(--primary);
+    color: var(--secondary);
 }
 
 .settings-link:active {
