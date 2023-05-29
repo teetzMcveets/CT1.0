@@ -12,3 +12,7 @@
     outline: none;
     box-shadow: 0 0 0 2px var(--primary);
 } */
+
+.rad-detail-edit {
+    background-color: var(--BGC);
+}

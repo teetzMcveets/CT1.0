@@ -80,50 +80,9 @@ export default function PrimaryQuestions ({ candidate, edit, isEditing }) {
                                 Gender
                             </div>
 
-                            <div className='rad-detail-answer'>
-                                <div>
-                                    <div className='rad-detail'>
-                                        <div className='rad-detail-input'>
-                                            <input 
-                                                type='radio'
-                                                checked={candidate.gender === 'Male'}
-                                                onChange={(e) => e.preventDefault()}
-                                            />
-                                        </div>
-                                        <div className='rad-detail-label'>
-                                            <label>
-                                                Male
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div className='rad-detail'>
-                                        <div className='rad-detail-input'>
-                                            <input 
-                                                type='radio'
-                                                checked={candidate.gender === 'Female'}
-                                                onChange={(e) => e.preventDefault()}
-                                            />
-                                        </div>
-                                        <div>
-                                            <label className='rad-detail-label'>
-                                                Female
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div className='rad-detail'>
-                                        <div className='rad-detail-input'>
-                                            <input 
-                                                type='radio'
-                                                checked={candidate.gender === 'Prefer not to say'}
-                                                onChange={(e) => e.preventDefault()}
-                                            />
-                                        </div>
-                                        <div>
-                                            <label className='rad-detail-label'>
-                                                Prefer not to say
-                                            </label>
-                                        </div>
-                                    </div>
+                            <div className='detail-answer'>
+                                <div className='answer-border'>
+                                    {candidate.gender}
                                 </div>
                             </div>
                         </div>
@@ -133,36 +92,9 @@ export default function PrimaryQuestions ({ candidate, edit, isEditing }) {
                                 Nationality
                             </div>
 
-                            <div className='rad-detail-answer'>
-                                <div>
-                                    <div className='rad-detail'>
-                                        <div className='rad-detail-input'>
-                                            <input 
-                                                type='radio'
-                                                checked={candidate.nationality === 'British'}
-                                                onChange={(e) => e.preventDefault()}
-                                            />
-                                        </div>
-                                        <div className='rad-detail-label'>
-                                            <label>
-                                                British
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div className='rad-detail'>
-                                        <div className='rad-detail-input'>
-                                            <input 
-                                                type='radio'
-                                                checked={candidate.nationality === 'Other'}
-                                                onChange={(e) => e.preventDefault()}
-                                            />
-                                        </div>
-                                        <div>
-                                            <label className='rad-detail-label'>
-                                                Other
-                                            </label>
-                                        </div>
-                                    </div>
+                            <div className='detail-answer'>
+                                <div className='answer-border'>
+                                    {candidate.nationality}
                                 </div>
                             </div>
                         </div>

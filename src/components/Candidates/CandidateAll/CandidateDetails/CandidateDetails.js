@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './CandidateDetails.css';
 import { Route, Routes, useParams, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -18,6 +18,7 @@ export default function CandidateDetails() {
     const location = useLocation();
     const dispatch = useDispatch();
     const [isEditing, setIsEditing] = useState(false);
+    const changesMade = useRef(false);
 
     const [updatedPrimaryQuestions, setUpdatedPrimaryQuestions] = useState({
         ...candidate,
@@ -27,6 +28,19 @@ export default function CandidateDetails() {
     })
 
     const toggleEdit = () => {
+        if (isEditing && changesMade.current && !window.confirm('Unsaved changes will be lost. Continue?')) {
+            return;
+        }
+
+        if (isEditing && changesMade.current) {
+            setUpdatedPrimaryQuestions({
+                ...candidate,
+            })
+            setUpdatedPreferenceQuestions({
+                ...candidate,
+            });
+            changesMade.current = false;
+        }
         setIsEditing(!isEditing);
     }
 
@@ -44,6 +58,8 @@ export default function CandidateDetails() {
                 [field]: value
             }))
         }
+
+        changesMade.current = true;
     }
 
     const handleSave = () => {
@@ -60,8 +76,26 @@ export default function CandidateDetails() {
             dispatch(updateCandidate(updatedQuestions));
             setIsEditing(false)
         }
+
+        changesMade.current = false;
     }
 
+    useEffect(() => {
+        const warnUserAboutUnsavedChanges = (e) => {
+            if (!isEditing || !changesMade.current) {
+                return;
+            }
+
+            e.preventDefault();
+            e.returnValue = '';
+        }
+
+        window.addEventListener('beforeunload', warnUserAboutUnsavedChanges);
+
+        return () => {
+            window.removeEventListener('beforeUnload', warnUserAboutUnsavedChanges);
+        };
+    }, [isEditing]);
     
 
     return (

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../CandidateDetailsForm.css';
+import { nationalities } from '../../../../../../utilities/nationalitiesArray';
 
 export default function PrimaryQuestionsForm ({ candidate, updatedPrimaryQuestions, handleOnChange, edit, save }) {
 
@@ -36,20 +37,20 @@ export default function PrimaryQuestionsForm ({ candidate, updatedPrimaryQuestio
 
                     <div className='card-container'>
                         
-                    <div className='detail-container'>
-                        <div className='detail-label'>
-                            First Name
-                        </div>
+                        <div className='detail-container'>
+                            <div className='detail-label'>
+                                First Name
+                            </div>
 
-                        <div className='detail-answer'>
-                            <input 
-                                type='text'
-                                className='candidate-details-edit-input'
-                                value={updatedPrimaryQuestions.firstName}
-                                onChange={(e) => handleOnChange('firstName', e.target.value)}
-                            />
+                            <div className='detail-answer'>
+                                <input 
+                                    type='text'
+                                    className='candidate-details-edit-input'
+                                    value={updatedPrimaryQuestions.firstName}
+                                    onChange={(e) => handleOnChange('firstName', e.target.value)}
+                                />
+                            </div>
                         </div>
-                    </div>
 
                         <div className='detail-container'>
                             <div className='detail-label'>
@@ -103,44 +104,53 @@ export default function PrimaryQuestionsForm ({ candidate, updatedPrimaryQuestio
 
                             <div className='rad-detail-answer'>
                                 <div>
-                                    <div className='rad-detail'>
+                                    <div className='rad-detail rad-detail-edit'>
                                         <div className='rad-detail-input'>
                                             <input 
                                                 type='radio'
-                                                checked={candidate.gender === 'Male'}
-                                                onChange={(e) => e.preventDefault()}
+                                                name='gender'
+                                                id='gender-male'
+                                                value='Male'
+                                                checked={updatedPrimaryQuestions.gender === 'Male'}
+                                                onChange={(e) => handleOnChange('gender', e.target.value)}
                                             />
                                         </div>
                                         <div className='rad-detail-label'>
-                                            <label>
+                                            <label htmlFor='gender-male'>
                                                 Male
                                             </label>
                                         </div>
                                     </div>
-                                    <div className='rad-detail'>
+                                    <div className='rad-detail rad-detail-edit'>
                                         <div className='rad-detail-input'>
                                             <input 
                                                 type='radio'
-                                                checked={candidate.gender === 'Female'}
-                                                onChange={(e) => e.preventDefault()}
+                                                name='gender'
+                                                id='gender-female'
+                                                value='Female'
+                                                checked={updatedPrimaryQuestions.gender === 'Female'}
+                                                onChange={(e) => handleOnChange('gender', e.target.value)}
                                             />
                                         </div>
                                         <div>
-                                            <label className='rad-detail-label'>
+                                            <label className='rad-detail-label' htmlFor='gender-female'>
                                                 Female
                                             </label>
                                         </div>
                                     </div>
-                                    <div className='rad-detail'>
+                                    <div className='rad-detail rad-detail-edit'>
                                         <div className='rad-detail-input'>
                                             <input 
                                                 type='radio'
-                                                checked={candidate.gender === 'Prefer not to say'}
-                                                onChange={(e) => e.preventDefault()}
+                                                name='gender'
+                                                id='gender-prefNotSay'
+                                                value='Prefer not to say'
+                                                checked={updatedPrimaryQuestions.gender === 'Prefer not to say'}
+                                                onChange={(e) => handleOnChange('gender', e.target.value)}
                                             />
                                         </div>
                                         <div>
-                                            <label className='rad-detail-label'>
+                                            <label className='rad-detail-label' htmlFor='gender-prefNotSay'>
                                                 Prefer not to say
                                             </label>
                                         </div>
@@ -156,30 +166,36 @@ export default function PrimaryQuestionsForm ({ candidate, updatedPrimaryQuestio
 
                             <div className='rad-detail-answer'>
                                 <div>
-                                    <div className='rad-detail'>
+                                    <div className='rad-detail rad-detail-edit'>
                                         <div className='rad-detail-input'>
                                             <input 
                                                 type='radio'
-                                                checked={candidate.nationality === 'British'}
-                                                onChange={(e) => e.preventDefault()}
+                                                name='nationality'
+                                                id='nationality-british'
+                                                value='British'
+                                                checked={updatedPrimaryQuestions.nationality === 'British'}
+                                                onChange={(e) => handleOnChange('nationality', e.target.value)}
                                             />
                                         </div>
                                         <div className='rad-detail-label'>
-                                            <label>
+                                            <label htmlFor='nationality-british'>
                                                 British
                                             </label>
                                         </div>
                                     </div>
-                                    <div className='rad-detail'>
+                                    <div className='rad-detail rad-detail-edit'>
                                         <div className='rad-detail-input'>
                                             <input 
                                                 type='radio'
-                                                checked={candidate.nationality === 'Other'}
-                                                onChange={(e) => e.preventDefault()}
+                                                name='nationality'
+                                                id='nationality-other'
+                                                value='Other'
+                                                checked={updatedPrimaryQuestions.nationality === 'Other'}
+                                                onChange={(e) => handleOnChange('nationality', e.target.value)}
                                             />
                                         </div>
                                         <div>
-                                            <label className='rad-detail-label'>
+                                            <label className='rad-detail-label' htmlFor='nationality-other'>
                                                 Other
                                             </label>
                                         </div>
@@ -187,6 +203,34 @@ export default function PrimaryQuestionsForm ({ candidate, updatedPrimaryQuestio
                                 </div>
                             </div>
                         </div>
+
+                        {updatedPrimaryQuestions.nationality !== 'British' &&
+
+                            <div className='detail-container'>
+                                <div className='detail-label'>
+                                    Please Choose    
+                                </div>
+
+                                <div className='detail-answer'>
+                                    <select 
+                                        type='text'
+                                        className='candidate-details-edit-input'
+                                        value={updatedPrimaryQuestions.nationality}
+                                        onChange={(e) => handleOnChange('nationality', e.target.value)}
+                                    >
+                                        <option value=''>Please select...</option> 
+                                        {nationalities.map((nationality) => 
+                                            <option key={nationality} value={nationality}>{nationality}</option>
+                                        )}
+
+                                    </select>
+                                </div>
+                            </div>  
+                        }
+
+                        
+
+
                     </div>
 
                     <div className='card-detail-title'>
@@ -230,9 +274,19 @@ export default function PrimaryQuestionsForm ({ candidate, updatedPrimaryQuestio
                             </div>
 
                             <div className='detail-answer'>
-                                <div className='answer-border'>
-                                    {candidate.owner}
-                                </div>
+                                <select 
+                                    type='text'
+                                    className='candidate-details-edit-input'
+                                    value={updatedPrimaryQuestions.owner}
+                                    onChange={(e) => handleOnChange('owner', e.target.value)}
+                                >
+                                    <option value={candidate.owner}>{candidate.owner}</option>
+                                    <option value='#1'>#1</option>
+                                    <option value='#2'>#2</option>
+                                    <option value='#3'>#3</option>
+                                    <option value='#4'>#4</option>
+                                    <option value='#5'>#5</option>
+                                </select>
                             </div>
                         </div>
 
