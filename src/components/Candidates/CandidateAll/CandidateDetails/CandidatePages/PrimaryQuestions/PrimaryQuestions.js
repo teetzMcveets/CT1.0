@@ -258,7 +258,7 @@ export default function PrimaryQuestions ({ candidate, edit, isEditing }) {
 
                             <div className='detail-answer'>
                                 <div className='answer-border'>
-                                    {candidate.address2}
+                                    {candidate.address3}
                                 </div>
                             </div>
                         </div>
@@ -331,64 +331,86 @@ export default function PrimaryQuestions ({ candidate, edit, isEditing }) {
 
                         <div className='detail-container'>
                             <div className='detail-label'>
-                                Work Permit
+                                Permit needed
                             </div>
 
                             <div className='detail-answer'>
                                 <div className='answer-border'>
-                                    {candidate.workPermit}
+                                    {candidate.permitNeeded}
                                 </div>
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
-                                EUSS share code
-                            </div>
+                        {candidate.permitNeeded === 'Yes' &&
+                            <>
+                                <div className='detail-container'>
+                                    <div className='detail-label'>
+                                        Work Permit
+                                    </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
-                                    {candidate.EUSSShareCode}
+                                    <div className='detail-answer'>
+                                        <div className='answer-border'>
+                                            {candidate.workPermit}
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
-                                Permit number
-                            </div>
+                                {(candidate.workPermit === 'EU pre-settled status' ||
+                                candidate.workPermit === 'EU settled status') &&
+                                    <>
+                                        <div className='detail-container'>
+                                            <div className='detail-label'>
+                                                EUSS share code
+                                            </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
-                                    {candidate.permitNumber}
-                                </div>
-                            </div>
-                        </div>
+                                            <div className='detail-answer'>
+                                                <div className='answer-border'>
+                                                    {candidate.permitShareCode}
+                                                </div>
+                                            </div>
+                                        </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
-                                Permit expiry date
-                            </div>
+                                        <div className='detail-container'>
+                                            <div className='detail-label'>
+                                                Permit number
+                                            </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
-                                    {candidate.permitExpiry}
-                                </div>
-                            </div>
-                        </div>
+                                            <div className='detail-answer'>
+                                                <div className='answer-border'>
+                                                    {candidate.permitNumber}
+                                                </div>
+                                            </div>
+                                        </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
-                                Upload
-                            </div>
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
-                                    <Link className='link-secondary'>
-                                        View Document
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
+                                        <div className='detail-container'>
+                                            <div className='detail-label'>
+                                                Permit expiry date
+                                            </div>
+
+                                            <div className='detail-answer'>
+                                                <div className='answer-border'>
+                                                    {candidate.permitExpiry}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className='detail-container'>
+                                            <div className='detail-label'>
+                                                Upload
+                                            </div>
+                                            <div className='detail-answer'>
+                                                <div className='answer-border'>
+                                                    <Link className='link-secondary'>
+                                                        View Document
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </>
+                                }
+                            </>
+                        }
 
                         <div className='detail-container'>
                             <div className='detail-label'>
@@ -401,6 +423,21 @@ export default function PrimaryQuestions ({ candidate, edit, isEditing }) {
                                 </div>
                             </div>
                         </div>
+
+                        {candidate.criminalConvictions === 'Yes' && 
+                            <div className='detail-container'>
+                                <div className='detail-label'>
+                                    Details
+                                </div>
+
+                                <div className='detail-answer'>
+                                    <div className='answer-border'>
+                                        {candidate.criminalConvictionsDetails}
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        }
                     </div>
                 </div>
             </div>
