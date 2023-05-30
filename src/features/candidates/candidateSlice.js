@@ -42,6 +42,8 @@ const candidatesSlice = createSlice({
                         status: 'Active',
                         access: [],
                         contactPref: [],
+                        ppeOwned: [],
+                        weekDays: [],
                     }
                 }
             },

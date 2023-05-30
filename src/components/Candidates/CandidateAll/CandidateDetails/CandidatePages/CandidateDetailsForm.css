@@ -21,3 +21,7 @@
     display: flex;
     justify-content: center;
 }
+
+.check-detail-longer {
+    width: 200px;
+}

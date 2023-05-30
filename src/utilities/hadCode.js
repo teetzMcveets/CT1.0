@@ -1,16 +1,18 @@
 export const arnieMcVeighty = {
+    //CREATE
     id: 123456,
+    industry: 'Driving',
+    owner: '#5',
     firstName: 'Arnie',
     middleNames: '',
     lastName: 'McVeighty',
-    owner: '#5',
-    number: '07590 732 466',
-    email: 'mcveighty.a@gmail.com',
-    profile: '50%',
-    status: 'Active',
-    industry: 'Driving',
     dateOfBirth: '1990-06-19',
     gender: 'Male',
+    email: 'mcveighty.a@gmail.com',
+    number: '07590 732 466',
+    profile: '50%',
+    status: 'Active',
+    // PRIMARY QUESTIONS
     nationality: 'British',
     access: [
         '#1',
@@ -34,6 +36,16 @@ export const arnieMcVeighty = {
     permitExpiry: '2025-11-01',
     criminalConvictions: 'No',
     criminalConvictionsDetails: '',
+    //Preference Questions
+    startDate: '2023-05-30',
+    commuteType: 'Own car',
+    travelForWork: '',
+    ppeOwned: [
+        'HiViz',
+    ],
+    minPay: '',
+    smoker: 'Yes', 
+    weekDays: [],
 }
 
 export const danMilverton = {
@@ -134,4 +146,6 @@ export const amiKaur = {
     workPermitOther: '',
     criminalConvictions: '',
     criminalConvictionsDetails: '',
+    industrialLicense: 'No',
+    ppeOwned: [],
 }

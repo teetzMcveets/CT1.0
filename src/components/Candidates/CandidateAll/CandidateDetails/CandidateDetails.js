@@ -69,67 +69,69 @@ export default function CandidateDetails() {
         changesMade.current = true;
     }
 
-    const handleAccessChange = (e, accessValue) => {
-        const pathName = location.pathname;
-    
+    const handleAccessChange = (e, accessValue) => {    
         if (e.target.checked) {
             if (!candidate.access.includes(accessValue)) {
-                if (pathName.endsWith('primary-questions')) {
-                    setUpdatedPrimaryQuestions(prevState => ({
-                        ...prevState,
-                        access: [...prevState.access, accessValue]
-                    }));
-                } else if (pathName.endsWith('preference-questions')) {
-                    setUpdatedPreferenceQuestions(prevState => ({
-                        ...prevState,
-                        access: [...prevState.access, accessValue]
-                    }));
-                }
-            }
-        } else {
-            if (pathName.endsWith('primary-questions')) {
                 setUpdatedPrimaryQuestions(prevState => ({
                     ...prevState,
-                    access: prevState.access.filter(value => value !== accessValue)
-                }));
-            } else if (pathName.endsWith('preference-questions')) {
-                setUpdatedPreferenceQuestions(prevState => ({
-                    ...prevState,
-                    access: prevState.access.filter(value => value !== accessValue)
+                    access: [ ...prevState.access, accessValue ]
                 }));
             }
+        } else {
+            setUpdatedPrimaryQuestions(prevState => ({
+                ...prevState, 
+                access: prevState.access.filter(value => value !== accessValue)
+            }));
         }
     };
 
     const handleContactPrefChange = (e, contactPrefValue) => {
-        const pathName = location.pathname;
-
         if (e.target.checked) {
-            if (pathName.endsWith('primary-questions')) {
+            if (!candidate.contactPref.includes(contactPrefValue)) {
                 setUpdatedPrimaryQuestions(prevState => ({
                     ...prevState,
-                    contactPref: [...prevState.contactPref, contactPrefValue]
-                }));
-            } else if (pathName.endsWith('preference-questions')) {
-                setUpdatedPreferenceQuestions(prevState => ({
-                    ...prevState,
-                    contactPref: [...prevState.contactPref, contactPrefValue]
+                    contactPref: [ ...prevState.contactPref, contactPrefValue ]
                 }));
             }
         } else {
-            if (pathName.endsWith('primary-questions')) {
-                setUpdatedPrimaryQuestions(prevState => ({
-                    ...prevState,
-                    contactPref: prevState.contactPref.filter(value => value !== contactPrefValue)
-                }));
-            } else if (pathName.endsWith('preference-questions')) {
+            setUpdatedPrimaryQuestions(prevState => ({
+                ...prevState, 
+                contactPref: prevState.contactPref.filter(value => value !== contactPrefValue)
+            }));
+        }
+    };
+
+    const handlePPEOwnedChange = (e, ppeOwnedValue) => {
+        if (e.target.checked) {
+            if (!candidate.ppeOwned.includes(ppeOwnedValue)) {
                 setUpdatedPreferenceQuestions(prevState => ({
                     ...prevState,
-                    contactPref: prevState.contactPref.filter(value => value !== contactPrefValue)
+                    ppeOwned: [ ...prevState.ppeOwned, ppeOwnedValue ]
+                }));
+            }           
+        } else {
+            setUpdatedPreferenceQuestions(prevState => ({
+                ...prevState,
+                ppeOwned: prevState.ppeOwned.filter(value => value !== ppeOwnedValue)
+            }));
+        }
+    };
+
+    const handleWeekDaysChange = (e, weekDaysValue) => {
+        if (e.target.checked) {
+            if(!candidate.weekDays.includes(weekDaysValue)) {
+                setUpdatedPreferenceQuestions(prevState => ({
+                    ...prevState, 
+                    weekDays: [ ...prevState.weekDays, weekDaysValue ]
                 }));
             }
+        } else {
+            setUpdatedPreferenceQuestions(prevState => ({
+                ...prevState,
+                weekDays: prevState.weekDays.filter(value => value !== weekDaysValue)
+            }));
         }
-    }
+    };
 
     const handleSave = () => {
         const pathName = location.pathname;
@@ -200,8 +202,7 @@ export default function CandidateDetails() {
                                     !isEditing ?
                                         <PrimaryQuestions 
                                             candidate={candidate}
-                                            edit={toggleEdit}
-                                            isEditing={isEditing}                                  
+                                            edit={toggleEdit}                                  
                                         />
                                         :
                                         <PrimaryQuestionsForm 
@@ -233,6 +234,8 @@ export default function CandidateDetails() {
                                             handleOnChange={handleUpdatedForm}
                                             edit={toggleEdit}
                                             save={handleSave}
+                                            handlePPEOwnedChange={handlePPEOwnedChange}
+                                            handleWeekDaysChange={handleWeekDaysChange}
                                         />
 
                                 } 
