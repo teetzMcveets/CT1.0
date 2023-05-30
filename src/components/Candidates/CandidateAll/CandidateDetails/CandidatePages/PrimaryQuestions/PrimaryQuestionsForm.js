@@ -286,7 +286,6 @@ export default function PrimaryQuestionsForm ({
                                     value={updatedPrimaryQuestions.owner}
                                     onChange={(e) => handleOnChange('owner', e.target.value)}
                                 >
-                                    <option value={candidate.owner}>{candidate.owner}</option>
                                     <option value='#1'>#1</option>
                                     <option value='#2'>#2</option>
                                     <option value='#3'>#3</option>
@@ -729,27 +728,27 @@ export default function PrimaryQuestionsForm ({
                         {updatedPrimaryQuestions.criminalConvictions === 'Yes' &&
                             <>
                                  <div className='detail-container'>
-                                            <div className='detail-label'>
-                                                Details
-                                            </div>
+                                    <div className='detail-label'>
+                                        Details
+                                    </div>
 
-                                            <div className='detail-answer'>
-                                                <textarea 
-                                                    className='candidate-details-edit-input'
-                                                    rows='5'
-                                                    cols='10'
-                                                    value={updatedPrimaryQuestions.criminalConvictionsDetails}
-                                                    onChange={(e) => handleOnChange('criminalConvictionsDetails', e.target.value)}
-                                                />
-                                            </div>
-                                        </div>
+                                    <div className='detail-answer'>
+                                        <textarea 
+                                            className='candidate-details-edit-input'
+                                            rows='5'
+                                            cols='10'
+                                            value={updatedPrimaryQuestions.criminalConvictionsDetails}
+                                            onChange={(e) => handleOnChange('criminalConvictionsDetails', e.target.value)}
+                                        />
+                                    </div>
+                                </div>
                             </>
                         }
                     </div>
 
                     <div className='save-button-container'>
                         <button
-                            className='button-primary-secondary'
+                            className='button-primary'
                             onClick={save}
                         >
                             Save Details

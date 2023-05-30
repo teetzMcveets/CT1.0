@@ -150,18 +150,18 @@ export default function PreferenceQuestions ({
 
                             <div className='rad-detail-answer'>
                                 <div>
-                                    {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map((weekDays) => (
-                                        <div className='check-detail check-detail-longer' key={weekDays}>
+                                    {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map((weekDaysValue) => (
+                                        <div className='check-detail check-detail-longer' key={weekDaysValue}>
                                             <div className='rad-detail-input'>
                                                 <input 
                                                     type='checkbox'
-                                                    checked={candidate.ppeOwned.includes(weekDays)}
+                                                    checked={candidate.weekDays.includes(weekDaysValue)}
                                                     onChange={(e) => e.preventDefault()}
                                                 />
                                             </div>
                                             <div className='rad-detail-label'>
                                                 <label>
-                                                    {weekDays}
+                                                    {weekDaysValue}
                                                 </label>
                                             </div>
                                         </div>    
@@ -170,6 +170,66 @@ export default function PreferenceQuestions ({
                             </div>
                         </div>
 
+                        <div className='detail-container'>
+                            <div className='detail-label'>
+                                Shifts   
+                            </div>
+
+                            <div className='rad-detail-answer'>
+                                <div>
+                                    {['Mornings', 'Afternoons', 'Nights'].map((shiftsValue) => (
+                                        <div className='check-detail check-detail-longer' key={shiftsValue}>
+                                            <div className='rad-detail-input'>
+                                                <input 
+                                                    type='checkbox'
+                                                    checked={candidate.shifts.includes(shiftsValue)}
+                                                    onChange={(e) => e.preventDefault()}
+                                                />
+                                            </div>
+                                            <div className='rad-detail-label'>
+                                                <label>
+                                                    {shiftsValue}
+                                                </label>
+                                            </div>
+                                        </div>    
+                                    ))}      
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='detail-container'>
+                            <div className='detail-label'>
+                                Start window   
+                            </div>
+
+                            <div className='detail-answer'>
+                                <div className='answer-border'>
+                                    {candidate.startWindow}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div className='card-detail-title'>
+                        <div className='card-title'>
+                            Additional Info
+                        </div>
+                    </div>
+
+                    <div className='card-container'>
+                        
+                        <div className='detail-container'>
+                            <div className='detail-label'>
+                                Heard of us
+                            </div>
+
+                            <div className='detail-answer'>
+                                <div className='answer-border'>
+                                    {candidate.heardOfUs}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
                 </div>

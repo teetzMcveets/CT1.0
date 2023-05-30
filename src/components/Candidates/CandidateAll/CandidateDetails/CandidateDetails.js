@@ -133,6 +133,22 @@ export default function CandidateDetails() {
         }
     };
 
+    const handleShiftsChange = (e, shiftsValue) => {
+        if (e.target.checked) {
+            if(!candidate.shifts.includes(shiftsValue)) {
+                setUpdatedPreferenceQuestions(prevState => ({
+                    ...prevState,
+                    shifts: [ ...prevState.shifts, shiftsValue]
+                }));
+            }
+        } else {
+            setUpdatedPreferenceQuestions(prevState => ({
+                ...prevState,
+                shifts: prevState.shifts.filter(value => value !== shiftsValue)
+            })) 
+        }
+    }
+
     const handleSave = () => {
         const pathName = location.pathname;
         let updatedQuestions;
@@ -236,6 +252,7 @@ export default function CandidateDetails() {
                                             save={handleSave}
                                             handlePPEOwnedChange={handlePPEOwnedChange}
                                             handleWeekDaysChange={handleWeekDaysChange}
+                                            handleShiftsChange={handleShiftsChange}
                                         />
 
                                 } 

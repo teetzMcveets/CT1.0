@@ -66,25 +66,25 @@ html {
 /* UNIVERSAL BUTTONS */
 
 .button-primary {
-  background-color: var(--primary);
+  background-color: var(--secondary);
   color: var(--textOnColor);
-  border: 2px solid var(--primary);
+  border: 2px solid var(--secondary);
   border-radius: 4px;
   padding: 5px 10px;
 }
 
 .button-primary:hover {
   background-color: var(--BGC);
-  border: 2px solid var(--primary);
+  border: 2px solid var(--secondary);
   color: var(--text);
   cursor: pointer;
   transition-duration: var(--transition);
 }
 
 .button-primary:active {
-  background-color: var(--primary);
+  background-color: var(--secondary);
   color: var(--textOnColor);
-  border: 2px solid var(--primary);
+  border: 2px solid var(--secondary);
   transition-duration: 0ms;
 }
 
@@ -119,21 +119,6 @@ html {
   border: 2px solid var(--secondary);
   border-radius: 4px;
   padding: 5px 10px;
-}
-
-.button-primary-secondary:hover {
-  background-color: var(--BGC);
-  border: 2px solid var(--secondary);
-  color: var(--text);
-  cursor: pointer;
-  transition-duration: var(--transition);
-}
-
-.button-primary-secondary:active {
-  background-color: var(--secondary);
-  color: var(--textOnColor);
-  border: 2px solid var(--secondary);
-  transition-duration: 0ms;
 }
 
 /* UNIVERSAL LINK */

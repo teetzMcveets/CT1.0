@@ -44,6 +44,7 @@ const candidatesSlice = createSlice({
                         contactPref: [],
                         ppeOwned: [],
                         weekDays: [],
+                        shifts: [],
                     }
                 }
             },

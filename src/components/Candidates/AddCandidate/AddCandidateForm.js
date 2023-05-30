@@ -33,10 +33,6 @@ export default function AddCandidateForm ({
                     </button>
                 </div>
 
-                <div className='page-title'>
-                    <h2>Add New Worker</h2>
-                </div>
-
             </div>
 
             <div className='form'>

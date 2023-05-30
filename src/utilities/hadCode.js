@@ -46,6 +46,10 @@ export const arnieMcVeighty = {
     minPay: '',
     smoker: 'Yes', 
     weekDays: [],
+    shifts: [],
+    startWindow: '00:00-04:00',
+    heardOfUs: '',
+    heardOfUsOther: '',
 }
 
 export const danMilverton = {
