@@ -9,7 +9,8 @@
   --s1: #191919;
   --s2: #262626;
   --s3: #323232;
-  --primary: #6DECD8;
+  /* --primary: #6DECD8; */
+  --primary: #88D4FF;
   --secondary: #0074FD;
   --text: #CCCCCC;
   --text2: #cccccc94;
@@ -66,23 +67,23 @@ html {
 /* UNIVERSAL BUTTONS */
 
 .button-primary {
-  background-color: var(--secondary);
-  color: var(--textOnColor);
+  background-color: var(--BGC);
+  color: var(--text);
   border: 2px solid var(--secondary);
   border-radius: 4px;
   padding: 5px 10px;
 }
 
 .button-primary:hover {
-  background-color: var(--BGC);
+  background-color: var(--secondary);
   border: 2px solid var(--secondary);
-  color: var(--text);
+  color: var(--textOnColor);
   cursor: pointer;
   transition-duration: var(--transition);
 }
 
 .button-primary:active {
-  background-color: var(--secondary);
+  background-color: var(--BGC);
   color: var(--textOnColor);
   border: 2px solid var(--secondary);
   transition-duration: 0ms;
@@ -92,8 +93,8 @@ html {
   background-color: var(--secondary);
   color: var(--textOnColor);
   border: 2px solid var(--secondary);
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   cursor: pointer;
 }

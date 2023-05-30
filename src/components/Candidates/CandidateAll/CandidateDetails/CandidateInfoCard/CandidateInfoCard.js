@@ -8,6 +8,10 @@ export default function CandidateInfoCard ({ candidate }) {
         <>
             <div className='info-card'>
 
+
+                <div className='info-container'>
+                    <p style={{ display: 'flex', justifyContent: 'center', fontSize: 14 }}>{candidate.firstName} {candidate.lastName}</p>
+                </div>
                 <div className='info-container'>
                     <div className='default-photo'></div>
                     <div className='add-photo-text'>
