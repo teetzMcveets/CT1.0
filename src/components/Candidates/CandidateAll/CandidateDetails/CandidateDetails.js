@@ -68,6 +68,68 @@ export default function CandidateDetails() {
         changesMade.current = true;
     }
 
+    const handleAccessChange = (e, accessValue) => {
+        const pathName = location.pathname;
+    
+        if (e.target.checked) {
+            if (!candidate.access.includes(accessValue)) {
+                if (pathName.endsWith('primary-questions')) {
+                    setUpdatedPrimaryQuestions(prevState => ({
+                        ...prevState,
+                        access: [...prevState.access, accessValue]
+                    }));
+                } else if (pathName.endsWith('preference-questions')) {
+                    setUpdatedPreferenceQuestions(prevState => ({
+                        ...prevState,
+                        access: [...prevState.access, accessValue]
+                    }));
+                }
+            }
+        } else {
+            if (pathName.endsWith('primary-questions')) {
+                setUpdatedPrimaryQuestions(prevState => ({
+                    ...prevState,
+                    access: prevState.access.filter(value => value !== accessValue)
+                }));
+            } else if (pathName.endsWith('preference-questions')) {
+                setUpdatedPreferenceQuestions(prevState => ({
+                    ...prevState,
+                    access: prevState.access.filter(value => value !== accessValue)
+                }));
+            }
+        }
+    };
+
+    const handleContactPrefChange = (e, contactPrefValue) => {
+        const pathName = location.pathname;
+
+        if (e.target.checked) {
+            if (pathName.endsWith('primary-questions')) {
+                setUpdatedPrimaryQuestions(prevState => ({
+                    ...prevState,
+                    contactPref: [...prevState.contactPref, contactPrefValue]
+                }));
+            } else if (pathName.endsWith('preference-questions')) {
+                setUpdatedPreferenceQuestions(prevState => ({
+                    ...prevState,
+                    contactPref: [...prevState.contactPref, contactPrefValue]
+                }));
+            }
+        } else {
+            if (pathName.endsWith('primary-questions')) {
+                setUpdatedPrimaryQuestions(prevState => ({
+                    ...prevState,
+                    contactPref: prevState.contactPref.filter(value => value !== contactPrefValue)
+                }));
+            } else if (pathName.endsWith('preference-questions')) {
+                setUpdatedPreferenceQuestions(prevState => ({
+                    ...prevState,
+                    contactPref: prevState.contactPref.filter(value => value !== contactPrefValue)
+                }));
+            }
+        }
+    }
+
     const handleSave = () => {
         const pathName = location.pathname;
         let updatedQuestions;
@@ -140,6 +202,8 @@ export default function CandidateDetails() {
                                             edit={toggleEdit}
                                             save={handleSave}
                                             otherNationality={otherNationality}
+                                            handleAccessChange={handleAccessChange}
+                                            handleContactPrefChange={handleContactPrefChange}
                                         />
                                 }
                             />

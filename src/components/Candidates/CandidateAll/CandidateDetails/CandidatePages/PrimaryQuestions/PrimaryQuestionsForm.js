@@ -9,7 +9,9 @@ export default function PrimaryQuestionsForm ({
     handleOnChange, 
     edit, 
     save,
-    otherNationality
+    otherNationality,
+    handleAccessChange,
+    handleContactPrefChange,
  }) {
 
     return (
@@ -300,14 +302,14 @@ export default function PrimaryQuestionsForm ({
                             </div>
 
                             <div className='rad-detail-answer'>
-                                <div>
+                                <div className='rad-detail-edit'>
                                     {['#1', '#2', '#3', '#4', '#5'].map((accessValue) => (
                                         <div className='check-detail' key={accessValue}>
                                             <div className='rad-detail-input'>
                                                 <input 
                                                     type='checkbox'
-                                                    checked={candidate.access.includes(accessValue)}
-                                                    onChange={(e) => e.preventDefault()}
+                                                    checked={updatedPrimaryQuestions.access.includes(accessValue)}
+                                                    onChange={(e) => handleAccessChange(e, accessValue)}
                                                 />
                                             </div>
                                             <div className='rad-detail-label'>
@@ -366,19 +368,19 @@ export default function PrimaryQuestionsForm ({
                             </div>
 
                             <div className='rad-detail-answer'>
-                                <div>
-                                    {['Mobile', 'Email'].map((accessValue) => (
-                                        <div className='check-detail' key={accessValue}>
-                                            <div className='rad-detail-input'>
+                                <div className='rad-detail-edit'>
+                                    {['Mobile', 'Email'].map((contactPrefValue) => (
+                                        <div className='check-detail' key={contactPrefValue}>
+                                            <div className='rad-detail-input '>
                                                 <input 
                                                     type='checkbox'
-                                                    checked={candidate.contactPref.includes(accessValue)}
-                                                    onChange={(e) => e.preventDefault()}
+                                                    checked={updatedPrimaryQuestions.contactPref.includes(contactPrefValue)}
+                                                    onChange={(e) => handleContactPrefChange(e, contactPrefValue)}
                                                 />
                                             </div>
                                             <div className='rad-detail-label'>
                                                 <label>
-                                                    {accessValue}
+                                                    {contactPrefValue}
                                                 </label>
                                             </div>
                                         </div>    
