@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './CandidateDetails.css';
-import { Route, Routes, useParams, useLocation } from 'react-router-dom';
+import { Route, Routes, useParams, useLocation, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateCandidate } from '../../../../features/candidates/candidateSlice';
 import SubNavDriving from '../../../../shared/Navigation/SubNav/Driving/SubNavDriving'
@@ -19,6 +19,7 @@ export default function CandidateDetails() {
     const dispatch = useDispatch();
     const [isEditing, setIsEditing] = useState(false);
     const changesMade = useRef(false);
+    const navigate = useNavigate();
 
     const [updatedPrimaryQuestions, setUpdatedPrimaryQuestions] = useState({
         ...candidate,
@@ -164,7 +165,15 @@ export default function CandidateDetails() {
             window.removeEventListener('beforeUnload', warnUserAboutUnsavedChanges);
         };
     }, [isEditing]);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            navigate(`/candidates/${candidate.id}/primary-questions`);
+        }, 10);
     
+        return () => clearTimeout(timer);
+    }, []);  
+        
 
     return (
         <>
@@ -199,6 +208,7 @@ export default function CandidateDetails() {
                                             candidate={candidate}
                                             updatedPrimaryQuestions={updatedPrimaryQuestions}
                                             handleOnChange={handleUpdatedForm}
+                                            isEditing={isEditing}
                                             edit={toggleEdit}
                                             save={handleSave}
                                             otherNationality={otherNationality}

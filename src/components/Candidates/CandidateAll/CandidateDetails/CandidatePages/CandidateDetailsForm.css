@@ -16,3 +16,8 @@
 .rad-detail-edit {
     background-color: var(--BGC);
 }
+
+.save-button-container {
+    display: flex;
+    justify-content: center;
+}

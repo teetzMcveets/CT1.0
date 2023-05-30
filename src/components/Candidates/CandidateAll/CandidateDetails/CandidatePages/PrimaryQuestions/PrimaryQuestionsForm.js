@@ -746,6 +746,15 @@ export default function PrimaryQuestionsForm ({
                             </>
                         }
                     </div>
+
+                    <div className='save-button-container'>
+                        <button
+                            className='button-primary-secondary'
+                            onClick={save}
+                        >
+                            Save Details
+                        </button>
+                    </div>
                 </div>
             </div>
         </>
