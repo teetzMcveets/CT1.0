@@ -25,3 +25,25 @@
 .check-detail-longer {
     width: 200px;
 }
+
+.medical-card-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--big3);
+    padding-bottom: var(--big3);
+    background-color: var(--s1);
+    margin-bottom: var(--big2);
+}
+
+.medical-detail-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.medical-detail-label {
+    border: 1px solid white;
+}
+
+.medical-detail-answer {
+    border: 1px solid red;
+}

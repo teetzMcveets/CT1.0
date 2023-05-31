@@ -10,6 +10,8 @@ import PrimaryQuestions from './CandidatePages/PrimaryQuestions/PrimaryQuestions
 import PrimaryQuestionsForm from './CandidatePages/PrimaryQuestions/PrimaryQuestionsForm';
 import PreferenceQuestions from './CandidatePages/PreferenceQuestions/PreferenceQuestions';
 import PreferenceQuestionsForm from './CandidatePages/PreferenceQuestions/PreferenceQuestionsForm';
+import MedicalQuestions from './CandidatePages/MedicalQuestions/MedicalQuestions';
+import MedicalQuestionsForm from './CandidatePages/MedicalQuestions/MedicalQuestionsForm';
 
 
 export default function CandidateDetails() {
@@ -26,6 +28,9 @@ export default function CandidateDetails() {
     })
     const [updatedPreferenceQuestions, setUpdatedPreferenceQuestions] = useState({
         ...candidate
+    })
+    const [updatedMedicalQuestions, setUpdatedMedicalQuestions] = useState({
+        ...candidate,
     })
 
     const [otherNationality, setOtherNationality] = useState(false);
@@ -61,6 +66,11 @@ export default function CandidateDetails() {
             }))
         } else if (pathName.endsWith('preference-questions')) {
             setUpdatedPreferenceQuestions(prevState => ({
+                ...prevState,
+                [field]: value
+            }))
+        } else if (pathName.endsWith('medical-questions')) {
+            setUpdatedMedicalQuestions(prevState => ({
                 ...prevState,
                 [field]: value
             }))
@@ -257,6 +267,25 @@ export default function CandidateDetails() {
                                         />
 
                                 } 
+                            />
+                            <Route 
+                                path='medical-questions'
+                                element={
+                                    !isEditing ?
+                                        <MedicalQuestions
+                                            candidate={candidate}
+                                            edit={toggleEdit}
+                                            isEditing={isEditing}
+                                        />
+                                        :
+                                        <MedicalQuestionsForm
+                                            candidate={candidate}
+                                            updatedMedicalQuestions={updatedMedicalQuestions}
+                                            handleChange={handleUpdatedForm}
+                                            edit={toggleEdit}
+                                            save={handleSave}
+                                        />
+                                }
                             />
                         </Routes>
                     </div>
