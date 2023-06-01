@@ -61,6 +61,8 @@
     border-radius: 2px;
     padding: 4px 10px;
     width: 70%;
+    font-family: var(--font);
+    font-size: 12px;
 }
 
 .add-candidate-input:focus,

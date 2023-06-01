@@ -24,6 +24,7 @@
   --big3: 20px;
   --big4: 24px;
   --transition: 0.35s;
+  --font: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; 
 }
 
 html {

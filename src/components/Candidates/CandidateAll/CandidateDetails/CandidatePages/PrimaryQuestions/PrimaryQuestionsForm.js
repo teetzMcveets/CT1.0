@@ -16,102 +16,102 @@ export default function PrimaryQuestionsForm ({
 
     return (
         <>  
-            <div style={{ display: 'flex'}}>
-                <div>
-                    <div className='edit-button-container'>
-                        <div>
-                            <button
-                                className='button-secondary'
-                                onClick={save}
-                            >
-                                <i className='fas fa-save'></i>
-                            </button>
-                            
-                        </div>
+            <div className='candidate-page-left-container'>
+                <div className='candidate-page-button-container'>
+                    <button
+                        className='button-secondary'
+                        onClick={save}
+                    >
+                        <i className='fas fa-save'></i>
+                    </button>
+
+                    <div style={{ height: 'var(--med2)' }}></div>
                         
-                        <button 
-                            className='button-secondary'
-                            onClick={edit}    
-                        >
-                            <i className='fas fa-times'></i>
-                        </button>
-                    </div>
+                    <button 
+                        className='button-secondary'
+                        onClick={edit}    
+                    >
+                        <i className='fas fa-times'></i>
+                    </button>
                 </div>
-                <div>
+            </div>
+
+            <div className='candidate-page-right-candidate'>
+                <div className='candidate-page-full-page'>
                     <div className='card-detail-title'>
                         <div className='card-title'>
                             About You
                         </div>
                     </div>
 
-                    <div className='card-container'>
+                    <div className='candidate-page-card-container'>
                         
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 First Name
                             </div>
 
-                            <div className='detail-answer'>
+                            <div className='candidate-page-detail-answer'>
                                 <input 
                                     type='text'
-                                    className='candidate-details-edit-input'
+                                    className='candidate-page-input'
                                     value={updatedPrimaryQuestions.firstName}
                                     onChange={(e) => handleOnChange('firstName', e.target.value)}
                                 />
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Middle names
                             </div>
 
-                            <div className='detail-answer'>
-                            <input 
-                                type='text'
-                                className='candidate-details-edit-input'
-                                value={updatedPrimaryQuestions.middleNames}
-                                onChange={(e) => handleOnChange('middleNames', e.target.value)}
-                            />
+                            <div className='candidate-page-detail-answer'>
+                                <input 
+                                    type='text'
+                                    className='candidate-page-input'
+                                    value={updatedPrimaryQuestions.middleNames}
+                                    onChange={(e) => handleOnChange('middleNames', e.target.value)}
+                                />
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Last name
                             </div>
 
-                            <div className='detail-answer'>
+                            <div className='candidate-page-detail-answer'>
                                 <input 
                                     type='text'
-                                    className='candidate-details-edit-input'
+                                    className='candidate-page-input'
                                     value={updatedPrimaryQuestions.lastName}
                                     onChange={(e) => handleOnChange('lastName', e.target.value)}
                                 />
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Date of birth
                             </div>
 
-                            <div className='detail-answer'>
+                            <div className='candidate-page-detail-answer'>
                                 <input 
                                     type='date'
-                                    className='candidate-details-edit-input'
+                                    className='candidate-page-input'
                                     value={updatedPrimaryQuestions.dateOfBirth}
                                     onChange={(e) => handleOnChange('dateOfBirth', e.target.value)}
                                 />
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Gender
                             </div>
 
-                            <div className='rad-detail-answer'>
+                            <div className='candidate-page-detail-answer'>
                                 <div>
                                     <div className='rad-detail rad-detail-edit'>
                                         <div className='rad-detail-input'>
@@ -168,74 +168,26 @@ export default function PrimaryQuestionsForm ({
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Nationality
                             </div>
 
-                            <div className='rad-detail-answer'>
-                                <div>
-                                    <div className='rad-detail rad-detail-edit'>
-                                        <div className='rad-detail-input'>
-                                            <input 
-                                                type='radio'
-                                                name='nationality'
-                                                id='nationality-british'
-                                                value='British'
-                                                checked={updatedPrimaryQuestions.nationality === 'British'}
-                                                onChange={(e) => handleOnChange('nationality', e.target.value)}
-                                            />
-                                        </div>
-                                        <div className='rad-detail-label'>
-                                            <label htmlFor='nationality-british'>
-                                                British
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div className='rad-detail rad-detail-edit'>
-                                        <div className='rad-detail-input'>
-                                            <input 
-                                                type='radio'
-                                                name='nationality'
-                                                id='nationality-other'
-                                                value='Other'
-                                                checked={updatedPrimaryQuestions.nationality === 'Other'}
-                                                onChange={(e) => handleOnChange('nationality', e.target.value)}
-                                            />
-                                        </div>
-                                        <div>
-                                            <label className='rad-detail-label' htmlFor='nationality-other'>
-                                                Other
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <div className='candidate-page-detail-answer'>
+                                <select 
+                                    type='text'
+                                    className='candidate-page-input'
+                                    value={updatedPrimaryQuestions.nationality}
+                                    onChange={(e) => handleOnChange('nationality', e.target.value)}
+                                >
+                                    <option value=''>Please select...</option> 
+                                    {nationalities.map((nationality) => 
+                                        <option key={nationality} value={nationality}>{nationality}</option>
+                                    )}
+
+                                </select>
+                            </div> 
                         </div>
-
-                        {(otherNationality || candidate.nationality !== '' ) &&
-
-                            <div className='detail-container'>
-                                <div className='detail-label'>
-                                    Please Choose    
-                                </div>
-
-                                <div className='detail-answer'>
-                                    <select 
-                                        type='text'
-                                        className='candidate-details-edit-input'
-                                        value={updatedPrimaryQuestions.nationality}
-                                        onChange={(e) => handleOnChange('nationality', e.target.value)}
-                                    >
-                                        <option value=''>Please select...</option> 
-                                        {nationalities.map((nationality) => 
-                                            <option key={nationality} value={nationality}>{nationality}</option>
-                                        )}
-
-                                    </select>
-                                </div>
-                            </div>  
-                        }
 
                     </div>
 

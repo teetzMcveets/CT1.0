@@ -52,6 +52,22 @@
     background-color: var(--s3);
 }
 
+.candidate-page-input {
+    width: 60%;
+    background-color: var(--BGC);
+    color: var(--text);
+    border: 1px solid var(--s2);
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-family: var(--font);
+    font-size: var(--med1);
+}
+
+.candidate-page-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--secondary)
+}
+
 
 /* 
 
