@@ -69,7 +69,7 @@ export default function PrimaryQuestions ({ candidate, edit }) {
                             </div>
 
                             <div className='candidate-page-detail-answer'>
-                                <div className='candidate-page-detail-answer-container'>
+                                <div className='candidate-page-detail-answer-container-date'>
                                     {candidate.dateOfBirth}
                                 </div>
                             </div>

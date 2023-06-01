@@ -99,7 +99,7 @@ export default function PrimaryQuestionsForm ({
                             <div className='candidate-page-detail-answer'>
                                 <input 
                                     type='date'
-                                    className='candidate-page-input'
+                                    className='candidate-page-input-date'
                                     value={updatedPrimaryQuestions.dateOfBirth}
                                     onChange={(e) => handleOnChange('dateOfBirth', e.target.value)}
                                 />
