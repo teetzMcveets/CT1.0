@@ -167,6 +167,8 @@ export default function CandidateDetails() {
             updatedQuestions = updatedPrimaryQuestions
         } else if (pathName.endsWith('preference-questions')) {
             updatedQuestions = updatedPreferenceQuestions
+        } else if (pathName.endsWith('medical-questions')) {
+            updatedQuestions = updatedMedicalQuestions
         }
 
         if (updatedQuestions) {
@@ -281,7 +283,7 @@ export default function CandidateDetails() {
                                         <MedicalQuestionsForm
                                             candidate={candidate}
                                             updatedMedicalQuestions={updatedMedicalQuestions}
-                                            handleChange={handleUpdatedForm}
+                                            handleOnChange={handleUpdatedForm}
                                             edit={toggleEdit}
                                             save={handleSave}
                                         />

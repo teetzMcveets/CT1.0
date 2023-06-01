@@ -4,7 +4,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
 
     return (
         <>
-            <div style={{ display: 'flex'}}>
+            <div style={{ display: 'flex' }}>
                 <div>
                     <div className='edit-button-container'>
                         <div>
@@ -24,22 +24,20 @@ export default function MedicalQuestions ({ candidate, edit }) {
                         </div>
                     </div>
 
-                    <div className='medical-card-container'>
+                    <div className='card-container'>
 
-                        
-                        
-                        <div className='detail-container medical-detail-container'>
-                            <div className='detail-container'>
-                                Do you suffer from any of the following:
+                            <div className='questionnaire-title'>
+                                Do you Suffer any of the following - 
                             </div>
-                            
-                            <div className='medical-detail-label'>
-                                First Name
+                        
+                        <div className='medical-detail-container'>
+                            <div className='detail-label'>
+                                Diabetes
                             </div>
 
-                            <div className='medical-detail-answer'>
+                            <div className='detail-answer'>
                                 <div className='answer-border'>
-                                    {candidate.firstName}
+                                    {candidate.diabetes}
                                 </div>
                             </div>
                         </div>

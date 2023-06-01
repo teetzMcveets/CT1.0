@@ -1,16 +1,15 @@
 /* CANDIDATE PAGE CONTAINERS */
-.candidates-container {
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 15%;
-    padding-top: var(--big3);
-}
 
 .candidates-left-container {
-    padding-top: 50px;
+    width: 35%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 85px 25px 25px 0;
 }
 
 .candidates-right-container {
-    /* border: 1px solid white; */
-    padding-right: 18%;
+    width: 65%;
+    display: flex; 
+    justify-content: flex-start;
+    padding: 85px 0 25px 25px;
 }

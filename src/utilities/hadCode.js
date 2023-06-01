@@ -50,6 +50,8 @@ export const arnieMcVeighty = {
     startWindow: '00:00-04:00',
     heardOfUs: '',
     heardOfUsOther: '',
+    //MEDICAL QUESTIONS
+    diabetes: 'No',
 }
 
 export const danMilverton = {

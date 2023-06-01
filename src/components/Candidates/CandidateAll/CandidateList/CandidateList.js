@@ -13,7 +13,7 @@ export default function CandidateList ({ candidates, handleArchiveClick }) {
             <div className='candidates-list-container'>
 
                 <div className='create-candidate-container'>
-                    <div className='button-placement' style={{ paddingLeft: 10 }}>
+                    <div className='button-placement'>
                         <button 
                             className='button-secondary'
                             onClick={() => setSort(sort === 'A-Z' ? 'Z-A' : 'A-Z')}
@@ -42,14 +42,15 @@ export default function CandidateList ({ candidates, handleArchiveClick }) {
                                     // key={candidate.id} 
                                     className={`candidate-card-link ${isArchived ? 'archived-candidate' : ''}`}>
                                         <div className={`candidate-details-card ${isArchived ? 'archived-candidate' : ''}`}>
-                                            <div className='candidate-card-details'>
-                                                <div className='first-column'>
+                                            
+                                            <div className='first-three-columns'>
+                                                <div className='candidateList-column column-one'>
                                                     
-                                                    <div className='candidate-single-detail'>
+                                                    <div className='candidate-list-single-detail'>
                                                         <p className='p-top name'>{candidate.firstName} {candidate.lastName}</p>
                                                     </div>
 
-                                                    <div className='candidate-single-detail'>
+                                                    <div className='candidate-list-single-detail'>
                                                         <p>
                                                             <span className={`id-key ${isArchived ? 'archived-span' : ''}`}>
                                                                 ID:    
@@ -60,13 +61,13 @@ export default function CandidateList ({ candidates, handleArchiveClick }) {
 
                                                 </div>
 
-                                                <div className='second-column'> 
+                                                <div className='candidateList-column column-two'>
 
-                                                    <div className='candidate-single-detail'>
+                                                    <div className='candidate-list-single-detail'>
                                                         <p className='p-top'>{candidate.number}</p>
                                                     </div>
 
-                                                    <div className='candidate-single-detail'>
+                                                    <div className='candidate-list-single-detail'>
                                                         <p>
                                                             <span className={`id-key ${isArchived ? 'archived-span' : ''}`}>
                                                                 Owner: 
@@ -77,13 +78,13 @@ export default function CandidateList ({ candidates, handleArchiveClick }) {
 
                                                 </div>
 
-                                                <div className='third-column'> 
+                                                <div className='candidateList-column'>
 
-                                                    <div className='candidate-single-detail'>
+                                                    <div className='candidate-list-single-detail'>
                                                         <p className='p-top'>{candidate.email}</p>
                                                     </div>
 
-                                                    <div className='candidate-single-detail'>
+                                                    <div className='candidate-list-single-detail'>
                                                         <p>
                                                             <span className={`id-key ${isArchived ? 'archived-span' : ''}`}>
                                                                 Profile: 
@@ -95,13 +96,15 @@ export default function CandidateList ({ candidates, handleArchiveClick }) {
                                                 </div>
                                             </div>
 
-                                            <div className='candidate-archive-container'> 
-                                                <button 
-                                                    className={`archive-button ${isArchived ? 'unarchive-button' : ''}`}
-                                                    onClick={(e) => handleArchiveClick(candidate.id, e)}
-                                                >
-                                                    <i className="fas fa-folder"></i>
-                                                </button>
+                                            <div className='candidateList-column last-column'>
+                                                <div className='candidate-archive-container'> 
+                                                    <button 
+                                                        className={`archive-button ${isArchived ? 'unarchive-button' : ''}`}
+                                                        onClick={(e) => handleArchiveClick(candidate.id, e)}
+                                                    >
+                                                        <i className="fas fa-folder"></i>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div> 
                                     </Link>  

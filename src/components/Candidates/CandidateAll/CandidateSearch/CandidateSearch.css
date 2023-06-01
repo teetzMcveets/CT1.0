@@ -10,11 +10,11 @@
     flex-direction: column;
 }
 
-.candidate-label {
+.search-candidate-label {
     padding: var(--small2) 0;
 }
 
-.candidate-input {
+.search-candidate-input {
     margin: 0 0 var(--med2) var(--med1);
     padding: 4px;
     font-size: var(--med1);
@@ -24,16 +24,16 @@
     border-radius: 5px;
 }
 
-.candidate-input:focus {
+.search-candidate-input:focus {
     outline: none;
     box-shadow: 0 0 0 2px var(--primary)
 }
 
-/* .rad-all-answer-container {
+.rad-all-answer-container {
     display: flex;
     justify-content: center;
     margin-bottom: 12px;
-} */
+}
 
 .rad-answer-container {
     border: 2px solid var(--s2);
@@ -46,6 +46,6 @@
     display: flex;
 }
 
-.rad-label {
+.search-rad-label {
     padding: 0 0 0 var(--big3)
 }

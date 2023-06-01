@@ -35,15 +35,11 @@
     margin-bottom: var(--big2);
 }
 
+.questionnaire-title {
+    padding: var(--med1) var(--big1);
+    display: flex;
+}
+
 .medical-detail-container {
     display: flex;
-    flex-direction: column;
-}
-
-.medical-detail-label {
-    border: 1px solid white;
-}
-
-.medical-detail-answer {
-    border: 1px solid red;
 }

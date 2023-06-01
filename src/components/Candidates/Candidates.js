@@ -29,21 +29,19 @@ export default function Candidates () {
     return (
         <div className='main-content'>
 
-            <div className='candidates-container'>
-                {/* CREATE BUTTON */}
-                <div className='candidates-left-container'>
-                    <CandidateSearch
-                        searchCriteria={searchCriteria}
-                        handleSearchChange={handleSearchChange}
-                        handleClearSearch={handleClearSearch}
-                    />
-                </div>
-                <div className='candidates-right-container'>
-                    <CandidateList 
-                        candidates={candidates}
-                        handleArchiveClick={handleArchiveClick}
-                    />
-                </div>
+            {/* CREATE BUTTON */}
+            <div className='candidates-left-container'>
+                <CandidateSearch
+                    searchCriteria={searchCriteria}
+                    handleSearchChange={handleSearchChange}
+                    handleClearSearch={handleClearSearch}
+                />
+            </div>
+            <div className='candidates-right-container'>
+                <CandidateList 
+                    candidates={candidates}
+                    handleArchiveClick={handleArchiveClick}
+                />
             </div>
 
         </div>

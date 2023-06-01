@@ -39,12 +39,12 @@ export default function CandidateSearch ({
             <div className='candidate-search-container'>
 
                 <div className='search-criteria-container'>
-                    <label className='candidate-label'>
+                    <label className='search-candidate-label'>
                         Search Name
                     </label>
                     <input 
                         type='text'
-                        className='candidate-input'
+                        className='search-candidate-input'
                         placeholder='Search...'
                         name='name'
                         value={name}
@@ -53,12 +53,12 @@ export default function CandidateSearch ({
                 </div>
 
                 <div className='search-criteria-container'>
-                    <label className='candidate-label'>
+                    <label className='search-candidate-label'>
                         Search Number
                     </label>
                     <input 
                         type='tel'
-                        className='candidate-input'
+                        className='search-candidate-input'
                         placeholder='Search...'
                         name='number'
                         value={number}
@@ -68,7 +68,7 @@ export default function CandidateSearch ({
 
                 <div className='search-criteria-container'>
                     
-                    <label className='candidate-label'>Industry</label>
+                    <label className='search-candidate-label'>Industry</label>
 
                     <div className='rad-answer-container'>
                         
@@ -83,7 +83,7 @@ export default function CandidateSearch ({
                             />
                             <label
                                 htmlFor='all'
-                                className='rad-label'
+                                className='search-rad-label'
                             >
                                 All
                             </label>
@@ -100,7 +100,7 @@ export default function CandidateSearch ({
                             />
                             <label 
                                 htmlFor='driving'
-                                className='rad-label'
+                                className='search-rad-label'
                             >
                                 Driving
                             </label>
@@ -117,7 +117,7 @@ export default function CandidateSearch ({
                             />
                             <label
                                 htmlFor='industrial'
-                                className='rad-label'
+                                className='search-rad-label'
                             >
                                 Industrial
                             </label>
@@ -129,7 +129,7 @@ export default function CandidateSearch ({
 
                 <div className='search-criteria-container'>
 
-                    <label className='candidate-label'>Status</label>
+                    <label className='search-candidate-label'>Status</label>
                     
                     <div className='rad-answer-container'>
 
@@ -144,7 +144,7 @@ export default function CandidateSearch ({
                             />
                             <label
                                 htmlFor='active'
-                                className='rad-label'
+                                className='search-rad-label'
                             >
                                 All
                             </label>
@@ -161,7 +161,7 @@ export default function CandidateSearch ({
                             />
                             <label 
                                 htmlFor='allStatus'
-                                className='rad-label'
+                                className='search-rad-label'
                             >
                                 Active
                             </label>
@@ -178,7 +178,7 @@ export default function CandidateSearch ({
                             />
                             <label
                                 htmlFor='archived'
-                                className='rad-label'
+                                className='search-rad-label'
                             >
                                 Archived
                             </label>

@@ -57,13 +57,6 @@ html {
   scrollbar-width: none; /* Firefox */
 }
 
-/* Main Content
-=========================================================================== */
-
-.main-content {
-  padding: 50px 20px 0 80px;
-}
-
 /* UNIVERSAL BUTTONS */
 
 .button-primary {
@@ -157,4 +150,13 @@ html {
   color: var(--secondary);
   transition-duration: 0ms;
   text-decoration: underline;
+}
+
+/* Main Content
+=========================================================================== */
+
+.main-content {
+  /* border: 1px solid white; */
+  margin-left: 60px;
+  display: flex;
 }

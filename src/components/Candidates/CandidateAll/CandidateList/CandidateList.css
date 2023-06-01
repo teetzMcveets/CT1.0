@@ -1,9 +1,12 @@
+.candidates-list-container {
+    width: 77%;
+}
+
 /* top buttons */
 .create-candidate-container {
-    padding: var(--med1);
     display: flex;
     justify-content: space-between;
-    height: 50px;
+    padding-bottom: 10px;
 }
 
 /* Candidate list display */
@@ -13,37 +16,46 @@
 }
 
 .candidate-details-card {
-    margin: 0 var(--small1) var(--big3) var(--med2);
     display: flex;
-    padding: 0 0 0 var(--med2);
-    background-color: var(--s1);
     justify-content: space-between;
+    background-color: var(--s1);
+    margin-bottom: 15px;
 }
 
 .candidate-details-card:hover {
     background-color: var(--s2);
 }
 
-.candidate-single-detail {
-    padding: var(--small2)0 var(--small2) 0;
+.candidateList-column {
+    /* border: 1px solid blue; */
+    padding: 10px 0;
 }
 
-.first-column {
+.first-three-columns {
+    display: flex;
+    padding: 0 0 0 15px;
+}
+
+.candidate-list-single-detail {
+    /* border: 1px solid red; */
+    padding: 5px
+}
+
+.column-one {
     width: 200px;
 }
 
-.second-column {
-    width: 150px;
+.column-two {
+    width: 130px;
 }
 
-.third-column {
-    width: 300px;
-}
-
-.candidate-card-details {
+.last-column {
     display: flex;
-    width: 120%
+    justify-content: center;
+    align-items: flex-end;
+    padding: 5px;
 }
+
 
 .p-top {
     font-weight: bold;
@@ -57,12 +69,6 @@
     color: var(--primary);
     padding-right: 5px;
     font-weight: bold;
-}
-
-.candidate-archive-container {
-    display: flex;
-    align-items: flex-end;
-    padding: 0 8px 4px 0;
 }
 
 .archive-button {
