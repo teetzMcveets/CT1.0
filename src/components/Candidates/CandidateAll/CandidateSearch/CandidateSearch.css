@@ -26,7 +26,7 @@
 
 .search-candidate-input:focus {
     outline: none;
-    box-shadow: 0 0 0 2px var(--primary)
+    box-shadow: 0 0 0 2px var(--secondary)
 }
 
 .rad-all-answer-container {

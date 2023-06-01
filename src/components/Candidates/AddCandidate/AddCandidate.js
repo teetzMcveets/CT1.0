@@ -6,7 +6,7 @@ import './AddCandidate.css';
 import { addCandidate } from '../../../features/candidates/candidateSlice';
 
 export default function AddCandidate () {
-    const [candidate, setCandidate] = useState({
+    const initialCandidate = {
         firstName: '',
         middleNames: '',
         lastName: '',
@@ -17,28 +17,43 @@ export default function AddCandidate () {
         gender: '',
         email: '',
         number: '',
-    });
+    }
+
+    const [candidate, setCandidate] = useState(initialCandidate);
+    const [isModified, setIsModified] = useState(false);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const handleAddCandidate = (e) => {
         e.preventDefault();
-        console.log('Adding Candidate: ', candidate); //take this out when complete
         dispatch(addCandidate(candidate));
         navigate('/candidates');
     };
 
     const handleInputChange = (e) => {
+        setIsModified(true);
         setCandidate({
             ...candidate, 
             [e.target.name]: e.target.value
         });
     }
 
-    const handlePhoneChange = (e, nextInput) => {
-        if (e.target.value.length >= e.target.maxLength) {
-            nextInput.current && nextInput.current.focus();
+    // const handlePhoneChange = (e, nextInput) => {
+    //     if (e.target.value.length >= e.target.maxLength) {
+    //         nextInput.current && nextInput.current.focus();
+    //     }
+    // }
+
+    const handleBack = (e) => {
+        if (isModified) {
+            if(window.confirm('You have unsaved changes, if you go back, all changes will be lost. Continue?')) {
+                setCandidate(initialCandidate);
+                setIsModified(false);
+                navigate('/candidates');
+            }
+        } else {
+            navigate('/candidates');
         }
     }
 
@@ -49,7 +64,8 @@ export default function AddCandidate () {
                     onAddCandidate={handleAddCandidate}
                     onInputChange={handleInputChange}
                     candidate={candidate}
-                    onPhoneChange={handlePhoneChange}
+                    // onPhoneChange={handlePhoneChange}
+                    onBack={handleBack}
                 />
             </div>
         </>

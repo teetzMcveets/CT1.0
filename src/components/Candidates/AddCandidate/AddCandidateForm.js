@@ -5,6 +5,7 @@ export default function AddCandidateForm ({
     onInputChange,
     candidate,
     // onPhoneChange,
+    onBack,
 }) {
 
     // const firstFiveRef = useRef(null);
@@ -29,7 +30,10 @@ export default function AddCandidateForm ({
                 <div className='top-container'>
 
                     <div className='return-button'>
-                        <button className='button-primary'>
+                        <button 
+                            className='button-primary'
+                            onClick={onBack}    
+                        >
                             Back
                         </button>
                     </div>
@@ -54,7 +58,7 @@ export default function AddCandidateForm ({
                                         Industry
                                 </label>
 
-                                <div className='input-container'>
+                                <div className='add-input-container'>
                                     <select
                                         name='industry'
                                         className='add-candidate-input'
@@ -76,7 +80,7 @@ export default function AddCandidateForm ({
                                     Owner
                                 </label>
 
-                                <div className='input-container'>
+                                <div className='add-input-container'>
                                     <select 
                                         name='owner'
                                         type='text'
@@ -102,7 +106,7 @@ export default function AddCandidateForm ({
                                     First name
                                 </label>
 
-                                <div className='input-container'>
+                                <div className='add-input-container'>
                                     <input 
                                         type='text'
                                         className='add-candidate-input'
@@ -121,7 +125,7 @@ export default function AddCandidateForm ({
                                         Middle names               
                                 </label>
 
-                                <div className='input-container'>
+                                <div className='add-input-container'>
                                     <input 
                                         type='text'
                                         className='add-candidate-input'
@@ -140,7 +144,7 @@ export default function AddCandidateForm ({
                                     Last name
                                 </label>
 
-                                <div className='input-container'>
+                                <div className='add-input-container'>
                                     <input 
                                         type='text'
                                         className='add-candidate-input'
@@ -159,7 +163,7 @@ export default function AddCandidateForm ({
                                     Date of birth
                                 </label>
 
-                                <div className='input-container'>
+                                <div className='add-input-container'>
                                     <input 
                                         type='date'
                                         className='add-candidate-input-date'
@@ -179,10 +183,10 @@ export default function AddCandidateForm ({
                                     Gender
                                 </label>
                                 
-                                <div className='input-container'>
+                                <div className='add-input-container'>
                                     <div className='rad-single-container'>
 
-                                        <div className='add-rad-single-answer rad-single-answer'>
+                                        <div className='add-rad-single-answer'>
                                             <input 
                                                 type='radio'
                                                 id='male'
@@ -193,13 +197,13 @@ export default function AddCandidateForm ({
                                             />
                                             <label
                                                 htmlFor='male'
-                                                className='rad-label'
+                                                className='add-rad-label'
                                             >
                                                 Male
                                             </label>
                                         </div>
 
-                                        <div className='add-rad-single-answer rad-single-answer'>
+                                        <div className='add-rad-single-answer'>
                                             <input 
                                                 type='radio'
                                                 id='female'
@@ -209,13 +213,13 @@ export default function AddCandidateForm ({
                                             />
                                             <label
                                                 htmlFor='female'
-                                                className='rad-label'
+                                                className='add-rad-label'
                                             >
                                                 Female
                                             </label>
                                         </div>
 
-                                        <div className='add-rad-single-answer rad-single-answer'>
+                                        <div className='add-rad-single-answer'>
                                             <input 
                                                 type='radio'
                                                 id='notSay'
@@ -225,7 +229,7 @@ export default function AddCandidateForm ({
                                             />
                                             <label
                                                 htmlFor='notSay'
-                                                className='rad-label'
+                                                className='add-rad-label'
                                             >
                                                 Prefer to not say
                                             </label>
@@ -243,7 +247,7 @@ export default function AddCandidateForm ({
                                     Email Address
                                 </label>
 
-                                <div className='input-container'>
+                                <div className='add-input-container'>
                                     <input 
                                         type='email'
                                         className='add-candidate-input'
@@ -302,8 +306,8 @@ export default function AddCandidateForm ({
                                 <label className='add-candidate-label'>
                                     Mobile Number
                                 </label>
-                                ß
-                                <div className='input-container'>
+
+                                <div className='add-input-container'>
                                     <input 
                                         type='tel'
                                         className='add-candidate-input'

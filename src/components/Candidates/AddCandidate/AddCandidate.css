@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 40%;
+    z-index: 1;
 }
 
 .top-container {
@@ -31,73 +32,39 @@
 }
 
 .add-candidate-detail-container {
+    /* border: 1px solid red; */
     display: flex;
-    border: 1px solid red;
+    align-items: flex-start;
+    padding: var(--med1);
 }
 
 .add-candidate-label {
-    border: 1px solid white;
+    /* border: 1px solid white; */
     width: 30%;
     display: flex; 
     justify-content: flex-end;
+    padding-top: 5px;
 }
 
-/*
-.form-card-placement {
-    background-color: var(--s1);
-}
-
-.form-label-input {
+.add-input-container {
+    /* border: 1px solid yellowgreen; */
+    width: 70%;
     display: flex;
-    align-items: flex-start;
-    margin: var(--big1) 0;
-}
-
-.candidate-label,
-.rad-candidate-label {
-    padding: var(--med1);
-    width: 30%;
-    display: flex;
-    justify-content: right;
-    height: 100%;
-}
-
-.input-container {
-    width: 50%;
-    padding: 4px;
+    padding: 0 0 0 15px;
 }
 
 .add-candidate-input,
-.add-candidate-input-date,
-.add-candidate-number {
+.add-candidate-input-date {
     background-color: var(--BGC);
     color: var(--text);
     border: 2px solid var(--s2);
-    border-radius: 5px;
+    border-radius: 2px;
     padding: 4px;
     width: 70%;
 }
 
-.add-candidate-input-date {
-    width: auto;
-}
-
-.number-code {
-    width: 50px;
-    margin-right: 5px;
-}
-
-.first-five {
-    width: 50px;
-    margin-right: 5px;
-}
-
-.next-three {
-    width: 40px;
-    margin-right: 5px;
-}
-
-.add-candidate-input:focus {
+.add-candidate-input:focus,
+.add-candidate-input-date:focus {
     outline: none;
     box-shadow: 0 0 0 2px var(--secondary)
 }
@@ -110,13 +77,15 @@
 
 .add-rad-single-answer {
     border: 2px solid var(--s3);
-    width: 60%;
+    padding: var(--small1);
+}
+
+.add-rad-label {
+    padding: 0 0 0 var(--big3)
 }
 
 .create-button-container {
     display: flex;
-    justify-content: flex-end;
-    padding: var(--big1) 0;
-} 
-
-*/
+    justify-content: center;
+    padding: var(--med1)
+}

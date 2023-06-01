@@ -77,14 +77,14 @@ html {
 
 .button-primary:active {
   background-color: var(--BGC);
-  color: var(--textOnColor);
+  color: var(--text);
   border: 2px solid var(--secondary);
   transition-duration: 0ms;
 }
 
 .button-secondary {
-  background-color: var(--secondary);
-  color: var(--textOnColor);
+  background-color: var(--BGG);
+  color: var(--text);
   border: 2px solid var(--secondary);
   width: 25px;
   height: 25px;
@@ -93,9 +93,9 @@ html {
 }
 
 .button-secondary:hover {
-  background-color: var(--BCG);
+  background-color: var(--secondary);
   border: 2px solid var(--secondary);
-  color: var(--text);
+  color: var(--textOnColor);
   cursor: pointer;
   transition-duration: var(--transition);
 }
@@ -157,6 +157,7 @@ html {
 
 .main-content {
   margin-left: 60px;
+  padding-top: 85px;
   display: flex;
   justify-content: center;
 }
