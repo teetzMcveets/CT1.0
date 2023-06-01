@@ -1,3 +1,59 @@
+.candidate-page-full-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 65%;
+}
+
+.card-detail-title {
+    display: flex;
+}
+
+.card-title {
+    padding: var(--small2);
+    background-color: var(--s2);
+}
+
+.candidate-page-card-container {
+    padding-top: var(--big3);
+    padding-bottom: var(--big3);
+    background-color: var(--s1);
+    margin-bottom: var(--big2);
+    display: flex;
+    flex-direction: column;
+}
+
+.candidate-page-detail-container {
+    display: flex;
+    /* border: 1px solid white; */
+    justify-content: flex-start;
+    padding: var(--med1);
+}
+.candidate-page-detail-label {
+    /* border: 1px solid red; */
+    width: 35%;
+    display: flex; 
+    justify-content: flex-end;
+    padding-top: 5px;
+}
+
+.candidate-page-detail-answer {
+    /* border: 1px solid blue; */
+    width: 65%;
+    display: flex;
+    padding: 0 0 0 15px;
+}
+
+.candidate-page-detail-answer-container {
+    width: 60%;
+    height: 25px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: var(--s3);
+}
+
+
+/* 
 
 .candidate-details-edit-input {
     background-color: var(--BGC);
@@ -8,10 +64,10 @@
     padding: 2.7px;
 }
 
-/* .candidate-details-edit-input:focus {
+.candidate-details-edit-input:focus {
     outline: none;
     box-shadow: 0 0 0 2px var(--primary);
-} */
+}
 
 .rad-detail-edit {
     background-color: var(--BGC);
@@ -43,3 +99,5 @@
 .medical-detail-container {
     display: flex;
 }
+
+*/

@@ -156,6 +156,7 @@ html {
 =========================================================================== */
 
 .main-content {
+  /* border: 1px solid white; */
   margin-left: 60px;
   padding-top: 85px;
   display: flex;

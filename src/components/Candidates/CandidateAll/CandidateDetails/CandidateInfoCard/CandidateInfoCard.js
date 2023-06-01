@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './CandidateInfoCard.css';
 
 export default function CandidateInfoCard ({ candidate }) {
@@ -13,17 +12,9 @@ export default function CandidateInfoCard ({ candidate }) {
                     <p style={{ display: 'flex', justifyContent: 'center', fontSize: 14 }}>{candidate.firstName} {candidate.lastName}</p>
                 </div>
                 <div className='info-container'>
-                    <div className='default-photo'></div>
-                    <div className='add-photo-text'>
-                        <Link to='#' className='link-primary'>
-                            Add Photo +
-                        </Link>
-                    </div>
-                </div>
-                <div className='info-container'>
                     <div className='info-details'>
                         <label className='info-label'>
-                            ID
+                            ID 
                         </label>
                         <div>
                             {candidate.id}
@@ -31,7 +22,7 @@ export default function CandidateInfoCard ({ candidate }) {
                     </div>
                     <div className='info-details'>
                         <label className='info-label'>
-                            Owner
+                            | Owner 
                         </label>
                         <div>
                             {candidate.owner}
@@ -39,7 +30,7 @@ export default function CandidateInfoCard ({ candidate }) {
                     </div>
                     <div className='info-details'>
                         <label className='info-label'>
-                            Industry
+                            | Industry 
                         </label>
                         <div>
                             {candidate.industry}
@@ -47,10 +38,10 @@ export default function CandidateInfoCard ({ candidate }) {
                     </div>
                     <div className='info-details'>
                         <label className='info-label'>
-                            Status
+                            | Status 
                         </label>
                         <div>
-                            {candidate.status}
+                            {candidate.status} 
                         </div>
                     </div>
                 </div>

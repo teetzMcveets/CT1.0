@@ -208,88 +208,94 @@ export default function CandidateDetails() {
 
     return (
         <>
-            <div className='main-content' >
+            <div className='main-content'>
                 <div className='candidates-detail-container'>
-                    <div className='candidate-details-left'>
-                        {candidate.industry === 'Driving' ?
-                            <SubNavDriving />
-                            :
-                            <SubNavIndustrial />
-                        }
-                        <div className='your-details'>
-                            <CandidateInfoCard 
-                                candidate={candidate}
-                            />
-                        </div>
+                    <div className='candidates-detail-top-container'>
+                        <CandidateInfoCard 
+                            candidate={candidate}
+                        />
                     </div>
-                    
-                    <div className='candidate-details-right'>
-                        <Routes>
-                            <Route
-                                path='primary-questions'
-                                element={
-                                    !isEditing ?
-                                        <PrimaryQuestions 
-                                            candidate={candidate}
-                                            edit={toggleEdit}                                  
-                                        />
-                                        :
-                                        <PrimaryQuestionsForm 
-                                            candidate={candidate}
-                                            updatedPrimaryQuestions={updatedPrimaryQuestions}
-                                            handleOnChange={handleUpdatedForm}
-                                            isEditing={isEditing}
-                                            edit={toggleEdit}
-                                            save={handleSave}
-                                            otherNationality={otherNationality}
-                                            handleAccessChange={handleAccessChange}
-                                            handleContactPrefChange={handleContactPrefChange}
-                                        />
-                                }
-                            />
-                            <Route 
-                                path='preference-questions'
-                                element={
-                                    !isEditing ?
-                                        <PreferenceQuestions
-                                            candidate={candidate}
-                                            edit={toggleEdit}
-                                            isEditing={isEditing}
-                                        />
-                                        :
-                                        <PreferenceQuestionsForm
-                                            candidate={candidate}
-                                            updatedPreferenceQuestions={updatedPreferenceQuestions}
-                                            handleOnChange={handleUpdatedForm}
-                                            edit={toggleEdit}
-                                            save={handleSave}
-                                            handlePPEOwnedChange={handlePPEOwnedChange}
-                                            handleWeekDaysChange={handleWeekDaysChange}
-                                            handleShiftsChange={handleShiftsChange}
-                                        />
 
-                                } 
-                            />
-                            <Route 
-                                path='medical-questions'
-                                element={
-                                    !isEditing ?
-                                        <MedicalQuestions
-                                            candidate={candidate}
-                                            edit={toggleEdit}
-                                            isEditing={isEditing}
-                                        />
-                                        :
-                                        <MedicalQuestionsForm
-                                            candidate={candidate}
-                                            updatedMedicalQuestions={updatedMedicalQuestions}
-                                            handleOnChange={handleUpdatedForm}
-                                            edit={toggleEdit}
-                                            save={handleSave}
-                                        />
+                    <div className='candidates-details-bottom-container'>
+                        <div className='candidate-details-left-container'>
+                            <div className='candidate-details-infoCard-subNav'>
+                                {candidate.industry === 'Driving' ?
+                                    <SubNavDriving />
+                                    :
+                                    <SubNavIndustrial />
                                 }
-                            />
-                        </Routes>
+                            </div>
+                            
+                        </div>
+                        
+                        <div className='candidate-details-center-container'>
+                            <Routes>
+                                <Route
+                                    path='primary-questions'
+                                    element={
+                                        !isEditing ?
+                                            <PrimaryQuestions 
+                                                candidate={candidate}
+                                                edit={toggleEdit}                                  
+                                            />
+                                            :
+                                            <PrimaryQuestionsForm 
+                                                candidate={candidate}
+                                                updatedPrimaryQuestions={updatedPrimaryQuestions}
+                                                handleOnChange={handleUpdatedForm}
+                                                isEditing={isEditing}
+                                                edit={toggleEdit}
+                                                save={handleSave}
+                                                otherNationality={otherNationality}
+                                                handleAccessChange={handleAccessChange}
+                                                handleContactPrefChange={handleContactPrefChange}
+                                            />
+                                    }
+                                />
+                                <Route 
+                                    path='preference-questions'
+                                    element={
+                                        !isEditing ?
+                                            <PreferenceQuestions
+                                                candidate={candidate}
+                                                edit={toggleEdit}
+                                                isEditing={isEditing}
+                                            />
+                                            :
+                                            <PreferenceQuestionsForm
+                                                candidate={candidate}
+                                                updatedPreferenceQuestions={updatedPreferenceQuestions}
+                                                handleOnChange={handleUpdatedForm}
+                                                edit={toggleEdit}
+                                                save={handleSave}
+                                                handlePPEOwnedChange={handlePPEOwnedChange}
+                                                handleWeekDaysChange={handleWeekDaysChange}
+                                                handleShiftsChange={handleShiftsChange}
+                                            />
+
+                                    } 
+                                />
+                                <Route 
+                                    path='medical-questions'
+                                    element={
+                                        !isEditing ?
+                                            <MedicalQuestions
+                                                candidate={candidate}
+                                                edit={toggleEdit}
+                                                isEditing={isEditing}
+                                            />
+                                            :
+                                            <MedicalQuestionsForm
+                                                candidate={candidate}
+                                                updatedMedicalQuestions={updatedMedicalQuestions}
+                                                handleOnChange={handleUpdatedForm}
+                                                edit={toggleEdit}
+                                                save={handleSave}
+                                            />
+                                    }
+                                />
+                            </Routes>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,99 +1,99 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../CandidateDetailsForm.css';
 
 export default function PrimaryQuestions ({ candidate, edit }) {
 
     return (
         <>
-            <div style={{ display: 'flex'}}>
-                <div>
-                    <div className='edit-button-container'>
-                        <div>
-                            <button 
-                                className='button-secondary'
-                                onClick={edit}
-                            >
-                                <i className='fas fa-pencil-alt'></i>
-                            </button>
-                        </div>
-                    </div>
+            <div className='candidate-page-left-container'>
+                <div className='candidate-page-button-container'>
+                    <button 
+                        className='button-secondary'
+                        onClick={edit}
+                    >
+                        <i className='fas fa-pencil-alt'></i>
+                    </button>
                 </div>
-                <div>
+            </div>
+            
+            <div className='candidate-page-right-candidate'>
+                <div className='candidate-page-full-page'>
                     <div className='card-detail-title'>
                         <div className='card-title'>
                             About You
                         </div>
                     </div>
 
-                    <div className='card-container'>
+                    <div className='candidate-page-card-container'>
                         
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 First Name
                             </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
                                     {candidate.firstName}
                                 </div>
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Middle names
                             </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
                                     {candidate.middleNames}
                                 </div>
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Last name
                             </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
                                     {candidate.lastName}
                                 </div>
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Date of birth
                             </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
                                     {candidate.dateOfBirth}
                                 </div>
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Gender
                             </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
                                     {candidate.gender}
                                 </div>
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Nationality
                             </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
                                     {candidate.nationality}
                                 </div>
                             </div>
