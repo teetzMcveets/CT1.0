@@ -1,24 +1,19 @@
-/* .top-container {
+.add-candidate-container {
     display: flex;
-    justify-content: left;
-    align-items: center;
-    padding: var(--med2) 0;
-    margin: var(--small1) 25%;
+    flex-direction: column;
+    width: 40%;
 }
 
-.return-button {
-    margin-right: 15%;
-}
-
-.page-title {
-    font-size: var(--small2);
+.top-container {
+    width: 30%;
+    margin: 10px 0;
+    width: 100%;
 }
 
 .form {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 0 25%;
 }
 
 .new-candidate-details-title {
@@ -30,8 +25,25 @@
     background-color: var(--s2);
 }
 
+.add-candidate-card {
+    background-color: var(--s1);
+    padding: 20px 0;
+}
+
+.add-candidate-detail-container {
+    display: flex;
+    border: 1px solid red;
+}
+
+.add-candidate-label {
+    border: 1px solid white;
+    width: 30%;
+    display: flex; 
+    justify-content: flex-end;
+}
+
+/*
 .form-card-placement {
-    padding: 26px 0;
     background-color: var(--s1);
 }
 
@@ -85,12 +97,12 @@
     margin-right: 5px;
 }
 
-/* .add-candidate-input:focus {
+.add-candidate-input:focus {
     outline: none;
     box-shadow: 0 0 0 2px var(--secondary)
-} */
+}
 
-/* .add-candidate-input::placeholder {
+.add-candidate-input::placeholder {
     font-size: 0.9rem;
     font-style: italic;
     padding-left: 5px;
@@ -105,4 +117,6 @@
     display: flex;
     justify-content: flex-end;
     padding: var(--big1) 0;
-} */ 
+} 
+
+*/

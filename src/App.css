@@ -156,7 +156,7 @@ html {
 =========================================================================== */
 
 .main-content {
-  /* border: 1px solid white; */
   margin-left: 60px;
   display: flex;
+  justify-content: center;
 }
