@@ -33,8 +33,6 @@ export default function CandidateDetails() {
         ...candidate,
     })
 
-    const [otherNationality, setOtherNationality] = useState(false);
-
     const toggleEdit = () => {
         if (isEditing && changesMade.current && !window.confirm('Unsaved changes will be lost. Continue?')) {
             return;
@@ -54,10 +52,6 @@ export default function CandidateDetails() {
 
     const handleUpdatedForm = (field, value) => {
         const pathName = location.pathname;
-
-        if (field === 'nationality' && value === 'Other') {
-            setOtherNationality(true);
-        }
 
         if (pathName.endsWith('primary-questions')) {
             setUpdatedPrimaryQuestions(prevState => ({
@@ -246,7 +240,6 @@ export default function CandidateDetails() {
                                                 isEditing={isEditing}
                                                 edit={toggleEdit}
                                                 save={handleSave}
-                                                otherNationality={otherNationality}
                                                 handleAccessChange={handleAccessChange}
                                                 handleContactPrefChange={handleContactPrefChange}
                                             />

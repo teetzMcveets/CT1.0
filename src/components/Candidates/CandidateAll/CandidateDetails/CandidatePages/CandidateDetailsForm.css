@@ -73,6 +73,29 @@
     box-shadow: 0 0 0 2px var(--secondary)
 }
 
+.candidate-page-rad-answer-container,
+.candidate-page-checkbox-container {
+    margin: 0 50px var(--med2) 0;
+    border-radius: 5px;
+    background-color: var(--s3);
+}
+
+.candidate-page-rad-single-answer,
+.candidate-page-checkbox-single-answer {
+    border-bottom: 2px solid var(--BGC);
+    padding: var(--small1);
+    display: flex;
+}
+
+.candidate-page-rad-label,
+.candidate-page-checkbox-label {
+    padding: 0 0 0 var(--big3)
+}
+
+.candidate-page-rad-answer-edit,
+.candidate-page-checkbox-answer-edit {
+    background-color: var(--BGC);
+}
 
 /* 
 

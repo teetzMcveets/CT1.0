@@ -19,6 +19,9 @@ export default function PrimaryQuestions ({ candidate, edit }) {
             
             <div className='candidate-page-right-candidate'>
                 <div className='candidate-page-full-page'>
+
+
+                    {/* ABOUT YOU CARD */}
                     <div className='card-detail-title'>
                         <div className='card-title'>
                             About You
@@ -81,8 +84,44 @@ export default function PrimaryQuestions ({ candidate, edit }) {
                             </div>
 
                             <div className='candidate-page-detail-answer'>
-                                <div className='candidate-page-detail-answer-container'>
-                                    {candidate.gender}
+
+                                <div className='candidate-page-rad-answer-container'>
+                                    <div className='candidate-page-rad-single-answer'>
+                                        <input 
+                                            type='radio'
+                                            name='gender'
+                                            id='gender-male'
+                                            value='Male'
+                                            checked={candidate.gender === 'Male'}
+                                        />
+                                        <label htmlFor='gender-male' className='candidate-page-rad-label'>
+                                            Male
+                                        </label>
+                                    </div>
+                                    <div className='candidate-page-rad-single-answer'>
+                                        <input 
+                                            type='radio'
+                                            name='gender'
+                                            id='gender-female'
+                                            value='Female'
+                                            checked={candidate.gender === 'Female'}
+                                        />
+                                        <label className='candidate-page-rad-label' htmlFor='gender-female'>
+                                            Female
+                                        </label>
+                                    </div>
+                                    <div className='candidate-page-rad-single-answer'>
+                                        <input 
+                                            type='radio'
+                                            name='gender'
+                                            id='gender-prefNotSay'
+                                            value='Prefer not to say'
+                                            checked={candidate.gender === 'Prefer not to say'}
+                                        />
+                                        <label className='candidate-page-rad-label' htmlFor='gender-prefNotSay'>
+                                            Prefer not to say
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -100,119 +139,114 @@ export default function PrimaryQuestions ({ candidate, edit }) {
                         </div>
                     </div>
 
+                    {/* ACCOUNT SETTINGS CARD */}
                     <div className='card-detail-title'>
                         <div className='card-title'>
                             Account Settings
                         </div>
                     </div>
 
-                    <div className='card-container'>
+                    <div className='candidate-page-card-container'>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Industry
                             </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
                                     {candidate.industry}
                                 </div>
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Owner
                             </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
                                     {candidate.owner}
                                 </div>
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Access
                             </div>
 
-                            <div className='rad-detail-answer'>
-                                <div>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-checkbox-container'>
                                     {['#1', '#2', '#3', '#4', '#5'].map((accessValue) => (
-                                        <div className='check-detail' key={accessValue}>
-                                            <div className='rad-detail-input'>
-                                                <input 
-                                                    type='checkbox'
-                                                    checked={candidate.access.includes(accessValue)}
-                                                    onChange={(e) => e.preventDefault()}
-                                                />
-                                            </div>
-                                            <div className='rad-detail-label'>
-                                                <label>
-                                                    {accessValue}
-                                                </label>
-                                            </div>
+                                        <div className='candidate-page-checkbox-single-answer' key={accessValue}>
+                                            <input 
+                                                type='checkbox'
+                                                checked={candidate.access.includes(accessValue)}
+                                                onChange={(e) => e.preventDefault()}
+                                            />
+                                            <label className='candidate-page-checkbox-label'>
+                                                {accessValue}
+                                            </label>
                                         </div>    
                                     ))}      
                                 </div>
                             </div>
                         </div>
                     </div>
+                        
 
+                    {/* CONTACT DETAILS CARD */}
                     <div className='card-detail-title'>
                         <div className='card-title'>
                             Contact Details
                         </div>
                     </div>
                     
-                    <div className='card-container'>
+                    <div className='candidate-page-card-container'>
                         
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Email Address
                             </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border email-answer'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
                                     {candidate.email}
                                 </div>
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Mobile Number
                             </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
                                     {candidate.number}
                                 </div>
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Contact preference
                             </div>
 
-                            <div className='rad-detail-answer'>
-                                <div>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-checkbox-container'>
                                     {['Mobile', 'Email'].map((accessValue) => (
-                                        <div className='check-detail' key={accessValue}>
-                                            <div className='rad-detail-input'>
-                                                <input 
-                                                    type='checkbox'
-                                                    checked={candidate.contactPref.includes(accessValue)}
-                                                    onChange={(e) => e.preventDefault()}
-                                                />
-                                            </div>
-                                            <div className='rad-detail-label'>
-                                                <label>
-                                                    {accessValue}
-                                                </label>
-                                            </div>
+                                        <div className='candidate-page-checkbox-single-answer' key={accessValue}>
+                                            <input 
+                                                type='checkbox'
+                                                checked={candidate.contactPref.includes(accessValue)}
+                                                onChange={(e) => e.preventDefault()}
+                                            />
+                                            <label className='candidate-page-checkbox-label'>
+                                                {accessValue}
+                                            </label>
                                         </div>    
                                     ))}      
                                 </div>
@@ -220,136 +254,163 @@ export default function PrimaryQuestions ({ candidate, edit }) {
                         </div>
                     </div>
 
+                    {/* CURRENT ADDRESS */}
                     <div className='card-detail-title'>
                         <div className='card-title'>
                             Current Address
                         </div>
                     </div>
 
-                    <div className='card-container'>
+                    <div className='candidate-page-card-container'>
                         
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Address Line 1
                             </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
                                     {candidate.address1}
                                 </div>
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Address Line 2
                             </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
                                     {candidate.address2}
                                 </div>
                             </div>
                         </div>
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Address Line 3
                             </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
                                     {candidate.address3}
                                 </div>
                             </div>
                         </div>
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 City or Town
                             </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
                                     {candidate.cityTown}
                                 </div>
                             </div>
                         </div>
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 County
                             </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
                                     {candidate.county}
                                 </div>
                             </div>
                         </div>
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Post code
                             </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
                                     {candidate.postCode}
                                 </div>
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Move in date
                             </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
                                     {candidate.movedIn}
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
 
+                    {/* WORK ELIGIBILITY CARD */}
                     <div className='card-detail-title'>
                         <div className='card-title'>
                             Work eligibility
                         </div>
                     </div>
                     
-                    <div className='card-container'>
+                    <div className='candidate-page-card-container'>
                         
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 NI number
                             </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
                                     {candidate.niNumber}
                                 </div>
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Permit needed
                             </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
-                                    {candidate.permitNeeded}
+                            <div className='candidate-page-detail-answer'>
+
+                                <div className='candidate-page-rad-answer-container'>
+                                    <div className='candidate-page-rad-single-answer'>
+                                        <input
+                                            type='radio'
+                                            name='permitNeeded'
+                                            checked={candidate.permitNeeded === 'Yes'}
+                                        />
+                                        <label className='candidate-page-rad-label'>
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div className='candidate-page-rad-single-answer'>
+                                        <input
+                                            type='radio'
+                                            name='permitNeeded'
+                                            checked={candidate.permitNeeded === 'No'}
+                                        />
+                                        <label className='candidate-page-rad-label'>
+                                            No
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         {candidate.permitNeeded === 'Yes' &&
                             <>
-                                <div className='detail-container'>
-                                    <div className='detail-label'>
+                                <div className='candidate-page-detail-container'>
+                                    <div className='candidate-page-detail-label'>
                                         Work Permit
                                     </div>
 
-                                    <div className='detail-answer'>
-                                        <div className='answer-border'>
+                                    <div className='candidate-page-detail-answer'>
+                                        <div className='candidate-page-detail-answer-container'>
                                             {candidate.workPermit}
                                         </div>
                                     </div>
@@ -358,48 +419,49 @@ export default function PrimaryQuestions ({ candidate, edit }) {
                                 {(candidate.workPermit === 'EU pre-settled status' ||
                                 candidate.workPermit === 'EU settled status') &&
                                     <>
-                                        <div className='detail-container'>
-                                            <div className='detail-label'>
+                                        <div className='candidate-page-detail-container'>
+                                            <div className='candidate-page-detail-label'>
                                                 EUSS share code
                                             </div>
 
-                                            <div className='detail-answer'>
-                                                <div className='answer-border'>
+                                            <div className='candidate-page-detail-answer'>
+                                                <div className='candidate-page-detail-answer-container'>
                                                     {candidate.permitShareCode}
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div className='detail-container'>
-                                            <div className='detail-label'>
+                                        <div className='candidate-page-detail-container'>
+                                            <div className='candidate-page-detail-label'>
                                                 Permit number
                                             </div>
 
-                                            <div className='detail-answer'>
-                                                <div className='answer-border'>
+                                            <div className='candidate-page-detail-answer'>
+                                                <div className='candidate-page-detail-answer-container'>
                                                     {candidate.permitNumber}
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div className='detail-container'>
-                                            <div className='detail-label'>
+                                        <div className='candidate-page-detail-container'>
+                                            <div className='candidate-page-detail-label'>
                                                 Permit expiry date
                                             </div>
 
-                                            <div className='detail-answer'>
-                                                <div className='answer-border'>
+                                            <div className='candidate-page-detail-answer'>
+                                                <div className='candidate-page-detail-answer-container'>
                                                     {candidate.permitExpiry}
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div className='detail-container'>
-                                            <div className='detail-label'>
+                                        <div className='candidate-page-detail-container'>
+                                            <div className='candidate-page-detail-label'>
                                                 Upload
                                             </div>
-                                            <div className='detail-answer'>
-                                                <div className='answer-border'>
+
+                                            <div className='candidate-page-detail-answer'>
+                                                <div className='candidate-page-detail-answer-container'>
                                                     <Link className='link-secondary'>
                                                         View Document
                                                     </Link>
@@ -412,14 +474,38 @@ export default function PrimaryQuestions ({ candidate, edit }) {
                             </>
                         }
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Criminal Convictions
                             </div>
 
-                            <div className='detail-answer'>
-                                <div className='answer-border'>
-                                    {candidate.criminalConvictions}
+                            <div className='candidate-page-detail-answer'>
+
+                                <div className='candidate-page-rad-answer-container'>
+                                    <div className='candidate-page-rad-single-answer'>
+                                        <input
+                                            type='radio'
+                                            name='criminalConvictions'
+                                            id='criminal-yes'
+                                            value='Yes'
+                                            checked={candidate.criminalConvictions === 'Yes'}
+                                        />
+                                        <label className='candidate-page-rad-label'>
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div className='candidate-page-rad-single-answer'>
+                                        <input
+                                            type='radio'
+                                            name='criminalConvictions'
+                                            id='criminal-no'
+                                            value='No'
+                                            checked={candidate.criminalConvictions === 'No'}
+                                        />
+                                        <label className='candidate-page-rad-label'>
+                                            No
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>

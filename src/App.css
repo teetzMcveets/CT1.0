@@ -137,7 +137,7 @@ html {
 
 .link-secondary {
   text-decoration: underline;
-  color: var(--secondary);
+  color: var(--primary);
   cursor: pointer;
 }
 
@@ -148,7 +148,7 @@ html {
 }
 
 .link-secondary:active {
-  color: var(--secondary);
+  color: var(--primary);
   transition-duration: 0ms;
   text-decoration: underline;
 }

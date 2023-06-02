@@ -9,7 +9,6 @@ export default function PrimaryQuestionsForm ({
     handleOnChange, 
     edit, 
     save,
-    otherNationality,
     handleAccessChange,
     handleContactPrefChange,
  }) {
@@ -38,6 +37,9 @@ export default function PrimaryQuestionsForm ({
 
             <div className='candidate-page-right-candidate'>
                 <div className='candidate-page-full-page'>
+
+
+                    {/* ABOUT YOU CARD */}
                     <div className='card-detail-title'>
                         <div className='card-title'>
                             About You
@@ -112,57 +114,47 @@ export default function PrimaryQuestionsForm ({
                             </div>
 
                             <div className='candidate-page-detail-answer'>
-                                <div>
-                                    <div className='rad-detail rad-detail-edit'>
-                                        <div className='rad-detail-input'>
-                                            <input 
-                                                type='radio'
-                                                name='gender'
-                                                id='gender-male'
-                                                value='Male'
-                                                checked={updatedPrimaryQuestions.gender === 'Male'}
-                                                onChange={(e) => handleOnChange('gender', e.target.value)}
-                                            />
-                                        </div>
-                                        <div className='rad-detail-label'>
-                                            <label htmlFor='gender-male'>
-                                                Male
-                                            </label>
-                                        </div>
+
+                                <div className='candidate-page-rad-answer-container'>
+                                    
+                                    <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                        <input 
+                                            type='radio'
+                                            name='gender'
+                                            id='gender-male'
+                                            value='Male'
+                                            checked={updatedPrimaryQuestions.gender === 'Male'}
+                                            onChange={(e) => handleOnChange('gender', e.target.value)}
+                                        />
+                                        <label htmlFor='gender-male' className='candidate-page-rad-label'>
+                                            Male
+                                        </label>
                                     </div>
-                                    <div className='rad-detail rad-detail-edit'>
-                                        <div className='rad-detail-input'>
-                                            <input 
-                                                type='radio'
-                                                name='gender'
-                                                id='gender-female'
-                                                value='Female'
-                                                checked={updatedPrimaryQuestions.gender === 'Female'}
-                                                onChange={(e) => handleOnChange('gender', e.target.value)}
-                                            />
-                                        </div>
-                                        <div>
-                                            <label className='rad-detail-label' htmlFor='gender-female'>
-                                                Female
-                                            </label>
-                                        </div>
+                                    <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                        <input 
+                                            type='radio'
+                                            name='gender'
+                                            id='gender-female'
+                                            value='Female'
+                                            checked={updatedPrimaryQuestions.gender === 'Female'}
+                                            onChange={(e) => handleOnChange('gender', e.target.value)}
+                                        />
+                                        <label className='candidate-page-rad-label' htmlFor='gender-female'>
+                                            Female
+                                        </label>
                                     </div>
-                                    <div className='rad-detail rad-detail-edit'>
-                                        <div className='rad-detail-input'>
-                                            <input 
-                                                type='radio'
-                                                name='gender'
-                                                id='gender-prefNotSay'
-                                                value='Prefer not to say'
-                                                checked={updatedPrimaryQuestions.gender === 'Prefer not to say'}
-                                                onChange={(e) => handleOnChange('gender', e.target.value)}
-                                            />
-                                        </div>
-                                        <div>
-                                            <label className='rad-detail-label' htmlFor='gender-prefNotSay'>
-                                                Prefer not to say
-                                            </label>
-                                        </div>
+                                    <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                        <input 
+                                            type='radio'
+                                            name='gender'
+                                            id='gender-prefNotSay'
+                                            value='Prefer not to say'
+                                            checked={updatedPrimaryQuestions.gender === 'Prefer not to say'}
+                                            onChange={(e) => handleOnChange('gender', e.target.value)}
+                                        />
+                                        <label className='candidate-page-rad-label' htmlFor='gender-prefNotSay'>
+                                            Prefer not to say
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -188,26 +180,27 @@ export default function PrimaryQuestionsForm ({
                                 </select>
                             </div> 
                         </div>
-
                     </div>
 
+
+                    {/* ACCOUNT SETTINGS CARD */}
                     <div className='card-detail-title'>
                         <div className='card-title'>
                             Account Settings
                         </div>
                     </div>
 
-                    <div className='card-container'>
+                    <div className='candidate-page-card-container'>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Industry
                             </div>
 
-                            <div className='detail-answer'>
+                            <div className='candidate-page-detail-answer'>
                                 <select 
                                     type='text'
-                                    className='candidate-details-edit-input'
+                                    className='candidate-page-input'
                                     value={updatedPrimaryQuestions.industry}
                                     onChange={(e) => handleOnChange('industry', e.target.value)}
                                 >
@@ -226,15 +219,15 @@ export default function PrimaryQuestionsForm ({
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Owner
                             </div>
 
-                            <div className='detail-answer'>
+                            <div className='candidate-page-detail-answer'>
                                 <select 
                                     type='text'
-                                    className='candidate-details-edit-input'
+                                    className='candidate-page-input'
                                     value={updatedPrimaryQuestions.owner}
                                     onChange={(e) => handleOnChange('owner', e.target.value)}
                                 >
@@ -247,27 +240,23 @@ export default function PrimaryQuestionsForm ({
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Access
                             </div>
 
-                            <div className='rad-detail-answer'>
-                                <div className='rad-detail-edit'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-checkbox-container candidate-page-checkbox-answer-edit'>
                                     {['#1', '#2', '#3', '#4', '#5'].map((accessValue) => (
-                                        <div className='check-detail' key={accessValue}>
-                                            <div className='rad-detail-input'>
-                                                <input 
-                                                    type='checkbox'
-                                                    checked={updatedPrimaryQuestions.access.includes(accessValue)}
-                                                    onChange={(e) => handleAccessChange(e, accessValue)}
-                                                />
-                                            </div>
-                                            <div className='rad-detail-label'>
-                                                <label>
-                                                    {accessValue}
-                                                </label>
-                                            </div>
+                                        <div className='candidate-page-checkbox-single-answer' key={accessValue}>
+                                            <input 
+                                                type='checkbox'
+                                                checked={updatedPrimaryQuestions.access.includes(accessValue)}
+                                                onChange={(e) => handleAccessChange(e, accessValue)}
+                                            />
+                                            <label className='candidate-page-checkbox-label'>
+                                                {accessValue}
+                                            </label>
                                         </div>    
                                     ))}      
                                 </div>
@@ -275,65 +264,62 @@ export default function PrimaryQuestionsForm ({
                         </div>
                     </div>
 
+                    {/* CONTACT DETAILS CARD */}
                     <div className='card-detail-title'>
                         <div className='card-title'>
                             Contact Details
                         </div>
                     </div>
                     
-                    <div className='card-container'>
+                    <div className='candidate-page-card-container'>
                         
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Email Address
                             </div>
 
-                            <div className='detail-answer'>
+                            <div className='candidate-page-detail-answer'>
                             <input 
                                     type='email'
-                                    className='candidate-details-edit-input'
+                                    className='candidate-page-input'
                                     value={updatedPrimaryQuestions.email}
                                     onChange={(e) => handleOnChange('email', e.target.value)}
                                 />
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Mobile Number
                             </div>
 
-                            <div className='detail-answer'>
+                            <div className='candidate-page-detail-answer'>
                             <input 
                                     type='tel'
-                                    className='candidate-details-edit-input'
+                                    className='candidate-page-input'
                                     value={updatedPrimaryQuestions.number}
                                     onChange={(e) => handleOnChange('number', e.target.value)}
                                 />
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Contact preference
                             </div>
 
-                            <div className='rad-detail-answer'>
-                                <div className='rad-detail-edit'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-checkbox-container candidate-page-checkbox-answer-edit'>
                                     {['Mobile', 'Email'].map((contactPrefValue) => (
-                                        <div className='check-detail' key={contactPrefValue}>
-                                            <div className='rad-detail-input '>
-                                                <input 
-                                                    type='checkbox'
-                                                    checked={updatedPrimaryQuestions.contactPref.includes(contactPrefValue)}
-                                                    onChange={(e) => handleContactPrefChange(e, contactPrefValue)}
-                                                />
-                                            </div>
-                                            <div className='rad-detail-label'>
-                                                <label>
-                                                    {contactPrefValue}
-                                                </label>
-                                            </div>
+                                        <div className='candidate-page-checkbox-single-answer' key={contactPrefValue}>
+                                            <input 
+                                                type='checkbox'
+                                                checked={updatedPrimaryQuestions.contactPref.includes(contactPrefValue)}
+                                                onChange={(e) => handleContactPrefChange(e, contactPrefValue)}
+                                            />
+                                            <label className='candidate-page-checkbox-label'>
+                                                {contactPrefValue}
+                                            </label>
                                         </div>    
                                     ))}      
                                 </div>
@@ -341,109 +327,114 @@ export default function PrimaryQuestionsForm ({
                         </div>
                     </div>
 
+
+                    {/* CURRENT ADDRESS */}
                     <div className='card-detail-title'>
                         <div className='card-title'>
                             Current Address
                         </div>
                     </div>
 
-                    <div className='card-container'>
+                    <div className='candidate-page-card-container'>
                         
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Address Line 1
                             </div>
 
-                            <div className='detail-answer'>
-                            <input 
+                            <div className='candidate-page-detail-answer'>
+                                <input 
                                     type='text'
-                                    className='candidate-details-edit-input'
+                                    className='candidate-page-input'
                                     value={updatedPrimaryQuestions.address1}
                                     onChange={(e) => handleOnChange('address1', e.target.value)}
                                 />
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Address Line 2
                             </div>
 
-                            <div className='detail-answer'>
-                            <input 
+                            <div className='candidate-page-detail-answer'>
+                                <input 
                                     type='text'
-                                    className='candidate-details-edit-input'
+                                    className='candidate-page-input'
                                     value={updatedPrimaryQuestions.address2}
                                     onChange={(e) => handleOnChange('address2', e.target.value)}
                                 />
                             </div>
                         </div>
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Address Line 3
                             </div>
 
-                            <div className='detail-answer'>
-                            <input 
+                            <div className='candidate-page-detail-answer'>
+                                <input 
                                     type='text'
-                                    className='candidate-details-edit-input'
+                                    className='candidate-page-input'
                                     value={updatedPrimaryQuestions.address3}
                                     onChange={(e) => handleOnChange('address3', e.target.value)}
                                 />
                             </div>
                         </div>
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 City or Town
                             </div>
 
-                            <div className='detail-answer'>
-                            <input 
+                            <div className='candidate-page-detail-answer'>
+                                <input 
                                     type='text'
-                                    className='candidate-details-edit-input'
+                                    className='candidate-page-input'
                                     value={updatedPrimaryQuestions.cityTown}
                                     onChange={(e) => handleOnChange('cityTown', e.target.value)}
                                 />
                             </div>
                         </div>
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 County
                             </div>
 
-                            <div className='detail-answer'>
-                            <input 
+                            <div className='candidate-page-detail-answer'>
+                                <input 
                                     type='text'
-                                    className='candidate-details-edit-input'
+                                    className='candidate-page-input'
                                     value={updatedPrimaryQuestions.county}
                                     onChange={(e) => handleOnChange('county', e.target.value)}
                                 />
                             </div>
                         </div>
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Post code
                             </div>
 
-                            <div className='detail-answer'>
+                            <div className='candidate-page-detail-answer'>
                             <input 
                                     type='text'
-                                    className='candidate-details-edit-input'
+                                    className='candidate-page-input'
                                     value={updatedPrimaryQuestions.postCode}
                                     onChange={(e) => handleOnChange('postCode', e.target.value)}
                                 />
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Move in date
                             </div>
 
-                            <div className='detail-answer'>
+                            <div className='candidate-page-detail-answer'>
                             <input 
                                     type='date'
-                                    className='candidate-details-edit-input'
+                                    className='candidate-page-input-date'
                                     value={updatedPrimaryQuestions.movedIn}
                                     onChange={(e) => handleOnChange('movedIn', e.target.value)}
                                 />
@@ -451,21 +442,22 @@ export default function PrimaryQuestionsForm ({
                         </div>
                     </div>
 
+                    {/* WORK ELIGIBILITY CARD */}
                     <div className='card-detail-title'>
                         <div className='card-title'>
                             Work eligibility
                         </div>
                     </div>
                     
-                    <div className='card-container'>
+                    <div className='candidate-page-card-container'>
                         
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 NI number
                             </div>
 
-                            <div className='detail-answer'>
-                            <input 
+                            <div className='candidate-page-detail-answer'>
+                                <input 
                                     type='text'
                                     className='candidate-details-edit-input'
                                     value={updatedPrimaryQuestions.niNumber}
@@ -474,8 +466,8 @@ export default function PrimaryQuestionsForm ({
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Permit needed
                             </div>
 
@@ -521,35 +513,33 @@ export default function PrimaryQuestionsForm ({
 
                         {updatedPrimaryQuestions.permitNeeded === 'Yes' && 
                             <>
-                                <div>
-                                    <div className='detail-container'>
-                                        <div className='detail-label'>
-                                            Work Permit
-                                        </div>
+                                <div className='candidate-page-detail-container'>
+                                    <div className='candidate-page-detail-label'>
+                                        Work Permit
+                                    </div>
 
-                                        <div className='detail-answer'>
-                                            <select 
-                                                type='text'
-                                                className='candidate-details-edit-input'
-                                                value={updatedPrimaryQuestions.workPermit}
-                                                onChange={(e) => handleOnChange('workPermit', e.target.value)}
-                                            >
-                                                <option value=''>Please select...</option>
-                                                <option value='Citizenship'>Citizenship</option>
-                                                <option value='EU pre-settled status'>EU pre-settled status</option>
-                                                <option value='EU settled status'>EU settled status</option>
-                                                <option value='UK citizen'>UK citizen</option>
-                                                <option value='Other'>Other</option>
-                                            </select>
-                                        </div>
+                                    <div className='detail-answer'>
+                                        <select 
+                                            type='text'
+                                            className='candidate-details-edit-input'
+                                            value={updatedPrimaryQuestions.workPermit}
+                                            onChange={(e) => handleOnChange('workPermit', e.target.value)}
+                                        >
+                                            <option value=''>Please select...</option>
+                                            <option value='Citizenship'>Citizenship</option>
+                                            <option value='EU pre-settled status'>EU pre-settled status</option>
+                                            <option value='EU settled status'>EU settled status</option>
+                                            <option value='UK citizen'>UK citizen</option>
+                                            <option value='Other'>Other</option>
+                                        </select>
                                     </div>
                                 </div>
 
                                 {(updatedPrimaryQuestions.workPermit === 'EU pre-settled status' || 
                                 updatedPrimaryQuestions.workPermit === 'EU settled status') &&
                                     <>
-                                        <div className='detail-container'>
-                                            <div className='detail-label'>
+                                        <div className='candidate-page-detail-container'>
+                                            <div className='candidate-page-detail-label'>
                                                 EUSS share code
                                             </div>
 
@@ -563,8 +553,8 @@ export default function PrimaryQuestionsForm ({
                                             </div>
                                         </div>
 
-                                        <div className='detail-container'>
-                                            <div className='detail-label'>
+                                        <div className='candidate-page-detail-container'>
+                                            <div className='candidate-page-detail-label'>
                                                 Permit number
                                             </div>
 
@@ -578,8 +568,8 @@ export default function PrimaryQuestionsForm ({
                                             </div>
                                         </div>
 
-                                        <div className='detail-container'>
-                                            <div className='detail-label'>
+                                        <div className='candidate-page-detail-container'>
+                                            <div className='candidate-page-detail-label'>
                                                 Permit expiry date
                                             </div>
 
@@ -593,8 +583,8 @@ export default function PrimaryQuestionsForm ({
                                             </div>
                                         </div>
 
-                                        <div className='detail-container'>
-                                            <div className='detail-label'>
+                                        <div className='candidate-page-detail-container'>
+                                            <div className='candidate-page-detail-label'>
                                                 Upload
                                             </div>
                                             <div className='detail-answer'>
@@ -610,8 +600,8 @@ export default function PrimaryQuestionsForm ({
 
                                 {updatedPrimaryQuestions.workPermit === 'Other' &&
                                     <>
-                                        <div className='detail-container'>
-                                            <div className='detail-label'>
+                                        <div className='candidate-page-detail-container'>
+                                            <div className='candidate-page-detail-label'>
                                                 Details
                                             </div>
 
@@ -632,8 +622,8 @@ export default function PrimaryQuestionsForm ({
 
                         
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Criminal Convictions
                             </div>
 
@@ -679,8 +669,8 @@ export default function PrimaryQuestionsForm ({
 
                         {updatedPrimaryQuestions.criminalConvictions === 'Yes' &&
                             <>
-                                 <div className='detail-container'>
-                                    <div className='detail-label'>
+                                 <div className='candidate-page-detail-container'>
+                                    <div className='candidate-page-detail-label'>
                                         Details
                                     </div>
 

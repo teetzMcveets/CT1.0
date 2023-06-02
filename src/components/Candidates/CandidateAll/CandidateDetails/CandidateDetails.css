@@ -33,6 +33,7 @@
 }
 
 .candidate-page-button-container {
+    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
