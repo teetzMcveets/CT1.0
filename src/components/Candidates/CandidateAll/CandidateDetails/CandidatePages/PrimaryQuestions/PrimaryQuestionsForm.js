@@ -459,7 +459,7 @@ export default function PrimaryQuestionsForm ({
                             <div className='candidate-page-detail-answer'>
                                 <input 
                                     type='text'
-                                    className='candidate-details-edit-input'
+                                    className='candidate-page-input'
                                     value={updatedPrimaryQuestions.niNumber}
                                     onChange={(e) => handleOnChange('niNumber', e.target.value)}
                                 />
@@ -471,42 +471,36 @@ export default function PrimaryQuestionsForm ({
                                 Permit needed
                             </div>
 
-                            <div className='rad-detail-answer'>
-                                <div>
-                                    <div className='rad-detail rad-detail-edit'>
-                                        <div className='rad-detail-input'>
-                                            <input 
-                                                type='radio'
-                                                name='permitNeeded'
-                                                id='permit-needed-yes'
-                                                value='Yes'
-                                                checked={updatedPrimaryQuestions.permitNeeded === 'Yes'}
-                                                onChange={(e) => handleOnChange('permitNeeded', e.target.value)}
-                                            />
-                                        </div>
-                                        <div className='rad-detail-label'>
-                                            <label htmlFor='permit-needed-yes'>
-                                                Yes
-                                            </label>
-                                        </div>
+                            <div className='candidate-page-detail-answer'>
+
+                                <div className='candidate-page-rad-answer-container'>
+
+                                    <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                        <input 
+                                            type='radio'
+                                            name='permitNeeded'
+                                            id='permit-needed-yes'
+                                            value='Yes'
+                                            checked={updatedPrimaryQuestions.permitNeeded === 'Yes'}
+                                            onChange={(e) => handleOnChange('permitNeeded', e.target.value)}
+                                        />
+                                        <label htmlFor='permit-needed-yes' className='candidate-page-rad-label'>
+                                            Yes
+                                        </label>
                                     </div>
-                                    <div className='rad-detail rad-detail-edit'>
-                                        <div className='rad-detail-input'>
-                                            <input 
-                                                type='radio'
-                                                name='permitNeeded'
-                                                id='permit-needed-no'
-                                                value='No'
-                                                checked={updatedPrimaryQuestions.permitNeeded === 'No'}
-                                                onChange={(e) => handleOnChange('permitNeeded', e.target.value)}
-                                            />
-                                        </div>
-                                        <div>
-                                            <label className='rad-detail-label' htmlFor='permit-needed-no'>
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
+                                    <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                        <input 
+                                            type='radio'
+                                            name='permitNeeded'
+                                            id='permit-needed-no'
+                                            value='No'
+                                            checked={updatedPrimaryQuestions.permitNeeded === 'No'}
+                                            onChange={(e) => handleOnChange('permitNeeded', e.target.value)}
+                                        />
+                                        <label className='candidate-page-rad-label' htmlFor='permit-needed-no'>
+                                            No
+                                        </label>
+                                    </div>    
                                 </div>
                             </div>
                         </div>
@@ -518,10 +512,10 @@ export default function PrimaryQuestionsForm ({
                                         Work Permit
                                     </div>
 
-                                    <div className='detail-answer'>
+                                    <div className='candidate-page-detail-answer'>
                                         <select 
                                             type='text'
-                                            className='candidate-details-edit-input'
+                                            className='candidate-page-input'
                                             value={updatedPrimaryQuestions.workPermit}
                                             onChange={(e) => handleOnChange('workPermit', e.target.value)}
                                         >
@@ -543,10 +537,10 @@ export default function PrimaryQuestionsForm ({
                                                 EUSS share code
                                             </div>
 
-                                            <div className='detail-answer'>
+                                            <div className='candidate-page-detail-answer'>
                                                 <input 
                                                     type='text'
-                                                    className='candidate-details-edit-input'
+                                                    className='candidate-page-input'
                                                     value={updatedPrimaryQuestions.permitShareCode}
                                                     onChange={(e) => handleOnChange('permitShareCode', e.target.value)}
                                                 />
@@ -558,10 +552,10 @@ export default function PrimaryQuestionsForm ({
                                                 Permit number
                                             </div>
 
-                                            <div className='detail-answer'>
+                                            <div className='candidate-page-detail-answer'>
                                                 <input 
                                                     type='text'
-                                                    className='candidate-details-edit-input'
+                                                    className='candidate-page-input'
                                                     value={updatedPrimaryQuestions.permitNumber}
                                                     onChange={(e) => handleOnChange('permitNumber', e.target.value)}
                                                 />
@@ -573,10 +567,10 @@ export default function PrimaryQuestionsForm ({
                                                 Permit expiry date
                                             </div>
 
-                                            <div className='detail-answer'>
+                                            <div className='candidate-page-detail-answer'>
                                                 <input 
                                                     type='date'
-                                                    className='candidate-details-edit-input'
+                                                    className='candidate-page-input-date'
                                                     value={updatedPrimaryQuestions.permitExpiry}
                                                     onChange={(e) => handleOnChange('permitExpiry', e.target.value)}
                                                 />
@@ -587,8 +581,8 @@ export default function PrimaryQuestionsForm ({
                                             <div className='candidate-page-detail-label'>
                                                 Upload
                                             </div>
-                                            <div className='detail-answer'>
-                                                <div className='answer-border'>
+                                            <div className='candidate-page-detail-answer'>
+                                                <div className='candidate-page-input'>
                                                     <Link className='link-secondary'>
                                                         View Document
                                                     </Link>
@@ -605,10 +599,10 @@ export default function PrimaryQuestionsForm ({
                                                 Details
                                             </div>
 
-                                            <div className='detail-answer'>
+                                            <div className='candidate-page-detail-answer'>
                                                 <input 
                                                     type='text'
-                                                    className='candidate-details-edit-input'
+                                                    className='candidate-page-input'
                                                     value={updatedPrimaryQuestions.workPermitOther}
                                                     onChange={(e) => handleOnChange('workPermitOther', e.target.value)}
                                                 />
@@ -627,41 +621,35 @@ export default function PrimaryQuestionsForm ({
                                 Criminal Convictions
                             </div>
 
-                            <div className='rad-detail-answer'>
-                                <div>
-                                    <div className='rad-detail rad-detail-edit'>
-                                        <div className='rad-detail-input'>
-                                            <input 
-                                                type='radio'
-                                                name='criminalConvictions'
-                                                id='criminal-convictions-yes'
-                                                value='Yes'
-                                                checked={updatedPrimaryQuestions.criminalConvictions === 'Yes'}
-                                                onChange={(e) => handleOnChange('criminalConvictions', e.target.value)}
-                                            />
-                                        </div>
-                                        <div className='rad-detail-label'>
-                                            <label htmlFor='criminal-convictions-yes'>
-                                                Yes
-                                            </label>
-                                        </div>
+                            <div className='candidate-page-detail-answer'>
+
+                                <div className='candidate-page-rad-answer-container'>
+
+                                    <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                        <input 
+                                            type='radio'
+                                            name='criminalConvictions'
+                                            id='criminal-convictions-yes'
+                                            value='Yes'
+                                            checked={updatedPrimaryQuestions.criminalConvictions === 'Yes'}
+                                            onChange={(e) => handleOnChange('criminalConvictions', e.target.value)}
+                                        />
+                                        <label htmlFor='criminal-convictions-yes' className='candidate-page-rad-label'>
+                                            Yes
+                                        </label>
                                     </div>
-                                    <div className='rad-detail rad-detail-edit'>
-                                        <div className='rad-detail-input'>
-                                            <input 
-                                                type='radio'
-                                                name='criminalConvictions'
-                                                id='criminal-convictions-no'
-                                                value='No'
-                                                checked={updatedPrimaryQuestions.criminalConvictions === 'No'}
-                                                onChange={(e) => handleOnChange('criminalConvictions', e.target.value)}
-                                            />
-                                        </div>
-                                        <div>
-                                            <label className='rad-detail-label' htmlFor='criminal-convictions-no'>
-                                                No
-                                            </label>
-                                        </div>
+                                    <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                        <input 
+                                            type='radio'
+                                            name='criminalConvictions'
+                                            id='criminal-convictions-no'
+                                            value='No'
+                                            checked={updatedPrimaryQuestions.criminalConvictions === 'No'}
+                                            onChange={(e) => handleOnChange('criminalConvictions', e.target.value)}
+                                        />
+                                        <label className='candidate-page-rad-label' htmlFor='criminal-convictions-no'>
+                                            No
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -674,9 +662,9 @@ export default function PrimaryQuestionsForm ({
                                         Details
                                     </div>
 
-                                    <div className='detail-answer'>
+                                    <div className='candidate-page-detail-answer'>
                                         <textarea 
-                                            className='candidate-details-edit-input'
+                                            className='candidate-page-input-text'
                                             rows='5'
                                             cols='10'
                                             value={updatedPrimaryQuestions.criminalConvictionsDetails}
@@ -689,12 +677,20 @@ export default function PrimaryQuestionsForm ({
                     </div>
 
                     <div className='save-button-container'>
-                        <button
-                            className='button-primary'
-                            onClick={save}
-                        >
-                            Save Details
-                        </button>
+                        <div className='button-space-between'>
+                            <button
+                                className='button-primary'
+                                onClick={save}
+                            >
+                                Save Details
+                            </button>
+                            <button
+                                className='button-primary'
+                                onClick={edit}
+                            >
+                                Cancel
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
