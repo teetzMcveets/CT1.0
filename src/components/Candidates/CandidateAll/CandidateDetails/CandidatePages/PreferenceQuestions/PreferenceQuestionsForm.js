@@ -13,54 +13,56 @@ export default function PreferenceQuestionsForm ({
 }) {
     return (
         <>
-            <div style={{ display: 'flex'}}>
-                <div>
-                    <div className='edit-button-container'>
-                        <div>
-                            <button
-                                className='button-secondary'
-                                onClick={save}
-                            >
-                                <i className='fas fa-save'></i>
-                            </button>
-                            
-                        </div>
-                        
-                        <button 
-                            className='button-secondary'
-                            onClick={edit}    
-                        >
-                            <i className='fas fa-times'></i>
-                        </button>
-                    </div>
-                </div>
+            <div className='candidate-page-left-container'>
+                <div className='candidate-page-button-container'>
+                    <button
+                        className='button-secondary'
+                        onClick={save}
+                    >
+                        <i className='fas fa-save'></i>
+                    </button>
 
-                <div>
+                    <div style={{ height: 'var(--med2)' }}></div>
+                    
+                    <button 
+                        className='button-secondary'
+                        onClick={edit}    
+                    >
+                        <i className='fas fa-times'></i>
+                    </button>
+                </div>
+            </div>
+
+            <div className='candidate-page-right-candidate'>
+                <div className='candidate-page-full-page'>
+
+
+                    {/* INTERVIEW QUESTIONS  */}
                     <div className='card-detail-title'>
                         <div className='card-title'>
                             Interview Questions
                         </div>
                     </div>
 
-                    <div className='card-container'>
+                    <div className='candidate-page-card-container'>
                         
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Start Date
                             </div>
 
-                            <div className='detail-answer'>
+                            <div className='candidate-page-detail-answer'>
                                 <input 
                                     type='date'
-                                    className='candidate-details-edit-input'
+                                    className='candidate-page-input-date'
                                     value={updatedPreferenceQuestions.startDate}
                                     onChange={(e) => handleOnChange('startDate', e.target.value)}
                                 />
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Commute type
                             </div>
 
@@ -79,8 +81,8 @@ export default function PreferenceQuestionsForm ({
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Travel for work
                             </div>
 
@@ -192,8 +194,8 @@ export default function PreferenceQuestionsForm ({
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 PPE Owned    
                             </div>
 
@@ -219,8 +221,8 @@ export default function PreferenceQuestionsForm ({
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Minimum Pay
                             </div>
 
@@ -234,8 +236,8 @@ export default function PreferenceQuestionsForm ({
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Smoker
                             </div>
 
@@ -474,9 +476,9 @@ export default function PreferenceQuestionsForm ({
                             Save Details
                         </button>
                     </div>
-                    
                 </div>
             </div>
+
         </>
     )
 }
