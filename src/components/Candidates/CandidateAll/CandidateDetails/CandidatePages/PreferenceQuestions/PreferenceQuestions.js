@@ -62,8 +62,79 @@ export default function PreferenceQuestions ({
                             </div>
 
                             <div className='candidate-page-detail-answer'>
-                                <div className='candidate-page-detail-answer-container'>
-                                    {candidate.travelForWork}
+
+                                <div className='candidate-page-rad-answer-container'>
+                                    <div className='candidate-page-rad-single-answer'>
+                                        <input
+                                            type='radio'
+                                            name='travelForWork'
+                                            value='0-1 miles'
+                                            checked={candidate.travelForWork === '0-1 miles'}
+                                        />
+                                        <label className='candidate-page-rad-label'>
+                                            0-1 miles
+                                        </label>
+                                    </div>
+                                
+
+                                    <div className='candidate-page-rad-single-answer'>
+                                        <input
+                                            type='radio'
+                                            name='travelForWork'
+                                            value='1-2 miles'
+                                            checked={candidate.travelForWork === '1-2 miles'}
+                                        />
+                                        <label className='candidate-page-rad-label'>
+                                            1-2 miles
+                                        </label>
+                                    </div>
+
+                                    <div className='candidate-page-rad-single-answer'>
+                                        <input
+                                            type='radio'
+                                            name='travelForWork'
+                                            value='2-4 miles'
+                                            checked={candidate.travelForWork === '2-4 miles'}
+                                        />
+                                        <label className='candidate-page-rad-label'>
+                                            2-4 miles
+                                        </label>
+                                    </div>
+
+                                    <div className='candidate-page-rad-single-answer'>
+                                        <input
+                                            type='radio'
+                                            name='travelForWork'
+                                            value='4-6 miles'
+                                            checked={candidate.travelForWork === '4-6 miles'}
+                                        />
+                                        <label className='candidate-page-rad-label'>
+                                            4-6 miles
+                                        </label>
+                                    </div>
+
+                                    <div className='candidate-page-rad-single-answer'>
+                                        <input
+                                            type='radio'
+                                            name='travelForWork'
+                                            value='6-10 miles'
+                                            checked={candidate.travelForWork === '6-10 miles'}
+                                        />
+                                        <label className='candidate-page-rad-label'>
+                                            6-10 miles
+                                        </label>
+                                    </div>
+                                    <div className='candidate-page-rad-single-answer'>
+                                        <input
+                                            type='radio'
+                                            name='travelForWork'
+                                            value='10+ miles'
+                                            checked={candidate.travelForWork === '10+ miles'}
+                                        />
+                                        <label className='candidate-page-rad-label'>
+                                            10+ miles
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -109,9 +180,33 @@ export default function PreferenceQuestions ({
                             </div>
 
                             <div className='candidate-page-detail-answer'>
-                                <div className='candidate-page-detail-answer-container'>
-                                    {candidate.smoker}
-                                </div>
+
+                                <div className='candidate-page-rad-answer-container'>
+                                    <div className='candidate-page-rad-single-answer'>
+                                        <input 
+                                            type='radio'
+                                            name='smoker'
+                                            id='smoker-yes'
+                                            value='Yes'
+                                            checked={candidate.smoker === 'Yes'}
+                                        />
+                                        <label className='candidate-page-rad-label'>
+                                            Yes
+                                        </label>
+                                    </div> 
+                                    <div className='candidate-page-rad-single-answer'>
+                                        <input 
+                                            type='radio'
+                                            name='smoker'
+                                            id='smoker-no'
+                                            value='No'
+                                            checked={candidate.smoker === 'No'}
+                                        />
+                                        <label className='candidate-page-rad-label'>
+                                            No
+                                        </label>
+                                    </div>           
+                                </div>            
                             </div>
                         </div>
 
@@ -121,10 +216,34 @@ export default function PreferenceQuestions ({
                                     License
                                 </div>
 
-                                <div className='detail-answer'>
-                                    <div className='answer-border'>
-                                        {candidate.industrialLicense}
-                                    </div>
+                                <div className='candidate-page-detail-answer'>
+                                    
+                                    <div className='candidate-page-rad-answer-container'>
+                                        <div className='candidate-page-rad-single-answer'>
+                                            <input 
+                                                type='radio'
+                                                name='industrialLicense'
+                                                id='industrialLicense-yes'
+                                                value='Yes'
+                                                checked={candidate.industrialLicense === 'Yes'}
+                                            />
+                                            <label className='candidate-page-rad-label'>
+                                                Yes
+                                            </label>
+                                        </div> 
+                                        <div className='candidate-page-rad-single-answer'>
+                                            <input 
+                                                type='radio'
+                                                name='industrialLicense'
+                                                id='industrialLicense-no'
+                                                value='No'
+                                                checked={candidate.industrialLicense === 'No'}
+                                            />
+                                            <label className='candidate-page-rad-label'>
+                                                No
+                                            </label>
+                                        </div>           
+                                    </div>  
                                 </div>
                             </div>
                         }

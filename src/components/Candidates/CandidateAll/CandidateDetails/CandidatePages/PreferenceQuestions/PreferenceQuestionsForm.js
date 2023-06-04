@@ -66,10 +66,10 @@ export default function PreferenceQuestionsForm ({
                                 Commute type
                             </div>
 
-                            <div className='detail-answer'>
+                            <div className='candidate-page-detail-answer'>
                                 <select 
                                     type='text'
-                                    className='candidate-details-edit-input'
+                                    className='candidate-page-input'
                                     value={updatedPreferenceQuestions.commuteType}
                                     onChange={(e) => handleOnChange('commuteType', e.target.value)}
                                 >
@@ -86,44 +86,37 @@ export default function PreferenceQuestionsForm ({
                                 Travel for work
                             </div>
 
-                            <div className='rad-detail-answer'>
-                                <div>
-                                    <div className='rad-detail rad-detail-edit'>
-                                        <div className='rad-detail-input'>
-                                            <input 
-                                                type='radio'
-                                                name='travelForWork'
-                                                id='travelForWork-1'
-                                                value='0-1 miles'
-                                                checked={updatedPreferenceQuestions.travelForWork === '0-1 miles'}
-                                                onChange={(e) => handleOnChange('travelForWork', e.target.value)}
-                                            />
-                                        </div>
-                                        <div className='rad-detail-label'>
-                                            <label htmlFor='travelForWork-1'>
-                                                0-1 miles
-                                            </label>
-                                        </div>
+                            <div className='candidate-page-detail-answer'>
+
+                                <div className='candidate-page-rad-answer-container'>
+                                    
+                                    <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                        <input
+                                            type='radio'
+                                            name='travelForWork'
+                                            id='travelForWork-1'
+                                            value='0-1 miles'
+                                            checked={updatedPreferenceQuestions.travelForWork === '0-1 miles'}
+                                            onChange={(e) => handleOnChange('travelForWork', e.target.value)}
+                                        />
+                                        <label htmlFor='travelForWork-1' className='candidate-page-rad-label'>
+                                            0-1 miles
+                                        </label>
                                     </div>
-                                    <div className='rad-detail rad-detail-edit'>
-                                        <div className='rad-detail-input'>
-                                            <input 
-                                                type='radio'
-                                                name='travelForWork'
-                                                id='travelForWork-2'
-                                                value='1-2 miles'
-                                                checked={updatedPreferenceQuestions.travelForWork === '1-2 miles'}
-                                                onChange={(e) => handleOnChange('travelForWork', e.target.value)}
-                                            />
-                                        </div>
-                                        <div>
-                                            <label className='rad-detail-label' htmlFor='travelForWork-2'>
-                                                1-2 miles
-                                            </label>
-                                        </div>
+                                    <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                        <input 
+                                            type='radio'
+                                            name='travelForWork'
+                                            id='travelForWork-2'
+                                            value='1-2 miles'
+                                            checked={updatedPreferenceQuestions.travelForWork === '1-2 miles'}
+                                            onChange={(e) => handleOnChange('travelForWork', e.target.value)}
+                                        />
+                                        <label className='candidate-page-rad-label' htmlFor='travelForWork-2'>
+                                            1-2 miles
+                                        </label>
                                     </div>
-                                    <div className='rad-detail rad-detail-edit'>
-                                        <div className='rad-detail-input'>
+                                    <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
                                             <input 
                                                 type='radio'
                                                 name='travelForWork'
@@ -132,15 +125,11 @@ export default function PreferenceQuestionsForm ({
                                                 checked={updatedPreferenceQuestions.travelForWork === '2-4 miles'}
                                                 onChange={(e) => handleOnChange('travelForWork', e.target.value)}
                                             />
-                                        </div>
-                                        <div>
-                                            <label className='rad-detail-label' htmlFor='travelForWork-3'>
+                                            <label className='candidate-page-rad-label' htmlFor='travelForWork-3'>
                                                 2-4 miles
                                             </label>
                                         </div>
-                                    </div>
-                                    <div className='rad-detail rad-detail-edit'>
-                                        <div className='rad-detail-input'>
+                                        <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
                                             <input 
                                                 type='radio'
                                                 name='travelForWork'
@@ -149,15 +138,11 @@ export default function PreferenceQuestionsForm ({
                                                 checked={updatedPreferenceQuestions.travelForWork === '4-6 miles'}
                                                 onChange={(e) => handleOnChange('travelForWork', e.target.value)}
                                             />
-                                        </div>
-                                        <div>
-                                            <label className='rad-detail-label' htmlFor='travelForWork-4'>
+                                            <label className='candidate-page-rad-label' htmlFor='travelForWork-4'>
                                                 4-6 miles
                                             </label>
                                         </div>
-                                    </div>
-                                    <div className='rad-detail rad-detail-edit'>
-                                        <div className='rad-detail-input'>
+                                        <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
                                             <input 
                                                 type='radio'
                                                 name='travelForWork'
@@ -166,15 +151,11 @@ export default function PreferenceQuestionsForm ({
                                                 checked={updatedPreferenceQuestions.travelForWork === '6-10 miles'}
                                                 onChange={(e) => handleOnChange('travelForWork', e.target.value)}
                                             />
-                                        </div>
-                                        <div>
-                                            <label className='rad-detail-label' htmlFor='travelForWork-5'>
+                                            <label className='candidate-page-rad-label' htmlFor='travelForWork-5'>
                                                 6-10 miles
                                             </label>
                                         </div>
-                                    </div>
-                                    <div className='rad-detail rad-detail-edit'>
-                                        <div className='rad-detail-input'>
+                                        <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
                                             <input 
                                                 type='radio'
                                                 name='travelForWork'
@@ -183,38 +164,31 @@ export default function PreferenceQuestionsForm ({
                                                 checked={updatedPreferenceQuestions.travelForWork === '10+ miles'}
                                                 onChange={(e) => handleOnChange('travelForWork', e.target.value)}
                                             />
-                                        </div>
-                                        <div>
-                                            <label className='rad-detail-label' htmlFor='travelForWork-6'>
+                                            <label className='candidate-page-rad-label' htmlFor='travelForWork-6'>
                                                 10+ miles
                                             </label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
                         <div className='candidate-page-detail-container'>
                             <div className='candidate-page-detail-label'>
                                 PPE Owned    
                             </div>
 
-                            <div className='rad-detail-answer'>
-                                <div className='rad-detail-edit'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-checkbox-container candidate-page-checkbox-answer-edit'>
                                     {['HiViz', 'Safety Boots'].map((ppeOwnedValue) => (
-                                        <div className='check-detail check-detail-longer' key={ppeOwnedValue}>
-                                            <div className='rad-detail-input'>
+                                        <div className='candidate-page-checkbox-single-answer' key={ppeOwnedValue}>
                                                 <input 
                                                     type='checkbox'
                                                     checked={updatedPreferenceQuestions.ppeOwned.includes(ppeOwnedValue)}
                                                     onChange={(e) => handlePPEOwnedChange(e, ppeOwnedValue)}
                                                 />
-                                            </div>
-                                            <div className='rad-detail-label'>
-                                                <label>
+                                                <label className='candidate-page-checkbox-label'>
                                                     {ppeOwnedValue}
                                                 </label>
-                                            </div>
                                         </div>    
                                     ))}      
                                 </div>
@@ -226,10 +200,10 @@ export default function PreferenceQuestionsForm ({
                                 Minimum Pay
                             </div>
 
-                            <div className='detail-answer'>
+                            <div className='candidate-page-detail-answer'>
                             <input 
                                     type='tel'
-                                    className='candidate-details-edit-input'
+                                    className='candidate-page-input'
                                     value={updatedPreferenceQuestions.minPay}
                                     onChange={(e) => handleOnChange('minPay', e.target.value)}
                                 />
@@ -241,10 +215,11 @@ export default function PreferenceQuestionsForm ({
                                 Smoker
                             </div>
 
-                            <div className='rad-detail-answer'>
-                                <div>
-                                    <div className='rad-detail rad-detail-edit'>
-                                        <div className='rad-detail-input'>
+                            <div className='candidate-page-detail-answer'>
+
+                                <div className='candidate-page-rad-answer-container'>
+
+                                    <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
                                             <input 
                                                 type='radio'
                                                 name='smoker'
@@ -253,15 +228,11 @@ export default function PreferenceQuestionsForm ({
                                                 checked={updatedPreferenceQuestions.smoker === 'Yes'}
                                                 onChange={(e) => handleOnChange('smoker', e.target.value)}
                                             />
-                                        </div>
-                                        <div className='rad-detail-label'>
-                                            <label htmlFor='smoker-yes'>
+                                            <label htmlFor='smoker-yes' className='candidate-page-rad-label'>
                                                 Yes
                                             </label>
-                                        </div>
                                     </div>
-                                    <div className='rad-detail rad-detail-edit'>
-                                        <div className='rad-detail-input'>
+                                    <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
                                             <input 
                                                 type='radio'
                                                 name='smoker'
@@ -270,27 +241,25 @@ export default function PreferenceQuestionsForm ({
                                                 checked={updatedPreferenceQuestions.smoker === 'No'}
                                                 onChange={(e) => handleOnChange('smoker', e.target.value)}
                                             />
-                                        </div>
-                                        <div>
-                                            <label className='rad-detail-label' htmlFor='smoker-no'>
+                                            <label className='candidate-page-rad-label' htmlFor='smoker-no'>
                                                 No
                                             </label>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
+                    
                         {candidate.industry === 'Industrial' && 
-                            <div className='detail-container'>
-                                <div className='detail-label'>
+                            <div className='candidate-page-detail-container'>
+                                <div className='candidate-page-detail-label'>
                                     License
                                 </div>
 
-                                <div className='rad-detail-answer'>
-                                    <div>
-                                        <div className='rad-detail rad-detail-edit'>
-                                            <div className='rad-detail-input'>
+                                <div className='candidate-page-detail-answer'>
+
+                                    <div className='candidate-page-rad-answer-container'>
+
+                                        <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
                                                 <input 
                                                     type='radio'
                                                     name='industrialLicense'
@@ -299,15 +268,11 @@ export default function PreferenceQuestionsForm ({
                                                     checked={updatedPreferenceQuestions.industrialLicense === 'Yes'}
                                                     onChange={(e) => handleOnChange('industrialLicense', e.target.value)}
                                                 />
-                                            </div>
-                                            <div className='rad-detail-label'>
-                                                <label htmlFor='industrialLicense-yes'>
+                                                <label htmlFor='industrialLicense-yes' className='candidate-page-rad-label'>
                                                     Yes
                                                 </label>
-                                            </div>
                                         </div>
-                                        <div className='rad-detail rad-detail-edit'>
-                                            <div className='rad-detail-input'>
+                                        <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
                                                 <input 
                                                     type='radio'
                                                     name='industrialLicense'
@@ -316,12 +281,9 @@ export default function PreferenceQuestionsForm ({
                                                     checked={updatedPreferenceQuestions.industrialLicense === 'No'}
                                                     onChange={(e) => handleOnChange('industrialLicense', e.target.value)}
                                                 />
-                                            </div>
-                                            <div>
-                                                <label className='rad-detail-label' htmlFor='industrialLicense-no'>
+                                                <label className='candidate-page-rad-label' htmlFor='industrialLicense-no'>
                                                     No
                                                 </label>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -329,80 +291,70 @@ export default function PreferenceQuestionsForm ({
                         }
 
                     </div>
-
+                    
                     <div className='card-detail-title'>
                         <div className='card-title'>
                             Availability Preferences
                         </div>
                     </div>
                     
-                    <div className='card-container'>
+                    <div className='candidate-page-card-container'>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Week days   
                             </div>
 
-                            <div className='rad-detail-answer'>
-                                <div className='rad-detail-edit'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-checkbox-container candidate-page-checkbox-answer-edit'>
                                     {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map((weekDaysValue) => (
-                                        <div className='check-detail check-detail-longer' key={weekDaysValue}>
-                                            <div className='rad-detail-input'>
-                                                <input 
-                                                    type='checkbox'
-                                                    checked={updatedPreferenceQuestions.weekDays.includes(weekDaysValue)}
-                                                    onChange={(e) => handleWeekDaysChange(e, weekDaysValue)}
-                                                />
-                                            </div>
-                                            <div className='rad-detail-label'>
-                                                <label>
-                                                    {weekDaysValue}
-                                                </label>
-                                            </div>
+                                        <div className='candidate-page-checkbox-single-answer' key={weekDaysValue}>
+                                            <input 
+                                                type='checkbox'
+                                                checked={updatedPreferenceQuestions.weekDays.includes(weekDaysValue)}
+                                                onChange={(e) => handleWeekDaysChange(e, weekDaysValue)}
+                                            />
+                                            <label className='candidate-page-checkbox-label'>
+                                                {weekDaysValue}
+                                            </label>
                                         </div>    
                                     ))}      
                                 </div>
                             </div>
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Shifts   
                             </div>
 
-                            <div className='rad-detail-answer'>
-                                <div className='rad-detail-edit'>
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-checkbox-container candidate-page-checkbox-answer-edit'>
                                     {['Mornings', 'Afternoons', 'Nights'].map((shiftsValue) => (
-                                        <div className='check-detail check-detail-longer' key={shiftsValue}>
-                                            <div className='rad-detail-input'>
-                                                <input 
-                                                    type='checkbox'
-                                                    checked={updatedPreferenceQuestions.shifts.includes(shiftsValue)}
-                                                    onChange={(e) => handleShiftsChange(e, shiftsValue)}
-                                                />
-                                            </div>
-                                            <div className='rad-detail-label'>
-                                                <label>
-                                                    {shiftsValue}
-                                                </label>
-                                            </div>
+                                        <div className='candidate-page-checkbox-single-answer' key={shiftsValue}>
+                                            <input 
+                                                type='checkbox'
+                                                checked={updatedPreferenceQuestions.shifts.includes(shiftsValue)}
+                                                onChange={(e) => handleShiftsChange(e, shiftsValue)}
+                                            />
+                                            <label className='candidate-page-checkbox-label'>
+                                                {shiftsValue}
+                                            </label>
                                         </div>    
                                     ))}      
                                 </div>
                             </div>
-
-
                         </div>
 
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Start window   
                             </div>
 
-                            <div className='detail-answer'>
-                            <select 
+                            <div className='candidate-page-detail-answer'>
+                                <select 
                                     type='text'
-                                    className='candidate-details-edit-input'
+                                    className='candidate-page-input'
                                     value={updatedPreferenceQuestions.startWindow}
                                     onChange={(e) => handleOnChange('startWindow', e.target.value)}
                                 >
@@ -425,17 +377,17 @@ export default function PreferenceQuestionsForm ({
                         </div>
                     </div>
 
-                    <div className='card-container'>
+                    <div className='candidate-page-card-container'>
                         
-                        <div className='detail-container'>
-                            <div className='detail-label'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
                                 Heard of us
                             </div>
 
-                            <div className='detail-answer'>
+                            <div className='candidate-page-detail-answer'>
                                 <select 
                                     type='text'
-                                    className='candidate-details-edit-input'
+                                    className='candidate-page-input'
                                     value={updatedPreferenceQuestions.heardOfUs}
                                     onChange={(e) => handleOnChange('heardOfUs', e.target.value)}
                                 >
@@ -450,14 +402,14 @@ export default function PreferenceQuestionsForm ({
                         </div>
 
                         {updatedPreferenceQuestions.heardOfUs === 'Other' &&
-                            <div className='detail-container'>
-                                <div className='detail-label'>
+                            <div className='candidate-page-detail-container'>
+                                <div className='candidate-page-detail-label'>
                                     Details
                                 </div>
 
-                                <div className='detail-answer'>
+                                <div className='candidate-page-detail-answer'>
                                     <textarea 
-                                        className='candidate-details-edit-input'
+                                        className='candidate-page-input-text'
                                         rows='5'
                                         cols='10'
                                         value={updatedPreferenceQuestions.heardOfUsOther}
@@ -469,16 +421,24 @@ export default function PreferenceQuestionsForm ({
                     </div>
 
                     <div className='save-button-container'>
-                        <button
-                            className='button-primary'
-                            onClick={save}
-                        >
-                            Save Details
-                        </button>
+                        <div className='button-space-between'>
+                            <button
+                                className='button-primary'
+                                onClick={save}
+                            >
+                                Save Details
+                            </button>
+                            <button
+                                className='button-primary'
+                                onClick={edit}
+                            >
+                                Cancel
+                            </button>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
-
         </>
     )
 }
