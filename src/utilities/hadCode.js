@@ -51,10 +51,26 @@ export const arnieMcVeighty = {
     heardOfUs: '',
     heardOfUsOther: '',
     //MEDICAL QUESTIONS
-    diabetes: 'Yes',
+    diabetes: 'No',
     diabetesYes: '',
     heartCirculatory: 'No',
     heartCirculatoryYes: '',
+    stomachIntestinal: 'No',
+    stomachIntestinalYes: '',
+    difficultySleeping: 'No',
+    difficultySleepingYes: '',
+    chronicChestNight: 'No',
+    chronicChestNightYes: '',
+    conditionMedicationTime : 'No',
+    conditionMedicationTimeYes: '',
+    conditionMealsTime: 'No',
+    conditionMealsTimeYes: '',
+    mentalHealthNights: 'No',
+    mentalHealthNightsYes: '',
+    otherConditionsNight: 'No',
+    otherConditionsNightYes: '',
+    expectingMother: 'No',
+    expectingMotherYes: '',
 }
 
 export const danMilverton = {
