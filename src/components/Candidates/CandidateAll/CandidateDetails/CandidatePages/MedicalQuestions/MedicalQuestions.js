@@ -30,32 +30,49 @@ export default function MedicalQuestions ({ candidate, edit }) {
                             Do you suffer from any of these conditions?
                         </div>
 
-                        <div>
-                            <div>
+                        <div className='candidate-page-medical-detail-container'>
+                            <div className='candidate-page-medical-detail-label'>
                                 Diabetes
                             </div>
 
-                            <div>
-                                <div>
+                            <div className='candidate-page-medical-detail-answer'>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer'>
                                     <input 
                                         type='radio'
+                                        name='diabetes'
+                                        value='Yes'
+                                        checked={candidate.diabetes === 'Yes'}
                                     />
-                                    <label className='candidate-page-rad-label'>
+                                    <label className='candidate-page-medical-rad-label'>
                                         Yes
                                     </label>
                                 </div>
-                                <div>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer'>
                                     <input 
                                         type='radio'
+                                        name='diabetes'
+                                        value='No'
+                                        checked={candidate.diabetes === 'No'}
                                     />
-                                    <label className='candidate-page-rad-label'>
+                                    <label className='candidate-page-medical-rad-label'>
                                         No
                                     </label>
                                 </div>
                             </div>
+                            {candidate.diabetes === 'Yes' &&
+                                <>
+                                    <div className='candidate-page-medical-detail-label'>
+                                        Details
+                                    </div>
+
+                                    <div className='candidate-page-detail-answer'>
+                                        <div className='candidate-page-detail-answer-container'>
+                                            {candidate.diabetesYes}
+                                        </div>
+                                    </div>
+                                </>
+                            }
                         </div>
-
-
                     </div>
                 </div>
             </div>

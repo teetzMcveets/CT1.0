@@ -15,7 +15,7 @@
     flex-direction: column;
     align-items: flex-end;
     width: 30%;
-    padding: 14px;
+    padding: 0 14px;
 }
 
 .candidate-details-center-container {
@@ -37,6 +37,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 /* 

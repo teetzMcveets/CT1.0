@@ -115,3 +115,32 @@
     display: flex;
     justify-content: space-between;
 }
+
+.candidate-page-medical-detail-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--med1);
+}
+
+.candidate-page-medical-detail-label {
+    width: 100%;
+    display: flex; 
+    justify-content: flex-start;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.candidate-page-medical-detail-answer {
+    display: flex;
+    padding: 0 0 0 15px;
+}
+
+.candidate-page-medical-rad-label {
+    padding: 0 10px 0 var(--small2)
+}
+
+.medical-rad-answer {
+    border: 2px solid var(--s1);
+    background-color: var(--s2);
+}

@@ -51,7 +51,10 @@ export const arnieMcVeighty = {
     heardOfUs: '',
     heardOfUsOther: '',
     //MEDICAL QUESTIONS
-    diabetes: 'No',
+    diabetes: 'Yes',
+    diabetesYes: '',
+    heartCirculatory: 'No',
+    heartCirculatoryYes: '',
 }
 
 export const danMilverton = {

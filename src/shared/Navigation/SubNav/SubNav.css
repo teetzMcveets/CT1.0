@@ -10,11 +10,12 @@
 }
 
 .sub-nav-link {
-    padding: var(--small2) var(--big3);
+    padding: var(--small2) 20px;
     font-size: var(--small2);
     color: var(--text);
     text-decoration: none;
     cursor: pointer;
+    border-left: 2px solid transparent;
 }
 
 .sub-nav-link:hover,
