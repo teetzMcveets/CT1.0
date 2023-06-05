@@ -578,9 +578,142 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
 
+                    <div className='card-detail-title'>
+                        <div className='card-title'>
+                            For Occupational Health
+                        </div>
+                    </div>
+                    
+                    <div className='candidate-page-card-container'>
+
+                        <div className='candidate-page-medical-detail-container'>
+                            <div className='candidate-page-medical-detail-label'>
+                                Suitable to continue night working
+                            </div>
+
+                            <div className='candidate-page-medical-detail-answer'>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer'>
+                                    <input 
+                                        type='radio'
+                                        name='continueNightWorking'
+                                        value='Yes'
+                                        checked={candidate.continueNightWorking === 'Yes'}
+                                    />
+                                    <label className='candidate-page-medical-rad-label'>
+                                        Yes
+                                    </label>
+                                </div>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer'>
+                                    <input 
+                                        type='radio'
+                                        name='continueNightWorking'
+                                        value='No'
+                                        checked={candidate.continueNightWorking === 'No'}
+                                    />
+                                    <label className='candidate-page-medical-rad-label'>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-medical-detail-container'>
+                            <div className='candidate-page-medical-detail-label'>
+                                Requires OHA telephone review
+                            </div>
+
+                            <div className='candidate-page-medical-detail-answer'>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer'>
+                                    <input 
+                                        type='radio'
+                                        name='OHATelephoneReview'
+                                        value='Yes'
+                                        checked={candidate.OHATelephoneReview === 'Yes'}
+                                    />
+                                    <label className='candidate-page-medical-rad-label'>
+                                        Yes
+                                    </label>
+                                </div>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer'>
+                                    <input 
+                                        type='radio'
+                                        name='OHATelephoneReview'
+                                        value='No'
+                                        checked={candidate.OHATelephoneReview === 'No'}
+                                    />
+                                    <label className='candidate-page-medical-rad-label'>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div className='candidate-page-medical-detail-container'>
+                            <div className='candidate-page-medical-detail-label'>
+                                Requires OHA night worker health assessment
+                            </div>
+
+                            <div className='candidate-page-medical-detail-answer'>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer'>
+                                    <input 
+                                        type='radio'
+                                        name='OHAHealthAssessment'
+                                        value='Yes'
+                                        checked={candidate.OHAHealthAssessment === 'Yes'}
+                                    />
+                                    <label className='candidate-page-medical-rad-label'>
+                                        Yes
+                                    </label>
+                                </div>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer'>
+                                    <input 
+                                        type='radio'
+                                        name='OHAHealthAssessment'
+                                        value='No'
+                                        checked={candidate.OHAHealthAssessment === 'No'}
+                                    />
+                                    <label className='candidate-page-medical-rad-label'>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-medical-detail-container'>
+                            <div className='candidate-page-medical-detail-label'>
+                                Requires OHP referral
+                            </div>
+
+                            <div className='candidate-page-medical-detail-answer'>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer'>
+                                    <input 
+                                        type='radio'
+                                        name='OHPReferral'
+                                        value='Yes'
+                                        checked={candidate.OHPReferral === 'Yes'}
+                                    />
+                                    <label className='candidate-page-medical-rad-label'>
+                                        Yes
+                                    </label>
+                                </div>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer'>
+                                    <input 
+                                        type='radio'
+                                        name='OHPReferral'
+                                        value='No'
+                                        checked={candidate.OHPReferral === 'No'}
+                                    />
+                                    <label className='candidate-page-medical-rad-label'>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </>
