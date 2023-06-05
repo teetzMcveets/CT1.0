@@ -12,6 +12,8 @@ import PreferenceQuestions from './CandidatePages/PreferenceQuestions/Preference
 import PreferenceQuestionsForm from './CandidatePages/PreferenceQuestions/PreferenceQuestionsForm';
 import MedicalQuestions from './CandidatePages/MedicalQuestions/MedicalQuestions';
 import MedicalQuestionsForm from './CandidatePages/MedicalQuestions/MedicalQuestionsForm';
+import BankDetails from './CandidatePages/BankDetails/BankDetails';
+import BankDetailsForm from './CandidatePages/BankDetails/BankDetailsForm';
 
 
 export default function CandidateDetails() {
@@ -33,6 +35,9 @@ export default function CandidateDetails() {
         ...candidate,
         medicalAgreementTimestamp: null,
     })
+    const [updatedBankDetails, setUpdatedBankDetails] = useState({
+        ...candidate,
+    })
 
     const toggleEdit = () => {
         if (isEditing && changesMade.current && !window.confirm('Unsaved changes will be lost. Continue?')) {
@@ -45,7 +50,10 @@ export default function CandidateDetails() {
             })
             setUpdatedPreferenceQuestions({
                 ...candidate,
-            });
+            })
+            setUpdatedBankDetails({
+                ...candidate,
+            })
             changesMade.current = false;
         }
         setIsEditing(!isEditing);
@@ -68,6 +76,11 @@ export default function CandidateDetails() {
             setUpdatedMedicalQuestions(prevState => ({
                 ...prevState,
                 [field]: value
+            }))
+        } else if (pathName.endsWith('bank-details')) {
+            setUpdatedBankDetails(prevState => ({
+                ...prevState,
+                [field]: value,
             }))
         }
 
@@ -181,6 +194,8 @@ export default function CandidateDetails() {
             updatedQuestions = updatedPreferenceQuestions
         } else if (pathName.endsWith('medical-questions')) {
             updatedQuestions = updatedMedicalQuestions
+        } else if (pathName.endsWith('bank-details')) {
+            updatedQuestions = updatedBankDetails
         }
 
         if (updatedQuestions) {
@@ -303,6 +318,25 @@ export default function CandidateDetails() {
                                                 edit={toggleEdit}
                                                 save={handleSave}
                                                 handleMedicalAgreementChange={handleMedicalAgreementChange}
+                                            />
+                                    }
+                                />
+                                <Route
+                                    path='bank-details'
+                                    element={
+                                        !isEditing ?
+                                            <BankDetails
+                                                candidate={candidate}
+                                                edit={toggleEdit}
+                                                isEditing={isEditing}
+                                            />
+                                            :
+                                            <BankDetailsForm
+                                                candidate={candidate}
+                                                updatedBankDetails={updatedBankDetails}
+                                                handleOnChange={handleUpdatedForm}
+                                                edit={toggleEdit}
+                                                save={handleSave}
                                             />
                                     }
                                 />
