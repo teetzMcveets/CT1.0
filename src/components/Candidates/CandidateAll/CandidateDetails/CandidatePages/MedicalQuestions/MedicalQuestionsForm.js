@@ -7,6 +7,7 @@ export default function MedicalQuestionsForm ({
     candidate,
     updatedMedicalQuestions,
     handleOnChange,
+    handleMedicalAgreementChange
 }) {
     
     return (
@@ -664,19 +665,21 @@ export default function MedicalQuestionsForm ({
                                 </div>
 
                                 <div className='candidate-page-detail-answer'>
-                                    <div className='candidate-page-detail-answer-container-date'>
+                                    <div className='candidate-page-detail-answer-container-date candidate-page-agreement-edit'>
                                         <input
                                             type='checkbox'
+                                            checked={!!updatedMedicalQuestions.medicalAgreementTimestamp}
+                                            onChange={handleMedicalAgreementChange}
                                         />
                                         <label className='candidate-page-checkbox-label edit'>
-                                            dateAgreed
+                                            {updatedMedicalQuestions.medicalAgreementTimestamp}
                                         </label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </>

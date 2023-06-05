@@ -569,9 +569,10 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                     <div className='candidate-page-detail-answer-container-date'>
                                         <input
                                             type='checkbox'
+                                            disabled
                                         />
                                         <label className='candidate-page-checkbox-label'>
-                                            dateAgreed
+                                            {candidate.medicalAgreementTimestamp}
                                         </label>
                                     </div>
                                 </div>

@@ -166,3 +166,7 @@
 .medical-details-input {
     width: 100%;
 }
+
+.candidate-page-agreement-edit {
+    background-color: var(--BGC);
+}

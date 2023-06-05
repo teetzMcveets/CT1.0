@@ -74,6 +74,7 @@ export const arnieMcVeighty = {
     nightCauseIllness: 'No',
     nightCauseIllnessYes: '',
     OHADiscussion: 'No',
+    medicalAgreementTimestamp: '',
 }
 
 export const danMilverton = {

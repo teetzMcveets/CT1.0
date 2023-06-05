@@ -31,6 +31,7 @@ export default function CandidateDetails() {
     })
     const [updatedMedicalQuestions, setUpdatedMedicalQuestions] = useState({
         ...candidate,
+        medicalAgreementTimestamp: null,
     })
 
     const toggleEdit = () => {
@@ -152,6 +153,23 @@ export default function CandidateDetails() {
             })) 
         }
     }
+
+    const handleMedicalAgreementChange = (e) => {
+        if (e.target.checked) {
+            const now = new Date()
+            const dateString = now.toLocaleDateString();
+            setUpdatedMedicalQuestions(prevState => ({
+                ...prevState,
+                medicalAgreementTimestamp: dateString,
+            }));
+        } else {
+            setUpdatedMedicalQuestions(prevState => ({
+                ...prevState,
+                medicalAgreementTimestamp: null,
+            }));
+        }
+        changesMade.current = true;
+    };
 
     const handleSave = () => {
         const pathName = location.pathname;
@@ -284,6 +302,7 @@ export default function CandidateDetails() {
                                                 handleOnChange={handleUpdatedForm}
                                                 edit={toggleEdit}
                                                 save={handleSave}
+                                                handleMedicalAgreementChange={handleMedicalAgreementChange}
                                             />
                                     }
                                 />
