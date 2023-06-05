@@ -157,3 +157,12 @@
 .candidate-page-declaration-words {
     padding: 0 20px;
 }
+
+.medical-rad-answer-edit {
+    background-color: var(--BGC);
+    border: 2px solid var(--BGC);
+}
+
+.medical-details-input {
+    width: 100%;
+}

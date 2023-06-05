@@ -66,7 +66,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                     </div>
 
                                     <div className='candidate-page-detail-answer'>
-                                        <div className='candidate-page-detail-answer-container'>
+                                        <div className='candidate-page-detail-answer-container medical-details-input'>
                                             {candidate.diabetesYes}
                                         </div>
                                     </div>
@@ -110,7 +110,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                     </div>
 
                                     <div className='candidate-page-detail-answer'>
-                                        <div className='candidate-page-detail-answer-container'>
+                                        <div className='candidate-page-detail-answer-container medical-details-input'>
                                             {candidate.heartCirculatoryYes}
                                         </div>
                                     </div>
@@ -154,8 +154,8 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                     </div>
 
                                     <div className='candidate-page-detail-answer'>
-                                        <div className='candidate-page-detail-answer-container'>
-                                            {candidate.heartCirculatoryYes}
+                                        <div className='candidate-page-detail-answer-container medical-details-input'>
+                                            {candidate.stomachIntestinalYes}
                                         </div>
                                     </div>
                                 </>
@@ -198,7 +198,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                     </div>
 
                                     <div className='candidate-page-detail-answer'>
-                                        <div className='candidate-page-detail-answer-container'>
+                                        <div className='candidate-page-detail-answer-container medical-details-input'>
                                             {candidate.difficultySleepingYes}
                                         </div>
                                     </div>
@@ -242,7 +242,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                     </div>
 
                                     <div className='candidate-page-detail-answer'>
-                                        <div className='candidate-page-detail-answer-container'>
+                                        <div className='candidate-page-detail-answer-container medical-details-input'>
                                             {candidate.chronicChestNightYes}
                                         </div>
                                     </div>
@@ -286,7 +286,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                     </div>
 
                                     <div className='candidate-page-detail-answer'>
-                                        <div className='candidate-page-detail-answer-container'>
+                                        <div className='candidate-page-detail-answer-container medical-details-input'>
                                             {candidate.conditionMedicationTimeYes}
                                         </div>
                                     </div>
@@ -330,7 +330,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                     </div>
 
                                     <div className='candidate-page-detail-answer'>
-                                        <div className='candidate-page-detail-answer-container'>
+                                        <div className='candidate-page-detail-answer-container medical-details-input'>
                                             {candidate.conditionMealsTimeYes}
                                         </div>
                                     </div>
@@ -374,7 +374,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                     </div>
 
                                     <div className='candidate-page-detail-answer'>
-                                        <div className='candidate-page-detail-answer-container'>
+                                        <div className='candidate-page-detail-answer-container medical-details-input'>
                                             {candidate.mentalHealthNightsYes}
                                         </div>
                                     </div>
@@ -418,7 +418,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                     </div>
 
                                     <div className='candidate-page-detail-answer'>
-                                        <div className='candidate-page-detail-answer-container'>
+                                        <div className='candidate-page-detail-answer-container medical-details-input'>
                                             {candidate.otherConditionsNightYes}
                                         </div>
                                     </div>
@@ -462,7 +462,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                     </div>
 
                                     <div className='candidate-page-detail-answer'>
-                                        <div className='candidate-page-detail-answer-container'>
+                                        <div className='candidate-page-detail-answer-container medical-details-input'>
                                             {candidate.expectingMotherYes}
                                         </div>
                                     </div>
@@ -506,7 +506,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                     </div>
 
                                     <div className='candidate-page-detail-answer'>
-                                        <div className='candidate-page-detail-answer-container'>
+                                        <div className='candidate-page-detail-answer-container medical-details-input'>
                                             {candidate.nightCauseIllnessYes}
                                         </div>
                                     </div>
@@ -578,7 +578,6 @@ export default function MedicalQuestions ({ candidate, edit }) {
                             </div>
                         </div>
                         
-                    
                     </div>
 
                 </div>
