@@ -71,6 +71,9 @@ export const arnieMcVeighty = {
     otherConditionsNightYes: '',
     expectingMother: 'No',
     expectingMotherYes: '',
+    nightCauseIllness: 'No',
+    nightCauseIllnessYes: '',
+    OHADiscussion: 'No',
 }
 
 export const danMilverton = {

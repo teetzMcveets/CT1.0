@@ -144,3 +144,16 @@
     border: 2px solid var(--s1);
     background-color: var(--s2);
 }
+
+.candidate-page-medical-declaration {
+    display: flex;
+    flex-direction: column;
+}
+
+.candidate-page-declaration-input {
+    display: flex;
+}
+
+.candidate-page-declaration-words {
+    padding: 0 20px;
+}

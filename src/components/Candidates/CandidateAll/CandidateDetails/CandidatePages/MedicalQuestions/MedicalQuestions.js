@@ -469,7 +469,118 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                 </>
                             }
                         </div>
+
+                        <div className='candidate-page-medical-detail-container'>
+                            <div className='candidate-page-medical-detail-label'>
+                                If you have worked at night before, did this cause any illness
+                            </div>
+
+                            <div className='candidate-page-medical-detail-answer'>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer'>
+                                    <input 
+                                        type='radio'
+                                        name='nightCauseIllness'
+                                        value='Yes'
+                                        checked={candidate.nightCauseIllness === 'Yes'}
+                                    />
+                                    <label className='candidate-page-medical-rad-label'>
+                                        Yes
+                                    </label>
+                                </div>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer'>
+                                    <input 
+                                        type='radio'
+                                        name='nightCauseIllness'
+                                        value='No'
+                                        checked={candidate.nightCauseIllness === 'No'}
+                                    />
+                                    <label className='candidate-page-medical-rad-label'>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            {candidate.nightCauseIllness === 'Yes' &&
+                                <>
+                                    <div className='candidate-page-medical-detail-label'>
+                                        Details
+                                    </div>
+
+                                    <div className='candidate-page-detail-answer'>
+                                        <div className='candidate-page-detail-answer-container'>
+                                            {candidate.nightCauseIllnessYes}
+                                        </div>
+                                    </div>
+                                </>
+                            }
+                        </div>
+
+                        <div className='candidate-page-medical-detail-container'>
+                            <div className='candidate-page-medical-detail-label'>
+                                Would you like to discuss these with an Occupational Health Adviser
+                            </div>
+
+                            <div className='candidate-page-medical-detail-answer'>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer'>
+                                    <input 
+                                        type='radio'
+                                        name='OHADiscussion'
+                                        value='Yes'
+                                        checked={candidate.OHADiscussion === 'Yes'}
+                                    />
+                                    <label className='candidate-page-medical-rad-label'>
+                                        Yes
+                                    </label>
+                                </div>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer'>
+                                    <input 
+                                        type='radio'
+                                        name='OHADiscussion'
+                                        value='No'
+                                        checked={candidate.OHADiscussion === 'No'}
+                                    />
+                                    <label className='candidate-page-medical-rad-label'>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <div className='card-detail-title'>
+                        <div className='card-title'>
+                            Declaration
+                        </div>
+                    </div>
+
+                    <div className='candidate-page-card-container'>
+                        
+                        <div className='candidate-page-medical-declaration'>
+                            
+                            <div className='candidate-page-declaration-words'>
+                                I certify that all the answers given above are true to the best of my knowledge and belief. I understand that no medical details will be divulged without my permission to any person outside Occupational Health, but an opinion about my fitness for night work will be issued to management.
+                            </div>
+                            
+                            <div className='candidate-page-detail-container'>
+                                <div className='candidate-page-detail-label'>
+                                    Agreed
+                                </div>
+
+                                <div className='candidate-page-detail-answer'>
+                                    <div className='candidate-page-detail-answer-container-date'>
+                                        <input
+                                            type='checkbox'
+                                        />
+                                        <label className='candidate-page-checkbox-label'>
+                                            dateAgreed
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    
+                    </div>
+
                 </div>
             </div>
         </>
