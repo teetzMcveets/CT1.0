@@ -54,14 +54,14 @@ export default function BankDetailsForm ({
                                     onChange={(e) => handleOnChange('payrollMethod', e.target.value)}
                                 >
                                     <option value=''>Please select</option>
-                                    <option value='limitedCompany'>Limited Company</option>
+                                    <option value='Limited Company'>Limited Company</option>
                                     <option value='PAYE'>PAYE</option>
                                     <option value='Umbrella'>Umbrella</option>
                                 </select>
                             </div>
                         </div>
 
-                        {updatedBankDetails.payrollMethod === 'limitedCompany' &&
+                        {updatedBankDetails.payrollMethod === 'Limited Company' &&
                             <>
                                 <div className='candidate-page-detail-container'>
                                     <div className='candidate-page-detail-label'>
@@ -118,6 +118,41 @@ export default function BankDetailsForm ({
                                             value={updatedBankDetails.LTDIncorporationDate}
                                             onChange={(e) => handleOnChange('LTDIncorporationDate', e.target.value)}
                                         />
+                                    </div>
+                                </div>
+
+                                <div className='candidate-page-detail-container'>
+                                    <div className='candidate-page-detail-label'>
+                                        Your Company VAT number
+                                    </div>
+
+                                    <div className='candidate-page-detail-answer'>
+                                        <div className='GB-box'>
+                                            GB
+                                        </div>
+                                        <input 
+                                            type='tel'
+                                            className='candidate-page-input-date'
+                                            value={updatedBankDetails.LTDCompanyVATNumber}
+                                            onChange={(e) => handleOnChange('LTDCompanyVATNumber', e.target.value)}
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className='candidate-page-detail-container'>
+                                    <div className='candidate-page-detail-label'>
+                                    </div>
+
+                                    <div className='candidate-page-detail-answer bank-detail-description-text'>
+                                        <div className='one'>
+                                            UK VAT reg number is co,posed of 9 or 12 digits.
+                                        </div>
+                                        <div className='two'>
+                                            GB prefix is not needed.
+                                        </div>
+                                        <div>
+                                            eg. 999999973 or 999999999973
+                                        </div>
                                     </div>
                                 </div>
 

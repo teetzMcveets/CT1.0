@@ -189,3 +189,11 @@
     color: var(--text2);
     padding-right: 20px;
 }
+
+.GB-box {
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    border: 1px solid var(--s2);
+    background-color: var(--s3);
+}

@@ -41,7 +41,7 @@ export default function BankDetails ({ candidate, edit}) {
                         </div>
                     
 
-                        {candidate.payrollMethod === 'limitedCompany' &&
+                        {candidate.payrollMethod === 'Limited Company' &&
                             <>
                                 <div className='candidate-page-detail-container'>
                                     <div className='candidate-page-detail-label'>
@@ -63,6 +63,47 @@ export default function BankDetails ({ candidate, edit}) {
                                     <div className='candidate-page-detail-answer'>
                                         <div className='candidate-page-detail-answer-container'>
                                             {candidate.LTDCompanyNumber}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className='candidate-page-detail-container'>
+                                    <div className='candidate-page-detail-label'>
+                                    </div>
+
+                                    <div className='candidate-page-detail-answer bank-detail-description-text'>
+                                        <div className='one'>
+                                            UK company reg numbers start with 2 characters (optional) and 6-8 digits
+                                        </div>
+                                        <div className='two'>
+                                            eg. 06488522 or SC06488522
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className='candidate-page-detail-container'>
+                                    <div className='candidate-page-detail-label'>
+                                        Company incorporation date
+                                    </div>
+
+                                    <div className='candidate-page-detail-answer'>
+                                        <div className='candidate-page-detail-answer-container'>
+                                            {candidate.LTDIncorporationDate}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className='candidate-page-detail-container'>
+                                    <div className='candidate-page-detail-label'>
+                                        Your company VAT number
+                                    </div>
+
+                                    <div className='candidate-page-detail-answer'>
+                                        <div className='GB-box'>
+                                            GB
+                                        </div>
+                                        <div className='candidate-page-detail-answer-container'>
+                                            {candidate.LTDCompanyVATNumber}
                                         </div>
                                     </div>
                                 </div>
