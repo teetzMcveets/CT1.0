@@ -197,3 +197,34 @@
     border: 1px solid var(--s2);
     background-color: var(--s3);
 }
+
+.candidate-page-emp-statement {
+    padding: var(--small2);
+    display: flex;
+    background-color: var(--s2);
+    border: 1px solid var(--s2);
+    border-radius: 5px;
+    margin: 0 40px;
+}
+
+.candidate-page-emp-statement-edit {
+    background-color: var(--BGC);
+}
+
+.emp-statement-box-one {
+    width: 10%;
+}
+
+.emp-statement-box-two {
+    width: 10%;
+}
+
+.emp-statement-box-three {
+    font-size: 11px;
+    width: 80%;
+}
+
+.employee-statement-container {
+    display: flex;
+    flex-direction: column;
+}

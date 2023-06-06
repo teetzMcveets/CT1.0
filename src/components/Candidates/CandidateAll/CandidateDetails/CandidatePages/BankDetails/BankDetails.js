@@ -107,6 +107,103 @@ export default function BankDetails ({ candidate, edit}) {
                                         </div>
                                     </div>
                                 </div>
+
+                                <div className='candidate-page-detail-container'>
+                                    <div className='candidate-page-detail-label'>
+                                    </div>
+
+                                    <div className='candidate-page-detail-answer bank-detail-description-text'>
+                                        <div className='one'>
+                                            UK VAT reg number is co,posed of 9 or 12 digits.
+                                        </div>
+                                        <div className='two'>
+                                            GB prefix is not needed.
+                                        </div>
+                                        <div>
+                                            eg. 999999973 or 999999999973
+                                        </div>
+                                    </div>
+                                </div>
+                            </>
+                        }
+
+                        {candidate.payrollMethod === 'PAYE' &&
+                            <>
+                                <div className='candidate-page-detail-container'>
+                                    <div className='candidate-page-detail-label'>
+                                        Employee statement
+                                    </div>
+
+                                    <div className='candidate-page-detail-answer'>
+                                    </div>
+                                </div>
+
+                                <div className='candidate-page-detail-container employee-statement-container'>
+                                    <div className='candidate-page-emp-statement'>
+                                        <div className='emp-statement-box-one'>
+                                            <input 
+                                                type='radio'
+                                                name='employeeStatement'
+                                                id='employeeStatement-A'
+                                                value='A'
+                                                checked={candidate.employeeStatement === 'A'}
+                                            />
+                                        </div>
+                                        <div className='emp-statement-box-two'>
+                                            <label htmlFor='employeeStatement-A'>
+                                                A -
+                                            </label>
+                                        </div>
+                                        <div className='emp-statement-box-three'>
+                                            <label htmlFor='employeeStatement-A'>
+                                                This is my first job since last 6 April and I have not been receiving taxable Jobseeker's Allowance, Employment and Support Allowance, taxable incapacity Benefit, State or Occupational Pension.
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div className='candidate-page-emp-statement'>
+                                        <div className='emp-statement-box-one'>
+                                            <input 
+                                                type='radio'
+                                                name='employeeStatement'
+                                                id='employeeStatement-B'
+                                                value='B'
+                                                checked={candidate.employeeStatement === 'B'}
+                                            />
+                                        </div>
+                                        <div className='emp-statement-box-two' >
+                                            <label htmlFor='employeeStatement-B'>
+                                                B -
+                                            </label>
+                                        </div>
+                                        <div className='emp-statement-box-three' >
+                                            <label htmlFor='employeeStatement-B'>
+                                                This is now my only job but since last 6 April I have had another job, or received taxable Jobseeker's Allowance, Employment and Support Allowance or taxable Incapacity Benefit. I do not receive a State or Occupational Pension.
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div className='candidate-page-emp-statement'>
+                                        <div className='emp-statement-box-one'>
+                                            <input 
+                                                type='radio'
+                                                name='employeeStatement'
+                                                id='employeeStatement-C'
+                                                value='C'
+                                                checked={candidate.employeeStatement === 'C'}
+                                            />
+                                        </div>
+                                        <div className='emp-statement-box-two' >
+                                            <label htmlFor='employeeStatement-C'>
+                                                C -
+                                            </label>
+                                        </div>
+                                        <div className='emp-statement-box-three' >
+                                            <label htmlFor='employeeStatement-C'>
+                                                As well as my new job, I have another job ir receive a State or Occupational Pension
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                             </>
                         }
                     </div>

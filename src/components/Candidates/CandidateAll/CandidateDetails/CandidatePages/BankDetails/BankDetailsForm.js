@@ -158,6 +158,89 @@ export default function BankDetailsForm ({
 
                             </>
                         }
+
+                        {updatedBankDetails.payrollMethod === 'PAYE' &&
+                            <>
+                                <div className='candidate-page-detail-container'>
+                                    <div className='candidate-page-detail-label'>
+                                        Employee statement
+                                    </div>
+
+                                    <div className='candidate-page-detail-answer'>
+                                    </div>
+                                </div>
+
+                                <div className='candidate-page-detail-container employee-statement-container'>
+                                    <div className='candidate-page-emp-statement candidate-page-emp-statement-edit'>
+                                        <div className='emp-statement-box-one'>
+                                            <input 
+                                                type='radio'
+                                                name='employeeStatement'
+                                                id='employeeStatement-A'
+                                                value='A'
+                                                checked={updatedBankDetails.employeeStatement === 'A'}
+                                                onChange={(e) => handleOnChange('employeeStatement', e.target.value)}
+                                            />
+                                        </div>
+                                        <div className='emp-statement-box-two'>
+                                            <label htmlFor='employeeStatement-A'>
+                                                A -
+                                            </label>
+                                        </div>
+                                        <div className='emp-statement-box-three'>
+                                            <label htmlFor='employeeStatement-A'>
+                                                This is my first job since last 6 April and I have not been receiving taxable Jobseeker's Allowance, Employment and Support Allowance, taxable incapacity Benefit, State or Occupational Pension.
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div className='candidate-page-emp-statement candidate-page-emp-statement-edit'>
+                                        <div className='emp-statement-box-one'>
+                                            <input 
+                                                type='radio'
+                                                name='employeeStatement'
+                                                id='employeeStatement-B'
+                                                value='B'
+                                                checked={updatedBankDetails.employeeStatement === 'B'}
+                                                onChange={(e) => handleOnChange('employeeStatement', e.target.value)}
+                                            />
+                                        </div>
+                                        <div className='emp-statement-box-two' >
+                                            <label htmlFor='employeeStatement-B'>
+                                                B -
+                                            </label>
+                                        </div>
+                                        <div className='emp-statement-box-three' >
+                                            <label htmlFor='employeeStatement-B'>
+                                                This is now my only job but since last 6 April I have had another job, or received taxable Jobseeker's Allowance, Employment and Support Allowance or taxable Incapacity Benefit. I do not receive a State or Occupational Pension.
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div className='candidate-page-emp-statement candidate-page-emp-statement-edit'>
+                                        <div className='emp-statement-box-one'>
+                                            <input 
+                                                type='radio'
+                                                name='employeeStatement'
+                                                id='employeeStatement-C'
+                                                value='C'
+                                                checked={updatedBankDetails.employeeStatement === 'C'}
+                                                onChange={(e) => handleOnChange('employeeStatement', e.target.value)}
+                                            />
+                                        </div>
+                                        <div className='emp-statement-box-two' >
+                                            <label htmlFor='employeeStatement-C'>
+                                                C -
+                                            </label>
+                                        </div>
+                                        <div className='emp-statement-box-three' >
+                                            <label htmlFor='employeeStatement-C'>
+                                                As well as my new job, I have another job ir receive a State or Occupational Pension
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </>
+                        }
                     </div>
 
                 </div>
