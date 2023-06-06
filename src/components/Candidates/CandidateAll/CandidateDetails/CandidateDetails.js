@@ -25,6 +25,7 @@ export default function CandidateDetails() {
     const changesMade = useRef(false);
     const navigate = useNavigate();
 
+    // STATE FOR EACH PAGE
     const [updatedPrimaryQuestions, setUpdatedPrimaryQuestions] = useState({
         ...candidate,
     })
@@ -39,6 +40,7 @@ export default function CandidateDetails() {
         ...candidate,
     })
 
+    // TOGGLE EDIT FOR EACH PAGE
     const toggleEdit = () => {
         if (isEditing && changesMade.current && !window.confirm('Unsaved changes will be lost. Continue?')) {
             return;
@@ -59,6 +61,7 @@ export default function CandidateDetails() {
         setIsEditing(!isEditing);
     }
 
+    // HANDLE STATE LOCALLY FOR EACH PAGE
     const handleUpdatedForm = (field, value) => {
         const pathName = location.pathname;
 
@@ -87,6 +90,7 @@ export default function CandidateDetails() {
         changesMade.current = true;
     }
 
+    // ACCESS CHANGE IN PRIMARY QUESTIONS
     const handleAccessChange = (e, accessValue) => {    
         if (e.target.checked) {
             if (!candidate.access.includes(accessValue)) {
@@ -103,6 +107,7 @@ export default function CandidateDetails() {
         }
     };
 
+    // CONTACT PREFERENCE CHANGE IN PRIMARY QUESTIONS
     const handleContactPrefChange = (e, contactPrefValue) => {
         if (e.target.checked) {
             if (!candidate.contactPref.includes(contactPrefValue)) {
@@ -119,6 +124,8 @@ export default function CandidateDetails() {
         }
     };
 
+
+    // PPE OWNED CHANGE IN PREFERENCE QUESTIONS
     const handlePPEOwnedChange = (e, ppeOwnedValue) => {
         if (e.target.checked) {
             if (!candidate.ppeOwned.includes(ppeOwnedValue)) {
@@ -135,6 +142,7 @@ export default function CandidateDetails() {
         }
     };
 
+    // WEEKDAY AVAILABLE CHANGE IN PRIMARY QUESTIONS
     const handleWeekDaysChange = (e, weekDaysValue) => {
         if (e.target.checked) {
             if(!candidate.weekDays.includes(weekDaysValue)) {
@@ -151,6 +159,7 @@ export default function CandidateDetails() {
         }
     };
 
+    // SHIFT CHANGE HANDLED IN PREFERENCE QUESTIONS
     const handleShiftsChange = (e, shiftsValue) => {
         if (e.target.checked) {
             if(!candidate.shifts.includes(shiftsValue)) {
@@ -167,6 +176,7 @@ export default function CandidateDetails() {
         }
     }
 
+    //MEDICAL AGREEMENT DATE FOR MEDICAL QUESTIONS
     const handleMedicalAgreementChange = (e) => {
         if (e.target.checked) {
             const now = new Date()
@@ -184,6 +194,17 @@ export default function CandidateDetails() {
         changesMade.current = true;
     };
 
+    // GET ONE YEAR ON FROM OHA DATE CONFIRMED
+    const getOneYearAhead = (date) => {
+        if (!date) return '';
+
+        const dateObject = new Date(date);
+        dateObject.setFullYear(dateObject.getFullYear() + 1);
+
+        return dateObject.toISOString().substring(0, 10);
+    }
+
+    // HANDLE SAVE FOR EACH PAGE
     const handleSave = () => {
         const pathName = location.pathname;
         let updatedQuestions;
@@ -206,6 +227,7 @@ export default function CandidateDetails() {
         changesMade.current = false;
     }
 
+    // STOP BEFORE LOSING UNSAVED DATA
     useEffect(() => {
         const warnUserAboutUnsavedChanges = (e) => {
             if (!isEditing || !changesMade.current) {
@@ -318,6 +340,7 @@ export default function CandidateDetails() {
                                                 edit={toggleEdit}
                                                 save={handleSave}
                                                 handleMedicalAgreementChange={handleMedicalAgreementChange}
+                                                getOneYearAhead={getOneYearAhead}
                                             />
                                     }
                                 />

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../CandidateDetailsForm.css';
+import getToday from '../../../../../../utilities/getToday';
 
 export default function MedicalQuestionsForm ({
     save,
@@ -7,7 +8,8 @@ export default function MedicalQuestionsForm ({
     candidate,
     updatedMedicalQuestions,
     handleOnChange,
-    handleMedicalAgreementChange
+    handleMedicalAgreementChange,
+    getOneYearAhead,
 }) {
     
     return (
@@ -680,6 +682,199 @@ export default function MedicalQuestionsForm ({
                         </div>
                     </div>
 
+                    <div className='card-detail-title'>
+                        <div className='card-title'>
+                            For Occupational Health
+                        </div>
+                    </div>
+                    
+                    <div className='candidate-page-card-container'>
+
+                        <div className='candidate-page-medical-detail-container'>
+                            <div className='candidate-page-medical-detail-label'>
+                                Suitable to continue night working
+                            </div>
+
+                            <div className='candidate-page-medical-detail-answer'>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer-edit'>
+                                    <input 
+                                        type='radio'
+                                        name='continueNightWorking'
+                                        id='continueNightWorking-yes'
+                                        value='Yes'
+                                        checked={updatedMedicalQuestions.continueNightWorking === 'Yes'}
+                                        onChange={(e) => handleOnChange('continueNightWorking', e.target.value)}
+                                    />
+                                    <label className='candidate-page-medical-rad-label' htmlFor='continueNightWorking-yes'>
+                                        Yes
+                                    </label>
+                                </div>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer-edit'>
+                                    <input 
+                                        type='radio'
+                                        name='continueNightWorking'
+                                        id='continueNightWorking-no'
+                                        value='No'
+                                        checked={updatedMedicalQuestions.continueNightWorking === 'No'}
+                                        onChange={(e) => handleOnChange('continueNightWorking', e.target.value)}
+                                    />
+                                    <label className='candidate-page-medical-rad-label' htmlFor='continueNightWorking-no'>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-medical-detail-container'>
+                            <div className='candidate-page-medical-detail-label'>
+                                Requires OHA telephone review
+                            </div>
+
+                            <div className='candidate-page-medical-detail-answer'>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer-edit'>
+                                    <input 
+                                        type='radio'
+                                        name='OHATelephoneReview'
+                                        id='OHATelephoneReview-yes'
+                                        value='Yes'
+                                        checked={updatedMedicalQuestions.OHATelephoneReview === 'Yes'}
+                                        onChange={(e) => handleOnChange('OHATelephoneReview', e.target.value)}
+                                    />
+                                    <label className='candidate-page-medical-rad-label' htmlFor='OHATelephoneReview-yes'>
+                                        Yes
+                                    </label>
+                                </div>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer-edit'>
+                                    <input 
+                                        type='radio'
+                                        name='OHATelephoneReview'
+                                        id='OHATelephoneReview-no'
+                                        value='No'
+                                        checked={updatedMedicalQuestions.OHATelephoneReview === 'No'}
+                                        onChange={(e) => handleOnChange('OHATelephoneReview', e.target.value)}
+                                    />
+                                    <label className='candidate-page-medical-rad-label' htmlFor='OHATelephoneReview-no'>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div className='candidate-page-medical-detail-container'>
+                            <div className='candidate-page-medical-detail-label'>
+                                Requires OHA night worker health assessment
+                            </div>
+
+                            <div className='candidate-page-medical-detail-answer'>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer-edit'>
+                                    <input 
+                                        type='radio'
+                                        name='OHAHealthAssessment'
+                                        id='OHAHealthAssessment-yes'
+                                        value='Yes'
+                                        checked={updatedMedicalQuestions.OHAHealthAssessment === 'Yes'}
+                                        onChange={(e) => handleOnChange('OHAHealthAssessment', e.target.value)}
+                                    />
+                                    <label className='candidate-page-medical-rad-label' htmlFor='OHAHealthAssessment-yes'>
+                                        Yes
+                                    </label>
+                                </div>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer-edit'>
+                                    <input 
+                                        type='radio'
+                                        name='OHAHealthAssessment'
+                                        id='OHAHealthAssessment-no'
+                                        value='No'
+                                        checked={updatedMedicalQuestions.OHAHealthAssessment === 'No'}
+                                        onChange={(e) => handleOnChange('OHAHealthAssessment', e.target.value)}
+                                    />
+                                    <label className='candidate-page-medical-rad-label' htmlFor='OHAHealthAssessment-no'>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-medical-detail-container'>
+                            <div className='candidate-page-medical-detail-label'>
+                                Requires OHP referral
+                            </div>
+
+                            <div className='candidate-page-medical-detail-answer'>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer-edit'>
+                                    <input 
+                                        type='radio'
+                                        name='OHPReferral'
+                                        id='OHPReferral-yes'
+                                        value='Yes'
+                                        checked={updatedMedicalQuestions.OHPReferral === 'Yes'}
+                                        onChange={(e) => handleOnChange('OHPReferral', e.target.value)}
+                                    />
+                                    <label className='candidate-page-medical-rad-label' htmlFor='OHPReferral-yes'>
+                                        Yes
+                                    </label>
+                                </div>
+                                <div className='candidate-page-rad-single-answer medical-rad-answer-edit'>
+                                    <input 
+                                        type='radio'
+                                        name='OHPReferral'
+                                        id='OHPReferral-no'
+                                        value='No'
+                                        checked={updatedMedicalQuestions.OHPReferral === 'No'}
+                                        onChange={(e) => handleOnChange('OHPReferral', e.target.value)}
+                                    />
+                                    <label className='candidate-page-medical-rad-label' htmlFor='OHPReferral-no'>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-medical-detail-container'>
+                            <div className='candidate-page-medical-detail-label'>
+                                Date OHA Answers
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <input 
+                                    type='date'
+                                    className='candidate-page-input-date'
+                                    value={updatedMedicalQuestions.OHAdateConfirmed}
+                                    onChange={(e) => {
+                                        handleOnChange('OHAdateConfirmed', e.target.value);
+                                        handleOnChange('OHARecallDate', getOneYearAhead(e.target.value));
+                                    }}
+                                />
+                                <button 
+                                    className='button-primary'
+                                    onClick={() => {
+                                        const today = getToday();
+                                        handleOnChange('OHAdateConfirmed', today);
+                                        handleOnChange('OHARecallDate', getOneYearAhead(today));
+                                    }}
+                                >
+                                    Today
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-medical-detail-container'>
+                            <div className='candidate-page-medical-detail-label'>
+                                Recall Date
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <input 
+                                    type='date'
+                                    disabled
+                                    className='candidate-page-input-date candidate-page-disabled-input'
+                                    value={updatedMedicalQuestions.OHARecallDate}
+                                />
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </>

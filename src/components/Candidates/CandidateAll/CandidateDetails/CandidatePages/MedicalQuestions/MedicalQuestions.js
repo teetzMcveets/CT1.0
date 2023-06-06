@@ -713,6 +713,30 @@ export default function MedicalQuestions ({ candidate, edit }) {
                             </div>
                         </div>
 
+                        <div className='candidate-page-medical-detail-container'>
+                            <div className='candidate-page-medical-detail-label'>
+                                Date OHA Answers
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container-date'>
+                                    {candidate.OHAdateConfirmed}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-medical-detail-container'>
+                            <div className='candidate-page-medical-detail-label'>
+                                Recall Date
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container-date'>
+                                    {candidate.OHARecallDate}
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
