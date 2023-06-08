@@ -30,8 +30,9 @@ export default function SkillsDriving () {
                             <div className='skills-single-line'>
                                 <input 
                                     type='checkbox'
+                                    id='box'
                                 />
-                                <label className='skills-box-label'>
+                                <label className='skills-box-label' htmlFor='box'>
                                     Box
                                 </label>
                             </div>
