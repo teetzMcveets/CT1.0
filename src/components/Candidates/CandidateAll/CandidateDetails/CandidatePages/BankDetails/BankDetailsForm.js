@@ -34,6 +34,60 @@ export default function BankDetailsForm ({
 
                 <div className='candidate-page-full-page'> 
 
+                <div className='card-detail-title'>
+                        <div className='card-title'>
+                            Bank Details
+                        </div>
+                    </div>
+
+                    <div className='candidate-page-card-container'>
+                        
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Account holder name
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <input 
+                                    type='text'
+                                    className='candidate-page-input'
+                                    value={updatedBankDetails.accountHolderName}
+                                    onChange={(e) => handleOnChange('accountHolderName', e.target.value)}
+                                />
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Bank account number
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <input 
+                                    type='tel'
+                                    className='candidate-page-input'
+                                    value={updatedBankDetails.accountNumber}
+                                    onChange={(e) => handleOnChange('accountNumber', e.target.value)}
+                                />
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Bank account sort code
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <input 
+                                    type='tel'
+                                    className='candidate-page-input'
+                                    value={updatedBankDetails.sortCode}
+                                    onChange={(e) => handleOnChange('sortCode', e.target.value)}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
                     <div className='card-detail-title'>
                         <div className='card-title'>
                             Payroll Method
@@ -238,10 +292,253 @@ export default function BankDetailsForm ({
                                         </div>
                                     </div>
                                 </div>
+
+                                <div className='candidate-page-detail-container'>
+                                    <div className='candidate-page-detail-label'>
+                                        Do you have a student loan which is not fully repaid
+                                    </div>
+
+                                    <div className='candidate-page-detail-answer'>
+
+                                        <div className='candidate-page-rad-answer-container'>
+                                            
+                                            <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                                <input 
+                                                    type='radio'
+                                                    name='studentLoanPaid'
+                                                    id='studentLoanPaid-yes'
+                                                    value='Yes'
+                                                    checked={updatedBankDetails.studentLoanPaid === 'Yes'}
+                                                    onChange={(e) => handleOnChange('studentLoanPaid', e.target.value)}
+                                                />
+                                                <label htmlFor='studentLoanPaid-yes' className='candidate-page-rad-label'>
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                                <input 
+                                                    type='radio'
+                                                    name='studentLoanPaid'
+                                                    id='studentLoanPaid-no'
+                                                    value='No'
+                                                    checked={updatedBankDetails.studentLoanPaid === 'No'}
+                                                    onChange={(e) => handleOnChange('studentLoanPaid', e.target.value)}
+                                                />
+                                                <label className='candidate-page-rad-label' htmlFor='studentLoanPaid-no'>
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className='candidate-page-detail-container'>
+                                    <div className='candidate-page-detail-label'>
+                                        Did you finish your studies before the last 6 April
+                                    </div>
+
+                                    <div className='candidate-page-detail-answer'>
+
+                                        <div className='candidate-page-rad-answer-container'>
+                                            
+                                            <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                                <input 
+                                                    type='radio'
+                                                    name='finishStudies'
+                                                    id='finishStudies-yes'
+                                                    value='Yes'
+                                                    checked={updatedBankDetails.finishStudies === 'Yes'}
+                                                    onChange={(e) => handleOnChange('finishStudies', e.target.value)}
+                                                />
+                                                <label htmlFor='finishStudies-yes' className='candidate-page-rad-label'>
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                                <input 
+                                                    type='radio'
+                                                    name='finishStudies'
+                                                    id='finishStudies-no'
+                                                    value='No'
+                                                    checked={updatedBankDetails.finishStudies === 'No'}
+                                                    onChange={(e) => handleOnChange('finishStudies', e.target.value)}
+                                                />
+                                                <label className='candidate-page-rad-label' htmlFor='finishStudies-no'>
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 
                             </>
                         }
+
+                        {updatedBankDetails.payrollMethod === 'Umbrella' &&
+                            <>
+                                <div className='candidate-page-detail-container'>
+                                    <div className='candidate-page-detail-label'>
+                                        Umbrella Company
+                                    </div>
+
+                                    <div className='candidate-page-detail-answer'>
+                                        <select 
+                                            type='text'
+                                            className='candidate-page-input'
+                                            value={updatedBankDetails.umbrellaCompany}
+                                            onChange={(e) => handleOnChange('umbrellaCompany', e.target.value)}
+                                        >
+                                            <option value=''>Please select</option>
+                                            <option value='HGV EDM'>HGV EDM</option>
+                                            <option value='HirePAY LTD'>HirePAY LTD</option>
+                                            <option value='HirePAYE'>HirePAYE</option>
+                                            <option value='Nova'>Nova</option>
+                                            <option value='Pegasus Outsource'>Pegasus Outsource</option>
+                                            <option value='PJ Payroll Services'>PJ Payroll Services</option>
+                                            <option value='Thames Outsourcing'>Thames Outsourcing</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </>
+                        }
                     </div>
+
+                    <div className='card-detail-title'>
+                        <div className='card-title'>
+                            Pay Information
+                        </div>
+                    </div>
+
+                    <div className='candidate-page-card-container'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Pay method
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+
+                                <div className='candidate-page-rad-answer-container'>
+                                    <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                        <input 
+                                            type='radio'
+                                            name='payMethod'
+                                            id='payMethod-bacs'
+                                            value='BACS'
+                                            checked={updatedBankDetails.payMethod === 'BACS'}
+                                            onChange={(e) => handleOnChange('payMethod', e.target.value)}
+                                        />
+                                        <label htmlFor='payMethod-bacs' className='candidate-page-rad-label'>
+                                            BACS
+                                        </label>
+                                    </div>
+                                    <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                        <input 
+                                            type='radio'
+                                            name='payMethod'
+                                            id='payMethod-cash'
+                                            value='Cash'
+                                            checked={updatedBankDetails.payMethod === 'Cash'}
+                                            onChange={(e) => handleOnChange('payMethod', e.target.value)}
+                                        />
+                                        <label className='candidate-page-rad-label' htmlFor='payMethod-cash'>
+                                            Cash
+                                        </label>
+                                    </div>
+                                    <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                        <input 
+                                            type='radio'
+                                            name='payMethod'
+                                            id='payMethod-ppc'
+                                            value='Pre-paid Card'
+                                            checked={updatedBankDetails.payMethod === 'Pre-paid Card'}
+                                            onChange={(e) => handleOnChange('payMethod', e.target.value)}
+                                        />
+                                        <label className='candidate-page-rad-label' htmlFor='payMethod-ppc'>
+                                            Pre-paid Card
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>   
+                            <div className='candidate-page-detail-label'>
+                                P60 received
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+
+                                <div className='candidate-page-rad-answer-container'>
+                                <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                        <input 
+                                            type='radio'
+                                            name='p60Received'
+                                            id='p60Received-yes'
+                                            value='Yes'
+                                            checked={updatedBankDetails.p60Received === 'Yes'}
+                                            onChange={(e) => handleOnChange('p60Received', e.target.value)}
+                                        />
+                                        <label htmlFor='p60Received-yes' className='candidate-page-rad-label'>
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                        <input 
+                                            type='radio'
+                                            name='p60Received'
+                                            id='p60Received-no'
+                                            value='No'
+                                            checked={updatedBankDetails.p60Received === 'No'}
+                                            onChange={(e) => handleOnChange('p60Received', e.target.value)}
+                                        />
+                                        <label className='candidate-page-rad-label' htmlFor='p60Received-no'>
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>   
+                            <div className='candidate-page-detail-label'>
+                                Apprentice
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+
+                                <div className='candidate-page-rad-answer-container'>
+                                <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                        <input 
+                                            type='radio'
+                                            name='apprentice'
+                                            id='apprentice-yes'
+                                            value='Yes'
+                                            checked={updatedBankDetails.apprentice === 'Yes'}
+                                            onChange={(e) => handleOnChange('apprentice', e.target.value)}
+                                        />
+                                        <label htmlFor='apprentice-yes' className='candidate-page-rad-label'>
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                        <input 
+                                            type='radio'
+                                            name='apprentice'
+                                            id='apprentice-no'
+                                            value='No'
+                                            checked={updatedBankDetails.apprentice === 'No'}
+                                            onChange={(e) => handleOnChange('apprentice', e.target.value)}
+                                        />
+                                        <label className='candidate-page-rad-label' htmlFor='apprentice-no'>
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                        
 
                 </div>
             </div>

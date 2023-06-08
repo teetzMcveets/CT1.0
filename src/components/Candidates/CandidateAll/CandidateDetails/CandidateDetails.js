@@ -14,6 +14,9 @@ import MedicalQuestions from './CandidatePages/MedicalQuestions/MedicalQuestions
 import MedicalQuestionsForm from './CandidatePages/MedicalQuestions/MedicalQuestionsForm';
 import BankDetails from './CandidatePages/BankDetails/BankDetails';
 import BankDetailsForm from './CandidatePages/BankDetails/BankDetailsForm';
+import SkillsDriving from './CandidatePages/Skills/Driving/SkillsDriving';
+import SkillsDrivingForm from './CandidatePages/Skills/Driving/SkillsDrivingForm';
+
 
 
 export default function CandidateDetails() {
@@ -39,6 +42,9 @@ export default function CandidateDetails() {
     const [updatedBankDetails, setUpdatedBankDetails] = useState({
         ...candidate,
     })
+    const [updatedSkills, setUpdatedSkills] = useState({
+        ...candidate,
+    })
 
     // TOGGLE EDIT FOR EACH PAGE
     const toggleEdit = () => {
@@ -53,7 +59,13 @@ export default function CandidateDetails() {
             setUpdatedPreferenceQuestions({
                 ...candidate,
             })
+            setUpdatedMedicalQuestions({
+                ...candidate,
+            })
             setUpdatedBankDetails({
+                ...candidate,
+            })
+            setUpdatedSkills({
                 ...candidate,
             })
             changesMade.current = false;
@@ -85,7 +97,12 @@ export default function CandidateDetails() {
                 ...prevState,
                 [field]: value,
             }))
-        }
+        } else if (pathName.endsWith('skills-driving')) {
+            setUpdatedSkills(prevState => ({
+                ...prevState,
+                [field]: value
+            }))
+        } else if (pathName.endsWith('skills-industrial'))
 
         changesMade.current = true;
     }
@@ -217,8 +234,11 @@ export default function CandidateDetails() {
             updatedQuestions = updatedMedicalQuestions
         } else if (pathName.endsWith('bank-details')) {
             updatedQuestions = updatedBankDetails
+        } else if (pathName.endsWith('skills-driving')) {
+            updatedQuestions = updatedSkills
+        } else if (pathName.endsWith('skills-industrial')) {
+            updatedQuestions = updatedSkills
         }
-
         if (updatedQuestions) {
             dispatch(updateCandidate(updatedQuestions));
             setIsEditing(false)
@@ -357,6 +377,25 @@ export default function CandidateDetails() {
                                             <BankDetailsForm
                                                 candidate={candidate}
                                                 updatedBankDetails={updatedBankDetails}
+                                                handleOnChange={handleUpdatedForm}
+                                                edit={toggleEdit}
+                                                save={handleSave}
+                                            />
+                                    }
+                                />
+                                <Route 
+                                    path='skills-driving'
+                                    element={
+                                        !isEditing ?
+                                            <SkillsDriving
+                                                candidate={candidate}
+                                                edit={toggleEdit}
+                                                isEditing={isEditing}
+                                            />
+                                            :
+                                            <SkillsDrivingForm 
+                                                candidate={candidate}
+                                                updatedSkills={updatedSkills}
                                                 handleOnChange={handleUpdatedForm}
                                                 edit={toggleEdit}
                                                 save={handleSave}
