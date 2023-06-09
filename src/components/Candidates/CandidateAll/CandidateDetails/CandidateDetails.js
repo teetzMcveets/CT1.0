@@ -16,6 +16,9 @@ import BankDetails from './CandidatePages/BankDetails/BankDetails';
 import BankDetailsForm from './CandidatePages/BankDetails/BankDetailsForm';
 import SkillsDriving from './CandidatePages/Skills/Driving/SkillsDriving';
 import SkillsDrivingForm from './CandidatePages/Skills/Driving/SkillsDrivingForm';
+import SkillsIndustrial from './CandidatePages/Skills/Industrial/SkillsIndustrial';
+import SkillsIndustrialForm from './CandidatePages/Skills/Industrial/SkillsIndustrialForm';
+
 
 
 
@@ -102,7 +105,12 @@ export default function CandidateDetails() {
                 ...prevState,
                 [field]: value
             }))
-        } else if (pathName.endsWith('skills-industrial'))
+        } else if (pathName.endsWith('skills-industrial')) {
+            setUpdatedSkills(prevState => ({
+                ...prevState,
+                [field]: value
+            }))
+        }
 
         changesMade.current = true;
     }
@@ -506,6 +514,22 @@ export default function CandidateDetails() {
                                                 handleCertificatesChange={handleCertificatesChange}
                                                 handleWorkCriteriaChange={handleWorkCriteriaChange}
                                                 handleOtherVehiclesChange={handleOtherVehiclesChange}
+                                            />
+                                    }
+                                />
+                                <Route 
+                                    path='skills-industrial'
+                                    element={
+                                        !isEditing ?
+                                            <SkillsIndustrial
+                                                candidate={candidate}
+                                                edit={toggleEdit}
+                                                isEditing={isEditing}
+                                            />
+                                            :
+                                            <SkillsIndustrialForm
+                                                edit={toggleEdit}
+                                                save={handleSave}
                                             />
                                     }
                                 />
