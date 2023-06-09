@@ -232,16 +232,23 @@
 .skills-box-container {
     display: flex;
     justify-content: center;
-    padding: 0 20px;
 }
 
 .skills-single-line {
-    border: 1px solid white;
-    width: 30%;
+    border: 2px solid var(--s1);
+    border-radius: 5px;
+    background-color: var(--s2);
+    width: 31%;
     display: flex;
-    padding: 5px;
+    padding: 10px;
+}
+.skills-single-line-edit {
+    background-color: var(---BGC);
+    border: 2px solid var(--BGC);
+    border-radius: 5px;
 }
 
 .skills-box-label {
     padding-left: 5px;
+    font-size: 10px;
 }

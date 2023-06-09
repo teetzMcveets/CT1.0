@@ -108,89 +108,89 @@ export default function CandidateDetails() {
     }
 
     // ACCESS CHANGE IN PRIMARY QUESTIONS
-    const handleAccessChange = (e, accessValue) => {    
-        if (e.target.checked) {
-            if (!candidate.access.includes(accessValue)) {
-                setUpdatedPrimaryQuestions(prevState => ({
+    const handleAccessChange = (e, accessValue) => {
+        setUpdatedPrimaryQuestions(prevState => {
+            if (e.target.checked) {
+                return {
                     ...prevState,
-                    access: [ ...prevState.access, accessValue ]
-                }));
+                    access: [...prevState.access, accessValue]
+                };
+            } else {
+                return {
+                    ...prevState,
+                    access: prevState.access.filter(value => value !== accessValue)
+                }
             }
-        } else {
-            setUpdatedPrimaryQuestions(prevState => ({
-                ...prevState, 
-                access: prevState.access.filter(value => value !== accessValue)
-            }));
-        }
-    };
+        })
+    }
 
     // CONTACT PREFERENCE CHANGE IN PRIMARY QUESTIONS
     const handleContactPrefChange = (e, contactPrefValue) => {
-        if (e.target.checked) {
-            if (!candidate.contactPref.includes(contactPrefValue)) {
-                setUpdatedPrimaryQuestions(prevState => ({
+        setUpdatedPrimaryQuestions(prevState => {
+            if(e.target.checked) {
+                return {
                     ...prevState,
-                    contactPref: [ ...prevState.contactPref, contactPrefValue ]
-                }));
+                    contactPref: [...prevState.contactPref, contactPrefValue]
+                };
+            } else {
+                return {
+                    ...prevState,
+                    contactPref: [...prevState.contactValue.filter(value => value !== contactPrefValue)]
+                }
             }
-        } else {
-            setUpdatedPrimaryQuestions(prevState => ({
-                ...prevState, 
-                contactPref: prevState.contactPref.filter(value => value !== contactPrefValue)
-            }));
-        }
-    };
+        })
+    }
 
 
     // PPE OWNED CHANGE IN PREFERENCE QUESTIONS
     const handlePPEOwnedChange = (e, ppeOwnedValue) => {
-        if (e.target.checked) {
-            if (!candidate.ppeOwned.includes(ppeOwnedValue)) {
-                setUpdatedPreferenceQuestions(prevState => ({
+        setUpdatedPreferenceQuestions(prevState => {
+            if (e.target.checked) {
+                return {
                     ...prevState,
-                    ppeOwned: [ ...prevState.ppeOwned, ppeOwnedValue ]
-                }));
-            }           
-        } else {
-            setUpdatedPreferenceQuestions(prevState => ({
-                ...prevState,
-                ppeOwned: prevState.ppeOwned.filter(value => value !== ppeOwnedValue)
-            }));
-        }
+                    ppeOwned: [ ...prevState.ppeOwned, ppeOwnedValue]
+                };
+            } else {
+                return {
+                    ...prevState,
+                    ppeOwned: [...prevState.ppeOwned.filter(value => value !== ppeOwnedValue)]
+                }
+            }
+        })
     };
 
     // WEEKDAY AVAILABLE CHANGE IN PRIMARY QUESTIONS
     const handleWeekDaysChange = (e, weekDaysValue) => {
-        if (e.target.checked) {
-            if(!candidate.weekDays.includes(weekDaysValue)) {
-                setUpdatedPreferenceQuestions(prevState => ({
-                    ...prevState, 
-                    weekDays: [ ...prevState.weekDays, weekDaysValue ]
-                }));
+        setUpdatedPreferenceQuestions(prevState => {
+            if (e.target.checked) {
+                return {
+                    ...prevState,
+                    weekDays: [...prevState.weekDays, weekDaysValue]
+                };
+            } else {
+                return {
+                    ...prevState,
+                    weekDays: [...prevState.weekDays.filter(value => value !== weekDaysValue)]
+                }
             }
-        } else {
-            setUpdatedPreferenceQuestions(prevState => ({
-                ...prevState,
-                weekDays: prevState.weekDays.filter(value => value !== weekDaysValue)
-            }));
-        }
+        })
     };
 
     // SHIFT CHANGE HANDLED IN PREFERENCE QUESTIONS
     const handleShiftsChange = (e, shiftsValue) => {
-        if (e.target.checked) {
-            if(!candidate.shifts.includes(shiftsValue)) {
-                setUpdatedPreferenceQuestions(prevState => ({
+        setUpdatedPreferenceQuestions(prevState => {
+            if (e.target.checked) {
+                return {
                     ...prevState,
-                    shifts: [ ...prevState.shifts, shiftsValue]
-                }));
+                    shifts: [...prevState.shifts, shiftsValue]
+                }
+            } else {
+                return {
+                    ...prevState,
+                    shifts: [...prevState.shifts.filter(value => value !== shiftsValue)]
+                }
             }
-        } else {
-            setUpdatedPreferenceQuestions(prevState => ({
-                ...prevState,
-                shifts: prevState.shifts.filter(value => value !== shiftsValue)
-            })) 
-        }
+        })
     }
 
     //MEDICAL AGREEMENT DATE FOR MEDICAL QUESTIONS
@@ -219,6 +219,23 @@ export default function CandidateDetails() {
         dateObject.setFullYear(dateObject.getFullYear() + 1);
 
         return dateObject.toISOString().substring(0, 10);
+    }
+
+    //SKILLS PAGES CHECKBOX TRAILERS
+    const handleTrailersChange = (e, trailersValue) => {
+        setUpdatedSkills(prevState => {
+            if (e.target.checked) {
+                return {
+                    ...prevState,
+                    trailers: [...prevState.trailers, trailersValue]
+                }
+            } else {
+                return {
+                    ...prevState,
+                    trailers: [...prevState.trailers.filter(value => value !== trailersValue)]
+                }
+            }
+        })
     }
 
     // HANDLE SAVE FOR EACH PAGE
@@ -399,6 +416,7 @@ export default function CandidateDetails() {
                                                 handleOnChange={handleUpdatedForm}
                                                 edit={toggleEdit}
                                                 save={handleSave}
+                                                handleTrailersChange={handleTrailersChange}
                                             />
                                     }
                                 />

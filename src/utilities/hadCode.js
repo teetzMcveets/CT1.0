@@ -75,6 +75,8 @@ export const arnieMcVeighty = {
     nightCauseIllnessYes: '',
     OHADiscussion: 'No',
     medicalAgreementTimestamp: '',
+    //SKILLS
+    trailers: [],
 }
 
 export const danMilverton = {
