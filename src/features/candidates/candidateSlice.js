@@ -46,6 +46,11 @@ const candidatesSlice = createSlice({
                         weekDays: [],
                         shifts: [],
                         trailers: [],
+                        gearboxes: [],
+                        loads: [],
+                        certificates: [],
+                        workCriteria: [],
+                        otherVehicles: [],
                     }
                 }
             },

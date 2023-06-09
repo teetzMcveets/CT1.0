@@ -241,11 +241,11 @@
     width: 31%;
     display: flex;
     padding: 10px;
+    align-items: center;
 }
 .skills-single-line-edit {
-    background-color: var(---BGC);
+    background-color: var(--BGC);
     border: 2px solid var(--BGC);
-    border-radius: 5px;
 }
 
 .skills-box-label {

@@ -77,6 +77,11 @@ export const arnieMcVeighty = {
     medicalAgreementTimestamp: '',
     //SKILLS
     trailers: [],
+    gearboxes: [],
+    loads:[],
+    certificates: [],
+    workCriteria: [],
+    otherVehicles: [],
 }
 
 export const danMilverton = {

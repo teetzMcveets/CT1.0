@@ -6,6 +6,105 @@ export default function SkillsDriving ({
     candidate,
 }) {
 
+    const otherVehiclesArray = [
+        'CE (class one)',
+        'C (class two)',
+        'C1 (7.5t)',
+        'B (van)',
+        'Other', 
+    ]
+
+    const trailersArray = [
+        'Box',
+        'Car Transporter',
+        'Container',
+        'Curtainsider',
+        'Double Decker',
+        'Draw Bar A Frame',
+        'Draw Bar Close Couple',
+        'Flat Bed',
+        'Fridge',
+        'Skips Chains',
+        'Skips Roll on Roll off',
+        'Tail Lift',
+        'Tanker',
+        'Tipper',
+    ];
+
+    const gearboxArray = [
+        'Automatic',
+        'Manual',
+        'Splitter',
+        'Straight',
+    ]
+
+    const loadsArray = [
+        'Automotive',
+        'Cages',
+        'Cash Handling',
+        'Food chilled / frozen',
+        'Furniture',
+        'Gen Haulage (pelletized)',
+        'Glass',
+        'Parcels',
+        'Steel Bar',
+        'Steel Coil',
+        'Steel Oiled / Pickled',
+        'Steel Sheet',
+        'Steel Tubes',
+        'White Goods',
+        'Other',
+    ]
+
+    const certificatesArray = [
+        'Epic Card',
+        'HIAB',
+        'IPAF',
+        'Level 4 (airport)',
+        'Moffett',
+        'RHIDS (container)',
+    ]
+
+    const workCriteriaArray = [
+        'Chain',
+        'Handball',
+        'Night Out',
+        'Tramping',
+        'Pallet network / palletline',
+        'Rope',
+        'Sheet',
+        'Shunting Onsite',
+        'Strap',
+    ]
+
+    const chunkSize = 3;
+    const otherVehiclesChunk = [];
+    const trailersChunks = [];
+    const gearboxChunks= [];
+    const loadsChunks = [];
+    const certificateChunks = [];
+    const workCriteriaChunks = [];
+
+    
+    for (let i = 0; i < otherVehiclesArray.length; i += chunkSize) {
+        otherVehiclesChunk.push(otherVehiclesArray.slice(i, i+chunkSize));
+    };
+    for (let i = 0; i < trailersArray.length; i += chunkSize) {
+        trailersChunks.push(trailersArray.slice(i, i+chunkSize));
+    };
+    for (let i = 0; i < gearboxArray.length; i += chunkSize) {
+        gearboxChunks.push(gearboxArray.slice(i, i+chunkSize));
+    };
+    for (let i = 0; i < loadsArray.length; i += chunkSize) {
+        loadsChunks.push(loadsArray.slice(i, i+chunkSize));
+    };
+    for (let i = 0; i < certificatesArray.length; i += chunkSize) {
+        certificateChunks.push(certificatesArray.slice(i, i+chunkSize));
+    };
+    for (let i = 0; i < workCriteriaArray.length; i += chunkSize) {
+        workCriteriaChunks.push(workCriteriaArray.slice(i, i+chunkSize));
+    };
+
     return (
         <>
             <div className='candidate-page-left-container'>
@@ -21,160 +120,181 @@ export default function SkillsDriving ({
 
             <div className='candidate-page-right-candidate'>
                 <div className='candidate-page-full-page'>
-                
+
+                <div className='card-detail-title'>
+                        <div className='card-title'>
+                            Other vehicles you will drive
+                        </div>
+                    </div>
+
+                    <div className='candidate-page-card-container' >
+                        {otherVehiclesChunk.map((chunk, idx) => (
+                            <div className='skills-box-container' key={`otherVehicles-group-${idx}`} >
+                                {chunk.concat(Array(3 - chunk.length).fill(null)).map((otherVehiclesValue, index) => (
+                                    otherVehiclesValue ? (
+                                        <div className='skills-single-line' key={otherVehiclesValue}>
+                                            <input 
+                                                type='checkbox'
+                                                id={`otherVehicles-${otherVehiclesValue}`}
+                                                checked={candidate.otherVehicles.includes(otherVehiclesValue)}
+                                            />
+                                            <label className='skills-box-label' htmlFor={`otherVehicles-${otherVehiclesValue}`}>
+                                                {otherVehiclesValue}
+                                            </label>
+                                        </div>
+                                    ) : (
+                                        <div key={`empty-${index}`} className='skills-single-line'></div>
+                                    )
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+
                     <div className='card-detail-title'>
                         <div className='card-title'>
                             Trailers
                         </div>
                     </div>
 
-                    <div className='candidate-page-card-container'>
-                        <div className='skills-box-container'>
-                            <div className='skills-single-line'>
-                                <input 
-                                    type='checkbox'
-                                    id='trailer-box'
-                                />
-                                <label className='skills-box-label' htmlFor='trailer-box'>
-                                    Box
-                                </label>
+                    <div className='candidate-page-card-container' >
+                        {trailersChunks.map((chunk, idx) => (
+                            <div className='skills-box-container' key={`trailer-group-${idx}`} >
+                                {chunk.concat(Array(3 - chunk.length).fill(null)).map((trailersValue, index) => (
+                                    trailersValue ? (
+                                        <div className='skills-single-line' key={trailersValue}>
+                                            <input 
+                                                type='checkbox'
+                                                id={`trailer-${trailersValue}`}
+                                                checked={candidate.trailers.includes(trailersValue)}
+                                            />
+                                            <label className='skills-box-label' htmlFor={`trailer-${trailersValue}`}>
+                                                {trailersValue}
+                                            </label>
+                                        </div>
+                                    ) : (
+                                        <div key={`empty-${index}`} className='skills-single-line'></div>
+                                    )
+                                ))}
                             </div>
-                            <div className='skills-single-line'>
-                                <input 
-                                    type='checkbox'
-                                    id='trailer-carTransporter'
-                                />
-                                <label className='skills-box-label' htmlFor='trailer-carTransporter'>
-                                    Car Transporter
-                                </label>
-                            </div>
-                            <div className='skills-single-line'>
-                                <input 
-                                    type='checkbox'
-                                    id='trailer-container'
-                                />
-                                <label className='skills-box-label' htmlFor='trailer-container'>
-                                    Containers
-                                </label>
-                            </div>
-                        </div>
+                        ))}
+                    </div>
 
-                        <div className='skills-box-container'>
-                            <div className='skills-single-line'>
-                                <input 
-                                    type='checkbox'
-                                    id='trailer-curtainsider'
-                                />
-                                <label className='skills-box-label' htmlFor='trailer-curtainsider'>
-                                    Curtainsider
-                                </label>
-                            </div>
-                            <div className='skills-single-line'>
-                                <input 
-                                    type='checkbox'
-                                    id='trailer-doubleDecker'
-                                />
-                                <label className='skills-box-label' htmlFor='trailer-doubleDecker'>
-                                    Double Decker
-                                </label>
-                            </div>
-                            <div className='skills-single-line'>
-                                <input 
-                                    type='checkbox'
-                                    id='trailer-drawBarAFrame'
-                                />
-                                <label className='skills-box-label' htmlFor='trailer-drawBarAFrame'>
-                                    Draw Bar A Frame
-                                </label>
-                            </div>
-                        </div>
-
-                        <div className='skills-box-container'>
-                            <div className='skills-single-line'>
-                                <input 
-                                    type='checkbox'
-                                    id='trailer-drawBarCloseCouple'
-                                />
-                                <label className='skills-box-label' htmlFor='trailer-drawBarCloseCouple'>
-                                    Draw Bar Close Couple
-                                </label>
-                            </div>
-                            <div className='skills-single-line'>
-                                <input 
-                                    type='checkbox'
-                                    id='trailer-flatBed'
-                                />
-                                <label className='skills-box-label' htmlFor='trailer-flatBed'>
-                                    Flat Bed
-                                </label>
-                            </div>
-                            <div className='skills-single-line'>
-                                <input 
-                                    type='checkbox'
-                                    id='trailer-fridges'
-                                />
-                                <label className='skills-box-label' htmlFor='trailer-fridges'>
-                                    Fridges
-                                </label>
-                            </div>
-                        </div>
-
-                        <div className='skills-box-container'>
-                            <div className='skills-single-line'>
-                                <input 
-                                    type='checkbox'
-                                    id='trailer-skipsChains'
-                                />
-                                <label className='skills-box-label' htmlFor='trailer-skipsChains'>
-                                    Skips Chains
-                                </label>
-                            </div>
-                            <div className='skills-single-line'>
-                                <input 
-                                    type='checkbox'
-                                    id='trailer-skipsRollOnRollOff'
-                                />
-                                <label className='skills-box-label' htmlFor='trailer-skipsRollOnRollOff'>
-                                    Skips Roll on Roll off
-                                </label>
-                            </div>
-                            <div className='skills-single-line'>
-                                <input 
-                                    type='checkbox'
-                                    id='trailer-tailLift'
-                                />
-                                <label className='skills-box-label' htmlFor='trailer-tailLift'>
-                                    Tail Lift
-                                </label>
-                            </div>
-                        </div>
-
-                        <div className='skills-box-container'>
-                            <div className='skills-single-line'>
-                                <input 
-                                    type='checkbox'
-                                    id='trailer-tankers'
-                                />
-                                <label className='skills-box-label' htmlFor='trailer-tankers'>
-                                    Tankers
-                                </label>
-                            </div>
-                            <div className='skills-single-line'>
-                                <input 
-                                    type='checkbox'
-                                    id='trailer-tipper'
-                                />
-                                <label className='skills-box-label' htmlFor='trailer-tipper'>
-                                    Tipper
-                                </label>
-                            </div>
-                            <div className='skills-single-line'>
-                            </div>
+                    <div className='card-detail-title'>
+                        <div className='card-title'>
+                            Gearboxes
                         </div>
                     </div>
-                
-                
-                
+
+                    <div className='candidate-page-card-container' >
+                        {gearboxChunks.map((chunk, idx) => (
+                            <div className='skills-box-container' key={`gearbox-group-${idx}`} >
+                                {chunk.concat(Array(3 - chunk.length).fill(null)).map((gearboxesValue, index) => (
+                                    gearboxesValue ? (
+                                        <div className='skills-single-line' key={gearboxesValue}>
+                                            <input 
+                                                type='checkbox'
+                                                id={`gearbox-${gearboxesValue}`}
+                                                checked={candidate.gearboxes.includes(gearboxesValue)}
+                                            />
+                                            <label className='skills-box-label' htmlFor={`gearbox-${gearboxesValue}`}>
+                                                {gearboxesValue}
+                                            </label>
+                                        </div>
+                                    ) : (
+                                        <div key={`empty-${index}`} className='skills-single-line'></div>
+                                    )
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className='card-detail-title'>
+                        <div className='card-title'>
+                            Loads
+                        </div>
+                    </div>
+
+                    <div className='candidate-page-card-container' >
+                        {loadsChunks.map((chunk, idx) => (
+                            <div className='skills-box-container' key={`gearbox-group-${idx}`} >
+                                {chunk.concat(Array(3 - chunk.length).fill(null)).map((loadsChunks, index) => (
+                                    loadsChunks ? (
+                                        <div className='skills-single-line' key={loadsChunks}>
+                                            <input 
+                                                type='checkbox'
+                                                id={`loads-${loadsChunks}`}
+                                                checked={candidate.loads.includes(loadsChunks)}
+                                            />
+                                            <label className='skills-box-label' htmlFor={`loads-${loadsChunks}`}>
+                                                {loadsChunks}
+                                            </label>
+                                        </div>
+                                    ) : (
+                                        <div key={`empty-${index}`} className='skills-single-line'></div>
+                                    )
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className='card-detail-title'>
+                        <div className='card-title'>
+                            Certificates
+                        </div>
+                    </div>
+
+                    <div className='candidate-page-card-container' >
+                        {certificateChunks.map((chunk, idx) => (
+                            <div className='skills-box-container' key={`certificates-group-${idx}`} >
+                                {chunk.concat(Array(3 - chunk.length).fill(null)).map((certificateChunks, index) => (
+                                    certificateChunks ? (
+                                        <div className='skills-single-line' key={certificateChunks}>
+                                            <input 
+                                                type='checkbox'
+                                                id={`certificate-${certificateChunks}`}
+                                                checked={candidate.certificates.includes(certificateChunks)}
+                                            />
+                                            <label className='skills-box-label' htmlFor={`certificate-${certificateChunks}`}>
+                                                {certificateChunks}
+                                            </label>
+                                        </div>
+                                    ) : (
+                                        <div key={`empty-${index}`} className='skills-single-line'></div>
+                                    )
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className='card-detail-title'>
+                        <div className='card-title'>
+                            Work Criteria
+                        </div>
+                    </div>
+
+                    <div className='candidate-page-card-container' >
+                        {workCriteriaChunks.map((chunk, idx) => (
+                            <div className='skills-box-container' key={`certificates-group-${idx}`} >
+                                {chunk.concat(Array(3 - chunk.length).fill(null)).map((workCriteriaChunks, index) => (
+                                    workCriteriaChunks ? (
+                                        <div className='skills-single-line' key={workCriteriaChunks}>
+                                            <input 
+                                                type='checkbox'
+                                                id={`workCriteria-${workCriteriaChunks}`}
+                                                checked={candidate.workCriteria.includes(workCriteriaChunks)}
+                                            />
+                                            <label className='skills-box-label' htmlFor={`workCriteria-${workCriteriaChunks}`}>
+                                                {workCriteriaChunks}
+                                            </label>
+                                        </div>
+                                    ) : (
+                                        <div key={`empty-${index}`} className='skills-single-line'></div>
+                                    )
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+
                 </div>
             </div>
         </>

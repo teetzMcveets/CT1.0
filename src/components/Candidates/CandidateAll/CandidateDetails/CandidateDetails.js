@@ -221,6 +221,22 @@ export default function CandidateDetails() {
         return dateObject.toISOString().substring(0, 10);
     }
 
+    const handleOtherVehiclesChange = (e, otherVehiclesValue) => {
+        setUpdatedSkills(prevState => {
+            if (e.target.checked) {
+                return {
+                    ...prevState,
+                    otherVehicles: [...prevState.otherVehicles, otherVehiclesValue]
+                }
+            } else {
+                return {
+                    ...prevState,
+                    otherVehicles: [...prevState.otherVehicles.filter(value => value !== otherVehiclesValue)]
+                }
+            }
+        })
+    }
+
     //SKILLS PAGES CHECKBOX TRAILERS
     const handleTrailersChange = (e, trailersValue) => {
         setUpdatedSkills(prevState => {
@@ -233,6 +249,74 @@ export default function CandidateDetails() {
                 return {
                     ...prevState,
                     trailers: [...prevState.trailers.filter(value => value !== trailersValue)]
+                }
+            }
+        })
+    }
+
+    //SKILLS GEARBOX CHECKBOX
+    const handleGearboxChange = (e, gearboxesValue) => {
+        setUpdatedSkills(prevState => {
+            if (e.target.checked) {
+                return {
+                    ...prevState,
+                    gearboxes: [...prevState.gearboxes, gearboxesValue]
+                }
+            } else {
+                return {
+                    ...prevState,
+                    gearboxes: [...prevState.gearboxes.filter(value => value !== gearboxesValue)]
+                }
+            }
+        })
+    };
+
+    //SKILLS LOADS
+    const handleLoadsChange = (e, loadsValue) => {
+        setUpdatedSkills(prevState => {
+            if (e.target.checked) {
+                return {
+                    ...prevState,
+                    loads: [...prevState.loads, loadsValue]
+                }
+            } else {
+                return {
+                    ...prevState, 
+                    loads: [...prevState.loads.filter(value => value !== loadsValue)]
+                }
+            }
+        })
+    }
+
+    //SKILLS CERTIFICATES
+    const handleCertificatesChange = (e, certificateValue) => {
+        setUpdatedSkills(prevState => {
+            if (e.target.checked) {
+                return {
+                    ...prevState,
+                    certificates: [...prevState.certificates, certificateValue]
+                }
+            } else {
+                return {
+                    ...prevState, 
+                    certificates: [...prevState.certificates.filter(value => value !== certificateValue)]
+                }
+            }
+        })
+    }
+
+    //SKILLS WORK CRITERIA
+    const handleWorkCriteriaChange = (e, workCriteriaValue) => {
+        setUpdatedSkills(prevState => {
+            if (e.target.checked) {
+                return {
+                    ...prevState,
+                    workCriteria: [...prevState.workCriteria, workCriteriaValue]
+                }
+            } else {
+                return {
+                    ...prevState, 
+                    workCriteria: [...prevState.workCriteria.filter(value => value !== workCriteriaValue)]
                 }
             }
         })
@@ -417,6 +501,11 @@ export default function CandidateDetails() {
                                                 edit={toggleEdit}
                                                 save={handleSave}
                                                 handleTrailersChange={handleTrailersChange}
+                                                handleGearboxChange={handleGearboxChange}
+                                                handleLoadsChange={handleLoadsChange}
+                                                handleCertificatesChange={handleCertificatesChange}
+                                                handleWorkCriteriaChange={handleWorkCriteriaChange}
+                                                handleOtherVehiclesChange={handleOtherVehiclesChange}
                                             />
                                     }
                                 />
