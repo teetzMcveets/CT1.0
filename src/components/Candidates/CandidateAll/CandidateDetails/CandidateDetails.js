@@ -330,6 +330,23 @@ export default function CandidateDetails() {
         })
     }
 
+    //SKILLS INDUSTRIAL HANDLE ENVIRONMENT
+    const handleWorkEnvironment = (e, workEnvironmentValue) => {
+        setUpdatedSkills(prevState => {
+            if (e.target.checked) {
+                return {
+                    ...prevState,
+                    workEnvironment: [...prevState.workEnvironment, workEnvironmentValue]
+                }
+            } else {
+                return {
+                    ...prevState,
+                    workEnvironment: [...prevState.workEnvironment.filter(value => value !== workEnvironmentValue)]
+                }
+            }
+        })
+    }
+
     // HANDLE SAVE FOR EACH PAGE
     const handleSave = () => {
         const pathName = location.pathname;
@@ -530,6 +547,9 @@ export default function CandidateDetails() {
                                             <SkillsIndustrialForm
                                                 edit={toggleEdit}
                                                 save={handleSave}
+                                                updatedSkills={updatedSkills}
+                                                handleWorkEnvironment={handleWorkEnvironment}
+                                                handleOnChange={handleUpdatedForm}
                                             />
                                     }
                                 />

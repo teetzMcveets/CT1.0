@@ -51,6 +51,7 @@ const candidatesSlice = createSlice({
                         certificates: [],
                         workCriteria: [],
                         otherVehicles: [],
+                        workEnvironment: [],
                     }
                 }
             },

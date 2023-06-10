@@ -82,6 +82,7 @@ export const arnieMcVeighty = {
     certificates: [],
     workCriteria: [],
     otherVehicles: [],
+    workEnvironment: [],
 }
 
 export const danMilverton = {
@@ -231,4 +232,5 @@ export const amiKaur = {
     certificates: [],
     workCriteria: [],
     otherVehicles: [],
+    workEnvironment: [],
 }
