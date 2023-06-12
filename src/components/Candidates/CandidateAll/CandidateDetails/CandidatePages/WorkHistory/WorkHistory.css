@@ -76,6 +76,10 @@
     margin-right: 20px;
 }
 
+.work-history-card {
+    background-color: var(--s1);
+}
+
 .work-history-rowOne {
     display: flex;
     justify-content: space-around;

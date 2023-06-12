@@ -58,14 +58,39 @@ const WorkHistoryModal = ({
                             <div className='candidate-page-detail-label WHM-label'>
                                 Agency
                             </div>
-                            <div className='candidate-page-detail-answer WHM-input-container WHM-checkbox-container'>
-                                <input 
-                                    type='checkbox'
-                                />
+                            <div className='candidate-page-detail-answer'>
+
+                                <div className='candidate-page-rad-answer-container'>
+
+                                    <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                        <input 
+                                            type='radio'
+                                            name='agency'
+                                            id='agency-yes'
+                                            value='Yes'
+                                            checked={isAgency === 'Yes'}
+                                            onChange={(e) => setIsAgency(e.target.value)}
+                                        />
+                                        <label htmlFor='agency-yes' className='candidate-page-rad-label'>
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div className='candidate-page-rad-single-answer candidate-page-rad-answer-edit'>
+                                        <input 
+                                            type='radio'
+                                            name='agency'
+                                            id='agency-no'
+                                            value='No'
+                                            checked={isAgency === 'No'}
+                                            onChange={(e) => setIsAgency(e.target.value)}
+                                        />
+                                        <label className='candidate-page-rad-label' htmlFor='agency-no'>
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        
-
                     
                         <div className='WHM-button-container'>
                             <div className='WHM-button-half-container'>
