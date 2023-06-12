@@ -417,7 +417,7 @@ export default function PrimaryQuestionsForm ({
                             </div>
 
                             <div className='candidate-page-detail-answer'>
-                            <input 
+                                <input 
                                     type='text'
                                     className='candidate-page-input'
                                     value={updatedPrimaryQuestions.postCode}

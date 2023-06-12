@@ -1,0 +1,84 @@
+.work-history-container {
+    /* border: 1px solid red; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 20%;
+}
+
+.add-work-history-button-container {
+    padding: 0 var(--med1) var(--med1) 0;
+}
+
+.work-history-modal {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+}
+
+.modal-content {
+    background-color: transparent;
+    width: 30%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-title-container {
+    display: flex;
+}
+
+.modal-title {
+    padding: var(--small2);
+    background-color: var(--s2);
+}
+
+.modal-card-container {
+    background-color: var(--s1);
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+}
+
+.modal-single-detail-row {
+    display: flex;
+    padding: var(--small2);
+}
+
+.WHM-input { 
+    width: 80%;
+}
+
+.WHM-input-text-area {
+    width: 80%;
+    height: 150px;
+}
+
+.WHM-checkbox-container {
+    height: 25px;
+}
+
+.WHM-button-container {
+    display: flex;
+    padding: 15px 5px;
+    justify-content: center;
+}
+
+.WHM-button-half-container {
+    margin-right: 20px;
+}
+
+.work-history-rowOne {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 0;
+}

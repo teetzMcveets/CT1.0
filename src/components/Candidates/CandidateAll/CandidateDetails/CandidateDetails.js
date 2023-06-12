@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import './CandidateDetails.css';
 import { Route, Routes, useParams, useLocation, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateCandidate } from '../../../../features/candidates/candidateSlice';
+import { updateCandidate, addWorkHistory, removeWorkHistory } from '../../../../features/candidates/candidateSlice';
 import SubNavDriving from '../../../../shared/Navigation/SubNav/Driving/SubNavDriving'
 import SubNavIndustrial from '../../../../shared/Navigation/SubNav/Industrial/SubNavIndustrial';
 import CandidateInfoCard from './CandidateInfoCard/CandidateInfoCard';
@@ -18,9 +18,7 @@ import SkillsDriving from './CandidatePages/Skills/Driving/SkillsDriving';
 import SkillsDrivingForm from './CandidatePages/Skills/Driving/SkillsDrivingForm';
 import SkillsIndustrial from './CandidatePages/Skills/Industrial/SkillsIndustrial';
 import SkillsIndustrialForm from './CandidatePages/Skills/Industrial/SkillsIndustrialForm';
-
-
-
+import WorkHistory from './CandidatePages/WorkHistory/WorkHistory';
 
 export default function CandidateDetails() {
     const { id } = useParams();
@@ -28,6 +26,7 @@ export default function CandidateDetails() {
     const location = useLocation();
     const dispatch = useDispatch();
     const [isEditing, setIsEditing] = useState(false);
+    const [isWorkHistoryModalOpen, setIsWorkHistoryModalOpen] = useState(false);
     const changesMade = useRef(false);
     const navigate = useNavigate();
 
@@ -347,6 +346,33 @@ export default function CandidateDetails() {
         })
     }
 
+    //handle adding new work history
+    const handleAddWorkHistoryModal = () => {
+        setIsWorkHistoryModalOpen(true);
+    }
+
+    const handleCloseWorkHistoryModal = () => {
+        setIsWorkHistoryModalOpen(false);
+    }
+
+    // const handleAddWorkHistory = (workHistory) => {
+    //     dispatch(addWorkHistory({ id, workHistory }));
+    //     setUpdatedWorkHistory(prevState => ({
+    //         ...prevState,
+    //         workHistory: [...prevState.workHistory, workHistory]
+    //     }))
+    //     changesMade.current = true;
+    // }
+
+    // const handleRemoveWorkHistory = (workHistoryId) => {
+    //     dispatch(removeWorkHistory({ id, workHistoryId }));
+    //     setUpdatedWorkHistory(prevState => ({
+    //       ...prevState,
+    //       workHistory: prevState.workHistory.filter(history => history.id !== workHistoryId)
+    //     }))
+    //     changesMade.current = true;
+    //   }
+
     // HANDLE SAVE FOR EACH PAGE
     const handleSave = () => {
         const pathName = location.pathname;
@@ -551,6 +577,16 @@ export default function CandidateDetails() {
                                                 handleWorkEnvironment={handleWorkEnvironment}
                                                 handleOnChange={handleUpdatedForm}
                                             />
+                                    }
+                                />
+                                <Route
+                                    path='work-history'
+                                    element={
+                                        <WorkHistory 
+                                            onAddClick={handleAddWorkHistoryModal}
+                                            isWorkHistoryModalOpen={isWorkHistoryModalOpen}
+                                            onModalClose={handleCloseWorkHistoryModal}
+                                        />
                                     }
                                 />
                             </Routes>
