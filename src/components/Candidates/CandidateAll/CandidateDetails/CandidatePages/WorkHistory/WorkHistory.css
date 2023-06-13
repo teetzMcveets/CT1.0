@@ -26,10 +26,29 @@
 
 .modal-content {
     background-color: transparent;
-    width: 30%;
-    height: 50%;
+    width: 40%;
+    max-height: 95%;
     display: flex;
     flex-direction: column;
+    overflow: scroll;
+    padding: var(--small2);
+}
+
+.modal-content::-webkit-scrollbar {
+    width: 0.4em;
+}
+  
+.modal-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+.modal-content::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+.modal-content {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
 .modal-title-container {
@@ -48,41 +67,148 @@
     padding-top: 15px;
 }
 
-.modal-single-detail-row {
+.modal-detail-row {
     display: flex;
+}
+
+.modal-single-detail-container {
     padding: var(--small2);
-}
-
-.WHM-input { 
-    width: 80%;
-}
-
-.WHM-input-text-area {
-    width: 80%;
-    height: 150px;
-}
-
-.WHM-checkbox-container {
-    height: 25px;
-}
-
-.WHM-button-container {
     display: flex;
-    padding: 15px 5px;
-    justify-content: center;
+    flex-direction: column;
 }
 
-.WHM-button-half-container {
-    margin-right: 20px;
+.modal-detail-label {
+    /* border: 1px solid white; */
+    padding: 0 0 10px 0;
+}
+
+.modal-detail-input-container {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.modal-detail-input,
+.modal-detail-input-date {
+    width: 100%;
+    background-color: var(--BGC);
+    color: var(--text);
+    border: 1px solid var(--s2);
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-family: var(--font);
+    font-size: var(--med1);
+    height: 30px;
+}
+
+.modal-detail-input-date {
+    width: auto;
+}
+
+.modal-detail-input:focus,
+.modal-detail-input-date:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--secondary)
+}
+
+.checkbox-container {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.modal-checkbox-label {
+    padding-left: 10px;
+}
+
+.disabled {
+    background-color: var(--s1);
+    color: var(--s2);
+}
+
+.modal-text-area {
+    height: 50px;
+}
+
+.modal-subtitle-container {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 0 var(--med2) 20px;
+    font-weight: bold;
 }
 
 .work-history-card {
     background-color: var(--s1);
+    margin-bottom: 10px;
 }
 
-.work-history-rowOne {
+.work-history-row,
+.work-history-row-header {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 5px 0;
+    height: 40px;
+}
+
+.work-history-row-header {
+    background-color: var(--s2);
+}
+
+.invisible-button {
+    background-color: transparent;
+    border: none;
+}
+
+.wh-col-one {
+    width: 20%;
+    padding-left: 15px;
+    
+}
+
+.wh-col-two {
+    width: 15%;
+}
+
+.wh-col-three {
+    width: 15%;
+}
+
+.wh-col-four {
+    width: 15%;
+}
+
+.wh-col-five {
+    width: 12.5%;
+    display: flex;
+    justify-content: center;
+}
+
+.wh-col-six {
+    width: 12.5%;;
+    display: flex;
+    justify-content: center;
+}
+
+.wh-col-seven {
+    width: 10%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+.tick-icon {
+    font-size: 22px;
+}
+
+#modal-button-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 var(--big1) 0;
+}
+
+.modal-button-container {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
 }

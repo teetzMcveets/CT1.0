@@ -47,6 +47,9 @@ export default function CandidateDetails() {
     const [updatedSkills, setUpdatedSkills] = useState({
         ...candidate,
     })
+    const [updatedWorkHistory, setUpdatedWorkHistory] = useState({
+        ...candidate,
+    }) 
 
     // TOGGLE EDIT FOR EACH PAGE
     const toggleEdit = () => {
@@ -355,14 +358,15 @@ export default function CandidateDetails() {
         setIsWorkHistoryModalOpen(false);
     }
 
-    // const handleAddWorkHistory = (workHistory) => {
-    //     dispatch(addWorkHistory({ id, workHistory }));
-    //     setUpdatedWorkHistory(prevState => ({
-    //         ...prevState,
-    //         workHistory: [...prevState.workHistory, workHistory]
-    //     }))
-    //     changesMade.current = true;
-    // }
+    const handleSaveWorkHistory = (workHistory) => {
+        dispatch(addWorkHistory({ id, workHistory }));
+        setUpdatedWorkHistory(prevState => ({
+            ...prevState,
+            workHistory: [...prevState.workHistory, workHistory]
+        }))
+        changesMade.current = true;
+        setIsWorkHistoryModalOpen(false);
+    }
 
     // const handleRemoveWorkHistory = (workHistoryId) => {
     //     dispatch(removeWorkHistory({ id, workHistoryId }));
@@ -583,9 +587,12 @@ export default function CandidateDetails() {
                                     path='work-history'
                                     element={
                                         <WorkHistory 
+                                            candidate={candidate}
                                             onAddClick={handleAddWorkHistoryModal}
                                             isWorkHistoryModalOpen={isWorkHistoryModalOpen}
                                             onModalClose={handleCloseWorkHistoryModal}
+                                            onSaveModal={handleSaveWorkHistory}
+                                            updatedWorkHistory={updatedWorkHistory}
                                         />
                                     }
                                 />
