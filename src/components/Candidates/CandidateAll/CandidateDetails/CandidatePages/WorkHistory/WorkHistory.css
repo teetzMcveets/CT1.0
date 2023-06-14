@@ -159,6 +159,8 @@
     background-color: var(--s1);
     margin-bottom: 10px;
     font-size: 11px;
+    height: 35px;
+    align-items: center;
 }
 
 .work-history-table-data {
@@ -259,21 +261,21 @@
     height: 50px;
 }
 
-.wh-expanding-answer-smaller {
-    width: 60%;
-}
-
 .wh-ref-expanding {
     display: flex;
 }
 
 .wh-ref-expanding-half {
-    border: 1px solid white;
-    width: 50%;
     display: flex;
     align-items: center;
 }
 
 .wh-ref-label {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+}
 
+.wh-ref-answer-container {
+    padding: 5px;
 }

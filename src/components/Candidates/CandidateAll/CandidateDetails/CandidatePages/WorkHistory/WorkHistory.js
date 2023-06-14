@@ -136,52 +136,52 @@ export default function WorkHistory ({
 
                                             {work.useAsRef &&
                                                 <>
-                                                    <div>
+                                                    <div style={{ paddingTop: '15px'}}>
                                                         For reference
                                                     </div>
 
-                                                        
-
-                                                        <div className='work-history-table-expanded-row'>
-                                                            <div className='wh-ref-expanding-half'>
-                                                                <div className='wh-ref-label'>
-                                                                    Contact Name
-                                                                </div>
-                                                                <div className=''>
-                                                                    <div className='wh-expanding-answer'>
-                                                                        {work.refContactName}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div className='wh-ref-expanding-half'>
-                                                                <div className=''>
-                                                                    Contact Position
-                                                                </div>
-                                                                <div className=''>
-                                                                    <div className='wh-expanding-answer'>
-                                                                        {work.refContactPosition}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    
                                                     <div className='work-history-table-expanded-row'>
-                                                        <div className='work-history-table-data wh-expanding-label-row-one'>
-                                                            Contact Number
+                                                        <div className='wh-ref-expanding-half' style={{ width: '50%' }}>
+                                                            <div className='wh-ref-label' style={{ width: '40%' }}>
+                                                                Contact Name
+                                                            </div>
+                                                            <div className='wh-ref-answer-container' style={{ width: '60%' }}>
+                                                                <div className='wh-expanding-answer'>
+                                                                    {work.refContactName}
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div className='work-history-table-data wh-expanded-answers-row-one'>
-                                                            <div className='wh-expanding-answer-smaller'>
-                                                                {work.refContactNumber}
+                                                        <div className='wh-ref-expanding-half' style={{ width: '50%' }}>
+                                                            <div className='wh-ref-label' style={{ width: '40%' }}>
+                                                                Contact Position
+                                                            </div>
+                                                            <div className='wh-ref-answer-container' style={{ width: '60%' }}>
+                                                                <div className='wh-expanding-answer'>
+                                                                    {work.refContactPosition}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                     <div className='work-history-table-expanded-row'>
-                                                        <div className='work-history-table-data wh-expanding-label-row-one'>
-                                                            Contact Number
+                                                        <div className='wh-ref-expanding-half' style={{ width: '40%' }}>
+                                                            <div className='wh-ref-label' style={{ width: '50%' }}>
+                                                                Contact number
+                                                            </div>
+                                                            <div className='wh-ref-answer-container' style={{ width: '50%' }}>
+                                                                <div className='wh-expanding-answer'>
+                                                                    {work.refContactNumber}
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div className='work-history-table-data wh-expanded-answers-row-one'>
-                                                            <div className='wh-expanding-answer-smaller'>
-                                                                {work.refContactEmail}
+                                                        <div className='wh-ref-expanding-half' style={{ width: '60%' }}>
+                                                            <div className='wh-ref-label' style={{ width: '35%' }}>
+                                                                Contact Email
+                                                            </div>
+                                                            <div className='wh-ref-answer-container' style={{ width: '65%' }}>
+                                                                <div className='wh-expanding-answer'>
+                                                                    {work.refContactEmail}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -189,111 +189,8 @@ export default function WorkHistory ({
                                             }
                                             {work.isAgency &&
                                                 <>
-                                                    <div>
+                                                    <div style={{ paddingTop: '15px'}}>
                                                         Agency contracts worked
-                                                    </div>
-                                                    <div className='work-history-table-expanded-row'>
-                                                        <div className='work-history-table-data wh-expanding-label-row-one'>
-                                                            Client name
-                                                        </div>
-                                                        <div className='work-history-table-data wh-expanded-answers-row-one'>
-                                                            <div className='wh-expanding-answer-smaller'>
-                                                                {work.clientOne}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className='work-history-table-expanded-row'>
-                                                        <div className='work-history-table-data wh-expanding-label-row-one'>
-                                                            Client contact name
-                                                        </div>
-                                                        <div className='work-history-table-data wh-expanded-answers-row-one'>
-                                                            <div className='wh-expanding-answer-smaller'>
-                                                                {work.clientOneName}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div className='work-history-table-expanded-row'>
-                                                        <div className='work-history-table-data wh-expanding-label-row-one'>
-                                                            Client name
-                                                        </div>
-                                                        <div className='work-history-table-data wh-expanded-answers-row-one'>
-                                                            <div className='wh-expanding-answer-smaller'>
-                                                                {work.clientTwo}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className='work-history-table-expanded-row'>
-                                                        <div className='work-history-table-data wh-expanding-label-row-one'>
-                                                            Client contact name
-                                                        </div>
-                                                        <div className='work-history-table-data wh-expanded-answers-row-one'>
-                                                            <div className='wh-expanding-answer-smaller'>
-                                                                {work.clientTwoName}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className='work-history-table-expanded-row'>
-                                                        <div className='work-history-table-data wh-expanding-label-row-one'>
-                                                            Client name
-                                                        </div>
-                                                        <div className='work-history-table-data wh-expanded-answers-row-one'>
-                                                            <div className='wh-expanding-answer-smaller'>
-                                                                {work.clientThree}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className='work-history-table-expanded-row'>
-                                                        <div className='work-history-table-data wh-expanding-label-row-one'>
-                                                            Client contact name
-                                                        </div>
-                                                        <div className='work-history-table-data wh-expanded-answers-row-one'>
-                                                            <div className='wh-expanding-answer-smaller'>
-                                                                {work.clientThreeName}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div className='work-history-table-expanded-row'>
-                                                        <div className='work-history-table-data wh-expanding-label-row-one'>
-                                                            Client name
-                                                        </div>
-                                                        <div className='work-history-table-data wh-expanded-answers-row-one'>
-                                                            <div className='wh-expanding-answer-smaller'>
-                                                                {work.clientFour}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className='work-history-table-expanded-row'>
-                                                        <div className='work-history-table-data wh-expanding-label-row-one'>
-                                                            Client contact name
-                                                        </div>
-                                                        <div className='work-history-table-data wh-expanded-answers-row-one'>
-                                                            <div className='wh-expanding-answer-smaller'>
-                                                                {work.clientFourName}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div className='work-history-table-expanded-row'>
-                                                        <div className='work-history-table-data wh-expanding-label-row-one'>
-                                                            Client name
-                                                        </div>
-                                                        <div className='work-history-table-data wh-expanded-answers-row-one'>
-                                                            <div className='wh-expanding-answer-smaller'>
-                                                                {work.clientFive}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className='work-history-table-expanded-row'>
-                                                        <div className='work-history-table-data wh-expanding-label-row-one'>
-                                                            Client contact name
-                                                        </div>
-                                                        <div className='work-history-table-data wh-expanded-answers-row-one'>
-                                                            <div className='wh-expanding-answer-smaller'>
-                                                                {work.clientFiveName}
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                 </>
                                             }

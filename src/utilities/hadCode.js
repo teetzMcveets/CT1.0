@@ -84,7 +84,33 @@ export const arnieMcVeighty = {
     otherVehicles: [],
     workEnvironment: [],
     //WorkHistory
-    workHistory: [],
+    workHistory: [
+        {
+            company: 'Alliance Personnel',
+            address: '1 Caroline Street, The Jewellery Quarter, Birmingham, B3 1UF',
+            jobTitle: 'Associate Partner',
+            startDate: '2015-06-08',
+            endDate: '',
+            isStillEmployed: true,
+            roleDuties: 'Supplying temporary staff the Transport industry',
+            useAsRef: true,
+            isAgency: 'Yes',
+            refContactName: 'Arron Kidson',
+            refContactPosition: 'Director',
+            refContactNumber: '0121 265 2080',
+            refContactEmail: 'arron@alliance-personnel.com',
+            clientOne: 'RGF',
+            clientOneName: 'Gurm',
+            clientTwo: 'CML',
+            clientTwoName: 'Cheryl',
+            clientThree: 'Fedex',
+            clientThreeName: 'Nicola',
+            clientFour: '',
+            clientFourName: '',
+            clientFive: '',
+            clientFiveName: '',
+        }
+    ],
 }
 
 export const danMilverton = {
