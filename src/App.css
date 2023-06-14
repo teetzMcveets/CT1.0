@@ -122,6 +122,25 @@ html {
   font-size: 10px;
 }
 
+.button-third {
+  background-color: transparent;
+  color: var(--secondary);
+  cursor: pointer;
+  border: none;
+}
+
+.button-third:hover {
+  background-color: transparent;
+  color: var(--primary);
+  transition-duration: var(--transition);
+}
+
+.button-third:active {
+  background-color: transparent;
+  color: var(--secondary);
+  transition-duration: 0ms;
+}
+
 /* UNIVERSAL LINK */
 .link-primary {
   text-decoration: underline;
