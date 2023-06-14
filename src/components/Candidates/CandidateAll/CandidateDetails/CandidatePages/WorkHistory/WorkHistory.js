@@ -5,6 +5,7 @@ import WorkHistoryModal from './WorkHistoryModal';
 export default function WorkHistory ({
     candidate,
     onAddClick,
+    onDeleteWorkHistory,
     isWorkHistoryModalOpen,
     onModalClose,
     onSaveModal,
@@ -94,7 +95,7 @@ export default function WorkHistory ({
                                     </button>
                                 </div>
                                 <div className='work-history-table-data wh-col-eight'>
-                                    <button className='button-secondary small-button'>
+                                    <button className='button-secondary small-button' onClick={() => onDeleteWorkHistory(work.id)}>
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </div>
@@ -192,6 +193,132 @@ export default function WorkHistory ({
                                                     <div style={{ paddingTop: '15px'}}>
                                                         Agency contracts worked
                                                     </div>
+
+                                                    {work.clientOne &&
+                                                        <div className='work-history-table-expanded-row'>
+                                                            <div className='wh-ref-expanding-half' style={{ width: '50%' }}>
+                                                                <div className='wh-ref-label' style={{ width: '40%' }}>
+                                                                    Client One
+                                                                </div>
+                                                                <div className='wh-ref-answer-container' style={{ width: '60%' }}>
+                                                                    <div className='wh-expanding-answer'>
+                                                                        {work.clientOne}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div className='wh-ref-expanding-half' style={{ width: '50%' }}>
+                                                                <div className='wh-ref-label' style={{ width: '40%' }}>
+                                                                    Client Contact
+                                                                </div>
+                                                                <div className='wh-ref-answer-container' style={{ width: '60%' }}>
+                                                                    <div className='wh-expanding-answer'>
+                                                                        {work.clientOneName}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    }
+
+                                                    {work.clientTwo &&
+                                                        <div className='work-history-table-expanded-row'>
+                                                            <div className='wh-ref-expanding-half' style={{ width: '50%' }}>
+                                                                <div className='wh-ref-label' style={{ width: '40%' }}>
+                                                                    Client Two
+                                                                </div>
+                                                                <div className='wh-ref-answer-container' style={{ width: '60%' }}>
+                                                                    <div className='wh-expanding-answer'>
+                                                                        {work.clientTwo}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div className='wh-ref-expanding-half' style={{ width: '50%' }}>
+                                                                <div className='wh-ref-label' style={{ width: '40%' }}>
+                                                                    Client Contact
+                                                                </div>
+                                                                <div className='wh-ref-answer-container' style={{ width: '60%' }}>
+                                                                    <div className='wh-expanding-answer'>
+                                                                        {work.clientTwoName}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    }
+
+                                                    {work.clientThree &&
+                                                        <div className='work-history-table-expanded-row'>
+                                                            <div className='wh-ref-expanding-half' style={{ width: '50%' }}>
+                                                                <div className='wh-ref-label' style={{ width: '40%' }}>
+                                                                    Client Three
+                                                                </div>
+                                                                <div className='wh-ref-answer-container' style={{ width: '60%' }}>
+                                                                    <div className='wh-expanding-answer'>
+                                                                        {work.clientThree}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div className='wh-ref-expanding-half' style={{ width: '50%' }}>
+                                                                <div className='wh-ref-label' style={{ width: '40%' }}>
+                                                                    Client Contact
+                                                                </div>
+                                                                <div className='wh-ref-answer-container' style={{ width: '60%' }}>
+                                                                    <div className='wh-expanding-answer'>
+                                                                        {work.clientThreeName}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    }
+
+                                                    {work.clientFour &&
+                                                        <div className='work-history-table-expanded-row'>
+                                                            <div className='wh-ref-expanding-half' style={{ width: '50%' }}>
+                                                                <div className='wh-ref-label' style={{ width: '40%' }}>
+                                                                    Client Four
+                                                                </div>
+                                                                <div className='wh-ref-answer-container' style={{ width: '60%' }}>
+                                                                    <div className='wh-expanding-answer'>
+                                                                        {work.clientFour}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div className='wh-ref-expanding-half' style={{ width: '50%' }}>
+                                                                <div className='wh-ref-label' style={{ width: '40%' }}>
+                                                                    Client Contact
+                                                                </div>
+                                                                <div className='wh-ref-answer-container' style={{ width: '60%' }}>
+                                                                    <div className='wh-expanding-answer'>
+                                                                        {work.clientFourName}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    }
+
+                                                    {work.clientFive &&
+                                                        <div className='work-history-table-expanded-row'>
+                                                            <div className='wh-ref-expanding-half' style={{ width: '50%' }}>
+                                                                <div className='wh-ref-label' style={{ width: '40%' }}>
+                                                                    Client Five
+                                                                </div>
+                                                                <div className='wh-ref-answer-container' style={{ width: '60%' }}>
+                                                                    <div className='wh-expanding-answer'>
+                                                                        {work.clientFive}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div className='wh-ref-expanding-half' style={{ width: '50%' }}>
+                                                                <div className='wh-ref-label' style={{ width: '40%' }}>
+                                                                    Client Contact
+                                                                </div>
+                                                                <div className='wh-ref-answer-container' style={{ width: '60%' }}>
+                                                                    <div className='wh-expanding-answer'>
+                                                                        {work.clientFiveName}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                    
                                                 </>
                                             }
                                             

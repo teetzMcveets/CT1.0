@@ -97,7 +97,7 @@ const candidatesSlice = createSlice({
             if (candidate) {
                 candidate.workHistory = candidate.workHistory.filter(history => history.id !== workHistoryId)
             }
-        }
+        },
     }
 });
 
@@ -108,7 +108,7 @@ export const {
     clearSearchCriteria,
     updateCandidate,
     addWorkHistory,
-    removeWorkHistory
+    removeWorkHistory,
 } = candidatesSlice.actions;
 
 export default candidatesSlice.reducer;

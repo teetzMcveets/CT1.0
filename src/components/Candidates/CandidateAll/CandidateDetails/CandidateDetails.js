@@ -368,14 +368,14 @@ export default function CandidateDetails() {
         setIsWorkHistoryModalOpen(false);
     }
 
-    // const handleRemoveWorkHistory = (workHistoryId) => {
-    //     dispatch(removeWorkHistory({ id, workHistoryId }));
-    //     setUpdatedWorkHistory(prevState => ({
-    //       ...prevState,
-    //       workHistory: prevState.workHistory.filter(history => history.id !== workHistoryId)
-    //     }))
-    //     changesMade.current = true;
-    //   }
+    const handleRemoveWorkHistory = (workHistoryId) => {
+        dispatch(removeWorkHistory({ id, workHistoryId }));
+        setUpdatedWorkHistory(prevState => ({
+          ...prevState,
+          workHistory: prevState.workHistory.filter(history => history.id !== workHistoryId)
+        }))
+        changesMade.current = true;
+    }
 
     // HANDLE SAVE FOR EACH PAGE
     const handleSave = () => {
@@ -589,6 +589,7 @@ export default function CandidateDetails() {
                                         <WorkHistory 
                                             candidate={candidate}
                                             onAddClick={handleAddWorkHistoryModal}
+                                            onDeleteWorkHistory={handleRemoveWorkHistory}
                                             isWorkHistoryModalOpen={isWorkHistoryModalOpen}
                                             onModalClose={handleCloseWorkHistoryModal}
                                             onSaveModal={handleSaveWorkHistory}
