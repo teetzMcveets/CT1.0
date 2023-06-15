@@ -88,7 +88,8 @@ const candidatesSlice = createSlice({
             const { id, workHistory } = action.payload;
             const candidate = state.byId[id];
             if (candidate) {
-                candidate.workHistory.push(workHistory);
+                const workHistoryWithId = { ...workHistory, id: candidate.workHistory.length}
+                candidate.workHistory.push(workHistoryWithId);
             }
         },
         removeWorkHistory: (state, action) => {
@@ -97,6 +98,16 @@ const candidatesSlice = createSlice({
             if (candidate) {
                 candidate.workHistory = candidate.workHistory.filter(history => history.id !== workHistoryId)
             }
+        },
+        editWorkHistory: (state, action) => {
+            const { id, workHistory } =action.payload;
+            const candidate = state.byId[id];
+            if (candidate) {
+                const historyIndex = candidate.workHistory.findIndex(history => history.id === workHistory.id)
+                if (historyIndex !== -1) {
+                    candidate.workHistory[historyIndex] = workHistory;
+                }
+            } 
         },
     }
 });
@@ -109,6 +120,7 @@ export const {
     updateCandidate,
     addWorkHistory,
     removeWorkHistory,
+    editWorkHistory,
 } = candidatesSlice.actions;
 
 export default candidatesSlice.reducer;

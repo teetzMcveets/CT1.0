@@ -93,6 +93,7 @@ export default function PrimaryQuestions ({ candidate, edit }) {
                                             id='gender-male'
                                             value='Male'
                                             checked={candidate.gender === 'Male'}
+                                            readOnly
                                         />
                                         <label htmlFor='gender-male' className='candidate-page-rad-label'>
                                             Male
@@ -105,6 +106,7 @@ export default function PrimaryQuestions ({ candidate, edit }) {
                                             id='gender-female'
                                             value='Female'
                                             checked={candidate.gender === 'Female'}
+                                            readOnly
                                         />
                                         <label className='candidate-page-rad-label' htmlFor='gender-female'>
                                             Female
@@ -117,6 +119,7 @@ export default function PrimaryQuestions ({ candidate, edit }) {
                                             id='gender-prefNotSay'
                                             value='Prefer not to say'
                                             checked={candidate.gender === 'Prefer not to say'}
+                                            readOnly
                                         />
                                         <label className='candidate-page-rad-label' htmlFor='gender-prefNotSay'>
                                             Prefer not to say
@@ -184,7 +187,8 @@ export default function PrimaryQuestions ({ candidate, edit }) {
                                             <input 
                                                 type='checkbox'
                                                 checked={candidate.access.includes(accessValue)}
-                                                onChange={(e) => e.preventDefault()}
+                                                // onChange={(e) => e.preventDefault()}
+                                                readOnly
                                             />
                                             <label className='candidate-page-checkbox-label'>
                                                 {accessValue}
@@ -242,7 +246,8 @@ export default function PrimaryQuestions ({ candidate, edit }) {
                                             <input 
                                                 type='checkbox'
                                                 checked={candidate.contactPref.includes(accessValue)}
-                                                onChange={(e) => e.preventDefault()}
+                                                // onChange={(e) => e.preventDefault()}
+                                                readOnly
                                             />
                                             <label className='candidate-page-checkbox-label'>
                                                 {accessValue}
@@ -383,6 +388,7 @@ export default function PrimaryQuestions ({ candidate, edit }) {
                                             type='radio'
                                             name='permitNeeded'
                                             checked={candidate.permitNeeded === 'Yes'}
+                                            readOnly
                                         />
                                         <label className='candidate-page-rad-label'>
                                             Yes
@@ -393,6 +399,7 @@ export default function PrimaryQuestions ({ candidate, edit }) {
                                             type='radio'
                                             name='permitNeeded'
                                             checked={candidate.permitNeeded === 'No'}
+                                            readOnly
                                         />
                                         <label className='candidate-page-rad-label'>
                                             No
@@ -489,6 +496,7 @@ export default function PrimaryQuestions ({ candidate, edit }) {
                                             id='criminal-yes'
                                             value='Yes'
                                             checked={candidate.criminalConvictions === 'Yes'}
+                                            readOnly
                                         />
                                         <label className='candidate-page-rad-label'>
                                             Yes
@@ -501,6 +509,7 @@ export default function PrimaryQuestions ({ candidate, edit }) {
                                             id='criminal-no'
                                             value='No'
                                             checked={candidate.criminalConvictions === 'No'}
+                                            readOnly
                                         />
                                         <label className='candidate-page-rad-label'>
                                             No

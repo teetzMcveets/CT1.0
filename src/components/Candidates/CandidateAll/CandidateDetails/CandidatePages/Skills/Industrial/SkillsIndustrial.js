@@ -57,6 +57,7 @@ export default function SkillsIndustrial ({
                                                 type='checkbox'
                                                 id={`workEnvironment-${workEnvironmentValue}`}
                                                 checked={candidate.workEnvironment.includes(workEnvironmentValue)}
+                                                readOnly
                                             />
                                             <label className='skills-box-label' htmlFor={`workEnvironment-${workEnvironmentValue}`}>
                                                 {workEnvironmentValue}

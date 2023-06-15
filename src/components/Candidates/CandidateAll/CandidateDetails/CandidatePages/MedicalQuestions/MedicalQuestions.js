@@ -42,6 +42,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='diabetes'
                                         value='Yes'
                                         checked={candidate.diabetes === 'Yes'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         Yes
@@ -53,6 +54,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='diabetes'
                                         value='No'
                                         checked={candidate.diabetes === 'No'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         No
@@ -86,6 +88,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='heartCirculatory'
                                         value='Yes'
                                         checked={candidate.heartCirculatory === 'Yes'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         Yes
@@ -97,6 +100,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='heartCirculatory'
                                         value='No'
                                         checked={candidate.heartCirculatory === 'No'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         No
@@ -130,6 +134,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='stomachIntestinal'
                                         value='Yes'
                                         checked={candidate.stomachIntestinal === 'Yes'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         Yes
@@ -141,6 +146,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='stomachIntestinal'
                                         value='No'
                                         checked={candidate.stomachIntestinal === 'No'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         No
@@ -174,6 +180,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='difficultySleeping'
                                         value='Yes'
                                         checked={candidate.difficultySleeping === 'Yes'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         Yes
@@ -185,6 +192,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='difficultySleeping'
                                         value='No'
                                         checked={candidate.difficultySleeping === 'No'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         No
@@ -218,6 +226,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='chronicChestNight'
                                         value='Yes'
                                         checked={candidate.chronicChestNight === 'Yes'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         Yes
@@ -229,6 +238,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='chronicChestNight'
                                         value='No'
                                         checked={candidate.chronicChestNight === 'No'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         No
@@ -262,6 +272,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='conditionMedicationTime'
                                         value='Yes'
                                         checked={candidate.conditionMedicationTime === 'Yes'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         Yes
@@ -273,6 +284,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='conditionMedicationTime'
                                         value='No'
                                         checked={candidate.conditionMedicationTime === 'No'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         No
@@ -306,6 +318,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='conditionMealsTime'
                                         value='Yes'
                                         checked={candidate.conditionMealsTime === 'Yes'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         Yes
@@ -317,6 +330,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='conditionMealsTime'
                                         value='No'
                                         checked={candidate.conditionMealsTime === 'No'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         No
@@ -350,6 +364,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='mentalHealthNights'
                                         value='Yes'
                                         checked={candidate.mentalHealthNights === 'Yes'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         Yes
@@ -361,6 +376,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='mentalHealthNights'
                                         value='No'
                                         checked={candidate.mentalHealthNights === 'No'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         No
@@ -394,6 +410,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='otherConditionsNight'
                                         value='Yes'
                                         checked={candidate.otherConditionsNight === 'Yes'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         Yes
@@ -405,6 +422,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='otherConditionsNight'
                                         value='No'
                                         checked={candidate.otherConditionsNight === 'No'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         No
@@ -438,6 +456,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='expectingMother'
                                         value='Yes'
                                         checked={candidate.expectingMother === 'Yes'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         Yes
@@ -449,6 +468,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='expectingMother'
                                         value='No'
                                         checked={candidate.expectingMother === 'No'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         No
@@ -482,6 +502,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='nightCauseIllness'
                                         value='Yes'
                                         checked={candidate.nightCauseIllness === 'Yes'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         Yes
@@ -493,6 +514,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='nightCauseIllness'
                                         value='No'
                                         checked={candidate.nightCauseIllness === 'No'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         No
@@ -526,6 +548,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='OHADiscussion'
                                         value='Yes'
                                         checked={candidate.OHADiscussion === 'Yes'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         Yes
@@ -537,6 +560,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='OHADiscussion'
                                         value='No'
                                         checked={candidate.OHADiscussion === 'No'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         No
@@ -600,6 +624,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='continueNightWorking'
                                         value='Yes'
                                         checked={candidate.continueNightWorking === 'Yes'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         Yes
@@ -611,6 +636,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='continueNightWorking'
                                         value='No'
                                         checked={candidate.continueNightWorking === 'No'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         No
@@ -631,6 +657,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='OHATelephoneReview'
                                         value='Yes'
                                         checked={candidate.OHATelephoneReview === 'Yes'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         Yes
@@ -642,6 +669,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='OHATelephoneReview'
                                         value='No'
                                         checked={candidate.OHATelephoneReview === 'No'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         No
@@ -663,6 +691,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='OHAHealthAssessment'
                                         value='Yes'
                                         checked={candidate.OHAHealthAssessment === 'Yes'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         Yes
@@ -674,6 +703,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='OHAHealthAssessment'
                                         value='No'
                                         checked={candidate.OHAHealthAssessment === 'No'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         No
@@ -694,6 +724,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='OHPReferral'
                                         value='Yes'
                                         checked={candidate.OHPReferral === 'Yes'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         Yes
@@ -705,6 +736,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
                                         name='OHPReferral'
                                         value='No'
                                         checked={candidate.OHPReferral === 'No'}
+                                        readOnly
                                     />
                                     <label className='candidate-page-medical-rad-label'>
                                         No

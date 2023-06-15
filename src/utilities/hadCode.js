@@ -86,6 +86,7 @@ export const arnieMcVeighty = {
     //WorkHistory
     workHistory: [
         {
+            id: 0,
             company: 'Alliance Personnel',
             address: '1 Caroline Street, The Jewellery Quarter, Birmingham, B3 1UF',
             jobTitle: 'Associate Partner',

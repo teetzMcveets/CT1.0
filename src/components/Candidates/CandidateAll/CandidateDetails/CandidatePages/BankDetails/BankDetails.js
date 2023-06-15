@@ -189,6 +189,7 @@ export default function BankDetails ({ candidate, edit}) {
                                                 id='employeeStatement-A'
                                                 value='A'
                                                 checked={candidate.employeeStatement === 'A'}
+                                                readOnly
                                             />
                                         </div>
                                         <div className='emp-statement-box-two'>
@@ -210,6 +211,7 @@ export default function BankDetails ({ candidate, edit}) {
                                                 id='employeeStatement-B'
                                                 value='B'
                                                 checked={candidate.employeeStatement === 'B'}
+                                                readOnly
                                             />
                                         </div>
                                         <div className='emp-statement-box-two' >
@@ -231,6 +233,7 @@ export default function BankDetails ({ candidate, edit}) {
                                                 id='employeeStatement-C'
                                                 value='C'
                                                 checked={candidate.employeeStatement === 'C'}
+                                                readOnly
                                             />
                                         </div>
                                         <div className='emp-statement-box-two' >
@@ -262,6 +265,7 @@ export default function BankDetails ({ candidate, edit}) {
                                                     id='studentLoanPaid-yes'
                                                     value='Yes'
                                                     checked={candidate.studentLoanPaid === 'Yes'}
+                                                    readOnly
                                                 />
                                                 <label htmlFor='studentLoanPaid-yes' className='candidate-page-rad-label'>
                                                     Yes
@@ -274,6 +278,7 @@ export default function BankDetails ({ candidate, edit}) {
                                                     id='studentLoanPaid-no'
                                                     value='No'
                                                     checked={candidate.studentLoanPaid === 'No'}
+                                                    readOnly
                                                 />
                                                 <label className='candidate-page-rad-label' htmlFor='studentLoanPaid-no'>
                                                     No
@@ -299,6 +304,7 @@ export default function BankDetails ({ candidate, edit}) {
                                                     id='finishStudies-yes'
                                                     value='Yes'
                                                     checked={candidate.finishStudies === 'Yes'}
+                                                    readOnly
                                                 />
                                                 <label htmlFor='finishStudies-yes' className='candidate-page-rad-label'>
                                                     Yes
@@ -311,6 +317,7 @@ export default function BankDetails ({ candidate, edit}) {
                                                     id='finishStudies-no'
                                                     value='No'
                                                     checked={candidate.finishStudies === 'No'}
+                                                    readOnly
                                                 />
                                                 <label className='candidate-page-rad-label' htmlFor='finishStudies-no'>
                                                     No
@@ -362,6 +369,7 @@ export default function BankDetails ({ candidate, edit}) {
                                             id='payMethod-bacs'
                                             value='BACS'
                                             checked={candidate.payMethod === 'BACS'}
+                                            readOnly
                                         />
                                         <label htmlFor='payMethod-bacs' className='candidate-page-rad-label'>
                                             BACS
@@ -374,6 +382,7 @@ export default function BankDetails ({ candidate, edit}) {
                                             id='payMethod-cash'
                                             value='Cash'
                                             checked={candidate.payMethod === 'Cash'}
+                                            readOnly
                                         />
                                         <label className='candidate-page-rad-label' htmlFor='payMethod-cash'>
                                             Cash
@@ -386,6 +395,7 @@ export default function BankDetails ({ candidate, edit}) {
                                             id='payMethod-ppc'
                                             value='Pre-paid Card'
                                             checked={candidate.payMethod === 'Pre-paid Card'}
+                                            readOnly
                                         />
                                         <label className='candidate-page-rad-label' htmlFor='payMethod-ppc'>
                                             Pre-paid Card
@@ -410,6 +420,7 @@ export default function BankDetails ({ candidate, edit}) {
                                             id='p60Received-yes'
                                             value='Yes'
                                             checked={candidate.p60Received === 'Yes'}
+                                            readOnly
                                         />
                                         <label htmlFor='p60Received-yes' className='candidate-page-rad-label'>
                                             Yes
@@ -422,6 +433,7 @@ export default function BankDetails ({ candidate, edit}) {
                                             id='p60Received-no'
                                             value='No'
                                             checked={candidate.p60Received === 'No'}
+                                            readOnly
                                         />
                                         <label className='candidate-page-rad-label' htmlFor='p60Received-no'>
                                             No
@@ -433,7 +445,7 @@ export default function BankDetails ({ candidate, edit}) {
 
                         <div className='candidate-page-detail-container'>
                             <div className='candidate-page-detail-label'>
-                                P60 received
+                                Apprentice
                             </div>
 
                             <div className='candidate-page-detail-answer'>
@@ -446,6 +458,7 @@ export default function BankDetails ({ candidate, edit}) {
                                             id='apprentice-yes'
                                             value='Yes'
                                             checked={candidate.apprentice === 'Yes'}
+                                            readOnly
                                         />
                                         <label htmlFor='apprentice-yes' className='candidate-page-rad-label'>
                                             Yes
@@ -458,6 +471,7 @@ export default function BankDetails ({ candidate, edit}) {
                                             id='apprentice-no'
                                             value='No'
                                             checked={candidate.apprentice === 'No'}
+                                            readOnly
                                         />
                                         <label className='candidate-page-rad-label' htmlFor='apprentice-no'>
                                             No

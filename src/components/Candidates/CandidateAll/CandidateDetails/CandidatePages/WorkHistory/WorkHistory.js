@@ -5,7 +5,8 @@ import WorkHistoryModal from './WorkHistoryModal';
 export default function WorkHistory ({
     candidate,
     onAddClick,
-    onDeleteWorkHistory,
+    onEditClick,
+    onDeleteClick,
     isWorkHistoryModalOpen,
     onModalClose,
     onSaveModal,
@@ -90,13 +91,13 @@ export default function WorkHistory ({
                                     {work.isAgency === 'Yes' ? <div className='tick-icon'>&#10003;</div> : '' }
                                 </div>
                                 <div className='work-history-table-data wh-col-seven'>
-                                    <button className='button-secondary small-button'>
+                                    <button className='button-secondary small-button' onClick={() => onEditClick(work.id)}>
                                         <i className='fas fa-pencil-alt'></i>
                                     </button>
                                 </div>
                                 <div className='work-history-table-data wh-col-eight'>
-                                    <button className='button-secondary small-button' onClick={() => onDeleteWorkHistory(work.id)}>
-                                        <i class="fas fa-trash-alt"></i>
+                                    <button className='button-secondary small-button' onClick={() => onDeleteClick(work.id)}>
+                                        <i className="fas fa-trash-alt"></i>
                                     </button>
                                 </div>
                                 <div className='work-history-table-data wh-col-nine'>

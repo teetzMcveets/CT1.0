@@ -137,6 +137,7 @@ export default function SkillsDriving ({
                                                 type='checkbox'
                                                 id={`otherVehicles-${otherVehiclesValue}`}
                                                 checked={candidate.otherVehicles.includes(otherVehiclesValue)}
+                                                readOnly
                                             />
                                             <label className='skills-box-label' htmlFor={`otherVehicles-${otherVehiclesValue}`}>
                                                 {otherVehiclesValue}
@@ -166,6 +167,7 @@ export default function SkillsDriving ({
                                                 type='checkbox'
                                                 id={`trailer-${trailersValue}`}
                                                 checked={candidate.trailers.includes(trailersValue)}
+                                                readOnly
                                             />
                                             <label className='skills-box-label' htmlFor={`trailer-${trailersValue}`}>
                                                 {trailersValue}
@@ -195,6 +197,7 @@ export default function SkillsDriving ({
                                                 type='checkbox'
                                                 id={`gearbox-${gearboxesValue}`}
                                                 checked={candidate.gearboxes.includes(gearboxesValue)}
+                                                readOnly
                                             />
                                             <label className='skills-box-label' htmlFor={`gearbox-${gearboxesValue}`}>
                                                 {gearboxesValue}
@@ -224,6 +227,7 @@ export default function SkillsDriving ({
                                                 type='checkbox'
                                                 id={`loads-${loadsChunks}`}
                                                 checked={candidate.loads.includes(loadsChunks)}
+                                                readOnly
                                             />
                                             <label className='skills-box-label' htmlFor={`loads-${loadsChunks}`}>
                                                 {loadsChunks}
@@ -253,6 +257,7 @@ export default function SkillsDriving ({
                                                 type='checkbox'
                                                 id={`certificate-${certificateChunks}`}
                                                 checked={candidate.certificates.includes(certificateChunks)}
+                                                readOnly
                                             />
                                             <label className='skills-box-label' htmlFor={`certificate-${certificateChunks}`}>
                                                 {certificateChunks}
@@ -282,6 +287,7 @@ export default function SkillsDriving ({
                                                 type='checkbox'
                                                 id={`workCriteria-${workCriteriaChunks}`}
                                                 checked={candidate.workCriteria.includes(workCriteriaChunks)}
+                                                readOnly
                                             />
                                             <label className='skills-box-label' htmlFor={`workCriteria-${workCriteriaChunks}`}>
                                                 {workCriteriaChunks}

@@ -70,6 +70,7 @@ export default function PreferenceQuestions ({
                                             name='travelForWork'
                                             value='0-1 miles'
                                             checked={candidate.travelForWork === '0-1 miles'}
+                                            readOnly
                                         />
                                         <label className='candidate-page-rad-label'>
                                             0-1 miles
@@ -83,6 +84,7 @@ export default function PreferenceQuestions ({
                                             name='travelForWork'
                                             value='1-2 miles'
                                             checked={candidate.travelForWork === '1-2 miles'}
+                                            readOnly
                                         />
                                         <label className='candidate-page-rad-label'>
                                             1-2 miles
@@ -95,6 +97,7 @@ export default function PreferenceQuestions ({
                                             name='travelForWork'
                                             value='2-4 miles'
                                             checked={candidate.travelForWork === '2-4 miles'}
+                                            readOnly
                                         />
                                         <label className='candidate-page-rad-label'>
                                             2-4 miles
@@ -107,6 +110,7 @@ export default function PreferenceQuestions ({
                                             name='travelForWork'
                                             value='4-6 miles'
                                             checked={candidate.travelForWork === '4-6 miles'}
+                                            readOnly
                                         />
                                         <label className='candidate-page-rad-label'>
                                             4-6 miles
@@ -119,6 +123,7 @@ export default function PreferenceQuestions ({
                                             name='travelForWork'
                                             value='6-10 miles'
                                             checked={candidate.travelForWork === '6-10 miles'}
+                                            readOnly
                                         />
                                         <label className='candidate-page-rad-label'>
                                             6-10 miles
@@ -130,6 +135,7 @@ export default function PreferenceQuestions ({
                                             name='travelForWork'
                                             value='10+ miles'
                                             checked={candidate.travelForWork === '10+ miles'}
+                                            readOnly
                                         />
                                         <label className='candidate-page-rad-label'>
                                             10+ miles
@@ -151,7 +157,8 @@ export default function PreferenceQuestions ({
                                             <input 
                                                 type='checkbox'
                                                 checked={candidate.ppeOwned.includes(ppeOwnedValue)}
-                                                onChange={(e) => e.preventDefault()}
+                                                // onChange={(e) => e.preventDefault()}
+                                                readOnly
                                             />
                                             <label className='candidate-page-checkbox-label'>
                                                 {ppeOwnedValue}
@@ -189,6 +196,7 @@ export default function PreferenceQuestions ({
                                             id='smoker-yes'
                                             value='Yes'
                                             checked={candidate.smoker === 'Yes'}
+                                            readOnly
                                         />
                                         <label className='candidate-page-rad-label'>
                                             Yes
@@ -201,6 +209,7 @@ export default function PreferenceQuestions ({
                                             id='smoker-no'
                                             value='No'
                                             checked={candidate.smoker === 'No'}
+                                            readOnly
                                         />
                                         <label className='candidate-page-rad-label'>
                                             No
@@ -226,6 +235,7 @@ export default function PreferenceQuestions ({
                                                 id='industrialLicense-yes'
                                                 value='Yes'
                                                 checked={candidate.industrialLicense === 'Yes'}
+                                                readOnly
                                             />
                                             <label className='candidate-page-rad-label'>
                                                 Yes
@@ -238,6 +248,7 @@ export default function PreferenceQuestions ({
                                                 id='industrialLicense-no'
                                                 value='No'
                                                 checked={candidate.industrialLicense === 'No'}
+                                                readOnly
                                             />
                                             <label className='candidate-page-rad-label'>
                                                 No
@@ -272,7 +283,8 @@ export default function PreferenceQuestions ({
                                             <input 
                                                 type='checkbox'
                                                 checked={candidate.weekDays.includes(weekDaysValue)}
-                                                onChange={(e) => e.preventDefault()}
+                                                // onChange={(e) => e.preventDefault()}
+                                                readOnly
                                             />
                                             <label className='candidate-page-checkbox-label'>
                                                 {weekDaysValue}
@@ -295,7 +307,8 @@ export default function PreferenceQuestions ({
                                             <input 
                                                 type='checkbox'
                                                 checked={candidate.shifts.includes(shiftsValue)}
-                                                onChange={(e) => e.preventDefault()}
+                                                // onChange={(e) => e.preventDefault()}
+                                                readOnly
                                             />
                                             <label className='candidate-page-checkbox-label'>
                                                 {shiftsValue}

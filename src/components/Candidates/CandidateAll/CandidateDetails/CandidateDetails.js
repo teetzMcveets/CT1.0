@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import './CandidateDetails.css';
 import { Route, Routes, useParams, useLocation, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateCandidate, addWorkHistory, removeWorkHistory } from '../../../../features/candidates/candidateSlice';
+import { updateCandidate, addWorkHistory, removeWorkHistory, editWorkHistory } from '../../../../features/candidates/candidateSlice';
 import SubNavDriving from '../../../../shared/Navigation/SubNav/Driving/SubNavDriving'
 import SubNavIndustrial from '../../../../shared/Navigation/SubNav/Industrial/SubNavIndustrial';
 import CandidateInfoCard from './CandidateInfoCard/CandidateInfoCard';
@@ -359,10 +359,11 @@ export default function CandidateDetails() {
     }
 
     const handleSaveWorkHistory = (workHistory) => {
-        dispatch(addWorkHistory({ id, workHistory }));
+        const workHistoryWithId = { ...workHistory, id: candidate.workHistory.length };
+        dispatch(addWorkHistory({ id, workHistory: workHistoryWithId }));
         setUpdatedWorkHistory(prevState => ({
             ...prevState,
-            workHistory: [...prevState.workHistory, workHistory]
+            workHistory: [...prevState.workHistory, workHistoryWithId]
         }))
         changesMade.current = true;
         setIsWorkHistoryModalOpen(false);
@@ -373,6 +374,17 @@ export default function CandidateDetails() {
         setUpdatedWorkHistory(prevState => ({
           ...prevState,
           workHistory: prevState.workHistory.filter(history => history.id !== workHistoryId)
+        }))
+        changesMade.current = true;
+    }
+
+    const handleEditWorkHistory = (editedWorkHistory) => {
+        dispatch(editWorkHistory({ id, workHistory: editedWorkHistory }));
+        setUpdatedWorkHistory(prevState => ({
+            ...prevState,
+            workHistory: prevState.workHistory.map(history => 
+                history.id === editedWorkHistory.id ? editedWorkHistory : history
+            )
         }))
         changesMade.current = true;
     }
@@ -589,7 +601,8 @@ export default function CandidateDetails() {
                                         <WorkHistory 
                                             candidate={candidate}
                                             onAddClick={handleAddWorkHistoryModal}
-                                            onDeleteWorkHistory={handleRemoveWorkHistory}
+                                            onDeleteClick={handleRemoveWorkHistory}
+                                            onEditClick={handleEditWorkHistory}
                                             isWorkHistoryModalOpen={isWorkHistoryModalOpen}
                                             onModalClose={handleCloseWorkHistoryModal}
                                             onSaveModal={handleSaveWorkHistory}
