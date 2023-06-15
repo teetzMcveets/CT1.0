@@ -1,10 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const EditWorkHistoryModal = ({
-    onModalClose,
-    onModalSave,
-    workHistory,
-}) => {
+const EditWorkHistoryModal = () => {
 
     return (
         <>

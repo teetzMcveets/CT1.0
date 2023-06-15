@@ -99,16 +99,6 @@ const candidatesSlice = createSlice({
                 candidate.workHistory = candidate.workHistory.filter(history => history.id !== workHistoryId)
             }
         },
-        editWorkHistory: (state, action) => {
-            const { id, workHistory } =action.payload;
-            const candidate = state.byId[id];
-            if (candidate) {
-                const historyIndex = candidate.workHistory.findIndex(history => history.id === workHistory.id)
-                if (historyIndex !== -1) {
-                    candidate.workHistory[historyIndex] = workHistory;
-                }
-            } 
-        },
     }
 });
 

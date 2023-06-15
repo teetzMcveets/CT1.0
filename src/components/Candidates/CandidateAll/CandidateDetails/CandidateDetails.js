@@ -378,17 +378,17 @@ export default function CandidateDetails() {
         changesMade.current = true;
     }
 
-    const handleEditWorkHistory = (workHistory) => {
-        dispatch(editWorkHistory({ id, workHistory }));
-        setUpdatedWorkHistory(prevState => {
-            const workHistoryIndex = prevState.workHistory.findIndex(history => history.id === workHistory.id);
-            const newWorkHistory = [ ...prevState.workHistory];
-            newWorkHistory[workHistoryIndex] = workHistory;
-            return { ...prevState, workHistory: newWorkHistory };
-        });
-        changesMade.current = true;
-        setIsWorkHistoryModalOpen(false);
-    };    
+    // const handleEditWorkHistory = (workHistory) => {
+    //     dispatch(editWorkHistory({ id, workHistory }));
+    //     setUpdatedWorkHistory(prevState => {
+    //         const workHistoryIndex = prevState.workHistory.findIndex(history => history.id === workHistory.id);
+    //         const newWorkHistory = [ ...prevState.workHistory];
+    //         newWorkHistory[workHistoryIndex] = workHistory;
+    //         return { ...prevState, workHistory: newWorkHistory };
+    //     });
+    //     changesMade.current = true;
+    //     setIsWorkHistoryModalOpen(false);
+    // };    
 
     // HANDLE SAVE FOR EACH PAGE
     const handleSave = () => {
@@ -603,11 +603,9 @@ export default function CandidateDetails() {
                                             candidate={candidate}
                                             onAddClick={handleOpenWorkHistoryModal}
                                             onDeleteClick={handleRemoveWorkHistory}
-                                            onEditClick={handleEditWorkHistory}
                                             isWorkHistoryModalOpen={isWorkHistoryModalOpen}
                                             onModalClose={handleCloseWorkHistoryModal}
                                             onSaveModal={handleSaveWorkHistory}
-                                            onSaveEditModal={handleEditWorkHistory}
                                             updatedWorkHistory={updatedWorkHistory}
                                         />
                                     }

@@ -1,37 +1,21 @@
 import React, { useState } from 'react';
 import './WorkHistory.css';
 import AddWorkHistoryModal from './AddWorkHistoryModal';
-import EditWorkHistoryModal from './EditWorkHistoryModal';
 
 export default function WorkHistory ({
     candidate,
     onAddClick,
-    onEditClick,
     onDeleteClick,
     isWorkHistoryModalOpen,
     onModalClose,
     onSaveModal,
-    onSaveEditModal,
 }) {
 
     const [expandedIndex, setExpandedIndex] = useState(-1);
-    const [isEditWorkHistoryModalOpen, setIsEditWorkHistoryModalOpen] = useState(false);
-    const [currentWorkHistory, setCurrentWorkHistory] = useState(null);
     const workHistoryDetails = candidate?.workHistory || [];
 
     const handleExpandClick = (index) => {
         setExpandedIndex(index === expandedIndex ? -1 : index);
-    }
-
-    const handleEditClick = (workHistory) => {
-        setCurrentWorkHistory(workHistory);
-        setIsEditWorkHistoryModalOpen(true);
-        onEditClick(workHistory);
-    };
-
-    const handleEditModalClose = () => {
-        setIsEditWorkHistoryModalOpen(false);
-        onModalClose();
     }
 
     console.log(workHistoryDetails)
@@ -50,14 +34,6 @@ export default function WorkHistory ({
                     <AddWorkHistoryModal
                         onModalClose={onModalClose}
                         onModalSave={onSaveModal}
-                    />
-                }
-
-                {isEditWorkHistoryModalOpen &&
-                    <EditWorkHistoryModal
-                        onModalClose={handleEditModalClose}
-                        onModalSave={onSaveEditModal}
-                        workHistory={currentWorkHistory}
                     />
                 }
 
@@ -114,7 +90,7 @@ export default function WorkHistory ({
                                     {work.isAgency === 'Yes' ? <div className='tick-icon'>&#10003;</div> : '' }
                                 </div>
                                 <div className='work-history-table-data wh-col-seven'>
-                                    <button className='button-secondary small-button' onClick={() => handleEditClick(work)}>
+                                    <button className='button-secondary small-button'>
                                         <i className='fas fa-pencil-alt'></i>
                                     </button>
                                 </div>
