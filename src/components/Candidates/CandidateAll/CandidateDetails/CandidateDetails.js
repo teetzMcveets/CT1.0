@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import './CandidateDetails.css';
 import { Route, Routes, useParams, useLocation, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateCandidate, addWorkHistory, removeWorkHistory, editWorkHistory } from '../../../../features/candidates/candidateSlice';
+import { updateCandidate, addWorkHistory, removeWorkHistory } from '../../../../features/candidates/candidateSlice';
 import SubNavDriving from '../../../../shared/Navigation/SubNav/Driving/SubNavDriving'
 import SubNavIndustrial from '../../../../shared/Navigation/SubNav/Industrial/SubNavIndustrial';
 import CandidateInfoCard from './CandidateInfoCard/CandidateInfoCard';
@@ -19,6 +19,8 @@ import SkillsDrivingForm from './CandidatePages/Skills/Driving/SkillsDrivingForm
 import SkillsIndustrial from './CandidatePages/Skills/Industrial/SkillsIndustrial';
 import SkillsIndustrialForm from './CandidatePages/Skills/Industrial/SkillsIndustrialForm';
 import WorkHistory from './CandidatePages/WorkHistory/WorkHistory';
+import Licenses from './CandidatePages/Licenses/Licenses';
+import LicensesForm from './CandidatePages/Licenses/LicensesForm';
 
 export default function CandidateDetails() {
     const { id } = useParams();
@@ -49,6 +51,9 @@ export default function CandidateDetails() {
     })
     const [updatedWorkHistory, setUpdatedWorkHistory] = useState({
         ...candidate,
+    })
+    const [updatedLicenses, setUpdatedLicenses] = useState({
+        ...candidate
     }) 
 
     // TOGGLE EDIT FOR EACH PAGE
@@ -109,6 +114,11 @@ export default function CandidateDetails() {
             }))
         } else if (pathName.endsWith('skills-industrial')) {
             setUpdatedSkills(prevState => ({
+                ...prevState,
+                [field]: value
+            }))
+        } else if (pathName.endsWith('licenses')) {
+            setUpdatedLicenses(prevState => ({
                 ...prevState,
                 [field]: value
             }))
@@ -349,6 +359,23 @@ export default function CandidateDetails() {
         })
     }
 
+    const handleLicenseCategory = (e, licenseCategoryValue) => {
+        setUpdatedLicenses(prevState => {
+            if (e.target.checked) {
+                return {
+                    ...prevState,
+                    licenseCategory: [...prevState.licenseCategory, licenseCategoryValue]
+                }
+            } else {
+                return {
+                    ...prevState,
+                    licenseCategory: [...prevState.licenseCategory.filter(value => value !== licenseCategoryValue)]
+                }
+            }
+        })
+            
+    }
+
     //handle adding new work history
     const handleOpenWorkHistoryModal = () => {
         setIsWorkHistoryModalOpen(true);
@@ -391,6 +418,7 @@ export default function CandidateDetails() {
     // };    
 
     // HANDLE SAVE FOR EACH PAGE
+    
     const handleSave = () => {
         const pathName = location.pathname;
         let updatedQuestions;
@@ -407,6 +435,8 @@ export default function CandidateDetails() {
             updatedQuestions = updatedSkills
         } else if (pathName.endsWith('skills-industrial')) {
             updatedQuestions = updatedSkills
+        } else if (pathName.endsWith('licenses')) {
+            updatedQuestions = updatedLicenses
         }
         if (updatedQuestions) {
             dispatch(updateCandidate(updatedQuestions));
@@ -521,7 +551,7 @@ export default function CandidateDetails() {
                                                 edit={toggleEdit}
                                                 isEditing={isEditing}
                                             />
-                                            :
+                                        :
                                             <MedicalQuestionsForm
                                                 candidate={candidate}
                                                 updatedMedicalQuestions={updatedMedicalQuestions}
@@ -608,6 +638,26 @@ export default function CandidateDetails() {
                                             onSaveModal={handleSaveWorkHistory}
                                             updatedWorkHistory={updatedWorkHistory}
                                         />
+                                    }
+                                />
+                                <Route
+                                    path='licenses'
+                                    element={
+                                        !isEditing ?
+                                            <Licenses
+                                                candidate={candidate}
+                                                edit={toggleEdit}
+                                                isEditing={isEditing}
+                                            />
+                                        : 
+                                            <LicensesForm
+                                                candidate={candidate}
+                                                updatedLicenses={updatedLicenses}
+                                                handleOnChange={handleUpdatedForm}
+                                                edit={toggleEdit}
+                                                save={handleSave}
+                                                handleLicenseCategory={handleLicenseCategory}
+                                            />
                                     }
                                 />
                             </Routes>

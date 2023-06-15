@@ -112,6 +112,7 @@ export const arnieMcVeighty = {
             clientFiveName: '',
         }
     ],
+    licenseCategory: [],
 }
 
 export const danMilverton = {
