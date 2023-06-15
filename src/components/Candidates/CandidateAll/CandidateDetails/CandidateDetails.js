@@ -350,7 +350,7 @@ export default function CandidateDetails() {
     }
 
     //handle adding new work history
-    const handleAddWorkHistoryModal = () => {
+    const handleOpenWorkHistoryModal = () => {
         setIsWorkHistoryModalOpen(true);
     }
 
@@ -378,16 +378,17 @@ export default function CandidateDetails() {
         changesMade.current = true;
     }
 
-    const handleEditWorkHistory = (editedWorkHistory) => {
-        dispatch(editWorkHistory({ id, workHistory: editedWorkHistory }));
-        setUpdatedWorkHistory(prevState => ({
-            ...prevState,
-            workHistory: prevState.workHistory.map(history => 
-                history.id === editedWorkHistory.id ? editedWorkHistory : history
-            )
-        }))
+    const handleEditWorkHistory = (workHistory) => {
+        dispatch(editWorkHistory({ id, workHistory }));
+        setUpdatedWorkHistory(prevState => {
+            const workHistoryIndex = prevState.workHistory.findIndex(history => history.id === workHistory.id);
+            const newWorkHistory = [ ...prevState.workHistory];
+            newWorkHistory[workHistoryIndex] = workHistory;
+            return { ...prevState, workHistory: newWorkHistory };
+        });
         changesMade.current = true;
-    }
+        setIsWorkHistoryModalOpen(false);
+    };    
 
     // HANDLE SAVE FOR EACH PAGE
     const handleSave = () => {
@@ -600,12 +601,13 @@ export default function CandidateDetails() {
                                     element={
                                         <WorkHistory 
                                             candidate={candidate}
-                                            onAddClick={handleAddWorkHistoryModal}
+                                            onAddClick={handleOpenWorkHistoryModal}
                                             onDeleteClick={handleRemoveWorkHistory}
                                             onEditClick={handleEditWorkHistory}
                                             isWorkHistoryModalOpen={isWorkHistoryModalOpen}
                                             onModalClose={handleCloseWorkHistoryModal}
                                             onSaveModal={handleSaveWorkHistory}
+                                            onSaveEditModal={handleEditWorkHistory}
                                             updatedWorkHistory={updatedWorkHistory}
                                         />
                                     }

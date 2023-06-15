@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './WorkHistory.css';
-import WorkHistoryModal from './WorkHistoryModal';
+import AddWorkHistoryModal from './AddWorkHistoryModal';
+import EditWorkHistoryModal from './EditWorkHistoryModal';
 
 export default function WorkHistory ({
     candidate,
@@ -10,13 +11,27 @@ export default function WorkHistory ({
     isWorkHistoryModalOpen,
     onModalClose,
     onSaveModal,
+    onSaveEditModal,
 }) {
 
     const [expandedIndex, setExpandedIndex] = useState(-1);
+    const [isEditWorkHistoryModalOpen, setIsEditWorkHistoryModalOpen] = useState(false);
+    const [currentWorkHistory, setCurrentWorkHistory] = useState(null);
     const workHistoryDetails = candidate?.workHistory || [];
 
     const handleExpandClick = (index) => {
         setExpandedIndex(index === expandedIndex ? -1 : index);
+    }
+
+    const handleEditClick = (workHistory) => {
+        setCurrentWorkHistory(workHistory);
+        setIsEditWorkHistoryModalOpen(true);
+        onEditClick(workHistory);
+    };
+
+    const handleEditModalClose = () => {
+        setIsEditWorkHistoryModalOpen(false);
+        onModalClose();
     }
 
     console.log(workHistoryDetails)
@@ -32,9 +47,17 @@ export default function WorkHistory ({
                 </div>
 
                 {isWorkHistoryModalOpen &&
-                    <WorkHistoryModal
+                    <AddWorkHistoryModal
                         onModalClose={onModalClose}
                         onModalSave={onSaveModal}
+                    />
+                }
+
+                {isEditWorkHistoryModalOpen &&
+                    <EditWorkHistoryModal
+                        onModalClose={handleEditModalClose}
+                        onModalSave={onSaveEditModal}
+                        workHistory={currentWorkHistory}
                     />
                 }
 
@@ -91,7 +114,7 @@ export default function WorkHistory ({
                                     {work.isAgency === 'Yes' ? <div className='tick-icon'>&#10003;</div> : '' }
                                 </div>
                                 <div className='work-history-table-data wh-col-seven'>
-                                    <button className='button-secondary small-button' onClick={() => onEditClick(work.id)}>
+                                    <button className='button-secondary small-button' onClick={() => handleEditClick(work)}>
                                         <i className='fas fa-pencil-alt'></i>
                                     </button>
                                 </div>

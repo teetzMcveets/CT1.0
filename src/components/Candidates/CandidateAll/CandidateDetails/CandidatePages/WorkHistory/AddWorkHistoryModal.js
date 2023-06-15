@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-const WorkHistoryModal = ({ 
+const AddWorkHistoryModal = ({ 
     onModalClose, 
-    onModalSave 
+    onModalSave,
 }) => {
 
     const [company, setCompany] = useState('');
@@ -32,7 +32,6 @@ const WorkHistoryModal = ({
     const [clientFourName, setClientFourName] = useState('');
     const [clientFive, setClientFive] = useState('');
     const [clientFiveName, setClientFiveName] = useState('');
-        
 
     const handleWorkHistorySave = () => {
         const workHistory = { 
@@ -470,4 +469,4 @@ const WorkHistoryModal = ({
     );
 }
 
-export default WorkHistoryModal;
+export default AddWorkHistoryModal;
