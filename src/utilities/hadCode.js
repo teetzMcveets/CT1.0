@@ -112,7 +112,9 @@ export const arnieMcVeighty = {
             clientFiveName: '',
         }
     ],
+    //LICENSE
     licenseCategory: [],
+    licenseEndorsements: [],
 }
 
 export const danMilverton = {

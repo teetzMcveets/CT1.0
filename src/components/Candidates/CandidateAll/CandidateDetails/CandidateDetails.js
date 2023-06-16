@@ -417,7 +417,36 @@ export default function CandidateDetails() {
     //     changesMade.current = true;
     //     setIsWorkHistoryModalOpen(false);
     // };   
+    
+    // LICENSES LOGIC
+    const endorsementOptions = endorsements;
+    const [selectValue, setSelectValue] = useState('');
+    const [selectedEndorsements, setSelectedEndorsements] = useState([]);
+    const [offenseDate, setOffenseDate] = useState('');
+    const [points, setPoints] = useState('');
 
+    const handleSelect = (e) => {
+        const endorsementValue = e.target.value;
+        const endorsement = endorsementOptions.find(item => item.value === endorsementValue);
+        setSelectedEndorsements([...selectedEndorsements, endorsement]);
+        setSelectValue('');
+    }
+
+    const handleOffenseDateChange = (index, date) => {
+        setOffenseDate(prevState => {
+            const newState = [...prevState];
+            newState[index] = date;
+            return newState;
+        })
+    }
+
+    const handlePointsChange = (index, point) => {
+        setPoints(prevState => {
+            const newState = [...prevState];
+            newState[index] = point;
+            return newState;
+        })
+    }
 
     // HANDLE SAVE FOR EACH PAGE
     
@@ -642,7 +671,36 @@ export default function CandidateDetails() {
                                         />
                                     }
                                 />
-                                
+                                <Route
+                                    path='licenses'
+                                    element={
+                                        !isEditing ?
+                                            <Licenses
+                                                candidate={candidate}
+                                                edit={toggleEdit}
+                                                isEditing={isEditing}
+                                                selectedEndorsements={selectedEndorsements}
+                                                offenseDate={offenseDate}
+                                                points={points}
+                                                updatedLicenses={updatedLicenses}
+                                            />
+                                        : 
+                                            <LicensesForm
+                                                candidate={candidate}
+                                                updatedLicenses={updatedLicenses}
+                                                handleOnChange={handleUpdatedForm}
+                                                edit={toggleEdit}
+                                                save={handleSave}
+                                                handleLicenseCategory={handleLicenseCategory}
+                                                endorsementOptions={endorsementOptions}
+                                                selectValue={selectValue}
+                                                handleSelect={handleSelect}
+                                                selectedEndorsements={selectedEndorsements}
+                                                handleOffenseDateChange={handleOffenseDateChange}
+                                                handlePointsChange={handlePointsChange}
+                                            />
+                                    }
+                                />
                             </Routes>
                         </div>
                     </div>
