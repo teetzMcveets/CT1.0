@@ -21,6 +21,7 @@ import SkillsIndustrialForm from './CandidatePages/Skills/Industrial/SkillsIndus
 import WorkHistory from './CandidatePages/WorkHistory/WorkHistory';
 import Licenses from './CandidatePages/Licenses/Licenses';
 import LicensesForm from './CandidatePages/Licenses/LicensesForm';
+import endorsements from '../../../../utilities/endorsements';
 
 export default function CandidateDetails() {
     const { id } = useParams();
@@ -415,7 +416,8 @@ export default function CandidateDetails() {
     //     });
     //     changesMade.current = true;
     //     setIsWorkHistoryModalOpen(false);
-    // };    
+    // };   
+
 
     // HANDLE SAVE FOR EACH PAGE
     
@@ -640,26 +642,7 @@ export default function CandidateDetails() {
                                         />
                                     }
                                 />
-                                <Route
-                                    path='licenses'
-                                    element={
-                                        !isEditing ?
-                                            <Licenses
-                                                candidate={candidate}
-                                                edit={toggleEdit}
-                                                isEditing={isEditing}
-                                            />
-                                        : 
-                                            <LicensesForm
-                                                candidate={candidate}
-                                                updatedLicenses={updatedLicenses}
-                                                handleOnChange={handleUpdatedForm}
-                                                edit={toggleEdit}
-                                                save={handleSave}
-                                                handleLicenseCategory={handleLicenseCategory}
-                                            />
-                                    }
-                                />
+                                
                             </Routes>
                         </div>
                     </div>
