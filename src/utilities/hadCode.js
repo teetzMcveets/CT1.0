@@ -114,7 +114,6 @@ export const arnieMcVeighty = {
     ],
     //LICENSE
     licenseCategory: [],
-    licenseEndorsements: [],
 }
 
 export const danMilverton = {

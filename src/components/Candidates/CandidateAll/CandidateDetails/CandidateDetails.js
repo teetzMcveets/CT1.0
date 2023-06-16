@@ -79,6 +79,9 @@ export default function CandidateDetails() {
             setUpdatedSkills({
                 ...candidate,
             })
+            setUpdatedLicenses({
+                ...candidate,
+            })
             changesMade.current = false;
         }
         setIsEditing(!isEditing);
@@ -448,6 +451,12 @@ export default function CandidateDetails() {
         })
     }
 
+    const handleRemoveEndorsement = (index) => {
+        const newSelectedEndorsements = [...selectedEndorsements];
+        newSelectedEndorsements.splice(index, 1);
+        setSelectedEndorsements(newSelectedEndorsements);
+    }
+
     // HANDLE SAVE FOR EACH PAGE
     
     const handleSave = () => {
@@ -467,7 +476,12 @@ export default function CandidateDetails() {
         } else if (pathName.endsWith('skills-industrial')) {
             updatedQuestions = updatedSkills
         } else if (pathName.endsWith('licenses')) {
-            updatedQuestions = updatedLicenses
+            updatedQuestions = {
+                ...updatedLicenses,
+                selectedEndorsements,
+                offenseDate,
+                points,
+            }
         }
         if (updatedQuestions) {
             dispatch(updateCandidate(updatedQuestions));
@@ -698,6 +712,7 @@ export default function CandidateDetails() {
                                                 selectedEndorsements={selectedEndorsements}
                                                 handleOffenseDateChange={handleOffenseDateChange}
                                                 handlePointsChange={handlePointsChange}
+                                                handleRemoveEndorsement={handleRemoveEndorsement}
                                             />
                                     }
                                 />

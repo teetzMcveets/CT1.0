@@ -57,6 +57,11 @@
     margin-left: 20px;
 }
 
-.shorter-date-input {
+.shorter-date-input,
+.offense-date-endorsement {
     width: 150px;
+}
+
+.empty-link-disabled {
+    color: transparent;
 }

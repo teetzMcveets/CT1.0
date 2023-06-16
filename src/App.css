@@ -178,6 +178,12 @@ html {
   text-decoration: underline;
 }
 
+.custom-file-upload {
+  padding: 10px;
+  font-family: var(--font);
+  border: 1px solid white;
+}
+
 /* Main Content
 =========================================================================== */
 

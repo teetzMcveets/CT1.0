@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import './Licenses.css';
 
 export default function LicensesForm ({
@@ -15,7 +14,10 @@ export default function LicensesForm ({
     selectedEndorsements,
     handleOffenseDateChange,
     handlePointsChange,
+    handleRemoveEndorsement,
 }) {
+
+    console.log(updatedLicenses.licenseCheckExpires)
  
     return (
         <>
@@ -77,25 +79,66 @@ export default function LicensesForm ({
 
                     <div className='card-detail-title'>
                         <div className='card-title'>
+                            License Check
+                        </div>
+                    </div>
+
+                    <div className='candidate-page-card-container'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Upload license check
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <input
+                                    type='file'
+                                />
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Expiration date
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <input
+                                    type='date'
+                                    className='candidate-page-input-date'
+                                    value={updatedLicenses.licenseCheckExpires}
+                                    onChange={(e) => handleOnChange('licenseCheckExpires', e.target.value)}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                        
+                    
+                    <div className='card-detail-title'>
+                        <div className='card-title'>
                             License Endorsements
                         </div>
                     </div>
+                    
 
                     <div className='candidate-page-card-container'>
 
                         {/* <div className='candidate-page-detail-container endorsement-direction'> */}
 
                             {selectedEndorsements.map((endorsement, index) => (
-                                <div className='candidate-page-detail-container endorsement-direction'>
-                                    <div key={index} className='endorsement-container'>
+                                <div key={index} className='candidate-page-detail-container endorsement-direction'>
+                                    <div className='endorsement-container'>
                                         <div className='value-remove-container'>
                                             <div className='endorsement-value'>
                                                 {endorsement.value}
                                             </div>
                                             <div className='link-container'>
-                                                <Link className='link-secondary'>
+                                                <button
+                                                    onClick={() => handleRemoveEndorsement(index)}
+                                                    className='button-third'
+                                                >
                                                     Remove
-                                                </Link>
+                                                </button>
                                             </div>
                                         </div>
 
