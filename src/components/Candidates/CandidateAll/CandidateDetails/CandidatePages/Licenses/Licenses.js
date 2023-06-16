@@ -10,7 +10,7 @@ export default function Licenses ({
     offenseDate,
     points,
 }) {
-    console.log(candidate.licenseCheckExpires)
+    console.log(candidate.licenseEndorsements)
 
     return (
         <>
@@ -94,11 +94,67 @@ export default function Licenses ({
                         </div>
                     </div>
 
-                    <div className='card-detail-title'>
+                    {selectedEndorsements && selectedEndorsements.length > 0 && (
+                        <>
+                            <div className='card-detail-title'>
+                                <div className='card-title'>
+                                    License Endorsements
+                                </div>
+                            </div>
+
+
+                            <div className='candidate-page-card-container'>
+                                
+                                {selectedEndorsements.map((endorsement, index) => (
+                                    <div key={index} className='candidate-page-detail-container endorsement-direction'>
+                                        <div className='endorsement-container'>
+                                            <div className='value-remove-container'>
+                                                <div className='endorsement-value'>
+                                                    {endorsement.value}
+                                                </div>
+                                                <div className='link-container'>
+                                                    <Link className='empty-link-disabled'>
+                                                        BLANK
+                                                    </Link>
+                                                </div>
+                                            </div>
+
+                                            <div className='details-dates-container'>
+                                                <div className='endorsement-details'>
+                                                    {endorsement.details}
+                                                </div>
+                                                <div className='endorsement-date-container'>
+                                                    <label className='endorsement-date'>
+                                                        Date of offense
+                                                    </label>
+                                                    <div className='candidate-page-detail-answer-container offense-date-endorsement'>
+                                                        {candidate.offenseDate}
+                                                    </div>
+                                                </div>
+                                                <div className='endorsement-point-container'>
+                                                    <label className='endorsement-points'>
+                                                        Points
+                                                    </label>
+                                                    <div className='candidate-page-detail-answer-container'>
+                                                        {candidate.points}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+
+                            </div>
+                        </>
+                    )}
+
+                    
+                    {/* <div className='card-detail-title'>
                         <div className='card-title'>
                             License Endorsements
                         </div>
                     </div>
+
 
                     <div className='candidate-page-card-container'>
                         
@@ -141,7 +197,7 @@ export default function Licenses ({
                             </div>
                         ))}
 
-                    </div>
+                    </div> */}
 
                     {/* THIS IS WHERE THE UPLOADS AND STUFF ARE */}
                     {updatedLicenses.licenseCategory.includes('CE - class one') &&
