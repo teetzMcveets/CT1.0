@@ -46,7 +46,42 @@ export default function LicensesForm ({
 
                     <div className='card-detail-title'>
                         <div className='card-title'>
-                            Licenses Categories
+                            License Front
+                        </div>
+                    </div>
+
+                    <div className='candidate-page-card-container'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Upload front of license
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <input
+                                    type='file'
+                                />
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                4B Expiration date
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <input
+                                    type='date'
+                                    className='candidate-page-input-date'
+                                    value={updatedLicenses.licenseExpires4B}
+                                    onChange={(e) => handleOnChange('licenseExpires4B', e.target.value)}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='card-detail-title'>
+                        <div className='card-title'>
+                            License Back
                         </div>
                     </div>
 
