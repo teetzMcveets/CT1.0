@@ -65,3 +65,9 @@
 .empty-link-disabled {
     color: transparent;
 }
+
+.file-input-container {
+    height: 30px;
+    display: flex;
+    align-items: center;
+}

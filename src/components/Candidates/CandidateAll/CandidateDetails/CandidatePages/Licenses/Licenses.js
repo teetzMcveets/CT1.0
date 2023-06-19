@@ -24,9 +24,90 @@ export default function Licenses ({
                     </button>
                 </div>
             </div>
+            
 
             <div className='candidate-page-right-candidate'>
                 <div className='candidate-page-full-page'>
+
+                    <div className='card-detail-title'>
+                        <div className='card-title'>
+                            License Front
+                        </div>
+                    </div>
+
+                    <div className='candidate-page-detail-container'>
+                        <div className='candidate-page-detail-label'>
+                            Upload front of license
+                        </div>
+
+                        <div className='candidate-page-detail-answer'>
+                            <div className='candidate-page-detail-answer-container'>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='candidate-page-card-container'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                First name on license (if not {candidate.firstName})
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
+                                    {candidate.licenseNameNotSame}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                License number (5)
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
+                                    {candidate.licenseNumber}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                License issue (last two digits of license number)
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container' style={{ width: 100 }}>
+                                    {candidate.licenseIssueNumber}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Issue date (4a)
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
+                                    {candidate.licenseIssueDate}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Expiration date (4b)
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
+                                    {candidate.licenseExpiryDate}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div className='card-detail-title'>
                         <div className='card-title'>

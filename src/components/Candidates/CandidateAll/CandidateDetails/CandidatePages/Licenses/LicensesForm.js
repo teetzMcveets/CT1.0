@@ -53,27 +53,94 @@ export default function LicensesForm ({
                     <div className='candidate-page-card-container'>
                         <div className='candidate-page-detail-container'>
                             <div className='candidate-page-detail-label'>
-                                Upload front of license
+                                First name on license (if not {candidate.firstName})
                             </div>
+            
 
                             <div className='candidate-page-detail-answer'>
                                 <input
-                                    type='file'
+                                    type='text'
+                                    className='candidate-page-input'
+                                    value={updatedLicenses.licenseNameNotSame}
+                                    onChange={(e) => handleOnChange('licenseNameNotSame', e.target.value)}
                                 />
                             </div>
                         </div>
 
                         <div className='candidate-page-detail-container'>
                             <div className='candidate-page-detail-label'>
-                                4B Expiration date
+                                License number (5)
+                            </div>
+            
+
+                            <div className='candidate-page-detail-answer'>
+                                <input
+                                    type='tel'
+                                    className='candidate-page-input'
+                                    value={updatedLicenses.licenseNumber}
+                                    onChange={(e) => handleOnChange('licenseNumber', e.target.value)}
+                                />
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                License issue (last two digits of license number)
+                            </div>
+            
+
+                            <div className='candidate-page-detail-answer'>
+                                <input
+                                    type='tel'
+                                    className='candidate-page-input'
+                                    style={{ width: 100 }}
+                                    value={updatedLicenses.licenseIssueNumber}
+                                    onChange={(e) => handleOnChange('licenseIssueNumber', e.target.value)}
+                                />
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Upload front of license
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <div className='file-input-container'>
+                                <input
+                                    type='file'
+                                    className='file-input'
+                                />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Issue date (4a)
                             </div>
 
                             <div className='candidate-page-detail-answer'>
                                 <input
                                     type='date'
                                     className='candidate-page-input-date'
-                                    value={updatedLicenses.licenseExpires4B}
-                                    onChange={(e) => handleOnChange('licenseExpires4B', e.target.value)}
+                                    value={updatedLicenses.licenseIssueDate}
+                                    onChange={(e) => handleOnChange('licenseIssueDate', e.target.value)}
+                                />
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Expiration date (4b)
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <input
+                                    type='date'
+                                    className='candidate-page-input-date'
+                                    value={updatedLicenses.licenseExpiryDate}
+                                    onChange={(e) => handleOnChange('licenseExpiryDate', e.target.value)}
                                 />
                             </div>
                         </div>
@@ -125,9 +192,11 @@ export default function LicensesForm ({
                             </div>
 
                             <div className='candidate-page-detail-answer'>
-                                <input
-                                    type='file'
-                                />
+                                <div className='file-input-container'>
+                                    <input
+                                        type='file'
+                                    />
+                                </div>
                             </div>
                         </div>
 
