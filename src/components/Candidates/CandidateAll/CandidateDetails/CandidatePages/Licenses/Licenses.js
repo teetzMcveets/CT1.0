@@ -28,35 +28,46 @@ export default function Licenses ({
 
             <div className='candidate-page-right-candidate'>
                 <div className='candidate-page-full-page'>
-
+                    
+                    {/* Front of license */}
                     <div className='card-detail-title'>
                         <div className='card-title'>
                             License Front
                         </div>
                     </div>
 
-                    <div className='candidate-page-detail-container'>
-                        <div className='candidate-page-detail-label'>
-                            Upload front of license
-                        </div>
-
-                        <div className='candidate-page-detail-answer'>
-                            <div className='candidate-page-detail-answer-container'>
-
-                            </div>
-                        </div>
-                    </div>
-
                     <div className='candidate-page-card-container'>
                         <div className='candidate-page-detail-container'>
+                            
                             <div className='candidate-page-detail-label'>
-                                First name on license (if not {candidate.firstName})
+                                Upload front of license
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                First name on license
                             </div>
 
                             <div className='candidate-page-detail-answer'>
                                 <div className='candidate-page-detail-answer-container'>
                                     {candidate.licenseNameNotSame}
                                 </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                            </div>
+
+                            <div className='candidate-page-detail-answer' style={{ marginTop: -15, color: 'var(--text2)' }}>
+                                (if not {candidate.firstName})
                             </div>
                         </div>
 
@@ -74,13 +85,22 @@ export default function Licenses ({
 
                         <div className='candidate-page-detail-container'>
                             <div className='candidate-page-detail-label'>
-                                License issue (last two digits of license number)
+                                License issue number
                             </div>
 
                             <div className='candidate-page-detail-answer'>
                                 <div className='candidate-page-detail-answer-container' style={{ width: 100 }}>
                                     {candidate.licenseIssueNumber}
                                 </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                            </div>
+
+                            <div className='candidate-page-detail-answer' style={{ marginTop: -15, color: 'var(--text2)' }}>
+                                (last digits of license number after the space)
                             </div>
                         </div>
 
@@ -108,10 +128,11 @@ export default function Licenses ({
                             </div>
                         </div>
                     </div>
-
+                    
+                    {/* Back of license */}
                     <div className='card-detail-title'>
                         <div className='card-title'>
-                            Licenses Categories
+                            License Back
                         </div>
                     </div>
 
@@ -141,6 +162,25 @@ export default function Licenses ({
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div className='card-detail-title'>
+                        <div className='card-title'>
+                            License Back
+                        </div>
+                    </div>
+
+                    <div className='candidate-page-card-container'>
+
+                        <div style={{ border: '1px solid white', display: 'flex'}}>
+                            <div style={{ border: '1px solid red', width: '15%' }}>
+                                CATEGORY
+                            </div>
+
+                            <div style={{ border: '1px solid blue', width: '85%' }}></div>
+
+                        </div>
+
                     </div>
 
                     <div className='card-detail-title'>

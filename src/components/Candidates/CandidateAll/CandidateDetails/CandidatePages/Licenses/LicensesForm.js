@@ -50,10 +50,28 @@ export default function LicensesForm ({
                         </div>
                     </div>
 
+                    
+
                     <div className='candidate-page-card-container'>
+
                         <div className='candidate-page-detail-container'>
                             <div className='candidate-page-detail-label'>
-                                First name on license (if not {candidate.firstName})
+                                Upload front of license
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <div className='file-input-container'>
+                                <input
+                                    type='file'
+                                    className='file-input'
+                                />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                First name on license
                             </div>
             
 
@@ -64,6 +82,16 @@ export default function LicensesForm ({
                                     value={updatedLicenses.licenseNameNotSame}
                                     onChange={(e) => handleOnChange('licenseNameNotSame', e.target.value)}
                                 />
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                            </div>
+            
+
+                            <div className='candidate-page-detail-answer' style={{ marginTop: -15, color: 'var(--text2)' }}>
+                                (if not {candidate.firstName})
                             </div>
                         </div>
 
@@ -85,7 +113,7 @@ export default function LicensesForm ({
 
                         <div className='candidate-page-detail-container'>
                             <div className='candidate-page-detail-label'>
-                                License issue (last two digits of license number)
+                                License issue number
                             </div>
             
 
@@ -102,16 +130,10 @@ export default function LicensesForm ({
 
                         <div className='candidate-page-detail-container'>
                             <div className='candidate-page-detail-label'>
-                                Upload front of license
                             </div>
 
-                            <div className='candidate-page-detail-answer'>
-                                <div className='file-input-container'>
-                                <input
-                                    type='file'
-                                    className='file-input'
-                                />
-                                </div>
+                            <div className='candidate-page-detail-answer' style={{ marginTop: -15, color: 'var(--text2)', fontSize: 12 }}>
+                                (last digits of license number after the space)
                             </div>
                         </div>
 
@@ -178,6 +200,47 @@ export default function LicensesForm ({
                             </div>
                         </div>
                     </div>
+
+                    <div className='card-detail-title'>
+                        <div className='card-title'>
+                            License Back
+                        </div>
+                    </div>
+
+                    <div className='candidate-page-card-container'>
+
+                        <div style={{ border: '1px solid white', display: 'flex', height: 30, paddingLeft: 10 }}>
+                            <div style={{ border: '1px solid red', width: '15%', display: 'flex', alignItems: 'center' }}>
+                                <input
+                                    type='checkbox'
+                                />
+                                <label style={{ paddingLeft: 10, fontWeight: 'bold' }}>
+                                    B
+                                </label>
+                            </div>
+
+                            <div style={{ border: '1px solid blue', width: '85%', display: 'flex', alignItems: 'center' }}>
+                                THIS IS WHERE THE DATES GO IF THE BUTTON IS CLICKED
+                            </div>
+                        </div>
+                        <div style={{ border: '1px solid white', display: 'flex', height: 30 }}>
+                            <div style={{ border: '1px solid red', width: '15%', display: 'flex', alignItems: 'center' }}>
+                                <input
+                                    type='checkbox'
+                                />
+                                <label style={{ paddingLeft: 10, fontWeight: 'bold' }}>
+                                    B+E
+                                </label>
+                            </div>
+
+                            <div style={{ border: '1px solid blue', width: '85%', display: 'flex', alignItems: 'center' }}>
+                                THIS IS WHERE THE DATES GO IF THE BUTTON IS CLICKED
+                            </div>
+                        </div>
+
+                    </div>
+
+
 
                     <div className='card-detail-title'>
                         <div className='card-title'>
