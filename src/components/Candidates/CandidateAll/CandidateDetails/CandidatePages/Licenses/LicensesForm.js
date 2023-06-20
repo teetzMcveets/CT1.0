@@ -261,52 +261,127 @@ export default function LicensesForm ({
                                 })}
                             </div>
                         </div>
+                    </div>
 
-                        {/* <div className='license-back-checkboxes'>
-                            <div className='license-back-left-box'>
-                                <input
-                                    type='checkbox'
-                                />
-                                <label style={{ paddingLeft: 5, fontWeight: 'bold' }}>
-                                    C
-                                </label>
+                    {/* CPC Card */}
+
+                    <div className='card-detail-title'>
+                        <div className='card-title'>
+                            Driver Qualification Card
+                        </div>
+                    </div>
+
+                    <div className='candidate-page-card-container'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Upload font of your DQC
                             </div>
 
-                            <div className='license-back-date-box'>
-                                
+                            <div className='candidate-page-detail-answer'>
+                                <div className='file-input-container'>
+                                    <input
+                                        type='file'
+                                    />
+                                </div>
+                            </div>   
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Upload back of your DQC
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <div className='file-input-container'>
+                                    <input
+                                        type='file'
+                                    />
+                                </div>
+                            </div>   
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Expiration date (4b)
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <input
+                                    type='date'
+                                    className='candidate-page-input-date'
+                                    value={updatedLicenses.DQCExpiryDate}
+                                    onChange={(e) => handleOnChange('DQCExpiryDate', e.target.value)}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* DIGI Card */}
+
+                    <div className='card-detail-title'>
+                        <div className='card-title'>
+                            Digital Tachograph Card
+                        </div>
+                    </div>
+
+                    <div className='candidate-page-card-container'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Upload font of your Tacho
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <div className='file-input-container'>
+                                    <input
+                                        type='file'
+                                    />
+                                </div>
+                            </div>   
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Upload back of your Tacho
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <div className='file-input-container'>
+                                    <input
+                                        type='file'
+                                    />
+                                </div>
+                            </div>   
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Tacho card number (5b)
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <input
+                                    type='tel'
+                                    className='candidate-page-input'
+                                    value={updatedLicenses.TachoCardNumber}
+                                    onChange={(e) => handleOnChange('TachoCardNumber', e.target.value)}
+                                />
                             </div>
                         </div>
 
-                        <div className='license-back-checkboxes'>
-                            <div className='license-back-left-box'>
-                                <input
-                                    type='checkbox'
-                                />
-                                <label style={{ paddingLeft: 5, fontWeight: 'bold' }}>
-                                    C1
-                                </label>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Expiration date (4b)
                             </div>
 
-                            <div className='license-back-date-box'>
-
+                            <div className='candidate-page-detail-answer'>
+                                <input
+                                    type='date'
+                                    className='candidate-page-input-date'
+                                    value={updatedLicenses.TachoCardExpiry}
+                                    onChange={(e) => handleOnChange('TachoCardExpiry', e.target.value)}
+                                />
                             </div>
                         </div>
-
-                        <div className='license-back-checkboxes'>
-                            <div className='license-back-left-box'>
-                                <input
-                                    type='checkbox'
-                                />
-                                <label style={{ paddingLeft: 5, fontWeight: 'bold' }}>
-                                    B
-                                </label>
-                            </div>
-
-                            <div className='license-back-date-box'>
-                                
-                            </div>
-                        </div> */}
-
                     </div>
 
 
@@ -440,21 +515,6 @@ export default function LicensesForm ({
 
                         </div>
                     </div>
-
-                    {/* THIS IS WHERE THE UPLOADS AND STUFF ARE */}
-                    {updatedLicenses.licenseCategory.includes('CE - class one') &&
-                        <>
-                            <div className='card-detail-title'>
-                                <div className='card-title'>
-                                    CE - class one
-                                </div>
-                            </div>
-
-                            <div className='candidate-page-card-container'>
-
-                            </div>
-                        </>
-                    } 
 
                 </div>
             </div>

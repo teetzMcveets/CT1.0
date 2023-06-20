@@ -152,3 +152,7 @@
     font-size: var(--med1);
     height: 30px;
 } */
+
+.candidate-page-input-date {
+    width: 120px;
+}

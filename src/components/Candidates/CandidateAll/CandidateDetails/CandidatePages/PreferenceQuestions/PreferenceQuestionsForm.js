@@ -58,6 +58,14 @@ export default function PreferenceQuestionsForm ({
                                     value={updatedPreferenceQuestions.startDate}
                                     onChange={(e) => handleOnChange('startDate', e.target.value)}
                                 />
+                                <input 
+                                    type='checkbox'
+                                    style={{ margin: '0 10px 0 20px'}}
+                                    id='start-work-asap'
+                                />
+                                <label style={{ display: 'flex', alignItems: 'center'}} htmlFor='start-work-asap'>
+                                    ASAP
+                                </label>
                             </div>
                         </div>
 

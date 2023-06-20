@@ -210,6 +210,112 @@ export default function Licenses ({
 
                     </div>
 
+                    {/* CPC Card */}
+
+                    <div className='card-detail-title'>
+                        <div className='card-title'>
+                            Driver Qualification Card
+                        </div>
+                    </div>
+
+                    <div className='candidate-page-card-container'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Upload font of your DQC
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Upload back of your DQC
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Expiration date (4b)
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
+                                    {candidate.DQCExpiryDate}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* DIGI Card */}
+
+                    <div className='card-detail-title'>
+                        <div className='card-title'>
+                            Digital Tachograph Card
+                        </div>
+                    </div>
+
+                    <div className='candidate-page-card-container'>
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Upload font of your Tacho
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Upload back of your Tacho
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Tacho card number (5b)
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
+                                    {candidate.TachoCardNumber}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Expiration date (4b)
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
+                                    {candidate.TachoCardExpiry}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                     
                     {/* License check */}
                     <div className='card-detail-title'>
