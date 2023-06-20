@@ -129,60 +129,10 @@ export default function Licenses ({
                         </div>
                     </div>
                     
-                    {/* Back of license */}
-                    <div className='card-detail-title'>
-                        <div className='card-title'>
-                            License Back
-                        </div>
-                    </div>
+                    {/* License bank */}
 
-                    <div className='candidate-page-card-container'>
-
-                        <div className='candidate-page-detail-container'>
-                            <div className='candidate-page-detail-label'>
-                                Select categories you have
-                            </div>
-
-                            <div className='candidate-page-detail-answer'>
-                                <div className='candidate-page-checkbox-container'>
-                                    {['CE - class one', 'C - class two', 'C1 - 7.5 tonne', 'B - van'].map((licenseCategoryValue) => (
-                                        <div className='candidate-page-checkbox-single-answer' key={licenseCategoryValue}>
-                                            <input 
-                                                type='checkbox'
-                                                id={`licenseCategory-${licenseCategoryValue}`}
-                                                checked={candidate.licenseCategory.includes(licenseCategoryValue)}
-                                                // onChange={(e) => handleLicenseCategory(e, licenseCategoryValue)}
-                                                readOnly
-                                            />
-                                            <label className='candidate-page-checkbox-label'  htmlFor={`licenseCategory-${licenseCategoryValue}`}>
-                                                {licenseCategoryValue}
-                                            </label>
-                                        </div>    
-                                    ))}      
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='card-detail-title'>
-                        <div className='card-title'>
-                            License Back
-                        </div>
-                    </div>
-
-                    <div className='candidate-page-card-container'>
-
-                        <div style={{ border: '1px solid white', display: 'flex'}}>
-                            <div style={{ border: '1px solid red', width: '15%' }}>
-                                CATEGORY
-                            </div>
-
-                            <div style={{ border: '1px solid blue', width: '85%' }}></div>
-
-                        </div>
-
-                    </div>
-
+                    
+                    {/* License check */}
                     <div className='card-detail-title'>
                         <div className='card-title'>
                             License Check

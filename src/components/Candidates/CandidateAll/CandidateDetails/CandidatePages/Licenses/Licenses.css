@@ -71,3 +71,34 @@
     display: flex;
     align-items: center;
 }
+
+/* LICENSE BACK BOX */
+
+.license-back-checkbox-container {
+    background-color: var(--BGC);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-right: 15px;
+}
+
+.license-back-checkboxes {
+    display: flex;
+}
+
+.license-back-left-box {
+    border: 1px solid var(--s3);
+    display: flex;
+    align-items: center;
+    width: 10%;
+    padding: 5px 15px;
+}
+
+.license-back-right-box {
+    border: 1px solid var(--s3);
+    display: flex;
+    align-items: center;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+}
