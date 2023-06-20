@@ -223,32 +223,30 @@ export default function LicensesForm ({
                                             <div className='license-back-right-box'>
                                                 {updatedLicenses.licenseCategory.includes(licenseCategoryValue) &&
                                                     <>
-                                                        <div style={{ display: 'flex', width: '100%', alignItems: 'center', padding: '10px 20px' }}>
-                                                            <div style={{ paddingRight: 10 }}>
+                                                        <div className='valid-from-to-container'>
+                                                            <div className='valid-from-to-label'>
                                                                 Valid from
                                                             </div>
 
-                                                            <div>
+                                                            <div className='valid-from-to-answer-container'>
                                                                 <input
                                                                     type='date'
-                                                                    className='candidate-page-input-date'
-                                                                    style={{ width: '100%' }}
+                                                                    className='valid-from-to-input-date'
                                                                     value={updatedLicenses[validFromDateKey]}
                                                                     onChange={(e) => handleOnChange(validFromDateKey, e.target.value)}
                                                                 />
                                                             </div>
                                                         </div>
 
-                                                        <div style={{ display: 'flex', width: '100%', alignItems: 'center', padding: '10px 20px' }}>
-                                                            <div style={{ paddingRight: 10 }}>
+                                                        <div className='valid-from-to-container'>
+                                                            <div className='valid-from-to-label'>
                                                                 Valid to
                                                             </div>
 
-                                                            <div>
+                                                            <div className='valid-from-to-answer-container'>
                                                                 <input
                                                                     type='date'
-                                                                    className='candidate-page-input-date'
-                                                                    style={{ width: '100%' }}
+                                                                    className='valid-from-to-input-date'
                                                                     value={updatedLicenses[validToDateKey]}
                                                                     onChange={(e) => handleOnChange(validToDateKey, e.target.value)}
                                                                 />

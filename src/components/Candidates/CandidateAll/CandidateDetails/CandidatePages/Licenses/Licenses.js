@@ -180,22 +180,22 @@ export default function Licenses ({
                                             <div className='license-back-right-box'>
                                                 {updatedLicenses.licenseCategory.includes(licenseCategoryValue) &&
                                                     <>
-                                                        <div className='license-back-validFrom-container'>
-                                                            <div className='license-back-label-date'>
+                                                        <div className='valid-from-to-container'>
+                                                            <div className='valid-from-to-label'>
                                                                 Valid from
                                                             </div>
 
-                                                            <div className='license-back-answer-date'>
+                                                            <div className='valid-from-to-answer'>
                                                                 {candidate[validFromDateKey]}
                                                             </div>
                                                         </div>
 
-                                                        <div className='license-back-validTo-container'>
-                                                            <div>
-                                                                Valid from
+                                                        <div className='valid-from-to-container'>
+                                                            <div className='valid-from-to-label'>
+                                                                Valid to
                                                             </div>
 
-                                                            <div>
+                                                            <div className='valid-from-to-answer'>
                                                                 {candidate[validToDateKey]}
                                                             </div>
                                                         </div>
