@@ -131,6 +131,55 @@ export default function Licenses ({
                     
                     {/* License bank */}
 
+                    <div className='card-detail-title'>
+                        <div className='card-title'>
+                            License Back
+                        </div>
+                    </div>
+
+                    <div className='candidate-page-card-container'>
+                        
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Upload back of license
+                            </div>
+
+                            <div className='candidate-page-detail-answer'>
+                                <div className='candidate-page-detail-answer-container'>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-container'>
+                            <div className='candidate-page-detail-label'>
+                                Select categories you have
+                            </div>
+                        </div>
+
+                        <div className='candidate-page-detail-answer' style={{ width: '100%' }}>
+                            <div className='license-back-checkbox-container'>
+                                {['CE', 'C', 'C1', 'B'].map((licenseCategoryValue) => (
+                                    <div className='license-back-checkboxes' key={licenseCategoryValue}>
+                                        <div className='license-back-left-box'>
+                                            <input
+                                                type='checkbox'
+                                            />
+                                            <label style={{ paddingLeft: 5 }}>
+                                                {licenseCategoryValue}
+                                            </label>
+                                        </div>
+                                        <div className='license-back-right-box'>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                    </div>
+
                     
                     {/* License check */}
                     <div className='card-detail-title'>
@@ -218,57 +267,6 @@ export default function Licenses ({
                             </div>
                         </>
                     )}
-
-                    
-                    {/* <div className='card-detail-title'>
-                        <div className='card-title'>
-                            License Endorsements
-                        </div>
-                    </div>
-
-
-                    <div className='candidate-page-card-container'>
-                        
-                        {selectedEndorsements.map((endorsement, index) => (
-                            <div key={index} className='candidate-page-detail-container endorsement-direction'>
-                                <div className='endorsement-container'>
-                                    <div className='value-remove-container'>
-                                        <div className='endorsement-value'>
-                                            {endorsement.value}
-                                        </div>
-                                        <div className='link-container'>
-                                            <Link className='empty-link-disabled'>
-                                                BLANK
-                                            </Link>
-                                        </div>
-                                    </div>
-
-                                    <div className='details-dates-container'>
-                                        <div className='endorsement-details'>
-                                            {endorsement.details}
-                                        </div>
-                                        <div className='endorsement-date-container'>
-                                            <label className='endorsement-date'>
-                                                Date of offense
-                                            </label>
-                                            <div className='candidate-page-detail-answer-container offense-date-endorsement'>
-                                                {candidate.offenseDate}
-                                            </div>
-                                        </div>
-                                        <div className='endorsement-point-container'>
-                                            <label className='endorsement-points'>
-                                                Points
-                                            </label>
-                                            <div className='candidate-page-detail-answer-container'>
-                                                {candidate.points}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-
-                    </div> */}
 
                     {/* THIS IS WHERE THE UPLOADS AND STUFF ARE */}
                     {updatedLicenses.licenseCategory.includes('CE - class one') &&

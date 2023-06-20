@@ -17,7 +17,7 @@ export default function LicensesForm ({
     handleRemoveEndorsement,
 }) {
 
-    console.log(updatedLicenses.licenseCheckExpires)
+    console.log(updatedLicenses.licenseCategory)
  
     return (
         <>
@@ -167,39 +167,6 @@ export default function LicensesForm ({
                             </div>
                         </div>
                     </div>
-
-                    {/* <div className='card-detail-title'>
-                        <div className='card-title'>
-                            License Back
-                        </div>
-                    </div>
-
-                    <div className='candidate-page-card-container'>
-
-                        <div className='candidate-page-detail-container'>
-                            <div className='candidate-page-detail-label'>
-                                Select categories you have
-                            </div>
-
-                            <div className='candidate-page-detail-answer'>
-                                <div className='candidate-page-checkbox-container candidate-page-checkbox-answer-edit'>
-                                    {['CE - class one', 'C - class two', 'C1 - 7.5 tonne', 'B - van'].map((licenseCategoryValue) => (
-                                        <div className='candidate-page-checkbox-single-answer' key={licenseCategoryValue}>
-                                            <input 
-                                                type='checkbox'
-                                                id={`licenseCategory-${licenseCategoryValue}`}
-                                                checked={updatedLicenses.licenseCategory.includes(licenseCategoryValue)}
-                                                onChange={(e) => handleLicenseCategory(e, licenseCategoryValue)}
-                                            />
-                                            <label className='candidate-page-checkbox-label'  htmlFor={`licenseCategory-${licenseCategoryValue}`}>
-                                                {licenseCategoryValue}
-                                            </label>
-                                        </div>    
-                                    ))}      
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
                     
 
                     {/* LICENSE BACK*/}
@@ -228,27 +195,62 @@ export default function LicensesForm ({
                         </div>
 
                         <div className='candidate-page-detail-container'>
-
                             <div className='candidate-page-detail-label'>
                                 Select categories you have
                             </div>
                         </div>
 
-
                         <div className='candidate-page-detail-answer' style={{ width: '100%' }}>
-                            <div className='license-back-checkbox-container'>
+                            <div className='license-back-checkbox-container license-back-checkbox-edit'>
                                 {['CE', 'C', 'C1', 'B'].map((licenseCategoryValue) => (
                                     <div className='license-back-checkboxes' key={licenseCategoryValue}>
                                         <div className='license-back-left-box'>
                                             <input
                                                 type='checkbox'
+                                                id={`licenseBack-${licenseCategoryValue}`}
+                                                checked={updatedLicenses.licenseCategory.includes(licenseCategoryValue)}
+                                                onChange={(e) => handleLicenseCategory(e, licenseCategoryValue)}
                                             />
-                                            <label style={{ paddingLeft: 5 }}>
+                                            <label style={{ paddingLeft: 5 }} htmlFor={`licenseBack-${licenseCategoryValue}`}>
                                                 {licenseCategoryValue}
                                             </label>
                                         </div>
                                         <div className='license-back-right-box'>
-                                            
+                                            {updatedLicenses.licenseCategory.includes(licenseCategoryValue) &&
+                                                <>
+                                                    <div style={{ display: 'flex', width: '100%', alignItems: 'center', padding: '10px 20px' }}>
+                                                        <div style={{ paddingRight: 10 }}>
+                                                            Valid from
+                                                        </div>
+
+                                                        <div>
+                                                            <input
+                                                                type='date'
+                                                                className='candidate-page-input-date'
+                                                                style={{ width: '100%' }}
+                                                                value={updatedLicenses.licenseExpiryDate}
+                                                                onChange={(e) => handleOnChange('licenseExpiryDate', e.target.value)}
+                                                            />
+                                                        </div>
+                                                    </div>
+
+                                                    <div style={{ display: 'flex', width: '100%', alignItems: 'center', padding: '10px 20px' }}>
+                                                        <div style={{ paddingRight: 10 }}>
+                                                            Valid to
+                                                        </div>
+
+                                                        <div>
+                                                            <input
+                                                                type='date'
+                                                                className='candidate-page-input-date'
+                                                                style={{ width: '100%' }}
+                                                                value={updatedLicenses.licenseExpiryDate}
+                                                                onChange={(e) => handleOnChange('licenseExpiryDate', e.target.value)}
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </>
+                                            }
                                         </div>
                                         
                                     </div>
