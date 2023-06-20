@@ -90,7 +90,7 @@ export default function WorkHistory ({
                                     {work.isAgency === 'Yes' ? <div className='tick-icon'>&#10003;</div> : '' }
                                 </div>
                                 <div className='work-history-table-data wh-col-seven'>
-                                    <button className='button-secondary small-button'>
+                                    <button className='button-secondary small-button' >
                                         <i className='fas fa-pencil-alt'></i>
                                     </button>
                                 </div>
