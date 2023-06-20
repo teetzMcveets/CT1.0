@@ -202,59 +202,66 @@ export default function LicensesForm ({
 
                         <div className='candidate-page-detail-answer' style={{ width: '100%' }}>
                             <div className='license-back-checkbox-container license-back-checkbox-edit'>
-                                {['CE', 'C', 'C1', 'B'].map((licenseCategoryValue) => (
-                                    <div className='license-back-checkboxes' key={licenseCategoryValue}>
-                                        <div className='license-back-left-box'>
-                                            <input
-                                                type='checkbox'
-                                                id={`licenseBack-${licenseCategoryValue}`}
-                                                checked={updatedLicenses.licenseCategory.includes(licenseCategoryValue)}
-                                                onChange={(e) => handleLicenseCategory(e, licenseCategoryValue)}
-                                            />
-                                            <label style={{ paddingLeft: 5 }} htmlFor={`licenseBack-${licenseCategoryValue}`}>
-                                                {licenseCategoryValue}
-                                            </label>
+                                {['CE', 'C', 'C1', 'B'].map((licenseCategoryValue) => {
+                                    
+                                    const validFromDateKey = `licenseBack${licenseCategoryValue}ValidFrom`;
+                                    const validToDateKey = `licenseBack${licenseCategoryValue}ValidTo`;
+
+
+                                    return (
+                                        <div className='license-back-checkboxes' key={licenseCategoryValue}>
+                                            <div className='license-back-left-box'>
+                                                <input
+                                                    type='checkbox'
+                                                    id={`licenseBack-${licenseCategoryValue}`}
+                                                    checked={updatedLicenses.licenseCategory.includes(licenseCategoryValue)}
+                                                    onChange={(e) => handleLicenseCategory(e, licenseCategoryValue)}
+                                                />
+                                                <label style={{ paddingLeft: 5 }} htmlFor={`licenseBack-${licenseCategoryValue}`}>
+                                                    {licenseCategoryValue}
+                                                </label>
+                                            </div>
+                                            <div className='license-back-right-box'>
+                                                {updatedLicenses.licenseCategory.includes(licenseCategoryValue) &&
+                                                    <>
+                                                        <div style={{ display: 'flex', width: '100%', alignItems: 'center', padding: '10px 20px' }}>
+                                                            <div style={{ paddingRight: 10 }}>
+                                                                Valid from
+                                                            </div>
+
+                                                            <div>
+                                                                <input
+                                                                    type='date'
+                                                                    className='candidate-page-input-date'
+                                                                    style={{ width: '100%' }}
+                                                                    value={updatedLicenses[validFromDateKey]}
+                                                                    onChange={(e) => handleOnChange(validFromDateKey, e.target.value)}
+                                                                />
+                                                            </div>
+                                                        </div>
+
+                                                        <div style={{ display: 'flex', width: '100%', alignItems: 'center', padding: '10px 20px' }}>
+                                                            <div style={{ paddingRight: 10 }}>
+                                                                Valid to
+                                                            </div>
+
+                                                            <div>
+                                                                <input
+                                                                    type='date'
+                                                                    className='candidate-page-input-date'
+                                                                    style={{ width: '100%' }}
+                                                                    value={updatedLicenses[validToDateKey]}
+                                                                    onChange={(e) => handleOnChange(validToDateKey, e.target.value)}
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                    </>
+                                                }
+                                            </div>
+                                            
                                         </div>
-                                        <div className='license-back-right-box'>
-                                            {updatedLicenses.licenseCategory.includes(licenseCategoryValue) &&
-                                                <>
-                                                    <div style={{ display: 'flex', width: '100%', alignItems: 'center', padding: '10px 20px' }}>
-                                                        <div style={{ paddingRight: 10 }}>
-                                                            Valid from
-                                                        </div>
-
-                                                        <div>
-                                                            <input
-                                                                type='date'
-                                                                className='candidate-page-input-date'
-                                                                style={{ width: '100%' }}
-                                                                value={updatedLicenses.licenseExpiryDate}
-                                                                onChange={(e) => handleOnChange('licenseExpiryDate', e.target.value)}
-                                                            />
-                                                        </div>
-                                                    </div>
-
-                                                    <div style={{ display: 'flex', width: '100%', alignItems: 'center', padding: '10px 20px' }}>
-                                                        <div style={{ paddingRight: 10 }}>
-                                                            Valid to
-                                                        </div>
-
-                                                        <div>
-                                                            <input
-                                                                type='date'
-                                                                className='candidate-page-input-date'
-                                                                style={{ width: '100%' }}
-                                                                value={updatedLicenses.licenseExpiryDate}
-                                                                onChange={(e) => handleOnChange('licenseExpiryDate', e.target.value)}
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                </>
-                                            }
-                                        </div>
-                                        
-                                    </div>
-                                ))}
+                                    )
+                                })}
                             </div>
                         </div>
 
