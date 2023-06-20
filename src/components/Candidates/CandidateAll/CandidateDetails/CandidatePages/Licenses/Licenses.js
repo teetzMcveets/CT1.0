@@ -159,22 +159,52 @@ export default function Licenses ({
 
                         <div className='candidate-page-detail-answer' style={{ width: '100%' }}>
                             <div className='license-back-checkbox-container'>
-                                {['CE', 'C', 'C1', 'B'].map((licenseCategoryValue) => (
-                                    <div className='license-back-checkboxes' key={licenseCategoryValue}>
-                                        <div className='license-back-left-box'>
+                                {['CE', 'C', 'C1', 'B'].map((licenseCategoryValue) => {
+                                    const validFromDateKey = `licenseBack${licenseCategoryValue}ValidFrom`;
+                                    const validToDateKey = `licenseBack${licenseCategoryValue}ValidTo`;
+                                
+                                    return (
+                                        <div className='license-back-checkboxes' key={licenseCategoryValue}>
+                                            <div className='license-back-left-box'>
                                             <input
-                                                type='checkbox'
-                                            />
-                                            <label style={{ paddingLeft: 5 }}>
-                                                {licenseCategoryValue}
-                                            </label>
+                                                    type='checkbox'
+                                                    id={`licenseBack-${licenseCategoryValue}`}
+                                                    checked={updatedLicenses.licenseCategory.includes(licenseCategoryValue)}
+                                                    // onChange={(e) => handleLicenseCategory(e, licenseCategoryValue)}
+                                                    readOnly
+                                                />
+                                                <label style={{ paddingLeft: 5 }}>
+                                                    {licenseCategoryValue}
+                                                </label>
+                                            </div>
+                                            <div className='license-back-right-box'>
+                                                {updatedLicenses.licenseCategory.includes(licenseCategoryValue) &&
+                                                    <>
+                                                        <div className='license-back-validFrom-container'>
+                                                            <div className='license-back-label-date'>
+                                                                Valid from
+                                                            </div>
+
+                                                            <div className='license-back-answer-date'>
+                                                                {candidate[validFromDateKey]}
+                                                            </div>
+                                                        </div>
+
+                                                        <div className='license-back-validTo-container'>
+                                                            <div>
+                                                                Valid from
+                                                            </div>
+
+                                                            <div>
+                                                                {candidate[validToDateKey]}
+                                                            </div>
+                                                        </div>
+                                                    </>
+                                                }
+                                            </div>
                                         </div>
-                                        <div className='license-back-right-box'>
-                                            
-                                        </div>
-                                        
-                                    </div>
-                                ))}
+                                    )
+                                })}
                             </div>
                         </div>
 

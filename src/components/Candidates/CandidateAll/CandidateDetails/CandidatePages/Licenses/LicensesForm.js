@@ -203,7 +203,6 @@ export default function LicensesForm ({
                         <div className='candidate-page-detail-answer' style={{ width: '100%' }}>
                             <div className='license-back-checkbox-container license-back-checkbox-edit'>
                                 {['CE', 'C', 'C1', 'B'].map((licenseCategoryValue) => {
-                                    
                                     const validFromDateKey = `licenseBack${licenseCategoryValue}ValidFrom`;
                                     const validToDateKey = `licenseBack${licenseCategoryValue}ValidTo`;
 
