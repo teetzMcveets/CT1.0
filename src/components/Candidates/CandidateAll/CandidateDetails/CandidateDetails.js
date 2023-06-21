@@ -22,6 +22,7 @@ import WorkHistory from './CandidatePages/WorkHistory/WorkHistory';
 import Licenses from './CandidatePages/Licenses/Licenses';
 import LicensesForm from './CandidatePages/Licenses/LicensesForm';
 import endorsements from '../../../../utilities/endorsements';
+import CandidateNotes from './CandidatePages/Notes/CandidateNotes';
 
 export default function CandidateDetails() {
     const { id } = useParams();
@@ -87,6 +88,7 @@ export default function CandidateDetails() {
     const [updatedLicenses, setUpdatedLicenses] = useState(
         getDefinedInitialObject(candidate)
     );
+    const [notes, setNotes] = useState([]);
 
     // TOGGLE EDIT FOR EACH PAGE
     const toggleEdit = () => {
@@ -548,6 +550,26 @@ export default function CandidateDetails() {
         return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);  
+
+    //CANDIDATE NOTES LOGIC
+    const addNote = (content) => {
+        const newNote = {
+            id: notes.length + 1,
+            content,
+            date: new Date().toLocaleDateString(),
+        };
+        setNotes([...notes, newNote])
+    }
+
+    const editNote = (id, newContent) => {
+        const newNotes = notes.map(note => note.id === id ? {...note, content: newContent} : note );
+        setNotes(newNotes);
+    }
+
+    const deleteNote = (id) => {
+        const newNotes = notes.filter(note => note.id !== id);
+        setNotes(newNotes);
+    }
         
 
     return (
@@ -745,6 +767,17 @@ export default function CandidateDetails() {
                                                 handlePointsChange={handlePointsChange}
                                                 handleRemoveEndorsement={handleRemoveEndorsement}
                                             />
+                                    }
+                                />
+                                <Route
+                                    path='candidate-notes'
+                                    element={
+                                        <CandidateNotes 
+                                            notes={notes}
+                                            onAddNote={addNote}
+                                            onEditNote={editNote}
+                                            onDeleteNote={deleteNote}
+                                        />
                                     }
                                 />
                             </Routes>
