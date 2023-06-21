@@ -16,12 +16,15 @@
     align-items: flex-end;
     width: 30%;
     padding: 0 14px;
+    position: fixed;
 }
 
 .candidate-details-center-container {
     display: flex;
     justify-content: center;
     width: 70%;
+    position: relative;
+    left: 30%;
 }
 
 .candidate-page-left-container {

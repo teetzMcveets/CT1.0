@@ -1,6 +1,7 @@
 .sub-nav {
     display: flex;
     background-color: var(--s1);
+    margin-right: 35px;
 }
 
 .sub-nav-ul {

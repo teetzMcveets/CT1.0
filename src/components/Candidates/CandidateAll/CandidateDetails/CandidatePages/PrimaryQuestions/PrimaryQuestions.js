@@ -520,13 +520,13 @@ export default function PrimaryQuestions ({ candidate, edit }) {
                         </div>
 
                         {candidate.criminalConvictions === 'Yes' && 
-                            <div className='detail-container'>
-                                <div className='detail-label'>
+                            <div className='candidate-page-detail-container'>
+                                <div className='candidate-page-detail-label'>
                                     Details
                                 </div>
 
-                                <div className='detail-answer'>
-                                    <div className='answer-border'>
+                                <div className='candidate-page-detail-answer'>
+                                    <div className='candidate-page-detail-answer-container' style={{ height: 100 }}>
                                         {candidate.criminalConvictionsDetails}
                                     </div>
                                 </div>

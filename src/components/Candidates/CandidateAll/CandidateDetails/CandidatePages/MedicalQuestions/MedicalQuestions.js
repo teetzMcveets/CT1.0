@@ -752,7 +752,7 @@ export default function MedicalQuestions ({ candidate, edit }) {
 
                             <div className='candidate-page-detail-answer'>
                                 <div className='candidate-page-detail-answer-container-date'>
-                                    {candidate.OHAdateConfirmed}
+                                    {candidate.OHADateConfirmed}
                                 </div>
                             </div>
                         </div>

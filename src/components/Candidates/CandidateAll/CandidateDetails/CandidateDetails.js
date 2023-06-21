@@ -34,28 +34,59 @@ export default function CandidateDetails() {
     const navigate = useNavigate();
 
     // STATE FOR EACH PAGE
-    const [updatedPrimaryQuestions, setUpdatedPrimaryQuestions] = useState({
-        ...candidate,
-    })
-    const [updatedPreferenceQuestions, setUpdatedPreferenceQuestions] = useState({
-        ...candidate
-    })
+    const getDefinedInitialObject = (candidate) => {
+        return Object.keys(candidate).reduce((acc, key) => {
+            acc[key] = candidate[key] || '';
+            return acc;
+        }, []);
+    };
+
+    // const [updatedPrimaryQuestions, setUpdatedPrimaryQuestions] = useState({
+    //     ...candidate,
+    // })
+    // const [updatedPreferenceQuestions, setUpdatedPreferenceQuestions] = useState({
+    //     ...candidate
+    // })
+    // const [updatedMedicalQuestions, setUpdatedMedicalQuestions] = useState({
+    //     ...candidate,
+    //     medicalAgreementTimestamp: null,
+    // })
+    // const [updatedBankDetails, setUpdatedBankDetails] = useState({
+    //     ...candidate,
+    // })
+    // const [updatedSkills, setUpdatedSkills] = useState({
+    //     ...candidate,
+    // })
+    // const [updatedWorkHistory, setUpdatedWorkHistory] = useState({
+    //     ...candidate,
+    // })
+    // const [updatedLicenses, setUpdatedLicenses] = useState({
+    //     ...candidate
+    // }) 
+
+    const [updatedPrimaryQuestions, setUpdatedPrimaryQuestions] = useState(
+        getDefinedInitialObject(candidate)
+    );
+    const [updatedPreferenceQuestions, setUpdatedPreferenceQuestions] = useState(
+        getDefinedInitialObject(candidate)
+    );
     const [updatedMedicalQuestions, setUpdatedMedicalQuestions] = useState({
-        ...candidate,
+        ...getDefinedInitialObject(candidate),
         medicalAgreementTimestamp: null,
-    })
-    const [updatedBankDetails, setUpdatedBankDetails] = useState({
-        ...candidate,
-    })
-    const [updatedSkills, setUpdatedSkills] = useState({
-        ...candidate,
-    })
-    const [updatedWorkHistory, setUpdatedWorkHistory] = useState({
-        ...candidate,
-    })
-    const [updatedLicenses, setUpdatedLicenses] = useState({
-        ...candidate
-    }) 
+        OHADateConfirmed: '',
+    });
+    const [updatedBankDetails, setUpdatedBankDetails] = useState(
+        getDefinedInitialObject(candidate)
+    );
+    const [updatedSkills, setUpdatedSkills] = useState(
+        getDefinedInitialObject(candidate)
+    );
+    const [updatedWorkHistory, setUpdatedWorkHistory] = useState(
+        getDefinedInitialObject(candidate)
+    );
+    const [updatedLicenses, setUpdatedLicenses] = useState(
+        getDefinedInitialObject(candidate)
+    );
 
     // TOGGLE EDIT FOR EACH PAGE
     const toggleEdit = () => {

@@ -840,9 +840,9 @@ export default function MedicalQuestionsForm ({
                                 <input 
                                     type='date'
                                     className='candidate-page-input-date'
-                                    value={updatedMedicalQuestions.OHAdateConfirmed}
+                                    value={updatedMedicalQuestions.OHADateConfirmed}
                                     onChange={(e) => {
-                                        handleOnChange('OHAdateConfirmed', e.target.value);
+                                        handleOnChange('OHADateConfirmed', e.target.value);
                                         handleOnChange('OHARecallDate', getOneYearAhead(e.target.value));
                                     }}
                                 />
@@ -850,7 +850,7 @@ export default function MedicalQuestionsForm ({
                                     className='button-primary'
                                     onClick={() => {
                                         const today = getToday();
-                                        handleOnChange('OHAdateConfirmed', today);
+                                        handleOnChange('OHADateConfirmed', today);
                                         handleOnChange('OHARecallDate', getOneYearAhead(today));
                                     }}
                                 >

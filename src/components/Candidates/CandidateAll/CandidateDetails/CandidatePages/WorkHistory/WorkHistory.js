@@ -18,8 +18,6 @@ export default function WorkHistory ({
         setExpandedIndex(index === expandedIndex ? -1 : index);
     }
 
-    console.log(workHistoryDetails)
-
     return (
         <>
             <div className='work-history-container'>

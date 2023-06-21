@@ -10,7 +10,6 @@ export default function Licenses ({
     offenseDate,
     points,
 }) {
-    console.log(candidate.licenseEndorsements)
 
     return (
         <>

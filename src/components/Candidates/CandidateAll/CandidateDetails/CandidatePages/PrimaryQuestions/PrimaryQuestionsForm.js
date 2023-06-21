@@ -582,11 +582,9 @@ export default function PrimaryQuestionsForm ({
                                                 Upload
                                             </div>
                                             <div className='candidate-page-detail-answer'>
-                                                <div className='candidate-page-input'>
-                                                    <Link className='link-secondary'>
-                                                        View Document
-                                                    </Link>
-                                                </div>
+                                                <input 
+                                                    type='file'
+                                                />
                                             </div>
                                         </div>
                                     </>

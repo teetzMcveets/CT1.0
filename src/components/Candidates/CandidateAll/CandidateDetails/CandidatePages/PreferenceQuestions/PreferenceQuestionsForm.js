@@ -193,8 +193,9 @@ export default function PreferenceQuestionsForm ({
                                                     type='checkbox'
                                                     checked={updatedPreferenceQuestions.ppeOwned.includes(ppeOwnedValue)}
                                                     onChange={(e) => handlePPEOwnedChange(e, ppeOwnedValue)}
+                                                    id={`ppeOwned-${ppeOwnedValue}`}
                                                 />
-                                                <label className='candidate-page-checkbox-label'>
+                                                <label className='candidate-page-checkbox-label' htmlFor={`ppeOwned-${ppeOwnedValue}`}>
                                                     {ppeOwnedValue}
                                                 </label>
                                         </div>    
