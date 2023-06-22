@@ -1,0 +1,29 @@
+.notes-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.notes-title-container {
+    width: 75%;
+    background-color: var(--s1);
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.added-note-container {
+    border: 1px solid white;
+    width: 75%;
+}
+
+.added-note-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.note-date-text {
+    font-style: italic;
+    color: var(--text2);
+}

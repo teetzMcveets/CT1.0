@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './CandidateNotes.css';
 
 export default function CandidateNotes ({
     notes,
@@ -25,25 +26,27 @@ export default function CandidateNotes ({
 
     return (
         <>
-            <div className='candidate-page-left-container'>
-
-            </div>
-
-            <div className='candidate-page-right-candidate'>
-                <div className='candidate-page-full-page'>
-                    <h2>Notes</h2>
-                    {notes.map(note => (
-                        <>
-                            <p>{note.content}</p>
-                            <p>{note.date}</p>
-                            <button onClick={() => handleEditNote(note.id)}>Edit</button>
-                            <button onClick={() => onDeleteNote(note.id)}>Delete</button>
-                        </>
-                    ))}
-                    <input value={noteInput} onChange={handleInputChange} />
-                    <button onClick={() => handleAddNote}>Add</button>
+            <div className='notes-container'>
+                <div className='notes-title-container'>
+                    Notes
                 </div>
+                {notes.map(note => (
+                    <div key={note.id} className='added-note-container'>
+                        <div>
+                            <p>{note.content}</p>
+                        </div>
+                        <div className='added-note-buttons'>
+                            <p className='note-date-text'>{note.date}</p>
+                            <div>
+                                <button className='button-primary' onClick={() => handleEditNote(note.id)}>Edit</button>
+                                <button className='button-primary' onClick={() => onDeleteNote(note.id)}>Delete</button>
+                            </div>
+                        </div>
+                </div>
+                ))}
+                <input value={noteInput} onChange={handleInputChange} />
+                <button onClick={handleAddNote}>Add Note</button>
             </div>
         </>
-    )
-}
+    );
+};
