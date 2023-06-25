@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import './CandidateNotes.css';
+import EditNoteModal from './EditNoteModal'
 
 export default function CandidateNotes ({
     notes,
     onAddNote,
-    onEditNote,
     onDeleteNote,
+    onEdit,
+    isEditMode,
+    currentNote,
+    onModalChange,
+    onModalSubmit,
+    onModalClose,
 }) {
 
     const [noteInput, setNoteInput] = useState('');
@@ -19,11 +25,6 @@ export default function CandidateNotes ({
         setNoteInput('');
     }
 
-    const handleEditNote = (id) => {
-        const newContent = prompt('Enter new content');
-        if (newContent) onEditNote(id, newContent);
-    }
-
     return (
         <>
             <div className='notes-container'>
@@ -32,21 +33,42 @@ export default function CandidateNotes ({
                 </div>
                 {notes.map(note => (
                     <div key={note.id} className='added-note-container'>
-                        <div>
+                        <div className='added-note-content'>
                             <p>{note.content}</p>
                         </div>
                         <div className='added-note-buttons'>
                             <p className='note-date-text'>{note.date}</p>
-                            <div>
-                                <button className='button-primary' onClick={() => handleEditNote(note.id)}>Edit</button>
-                                <button className='button-primary' onClick={() => onDeleteNote(note.id)}>Delete</button>
+                            <div className='button-container-candidate-notes'>
+                                <button className='button-secondary small-button' onClick={() => onEdit(note)}>
+                                    <i className='fas fa-pencil-alt'></i>
+                                </button>
+                                <button className='button-secondary small-button' onClick={() => onDeleteNote(note.id)}>
+                                    <i className="fas fa-trash-alt"></i>
+                                </button>
                             </div>
                         </div>
-                </div>
+                    </div>
                 ))}
-                <input value={noteInput} onChange={handleInputChange} />
-                <button onClick={handleAddNote}>Add Note</button>
+                <div className='add-new-note-container'>
+                    <textarea
+                        value={noteInput} 
+                        onChange={handleInputChange} 
+                        className='added-note-input'
+                        placeholder='Add note here...'
+                        
+                    />
+                    <div className='add-note-button-container'>
+                        <button onClick={handleAddNote} className='button-primary'>Add Note</button>
+                    </div>
+                </div>
             </div>
+            <EditNoteModal
+                isOpen={isEditMode}
+                note={currentNote}
+                onChange={onModalChange}
+                onSubmit={onModalSubmit}
+                onRequestClose={onModalClose}
+            />
         </>
     );
 };

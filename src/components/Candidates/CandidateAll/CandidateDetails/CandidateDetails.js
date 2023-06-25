@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './CandidateDetails.css';
 import { Route, Routes, useParams, useLocation, useNavigate } from 'react-router-dom';
+import Modal from 'react-modal'
 import { useSelector, useDispatch } from 'react-redux';
 import { updateCandidate, addWorkHistory, removeWorkHistory } from '../../../../features/candidates/candidateSlice';
 import SubNavDriving from '../../../../shared/Navigation/SubNav/Driving/SubNavDriving'
@@ -23,6 +24,8 @@ import Licenses from './CandidatePages/Licenses/Licenses';
 import LicensesForm from './CandidatePages/Licenses/LicensesForm';
 import endorsements from '../../../../utilities/endorsements';
 import CandidateNotes from './CandidatePages/Notes/CandidateNotes';
+
+Modal.setAppElement('#root');
 
 export default function CandidateDetails() {
     const { id } = useParams();
@@ -88,7 +91,6 @@ export default function CandidateDetails() {
     const [updatedLicenses, setUpdatedLicenses] = useState(
         getDefinedInitialObject(candidate)
     );
-    const [notes, setNotes] = useState([]);
 
     // TOGGLE EDIT FOR EACH PAGE
     const toggleEdit = () => {
@@ -552,6 +554,30 @@ export default function CandidateDetails() {
     }, []);  
 
     //CANDIDATE NOTES LOGIC
+    // const addNote = (content) => {
+    //     const newNote = {
+    //         id: notes.length + 1,
+    //         content,
+    //         date: new Date().toLocaleDateString(),
+    //     };
+    //     setNotes([...notes, newNote])
+    // }
+
+    // const editNote = (id, newContent) => {
+    //     const newNotes = notes.map(note => note.id === id ? {...note, content: newContent} : note );
+    //     setNotes(newNotes);
+    // }
+
+    // const deleteNote = (id) => {
+    //     const newNotes = notes.filter(note => note.id !== id);
+    //     setNotes(newNotes);
+    // }
+
+    //CANDIDATE NOTES LOGIC
+    const [notes, setNotes] = useState([]);
+    const [currentNote, setCurrentNote] = useState(null);
+    const [editMode, setEditMode] = useState(false);
+
     const addNote = (content) => {
         const newNote = {
             id: notes.length + 1,
@@ -570,6 +596,17 @@ export default function CandidateDetails() {
         const newNotes = notes.filter(note => note.id !== id);
         setNotes(newNotes);
     }
+
+    const handleModalChange = (e) => {
+        setCurrentNote({...currentNote, content: e.target.value});
+    }
+
+    const handleModalSubmit = () => {
+        editNote(currentNote.id, currentNote.content);
+        setEditMode(false);
+    }
+
+
         
 
     return (
@@ -775,8 +812,16 @@ export default function CandidateDetails() {
                                         <CandidateNotes 
                                             notes={notes}
                                             onAddNote={addNote}
-                                            onEditNote={editNote}
                                             onDeleteNote={deleteNote}
+                                            onEdit={(note) => {
+                                                setCurrentNote(note);
+                                                setEditMode(true);
+                                            }}
+                                            isEditMode={editMode}
+                                            currentNote={currentNote}
+                                            onModalChange={handleModalChange}
+                                            onModalSubmit={handleModalSubmit}
+                                            onModalClose={() => setEditMode(false)}
                                         />
                                     }
                                 />
