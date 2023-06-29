@@ -7,9 +7,7 @@ export default function PreferenceQuestionsForm ({
     candidate,
     updatedPreferenceQuestions,
     handleOnChange,
-    handlePPEOwnedChange,
-    handleWeekDaysChange,
-    handleShiftsChange,
+    handleValueChange,
 }) {
     return (
         <>
@@ -192,7 +190,8 @@ export default function PreferenceQuestionsForm ({
                                                 <input 
                                                     type='checkbox'
                                                     checked={updatedPreferenceQuestions.ppeOwned.includes(ppeOwnedValue)}
-                                                    onChange={(e) => handlePPEOwnedChange(e, ppeOwnedValue)}
+                                                    // onChange={(e) => handlePPEOwnedChange(e, ppeOwnedValue)}
+                                                    onChange={(e) => handleValueChange(e, ppeOwnedValue, "ppeOwned", "preference")}
                                                     id={`ppeOwned-${ppeOwnedValue}`}
                                                 />
                                                 <label className='candidate-page-checkbox-label' htmlFor={`ppeOwned-${ppeOwnedValue}`}>
@@ -321,9 +320,11 @@ export default function PreferenceQuestionsForm ({
                                             <input 
                                                 type='checkbox'
                                                 checked={updatedPreferenceQuestions.weekDays.includes(weekDaysValue)}
-                                                onChange={(e) => handleWeekDaysChange(e, weekDaysValue)}
+                                                // onChange={(e) => handleWeekDaysChange(e, weekDaysValue)}
+                                                onChange={(e) => handleValueChange(e, weekDaysValue, "weekDays", "preference")}
+                                                id={`${weekDaysValue}`}
                                             />
-                                            <label className='candidate-page-checkbox-label'>
+                                            <label className='candidate-page-checkbox-label' htmlFor={`${weekDaysValue}`}>
                                                 {weekDaysValue}
                                             </label>
                                         </div>    
@@ -344,9 +345,11 @@ export default function PreferenceQuestionsForm ({
                                             <input 
                                                 type='checkbox'
                                                 checked={updatedPreferenceQuestions.shifts.includes(shiftsValue)}
-                                                onChange={(e) => handleShiftsChange(e, shiftsValue)}
+                                                // onChange={(e) => handleShiftsChange(e, shiftsValue)}
+                                                onChange={(e) => handleValueChange(e, shiftsValue, "shifts", "preference")}
+                                                id={`${shiftsValue}`}
                                             />
-                                            <label className='candidate-page-checkbox-label'>
+                                            <label className='candidate-page-checkbox-label' htmlFor={`${shiftsValue}`}>
                                                 {shiftsValue}
                                             </label>
                                         </div>    

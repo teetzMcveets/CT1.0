@@ -45,29 +45,6 @@ export default function CandidateDetails() {
         }, []);
     };
 
-    // const [updatedPrimaryQuestions, setUpdatedPrimaryQuestions] = useState({
-    //     ...candidate,
-    // })
-    // const [updatedPreferenceQuestions, setUpdatedPreferenceQuestions] = useState({
-    //     ...candidate
-    // })
-    // const [updatedMedicalQuestions, setUpdatedMedicalQuestions] = useState({
-    //     ...candidate,
-    //     medicalAgreementTimestamp: null,
-    // })
-    // const [updatedBankDetails, setUpdatedBankDetails] = useState({
-    //     ...candidate,
-    // })
-    // const [updatedSkills, setUpdatedSkills] = useState({
-    //     ...candidate,
-    // })
-    // const [updatedWorkHistory, setUpdatedWorkHistory] = useState({
-    //     ...candidate,
-    // })
-    // const [updatedLicenses, setUpdatedLicenses] = useState({
-    //     ...candidate
-    // }) 
-
     const [updatedPrimaryQuestions, setUpdatedPrimaryQuestions] = useState(
         getDefinedInitialObject(candidate)
     );
@@ -165,91 +142,32 @@ export default function CandidateDetails() {
 
         changesMade.current = true;
     }
-
-    // ACCESS CHANGE IN PRIMARY QUESTIONS
-    const handleAccessChange = (e, accessValue) => {
-        setUpdatedPrimaryQuestions(prevState => {
+    
+    // HANDLE TICK BOXES FOR DIFFERENT PAGES
+    const handleValueChange = (e, value, stateKey, arrayKey) => {
+        const updateState = (prevState) => {
             if (e.target.checked) {
                 return {
                     ...prevState,
-                    access: [...prevState.access, accessValue]
+                    [stateKey]: [...prevState[stateKey], value],
                 };
             } else {
                 return {
                     ...prevState,
-                    access: prevState.access.filter(value => value !== accessValue)
-                }
-            }
-        })
-    }
-
-    // CONTACT PREFERENCE CHANGE IN PRIMARY QUESTIONS
-    const handleContactPrefChange = (e, contactPrefValue) => {
-        setUpdatedPrimaryQuestions(prevState => {
-            if(e.target.checked) {
-                return {
-                    ...prevState,
-                    contactPref: [...prevState.contactPref, contactPrefValue]
+                    [stateKey]: [...prevState[stateKey].filter((val) => val !== value)],
                 };
-            } else {
-                return {
-                    ...prevState,
-                    contactPref: [...prevState.contactValue.filter(value => value !== contactPrefValue)]
-                }
             }
-        })
-    }
+        };
 
-
-    // PPE OWNED CHANGE IN PREFERENCE QUESTIONS
-    const handlePPEOwnedChange = (e, ppeOwnedValue) => {
-        setUpdatedPreferenceQuestions(prevState => {
-            if (e.target.checked) {
-                return {
-                    ...prevState,
-                    ppeOwned: [ ...prevState.ppeOwned, ppeOwnedValue]
-                };
-            } else {
-                return {
-                    ...prevState,
-                    ppeOwned: [...prevState.ppeOwned.filter(value => value !== ppeOwnedValue)]
-                }
-            }
-        })
-    };
-
-    // WEEKDAY AVAILABLE CHANGE IN PRIMARY QUESTIONS
-    const handleWeekDaysChange = (e, weekDaysValue) => {
-        setUpdatedPreferenceQuestions(prevState => {
-            if (e.target.checked) {
-                return {
-                    ...prevState,
-                    weekDays: [...prevState.weekDays, weekDaysValue]
-                };
-            } else {
-                return {
-                    ...prevState,
-                    weekDays: [...prevState.weekDays.filter(value => value !== weekDaysValue)]
-                }
-            }
-        })
-    };
-
-    // SHIFT CHANGE HANDLED IN PREFERENCE QUESTIONS
-    const handleShiftsChange = (e, shiftsValue) => {
-        setUpdatedPreferenceQuestions(prevState => {
-            if (e.target.checked) {
-                return {
-                    ...prevState,
-                    shifts: [...prevState.shifts, shiftsValue]
-                }
-            } else {
-                return {
-                    ...prevState,
-                    shifts: [...prevState.shifts.filter(value => value !== shiftsValue)]
-                }
-            }
-        })
+        if (arrayKey === 'primary') {
+            setUpdatedPrimaryQuestions((prevState) => updateState(prevState));
+        } else if (arrayKey === 'preference') {
+            setUpdatedPreferenceQuestions((prevState) => updateState(prevState));
+        } else if (arrayKey === 'skills') {
+            setUpdatedSkills((prevState) => updateState(prevState));
+        } else if (arrayKey === 'licenses') {
+            setUpdatedLicenses((prevState) => updateState(prevState));
+        }
     }
 
     //MEDICAL AGREEMENT DATE FOR MEDICAL QUESTIONS
@@ -278,124 +196,6 @@ export default function CandidateDetails() {
         dateObject.setFullYear(dateObject.getFullYear() + 1);
 
         return dateObject.toISOString().substring(0, 10);
-    }
-
-    const handleOtherVehiclesChange = (e, otherVehiclesValue) => {
-        setUpdatedSkills(prevState => {
-            if (e.target.checked) {
-                return {
-                    ...prevState,
-                    otherVehicles: [...prevState.otherVehicles, otherVehiclesValue]
-                }
-            } else {
-                return {
-                    ...prevState,
-                    otherVehicles: [...prevState.otherVehicles.filter(value => value !== otherVehiclesValue)]
-                }
-            }
-        })
-    }
-
-    //SKILLS PAGES CHECKBOX TRAILERS
-    const handleTrailersChange = (e, trailersValue) => {
-        setUpdatedSkills(prevState => {
-            if (e.target.checked) {
-                return {
-                    ...prevState,
-                    trailers: [...prevState.trailers, trailersValue]
-                }
-            } else {
-                return {
-                    ...prevState,
-                    trailers: [...prevState.trailers.filter(value => value !== trailersValue)]
-                }
-            }
-        })
-    }
-
-    //SKILLS GEARBOX CHECKBOX
-    const handleGearboxChange = (e, gearboxesValue) => {
-        setUpdatedSkills(prevState => {
-            if (e.target.checked) {
-                return {
-                    ...prevState,
-                    gearboxes: [...prevState.gearboxes, gearboxesValue]
-                }
-            } else {
-                return {
-                    ...prevState,
-                    gearboxes: [...prevState.gearboxes.filter(value => value !== gearboxesValue)]
-                }
-            }
-        })
-    };
-
-    //SKILLS LOADS
-    const handleLoadsChange = (e, loadsValue) => {
-        setUpdatedSkills(prevState => {
-            if (e.target.checked) {
-                return {
-                    ...prevState,
-                    loads: [...prevState.loads, loadsValue]
-                }
-            } else {
-                return {
-                    ...prevState, 
-                    loads: [...prevState.loads.filter(value => value !== loadsValue)]
-                }
-            }
-        })
-    }
-
-    //SKILLS CERTIFICATES
-    const handleCertificatesChange = (e, certificateValue) => {
-        setUpdatedSkills(prevState => {
-            if (e.target.checked) {
-                return {
-                    ...prevState,
-                    certificates: [...prevState.certificates, certificateValue]
-                }
-            } else {
-                return {
-                    ...prevState, 
-                    certificates: [...prevState.certificates.filter(value => value !== certificateValue)]
-                }
-            }
-        })
-    }
-
-    //SKILLS WORK CRITERIA
-    const handleWorkCriteriaChange = (e, workCriteriaValue) => {
-        setUpdatedSkills(prevState => {
-            if (e.target.checked) {
-                return {
-                    ...prevState,
-                    workCriteria: [...prevState.workCriteria, workCriteriaValue]
-                }
-            } else {
-                return {
-                    ...prevState, 
-                    workCriteria: [...prevState.workCriteria.filter(value => value !== workCriteriaValue)]
-                }
-            }
-        })
-    }
-
-    //SKILLS INDUSTRIAL HANDLE ENVIRONMENT
-    const handleWorkEnvironment = (e, workEnvironmentValue) => {
-        setUpdatedSkills(prevState => {
-            if (e.target.checked) {
-                return {
-                    ...prevState,
-                    workEnvironment: [...prevState.workEnvironment, workEnvironmentValue]
-                }
-            } else {
-                return {
-                    ...prevState,
-                    workEnvironment: [...prevState.workEnvironment.filter(value => value !== workEnvironmentValue)]
-                }
-            }
-        })
     }
 
     const handleLicenseCategory = (e, licenseCategoryValue) => {
@@ -443,18 +243,6 @@ export default function CandidateDetails() {
         }))
         changesMade.current = true;
     }
-
-    // const handleEditWorkHistory = (workHistory) => {
-    //     dispatch(editWorkHistory({ id, workHistory }));
-    //     setUpdatedWorkHistory(prevState => {
-    //         const workHistoryIndex = prevState.workHistory.findIndex(history => history.id === workHistory.id);
-    //         const newWorkHistory = [ ...prevState.workHistory];
-    //         newWorkHistory[workHistoryIndex] = workHistory;
-    //         return { ...prevState, workHistory: newWorkHistory };
-    //     });
-    //     changesMade.current = true;
-    //     setIsWorkHistoryModalOpen(false);
-    // };   
     
     // LICENSES LOGIC
     const endorsementOptions = endorsements;
@@ -554,26 +342,6 @@ export default function CandidateDetails() {
     }, []);  
 
     //CANDIDATE NOTES LOGIC
-    // const addNote = (content) => {
-    //     const newNote = {
-    //         id: notes.length + 1,
-    //         content,
-    //         date: new Date().toLocaleDateString(),
-    //     };
-    //     setNotes([...notes, newNote])
-    // }
-
-    // const editNote = (id, newContent) => {
-    //     const newNotes = notes.map(note => note.id === id ? {...note, content: newContent} : note );
-    //     setNotes(newNotes);
-    // }
-
-    // const deleteNote = (id) => {
-    //     const newNotes = notes.filter(note => note.id !== id);
-    //     setNotes(newNotes);
-    // }
-
-    //CANDIDATE NOTES LOGIC
     const [notes, setNotes] = useState([]);
     const [currentNote, setCurrentNote] = useState(null);
     const [editMode, setEditMode] = useState(false);
@@ -605,9 +373,6 @@ export default function CandidateDetails() {
         editNote(currentNote.id, currentNote.content);
         setEditMode(false);
     }
-
-
-        
 
     return (
         <>
@@ -649,8 +414,7 @@ export default function CandidateDetails() {
                                                 isEditing={isEditing}
                                                 edit={toggleEdit}
                                                 save={handleSave}
-                                                handleAccessChange={handleAccessChange}
-                                                handleContactPrefChange={handleContactPrefChange}
+                                                handleValueChange={handleValueChange}
                                             />
                                     }
                                 />
@@ -668,11 +432,9 @@ export default function CandidateDetails() {
                                                 candidate={candidate}
                                                 updatedPreferenceQuestions={updatedPreferenceQuestions}
                                                 handleOnChange={handleUpdatedForm}
+                                                handleValueChange={handleValueChange}
                                                 edit={toggleEdit}
                                                 save={handleSave}
-                                                handlePPEOwnedChange={handlePPEOwnedChange}
-                                                handleWeekDaysChange={handleWeekDaysChange}
-                                                handleShiftsChange={handleShiftsChange}
                                             />
 
                                     } 
@@ -731,14 +493,9 @@ export default function CandidateDetails() {
                                                 candidate={candidate}
                                                 updatedSkills={updatedSkills}
                                                 handleOnChange={handleUpdatedForm}
+                                                handleValueChange={handleValueChange}
                                                 edit={toggleEdit}
                                                 save={handleSave}
-                                                handleTrailersChange={handleTrailersChange}
-                                                handleGearboxChange={handleGearboxChange}
-                                                handleLoadsChange={handleLoadsChange}
-                                                handleCertificatesChange={handleCertificatesChange}
-                                                handleWorkCriteriaChange={handleWorkCriteriaChange}
-                                                handleOtherVehiclesChange={handleOtherVehiclesChange}
                                             />
                                     }
                                 />
@@ -756,8 +513,9 @@ export default function CandidateDetails() {
                                                 edit={toggleEdit}
                                                 save={handleSave}
                                                 updatedSkills={updatedSkills}
-                                                handleWorkEnvironment={handleWorkEnvironment}
                                                 handleOnChange={handleUpdatedForm}
+                                                handleValueChange={handleValueChange}
+
                                             />
                                     }
                                 />
@@ -795,7 +553,8 @@ export default function CandidateDetails() {
                                                 handleOnChange={handleUpdatedForm}
                                                 edit={toggleEdit}
                                                 save={handleSave}
-                                                handleLicenseCategory={handleLicenseCategory}
+                                                handleValueChange={handleValueChange}
+                                                // handleLicenseCategory={handleLicenseCategory}
                                                 endorsementOptions={endorsementOptions}
                                                 selectValue={selectValue}
                                                 handleSelect={handleSelect}

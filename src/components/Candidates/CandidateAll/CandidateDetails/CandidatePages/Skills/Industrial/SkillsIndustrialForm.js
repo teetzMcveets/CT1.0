@@ -6,7 +6,7 @@ export default function SkillsIndustrialForm ({
     edit,
     updatedSkills,
     handleOnChange,
-    handleWorkEnvironment,
+    handleValueChange,
 }) {
     const workEnvironmentArray = [
         'Indoor',
@@ -69,7 +69,7 @@ export default function SkillsIndustrialForm ({
                                                 type='checkbox'
                                                 id={`workEnvironment-${workEnvironmentValue}`}
                                                 checked={updatedSkills.workEnvironment.includes(workEnvironmentValue)}
-                                                onChange={(e) => handleWorkEnvironment(e, workEnvironmentValue)}
+                                                onChange={(e) => handleValueChange(e, workEnvironmentValue, "workEnvironment", "skills")}
                                             />
                                             <label className='skills-box-label' htmlFor={`workEnvironment-${workEnvironmentValue}`}>
                                                 {workEnvironmentValue}

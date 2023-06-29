@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import '../CandidateDetailsForm.css';
 import { nationalities } from '../../../../../../utilities/nationalitiesArray';
 
@@ -9,8 +8,7 @@ export default function PrimaryQuestionsForm ({
     handleOnChange, 
     edit, 
     save,
-    handleAccessChange,
-    handleContactPrefChange,
+    handleValueChange
  }) {
 
     return (
@@ -252,9 +250,10 @@ export default function PrimaryQuestionsForm ({
                                             <input 
                                                 type='checkbox'
                                                 checked={updatedPrimaryQuestions.access.includes(accessValue)}
-                                                onChange={(e) => handleAccessChange(e, accessValue)}
+                                                onChange={(e) => handleValueChange(e, accessValue, "access", "primary")}
+                                                id={`${accessValue}`}
                                             />
-                                            <label className='candidate-page-checkbox-label'>
+                                            <label className='candidate-page-checkbox-label' htmlFor={`${accessValue}`}>
                                                 {accessValue}
                                             </label>
                                         </div>    
@@ -315,9 +314,10 @@ export default function PrimaryQuestionsForm ({
                                             <input 
                                                 type='checkbox'
                                                 checked={updatedPrimaryQuestions.contactPref.includes(contactPrefValue)}
-                                                onChange={(e) => handleContactPrefChange(e, contactPrefValue)}
+                                                onChange={(e) => handleValueChange(e, contactPrefValue, "contactPref", "primary")}
+                                                id={`${contactPrefValue}`}
                                             />
-                                            <label className='candidate-page-checkbox-label'>
+                                            <label className='candidate-page-checkbox-label' htmlFor={`${contactPrefValue}`}>
                                                 {contactPrefValue}
                                             </label>
                                         </div>    

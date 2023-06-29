@@ -5,13 +5,8 @@ export default function SkillsDrivingForm ({
     save,
     edit,
     handleOnChange,
-    handleTrailersChange,
+    handleValueChange,
     updatedSkills,
-    handleGearboxChange,
-    handleLoadsChange,
-    handleCertificatesChange,
-    handleWorkCriteriaChange,
-    handleOtherVehiclesChange,
 }) {
     const otherVehiclesArray = [
         'CE (class one)',
@@ -153,7 +148,7 @@ export default function SkillsDrivingForm ({
                                                 type='checkbox'
                                                 id={`otherVehicles-${otherVehiclesValue}`}
                                                 checked={updatedSkills.otherVehicles.includes(otherVehiclesValue)}
-                                                onChange={(e) => handleOtherVehiclesChange(e, otherVehiclesValue)}
+                                                onChange={(e) => handleValueChange(e, otherVehiclesValue, "otherVehicles", "skills")}
                                             />
                                             <label className='skills-box-label' htmlFor={`otherVehicles-${otherVehiclesValue}`}>
                                                 {otherVehiclesValue}
@@ -183,7 +178,7 @@ export default function SkillsDrivingForm ({
                                                 type='checkbox'
                                                 id={`trailer-${trailersValue}`}
                                                 checked={updatedSkills.trailers.includes(trailersValue)}
-                                                onChange={(e) => handleTrailersChange(e, trailersValue)}
+                                                onChange={(e) => handleValueChange(e, trailersValue, "trailers", "skills")}
                                             />
                                             <label className='skills-box-label' htmlFor={`trailer-${trailersValue}`}>
                                                 {trailersValue}
@@ -213,7 +208,7 @@ export default function SkillsDrivingForm ({
                                                 type='checkbox'
                                                 id={`gearbox-${gearboxesValue}`}
                                                 checked={updatedSkills.gearboxes.includes(gearboxesValue)}
-                                                onChange={(e) => handleGearboxChange(e, gearboxesValue)}
+                                                onChange={(e) => handleValueChange(e, gearboxesValue, "gearboxes", "skills")}
                                             />
                                             <label className='skills-box-label' htmlFor={`gearbox-${gearboxesValue}`}>
                                                 {gearboxesValue}
@@ -243,7 +238,7 @@ export default function SkillsDrivingForm ({
                                                 type='checkbox'
                                                 id={`loads-${loadsChunks}`}
                                                 checked={updatedSkills.loads.includes(loadsChunks)}
-                                                onChange={(e) => handleLoadsChange(e, loadsChunks)}
+                                                onChange={(e) => handleValueChange(e, loadsChunks, "loads", "skills")}
                                             />
                                             <label className='skills-box-label' htmlFor={`loads-${loadsChunks}`}>
                                                 {loadsChunks}
@@ -273,7 +268,7 @@ export default function SkillsDrivingForm ({
                                                 type='checkbox'
                                                 id={`certificate-${certificateChunks}`}
                                                 checked={updatedSkills.certificates.includes(certificateChunks)}
-                                                onChange={(e) => handleCertificatesChange(e, certificateChunks)}
+                                                onChange={(e) => handleValueChange(e, certificateChunks, "certificate", "skills")}
                                             />
                                             <label className='skills-box-label' htmlFor={`certificate-${certificateChunks}`}>
                                                 {certificateChunks}
@@ -303,7 +298,7 @@ export default function SkillsDrivingForm ({
                                                 type='checkbox'
                                                 id={`workCriteria-${workCriteriaChunks}`}
                                                 checked={updatedSkills.workCriteria.includes(workCriteriaChunks)}
-                                                onChange={(e) => handleWorkCriteriaChange(e, workCriteriaChunks)}
+                                                onChange={(e) => handleValueChange(e, workCriteriaChunks, "workCriteria", "skills")}
                                             />
                                             <label className='skills-box-label' htmlFor={`workCriteria-${workCriteriaChunks}`}>
                                                 {workCriteriaChunks}

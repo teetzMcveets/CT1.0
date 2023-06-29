@@ -7,7 +7,8 @@ export default function LicensesForm ({
     handleOnChange,
     edit,
     save,
-    handleLicenseCategory,
+    // handleLicenseCategory,
+    handleValueChange,
     endorsementOptions,
     selectValue,
     handleSelect,
@@ -214,7 +215,7 @@ export default function LicensesForm ({
                                                     type='checkbox'
                                                     id={`licenseBack-${licenseCategoryValue}`}
                                                     checked={updatedLicenses.licenseCategory.includes(licenseCategoryValue)}
-                                                    onChange={(e) => handleLicenseCategory(e, licenseCategoryValue)}
+                                                    onChange={(e) => handleValueChange(e, licenseCategoryValue, "licenseCategory", "licenses")}
                                                 />
                                                 <label style={{ paddingLeft: 5 }} htmlFor={`licenseBack-${licenseCategoryValue}`}>
                                                     {licenseCategoryValue}
