@@ -198,23 +198,6 @@ export default function CandidateDetails() {
         return dateObject.toISOString().substring(0, 10);
     }
 
-    const handleLicenseCategory = (e, licenseCategoryValue) => {
-        setUpdatedLicenses(prevState => {
-            if (e.target.checked) {
-                return {
-                    ...prevState,
-                    licenseCategory: [...prevState.licenseCategory, licenseCategoryValue]
-                }
-            } else {
-                return {
-                    ...prevState,
-                    licenseCategory: [...prevState.licenseCategory.filter(value => value !== licenseCategoryValue)]
-                }
-            }
-        })
-            
-    }
-
     //handle adding new work history
     const handleOpenWorkHistoryModal = () => {
         setIsWorkHistoryModalOpen(true);
@@ -554,7 +537,6 @@ export default function CandidateDetails() {
                                                 edit={toggleEdit}
                                                 save={handleSave}
                                                 handleValueChange={handleValueChange}
-                                                // handleLicenseCategory={handleLicenseCategory}
                                                 endorsementOptions={endorsementOptions}
                                                 selectValue={selectValue}
                                                 handleSelect={handleSelect}

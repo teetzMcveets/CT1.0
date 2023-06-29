@@ -7,7 +7,6 @@ export default function LicensesForm ({
     handleOnChange,
     edit,
     save,
-    // handleLicenseCategory,
     handleValueChange,
     endorsementOptions,
     selectValue,
