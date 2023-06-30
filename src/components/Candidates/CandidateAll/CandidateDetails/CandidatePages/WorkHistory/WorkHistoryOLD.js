@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './WorkHistory.css';
-import AddWorkHistoryModal from './AddWorkHistoryModal';
+import AddWorkHistoryModal from './AddWorkHistoryModalOLD';
 
 export default function WorkHistory ({
     candidate,

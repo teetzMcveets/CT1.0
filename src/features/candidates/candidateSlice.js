@@ -52,7 +52,6 @@ const candidatesSlice = createSlice({
                         workCriteria: [],
                         otherVehicles: [],
                         workEnvironment: [],
-                        workHistory: [],
                         licenseCategory: [],
                     }
                 }
@@ -85,21 +84,6 @@ const candidatesSlice = createSlice({
                 };
             }
         },
-        addWorkHistory: (state, action) => {
-            const { id, workHistory } = action.payload;
-            const candidate = state.byId[id];
-            if (candidate) {
-                const workHistoryWithId = { ...workHistory, id: candidate.workHistory.length}
-                candidate.workHistory.push(workHistoryWithId);
-            }
-        },
-        removeWorkHistory: (state, action) => {
-            const { id, workHistoryId } = action.payload;
-            const candidate = state.byId[id];
-            if (candidate) {
-                candidate.workHistory = candidate.workHistory.filter(history => history.id !== workHistoryId)
-            }
-        },
     }
 });
 
@@ -109,9 +93,6 @@ export const {
     setSearchCriteria,
     clearSearchCriteria,
     updateCandidate,
-    addWorkHistory,
-    removeWorkHistory,
-    editWorkHistory,
 } = candidatesSlice.actions;
 
 export default candidatesSlice.reducer;

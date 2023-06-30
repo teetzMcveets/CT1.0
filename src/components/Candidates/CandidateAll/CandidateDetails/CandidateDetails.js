@@ -3,7 +3,7 @@ import './CandidateDetails.css';
 import { Route, Routes, useParams, useLocation, useNavigate } from 'react-router-dom';
 import Modal from 'react-modal'
 import { useSelector, useDispatch } from 'react-redux';
-import { updateCandidate, addWorkHistory, removeWorkHistory } from '../../../../features/candidates/candidateSlice';
+import { updateCandidate } from '../../../../features/candidates/candidateSlice';
 import SubNavDriving from '../../../../shared/Navigation/SubNav/Driving/SubNavDriving'
 import SubNavIndustrial from '../../../../shared/Navigation/SubNav/Industrial/SubNavIndustrial';
 import CandidateInfoCard from './CandidateInfoCard/CandidateInfoCard';
@@ -19,7 +19,6 @@ import SkillsDriving from './CandidatePages/Skills/Driving/SkillsDriving';
 import SkillsDrivingForm from './CandidatePages/Skills/Driving/SkillsDrivingForm';
 import SkillsIndustrial from './CandidatePages/Skills/Industrial/SkillsIndustrial';
 import SkillsIndustrialForm from './CandidatePages/Skills/Industrial/SkillsIndustrialForm';
-import WorkHistory from './CandidatePages/WorkHistory/WorkHistory';
 import Licenses from './CandidatePages/Licenses/Licenses';
 import LicensesForm from './CandidatePages/Licenses/LicensesForm';
 import endorsements from '../../../../utilities/endorsements';
@@ -33,7 +32,6 @@ export default function CandidateDetails() {
     const location = useLocation();
     const dispatch = useDispatch();
     const [isEditing, setIsEditing] = useState(false);
-    const [isWorkHistoryModalOpen, setIsWorkHistoryModalOpen] = useState(false);
     const changesMade = useRef(false);
     const navigate = useNavigate();
 
@@ -60,9 +58,6 @@ export default function CandidateDetails() {
         getDefinedInitialObject(candidate)
     );
     const [updatedSkills, setUpdatedSkills] = useState(
-        getDefinedInitialObject(candidate)
-    );
-    const [updatedWorkHistory, setUpdatedWorkHistory] = useState(
         getDefinedInitialObject(candidate)
     );
     const [updatedLicenses, setUpdatedLicenses] = useState(
@@ -196,35 +191,6 @@ export default function CandidateDetails() {
         dateObject.setFullYear(dateObject.getFullYear() + 1);
 
         return dateObject.toISOString().substring(0, 10);
-    }
-
-    //handle adding new work history
-    const handleOpenWorkHistoryModal = () => {
-        setIsWorkHistoryModalOpen(true);
-    }
-
-    const handleCloseWorkHistoryModal = () => {
-        setIsWorkHistoryModalOpen(false);
-    }
-
-    const handleSaveWorkHistory = (workHistory) => {
-        const workHistoryWithId = { ...workHistory, id: candidate.workHistory.length };
-        dispatch(addWorkHistory({ id, workHistory: workHistoryWithId }));
-        setUpdatedWorkHistory(prevState => ({
-            ...prevState,
-            workHistory: [...prevState.workHistory, workHistoryWithId]
-        }))
-        changesMade.current = true;
-        setIsWorkHistoryModalOpen(false);
-    }
-
-    const handleRemoveWorkHistory = (workHistoryId) => {
-        dispatch(removeWorkHistory({ id, workHistoryId }));
-        setUpdatedWorkHistory(prevState => ({
-          ...prevState,
-          workHistory: prevState.workHistory.filter(history => history.id !== workHistoryId)
-        }))
-        changesMade.current = true;
     }
     
     // LICENSES LOGIC
@@ -503,20 +469,6 @@ export default function CandidateDetails() {
                                     }
                                 />
                                 <Route
-                                    path='work-history'
-                                    element={
-                                        <WorkHistory 
-                                            candidate={candidate}
-                                            onAddClick={handleOpenWorkHistoryModal}
-                                            onDeleteClick={handleRemoveWorkHistory}
-                                            isWorkHistoryModalOpen={isWorkHistoryModalOpen}
-                                            onModalClose={handleCloseWorkHistoryModal}
-                                            onSaveModal={handleSaveWorkHistory}
-                                            updatedWorkHistory={updatedWorkHistory}
-                                        />
-                                    }
-                                />
-                                <Route
                                     path='licenses'
                                     element={
                                         !isEditing ?
@@ -566,7 +518,15 @@ export default function CandidateDetails() {
                                         />
                                     }
                                 />
+                                {/* <Route
+                                    path='work-history'
+                                    element={
+                                        <WorkHistory 
+                                        />
+                                    }
+                                /> */}
                             </Routes>
+                            
                         </div>
                     </div>
                 </div>
