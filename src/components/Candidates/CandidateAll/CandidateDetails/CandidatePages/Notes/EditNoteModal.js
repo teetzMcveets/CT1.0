@@ -14,8 +14,9 @@ export default function EditNoteModal({isOpen, note, onChange, onSubmit, onReque
             marginRight             : '-50%',
             transform               : 'translate(-50%, -50%)',
             width                   : '30%', // controls the width of the modal
-            height                  : '40%', // controls the height of the modal
+            height                  : '28%', // controls the height of the modal
             background              : 'var(--BGC)',
+            border                  : '1px solid var(--s3)',
         },
         overlay: {
             zIndex                  : 1000,
@@ -30,18 +31,24 @@ export default function EditNoteModal({isOpen, note, onChange, onSubmit, onReque
             style={customStyles} // use the custom styles
         >
             <h2>Edit Note</h2>
-            <input 
-                type="text" 
-                className="modal-input" 
-                value={note.content} 
-                onChange={onChange} 
-            />
-            <button 
-                className="modal-submit" 
-                onClick={onSubmit}
-            >
-                Submit
-            </button>
+            <div className='edit-note-container'>
+                <div className='modal-input-edit-container'>
+                    <textarea 
+                        type="text" 
+                        className="modal-input-edit" 
+                        value={note.content} 
+                        onChange={onChange} 
+                    />
+                </div>
+                <div className='modal-submit-button-container'>
+                    <button 
+                        className="modal-submit button-primary" 
+                        onClick={onSubmit}
+                    >
+                        Submit
+                    </button>
+                </div>
+            </div>
         </Modal>
     );
 }

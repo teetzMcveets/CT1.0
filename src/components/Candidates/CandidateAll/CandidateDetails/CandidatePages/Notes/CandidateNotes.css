@@ -83,3 +83,35 @@
     display: flex;
     justify-content: space-around;
 }
+
+.modal-input-edit-container {
+    padding: 10px 0;
+}
+
+.modal-input-edit {
+    width: 100%;
+    margin: 5px 5px 15px 5px;
+    color: white;
+    background-color: var(--BGC);
+    padding: 5px;
+    border: 2px solid var(--s2);
+    border-radius: 5px;
+    overflow: hidden;
+    resize: none;
+}
+
+.modal-input-edit::after {
+    content: "";
+    white-space: pre-wrap;
+}
+
+.modal-input-edit:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--secondary);
+}
+
+.modal-submit-button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0;
+}

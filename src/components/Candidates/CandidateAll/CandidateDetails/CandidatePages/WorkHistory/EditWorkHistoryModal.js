@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import './'
 
 Modal.setAppElement('#root');
 
@@ -29,9 +30,12 @@ export default function EditWorkHistoryModal({isOpen, workHistory, onChange, onS
             onRequestClose={onRequestClose}
             style={customStyles}
         >
+            
             <h2>Edit Work History</h2>
-            <input>
-            </input>
+            <div>
+                <input>
+                </input>
+            </div>
 
         </Modal>
     )
